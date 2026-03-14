@@ -141,6 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { shortcode: 'DU6TwxCkuop', profile: '@marinaciconet', initials: 'MC', label: 'Marina Ciconet' },
     { shortcode: 'DTnm5hREZr6', profile: '@marinaciconet', initials: 'MC', label: 'Marina Ciconet' },
     { shortcode: 'DTOSXslElxf', profile: '@marinaciconet', initials: 'MC', label: 'Marina Ciconet' },
+    { shortcode: 'DS0NrjLkfDI', profile: '@marinaciconet', initials: 'MC', label: 'Marina Ciconet' },
+    { shortcode: 'DSQCWsDkcAF', profile: '@marinaciconet', initials: 'MC', label: 'Marina Ciconet' },
     { shortcode: 'DGFrjAIpPlp', profile: '@marianapenteado', initials: 'MP', label: 'Mariana Penteado' },
     { shortcode: 'DFdWjOUp_X0', profile: '@marianapenteado', initials: 'MP', label: 'Mariana Penteado' },
     { shortcode: 'DGK5gVvJFrW', profile: '@marianapenteado', initials: 'MP', label: 'Mariana Penteado' },

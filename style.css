@@ -456,14 +456,14 @@ h4 {
    SEÇÃO 3 — CLIENTES & COLABORAÇÕES
    ================================================ */
 .clientes {
-  background-color: #1C1C1C;
+  background-color: #F5EFE6;
   padding: 120px 0;
-  color: #FFFFFF;
+  color: #1C1C1C;
 }
 
 .clientes__subtitle {
   font-size: 1.1rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(28,28,28,0.65);
   max-width: 640px;
   margin-bottom: 60px;
   line-height: 1.8;
@@ -477,16 +477,17 @@ h4 {
 }
 
 .clientes__card {
-  background-color: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(28,28,28,0.08);
   border-radius: 12px;
   padding: 36px 28px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .clientes__card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.25);
+  border-color: rgba(28,28,28,0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
 }
 
 .clientes__card h3 {
@@ -496,43 +497,43 @@ h4 {
 
 .clientes__card-role {
   font-size: 0.85rem;
-  color: #B5A08A;
+  color: #8a6f52;
   margin-bottom: 4px;
 }
 
 .clientes__card-stats {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(28,28,28,0.45);
   letter-spacing: 0.05em;
   margin-bottom: 16px;
 }
 
 .clientes__card-desc {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(28,28,28,0.7);
   line-height: 1.7;
 }
 
 .clientes__internacional {
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(28,28,28,0.1);
   border-radius: 12px;
   padding: 36px;
   margin-bottom: 40px;
   text-align: center;
-  background: linear-gradient(135deg, rgba(181,160,138,0.1) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(181,160,138,0.15) 0%, transparent 100%);
 }
 
 .clientes__internacional-label {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   font-weight: 500;
-  color: #B5A08A;
+  color: #8a6f52;
   margin-bottom: 12px;
 }
 
 .clientes__internacional p:last-child {
   font-size: 1rem;
-  color: rgba(255,255,255,0.8);
+  color: rgba(28,28,28,0.75);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.8;
@@ -543,7 +544,7 @@ h4 {
   margin-bottom: 48px;
   font-size: 0.9rem;
   letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.6);
+  color: rgba(28,28,28,0.55);
 }
 
 .clientes__nichos-dot {
@@ -565,7 +566,7 @@ h4 {
    MÉTRICAS / PROVA SOCIAL
    ================================================ */
 .metricas {
-  background-color: #1a1410;
+  background-color: #FFFFFF;
   padding: 80px 0;
 }
 
@@ -583,7 +584,7 @@ h4 {
 .metricas__icon-box {
   width: 56px;
   height: 56px;
-  background-color: #2a2218;
+  background-color: rgba(201,169,110,0.12);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -595,7 +596,7 @@ h4 {
   font-family: 'Inter', sans-serif;
   font-size: 2.8rem;
   font-weight: 700;
-  color: #f5efe6;
+  color: #1C1C1C;
   display: block;
   margin-bottom: 8px;
   line-height: 1;
@@ -605,13 +606,13 @@ h4 {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #f5efe6;
+  color: #1C1C1C;
   margin-bottom: 4px;
 }
 
 .metricas__sub {
   font-size: 0.85rem;
-  color: #b8ae89;
+  color: #8a6f52;
   letter-spacing: 0.02em;
 }
 

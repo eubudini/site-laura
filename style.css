@@ -369,6 +369,15 @@ h4 {
   aspect-ratio: 3/4;
 }
 
+.hero__photo {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+}
+
 /* ================================================
    SEÇÃO 2 — SOBRE MIM
    ================================================ */

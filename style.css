@@ -1383,6 +1383,11 @@ h4 {
     aspect-ratio: 1/1;
   }
 
+  .hero__photo {
+    max-width: 280px;
+    aspect-ratio: 3/4;
+  }
+
   .sobre__container {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1591,6 +1596,10 @@ h4 {
 @media (max-width: 480px) {
   .hero__photo-placeholder {
     max-width: 240px;
+  }
+
+  .hero__photo {
+    max-width: 220px;
   }
 
   .hero__buttons .btn {

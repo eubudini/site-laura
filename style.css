@@ -322,9 +322,19 @@ h4 {
 .hero__subtitle {
   font-size: 1.05rem;
   color: #555;
-  margin-bottom: 36px;
+  margin-bottom: 16px;
   max-width: 520px;
   line-height: 1.8;
+}
+
+.hero__support {
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #c9a96e;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  max-width: 520px;
 }
 
 .hero__buttons {
@@ -856,6 +866,75 @@ h4 {
   width: 100%;
   aspect-ratio: 3/4;
   max-width: 400px;
+}
+
+/* ================================================
+   SEÇÃO — PROCESSO
+   ================================================ */
+.processo {
+  background-color: #F5EFE6;
+  padding: 120px 0;
+}
+
+.processo__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 64px;
+}
+
+.processo__step {
+  position: relative;
+  padding-top: 24px;
+}
+
+.processo__step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #c9a96e;
+}
+
+.processo__number {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: rgba(201,169,110,0.25);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.processo__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1C1C1C;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.processo__text {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .processo__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 32px;
+  }
+}
+
+@media (max-width: 520px) {
+  .processo__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 /* ================================================

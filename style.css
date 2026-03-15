@@ -783,6 +783,12 @@ h4 {
   background: linear-gradient(135deg, #EDE4D8 0%, #E0D4C4 100%);
 }
 
+.canais__icon-box img {
+  width: 28px;
+  height: 28px;
+  filter: invert(68%) sepia(28%) saturate(500%) hue-rotate(5deg) brightness(95%) contrast(85%);
+}
+
 /* Textos */
 .canais__card-name {
   font-family: 'Playfair Display', serif;

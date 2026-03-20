@@ -1,16 +1,29 @@
 /* ================================================
    LAURA CAMPONOGARA — JAVASCRIPT
+   ================================================
+   Funcionalidades: Header, Menu, Scroll Reveal (Motion),
+   Formulário WhatsApp, Count Up, Instagram Carrossel,
+   Active Nav, Animações Premium
    ================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- HEADER SCROLL SHADOW ---
+  /* ------------------------------------------------
+     ACESSIBILIDADE — REDUCED MOTION
+     ------------------------------------------------ */
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ------------------------------------------------
+     1. HEADER SCROLL SHADOW
+     ------------------------------------------------ */
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // --- MOBILE MENU ---
+  /* ------------------------------------------------
+     2. MOBILE MENU
+     ------------------------------------------------ */
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
 
@@ -19,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navMenu.classList.toggle('active');
   });
 
-  // Fechar menu ao clicar em um link
   navMenu.querySelectorAll('.nav__link').forEach(link => {
     link.addEventListener('click', () => {
       navToggle.classList.remove('active');
@@ -27,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Fechar menu ao clicar fora
   document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
       navToggle.classList.remove('active');
@@ -35,23 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- SCROLL REVEAL ---
-  const revealElements = document.querySelectorAll('.reveal');
-
-  const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    revealElements.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 80) {
-        el.classList.add('active');
-      }
-    });
-  };
-
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll(); // Verificar elementos já visíveis
-
-  // --- FORMULÁRIO (PREVENIR SUBMIT + FEEDBACK) ---
+  /* ------------------------------------------------
+     3. FORMULÁRIO — ENVIO PARA WHATSAPP
+     ------------------------------------------------ */
   const form = document.getElementById('contatoForm');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -59,14 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const formData = new FormData(form);
       const nome = formData.get('nome');
 
-      // Construir mensagem para WhatsApp como fallback
       let mensagem = `Olá Laura! Meu nome é ${nome}.`;
       const servico = formData.get('servico');
       if (servico) {
         const servicoTexto = {
+          'estrategia': 'Estratégia de Conteúdo',
           'gestao': 'Gestão de Redes Sociais',
           'captacao': 'Captação de Conteúdo',
           'evento': 'Cobertura de Evento',
+          'posicionamento': 'Posicionamento Digital',
           'outro': 'Outro'
         };
         mensagem += ` Tenho interesse em: ${servicoTexto[servico] || servico}.`;
@@ -82,7 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- COUNT UP ANIMATION ---
+  /* ------------------------------------------------
+     4. COUNT UP ANIMATION
+     ------------------------------------------------ */
   const countElements = document.querySelectorAll('.metricas__number');
   let countStarted = false;
 
@@ -126,13 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', checkCountUp);
   checkCountUp();
 
-  // --- INSTAGRAM CARROSSEL ---
-  // ╔═══════════════════════════════════════════════════════════╗
-  // ║  CONFIGURAÇÃO: Adicione/remova posts editando este array ║
-  // ║  shortcode = o código após /p/ na URL do Instagram       ║
-  // ║  profile = @ do perfil | initials = sigla do avatar      ║
-  // ║  label = descrição curta                                 ║
-  // ╚═══════════════════════════════════════════════════════════╝
+  /* ------------------------------------------------
+     5. INSTAGRAM CARROSSEL
+     ------------------------------------------------ */
   const INSTAGRAM_POSTS = [
     { shortcode: 'DGdLFfcJIBv', profile: '@zaira.nara', initials: 'ZN', label: 'Zaira Nara' },
     { shortcode: 'DFrLrPlJcCi', profile: '@zaira.nara', initials: 'ZN', label: 'Zaira Nara' },
@@ -146,14 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
     { shortcode: 'DGFrjAIpPlp', profile: '@marianapenteado', initials: 'MP', label: 'Mariana Penteado' },
     { shortcode: 'DFdWjOUp_X0', profile: '@marianapenteado', initials: 'MP', label: 'Mariana Penteado' },
     { shortcode: 'DGK5gVvJFrW', profile: '@marianapenteado', initials: 'MP', label: 'Mariana Penteado' },
-    { shortcode: 'DFhjzPIJapn', profile: '@a.mar.joseignacio', initials: 'AM', label: 'A.Mar José Ignácio' },
-    { shortcode: 'DGBkVQ2pJcf', profile: '@a.mar.joseignacio', initials: 'AM', label: 'A.Mar José Ignácio' },
-    { shortcode: 'DF_UWKjJ9pk', profile: '@a.mar.joseignacio', initials: 'AM', label: 'A.Mar José Ignácio' },
+    { shortcode: 'DFhjzPIJapn', profile: '@a.mar.joseignacio', initials: 'AM', label: 'A.Mar Jose Ignacio' },
+    { shortcode: 'DGBkVQ2pJcf', profile: '@a.mar.joseignacio', initials: 'AM', label: 'A.Mar Jose Ignacio' },
+    { shortcode: 'DF_UWKjJ9pk', profile: '@a.mar.joseignacio', initials: 'AM', label: 'A.Mar Jose Ignacio' },
   ];
 
   const carouselTrack = document.getElementById('igCarouselTrack');
   if (carouselTrack) {
-    // Construir cards
     INSTAGRAM_POSTS.forEach((post, i) => {
       const card = document.createElement('div');
       card.className = 'ig-carousel__card';
@@ -189,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       carouselTrack.appendChild(card);
     });
 
-    // Lazy load iframes com IntersectionObserver
+    // Lazy load iframes
     const placeholders = carouselTrack.querySelectorAll('.ig-carousel__card-placeholder');
     const loadEmbed = (placeholder) => {
       const embedUrl = placeholder.dataset.embedUrl;
@@ -214,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }, { rootMargin: '200px' });
-
       placeholders.forEach(p => embedObserver.observe(p));
     } else {
       placeholders.forEach(loadEmbed);
@@ -249,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
       carouselTrack.scrollLeft = scrollLeft - walk;
     });
 
-    // Botões prev/next
+    // Botoes prev/next
     const prevBtn = document.querySelector('.ig-carousel__btn--prev');
     const nextBtn = document.querySelector('.ig-carousel__btn--next');
     const scrollAmount = 320;
@@ -266,7 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- ACTIVE NAV LINK ON SCROLL ---
+  /* ------------------------------------------------
+     6. ACTIVE NAV LINK ON SCROLL
+     ------------------------------------------------ */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__link');
 
@@ -290,4 +286,288 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', highlightNav);
+
+
+  /* ================================================
+     MOTION ANIMATIONS
+     ================================================
+     Todas as animacoes usam Motion vanilla JS.
+     Respeitam prefers-reduced-motion.
+     ================================================ */
+
+  if (prefersReducedMotion || typeof Motion === 'undefined') {
+    // Sem animacoes: garantir que .reveal fique visivel
+    document.querySelectorAll('.reveal').forEach(el => {
+      el.classList.add('active');
+    });
+    return;
+  }
+
+  const { animate, inView, scroll } = Motion;
+
+  /* ------------------------------------------------
+     7. SCROLL PROGRESS BAR
+     ------------------------------------------------ */
+  const progressBar = document.createElement('div');
+  progressBar.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #1C1C1C;
+    transform-origin: left;
+    transform: scaleX(0);
+    z-index: 10001;
+    pointer-events: none;
+  `;
+  document.body.appendChild(progressBar);
+
+  scroll(
+    animate(progressBar, { transform: ['scaleX(0)', 'scaleX(1)'] }, { duration: 0.1, easing: 'linear' })
+  );
+
+  /* ------------------------------------------------
+     8. HERO — REVEAL POR PALAVRAS
+     ------------------------------------------------ */
+  const heroTitle = document.querySelector('.hero__title');
+  if (heroTitle) {
+    const text = heroTitle.textContent.trim();
+    const words = text.split(/\s+/);
+    heroTitle.innerHTML = '';
+    heroTitle.style.visibility = 'visible';
+
+    words.forEach((word, i) => {
+      const span = document.createElement('span');
+      span.textContent = word + (i < words.length - 1 ? '\u00A0' : '');
+      span.style.display = 'inline-block';
+      span.style.opacity = '0';
+      span.style.transform = 'translateY(20px)';
+      heroTitle.appendChild(span);
+    });
+
+    const wordSpans = heroTitle.querySelectorAll('span');
+    setTimeout(() => {
+      wordSpans.forEach((span, i) => {
+        animate(
+          span,
+          { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'] },
+          { duration: 0.5, delay: i * 0.08, easing: [0.25, 0.46, 0.45, 0.94] }
+        );
+      });
+    }, 300);
+  }
+
+  /* ------------------------------------------------
+     9. HERO — ELEMENTOS FADE IN SEQUENCIAL
+     ------------------------------------------------ */
+  const heroElements = [
+    '.hero__name',
+    '.hero__label',
+    '.hero__subtitle',
+    '.hero__support',
+    '.hero__buttons',
+    '.hero__location'
+  ];
+
+  heroElements.forEach((selector, i) => {
+    const el = document.querySelector(selector);
+    if (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      animate(
+        el,
+        { opacity: [0, 1], transform: ['translateY(16px)', 'translateY(0)'] },
+        { duration: 0.6, delay: 0.5 + i * 0.1, easing: [0.25, 0.46, 0.45, 0.94] }
+      );
+    }
+  });
+
+  /* ------------------------------------------------
+     10. HERO — PARALLAX SUTIL NA FOTO
+     ------------------------------------------------ */
+  const heroPhoto = document.querySelector('.hero__photo');
+  if (heroPhoto) {
+    scroll(
+      animate(heroPhoto, { transform: ['translateY(0px)', 'translateY(-60px)'] }, { easing: 'linear' }),
+      { target: document.querySelector('.hero'), offset: ['start start', 'end start'] }
+    );
+  }
+
+  /* ------------------------------------------------
+     11. SCROLL REVEAL GLOBAL — via Motion inView
+     ------------------------------------------------ */
+  const revealElements = document.querySelectorAll('.reveal');
+  revealElements.forEach(el => {
+    // Estado inicial
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(40px)';
+
+    inView(el, () => {
+      animate(
+        el,
+        { opacity: [0, 1], transform: ['translateY(40px)', 'translateY(0)'] },
+        { duration: 0.7, easing: [0.25, 0.46, 0.45, 0.94] }
+      );
+      el.classList.add('active');
+    }, { amount: 0.15 });
+  });
+
+  /* ------------------------------------------------
+     12. STAGGER EM GRUPOS DE CARDS
+     ------------------------------------------------ */
+  const staggerGroups = [
+    { container: '.sobre__cards', items: '.sobre__card', delay: 0.12 },
+    { container: '.clientes__grid', items: '.clientes__card', delay: 0.15 },
+    { container: '.servicos__grid', items: '.servicos__card', delay: 0.12 },
+    { container: '.planos__grid', items: '.planos__card', delay: 0.15 },
+    { container: '.processo__grid', items: '.processo__step', delay: 0.12 },
+    { container: '.metricas__grid', items: '.metricas__card', delay: 0.1 },
+  ];
+
+  staggerGroups.forEach(({ container, items, delay }) => {
+    const containerEl = document.querySelector(container);
+    if (!containerEl) return;
+
+    const children = containerEl.querySelectorAll(items);
+    if (!children.length) return;
+
+    children.forEach(child => {
+      child.style.opacity = '0';
+      child.style.transform = 'translateY(30px) scale(0.97)';
+    });
+
+    inView(containerEl, () => {
+      children.forEach((child, i) => {
+        animate(
+          child,
+          {
+            opacity: [0, 1],
+            transform: ['translateY(30px) scale(0.97)', 'translateY(0) scale(1)']
+          },
+          {
+            duration: 0.6,
+            delay: i * delay,
+            easing: [0.25, 0.46, 0.45, 0.94]
+          }
+        );
+      });
+    }, { amount: 0.1 });
+  });
+
+  /* ------------------------------------------------
+     13. HOVER NOS CARDS — ELEVACAO + SOMBRA
+     ------------------------------------------------ */
+  const hoverableCards = document.querySelectorAll(
+    '.clientes__card, .servicos__card, .planos__card, .metricas__card, .processo__step'
+  );
+
+  hoverableCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      animate(card, {
+        transform: 'translateY(-6px)',
+        boxShadow: '0 16px 40px rgba(0, 0, 0, 0.1)'
+      }, {
+        duration: 0.3,
+        easing: [0.25, 0.46, 0.45, 0.94]
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      animate(card, {
+        transform: 'translateY(0px)',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
+      }, {
+        duration: 0.4,
+        easing: [0.25, 0.46, 0.45, 0.94]
+      });
+    });
+  });
+
+  /* ------------------------------------------------
+     14. BOTOES COM SPRING
+     ------------------------------------------------ */
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      animate(btn, { transform: 'scale(1.03)' }, {
+        type: 'spring', stiffness: 400, damping: 15
+      });
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      animate(btn, { transform: 'scale(1)' }, {
+        type: 'spring', stiffness: 400, damping: 15
+      });
+    });
+
+    btn.addEventListener('mousedown', () => {
+      animate(btn, { transform: 'scale(0.97)' }, { duration: 0.1 });
+    });
+
+    btn.addEventListener('mouseup', () => {
+      animate(btn, { transform: 'scale(1.03)' }, {
+        type: 'spring', stiffness: 400, damping: 15
+      });
+    });
+  });
+
+  /* ------------------------------------------------
+     15. SOBRE — FOTOS COM REVEAL DIFERENCIADO
+     ------------------------------------------------ */
+  const sobrePhoto1 = document.querySelector('.sobre__photo--1');
+  const sobrePhoto2 = document.querySelector('.sobre__photo--2');
+
+  if (sobrePhoto1) {
+    sobrePhoto1.style.opacity = '0';
+    sobrePhoto1.style.transform = 'translateX(-40px)';
+
+    inView(sobrePhoto1, () => {
+      animate(sobrePhoto1, {
+        opacity: [0, 1],
+        transform: ['translateX(-40px)', 'translateX(0)']
+      }, { duration: 0.8, easing: [0.25, 0.46, 0.45, 0.94] });
+    }, { amount: 0.2 });
+  }
+
+  if (sobrePhoto2) {
+    sobrePhoto2.style.opacity = '0';
+    sobrePhoto2.style.transform = 'translateX(40px)';
+
+    inView(sobrePhoto2, () => {
+      animate(sobrePhoto2, {
+        opacity: [0, 1],
+        transform: ['translateX(40px)', 'translateX(0)']
+      }, { duration: 0.8, delay: 0.15, easing: [0.25, 0.46, 0.45, 0.94] });
+    }, { amount: 0.2 });
+  }
+
+  /* ------------------------------------------------
+     16. HERO IMAGE — REVEAL COM SCALE
+     ------------------------------------------------ */
+  const heroImage = document.querySelector('.hero__image');
+  if (heroImage) {
+    heroImage.style.opacity = '0';
+    heroImage.style.transform = 'scale(0.95)';
+    animate(heroImage, {
+      opacity: [0, 1],
+      transform: ['scale(0.95)', 'scale(1)']
+    }, { duration: 0.8, delay: 0.2, easing: [0.25, 0.46, 0.45, 0.94] });
+  }
+
+  /* ------------------------------------------------
+     17. SECTION TITLES — FADE IN ON SCROLL
+     ------------------------------------------------ */
+  document.querySelectorAll('.section-title').forEach(title => {
+    if (title.closest('.hero')) return; // pular hero
+    title.style.opacity = '0';
+    title.style.transform = 'translateY(24px)';
+
+    inView(title, () => {
+      animate(title, {
+        opacity: [0, 1],
+        transform: ['translateY(24px)', 'translateY(0)']
+      }, { duration: 0.7, easing: [0.25, 0.46, 0.45, 0.94] });
+    }, { amount: 0.3 });
+  });
+
 });

@@ -164,6 +164,7 @@ h4 {
   font-weight: 700;
   color: #1C1C1C;
   white-space: nowrap;
+  transition: opacity 0.3s ease, max-width 0.3s ease;
 }
 
 .nav__menu {
@@ -449,11 +450,19 @@ h4 {
 
 @media (max-width: 768px) {
   .video-section {
-    padding: 48px 0;
+    padding: 24px 0;
   }
 
   .video-section__wrapper {
-    border-radius: 10px;
+    border-radius: 0;
+    aspect-ratio: 9 / 16;
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  .video-section__wrapper video {
+    object-fit: contain;
+    background: #000;
   }
 }
 
@@ -2068,23 +2077,45 @@ h4 {
 
 /* MOBILE */
 @media (max-width: 768px) {
+  .nav {
+    height: 60px;
+    padding: 0 20px;
+  }
+
   .nav__toggle {
     display: flex;
+    order: 2;
+    margin-left: auto;
+  }
+
+  .nav__logo {
+    order: 1;
+    font-size: 1.1rem;
+  }
+
+  /* Oculta o logo ao fazer scroll no mobile */
+  .header.scrolled .nav__logo {
+    opacity: 0;
+    pointer-events: none;
+    max-width: 0;
+    overflow: hidden;
   }
 
   .nav__menu {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 260px;
     height: 100vh;
     background-color: #FFFFFF;
     flex-direction: column;
     justify-content: center;
-    gap: 28px;
-    padding: 40px;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 48px 36px;
     transition: right 0.3s ease;
     box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+    z-index: 1001;
   }
 
   .nav__menu.active {

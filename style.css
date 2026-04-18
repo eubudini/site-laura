@@ -2081,6 +2081,10 @@ h4 {
 
 /* MOBILE */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
   .nav {
     height: 60px;
     padding: 0 20px;
@@ -2130,16 +2134,203 @@ h4 {
     font-size: 1rem;
   }
 
+  /* --- HERO --- */
   .hero {
-    padding-top: 80px;
+    padding-top: 72px;
     min-height: auto;
-    padding-bottom: 60px;
+    padding-bottom: 56px;
+  }
+
+  .hero__name {
+    font-size: 1.1rem;
+  }
+
+  .hero__label {
+    font-size: 0.72rem;
+    margin-bottom: 18px;
   }
 
   .hero__title {
-    font-size: 1.8rem;
+    font-size: clamp(1.55rem, 6.5vw, 1.85rem);
+    line-height: 1.25;
+    margin-bottom: 16px;
   }
 
+  .hero__subtitle {
+    font-size: 0.93rem;
+    margin-bottom: 14px;
+  }
+
+  .hero__support {
+    font-size: 0.78rem;
+    margin-bottom: 28px;
+  }
+
+  .hero__photo {
+    max-width: min(300px, 82vw);
+  }
+
+  /* --- SECTION TITLES --- */
+  .section-title {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    margin-bottom: 12px;
+  }
+
+  /* --- SEÇÕES GERAIS --- */
+  .sobre, .clientes, .servicos, .portfolio, .planos, .contato, .ig-carousel-section, .processo, .internacional {
+    padding: 60px 0;
+  }
+
+  /* --- SOBRE --- */
+  .sobre__text {
+    font-size: 0.93rem;
+  }
+
+  .sobre__images {
+    min-height: 350px;
+  }
+
+  .sobre__photo--1 {
+    width: 220px;
+    height: 300px;
+  }
+
+  .sobre__photo--2 {
+    width: 180px;
+    height: 240px;
+  }
+
+  .sobre__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre__card {
+    padding: 24px 20px;
+  }
+
+  /* --- METRICAS --- */
+  .metricas {
+    padding: 48px 0;
+  }
+
+  .metricas__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    align-items: start;
+  }
+
+  .metricas__card {
+    padding: 28px 12px;
+  }
+
+  .metricas__number {
+    font-size: 2rem;
+  }
+
+  .metricas__title {
+    font-size: 0.88rem;
+  }
+
+  .metricas__sub {
+    font-size: 0.78rem;
+  }
+
+  /* --- CLIENTES --- */
+  .clientes__subtitle {
+    font-size: 0.93rem;
+    margin-bottom: 40px;
+  }
+
+  .clientes__grid {
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .clientes__card {
+    padding: 28px 20px;
+  }
+
+  .clientes__card h3 {
+    font-size: 1.2rem;
+  }
+
+  /* --- SERVIÇOS --- */
+  .servicos__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .servicos__card {
+    padding: 28px 20px;
+  }
+
+  .servicos__subtitle {
+    font-size: 0.93rem;
+    margin-bottom: 36px;
+  }
+
+  /* --- PROCESSO --- */
+  .processo__subtitle {
+    font-size: 0.93rem;
+    margin-bottom: 48px;
+  }
+
+  .processo__card {
+    padding: 24px 16px;
+  }
+
+  .processo__num {
+    font-size: 2.2rem;
+  }
+
+  .processo__title {
+    font-size: 0.95rem;
+  }
+
+  .processo__text {
+    font-size: 0.83rem;
+  }
+
+  /* --- PORTFÓLIO --- */
+  .portfolio__grid {
+    columns: 1;
+  }
+
+  .portfolio__subtitle {
+    font-size: 0.93rem;
+  }
+
+  /* --- PLANOS --- */
+  .planos__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planos__card {
+    padding: 32px 24px;
+  }
+
+  .planos__subtitle {
+    font-size: 0.93rem;
+    margin-bottom: 36px;
+  }
+
+  /* --- CONTATO --- */
+  .contato__buttons {
+    flex-direction: column;
+  }
+
+  .contato__buttons .btn {
+    text-align: center;
+  }
+
+  .contato__heading {
+    font-size: 1.35rem;
+  }
+
+  .contato__text {
+    font-size: 0.93rem;
+  }
+
+  /* --- CANAIS --- */
   .canais {
     padding: 48px 0 56px;
   }
@@ -2149,24 +2340,12 @@ h4 {
     padding: 26px 18px 22px;
   }
 
-  .sobre, .clientes, .servicos, .portfolio, .planos, .contato, .ig-carousel-section, .processo, .internacional {
-    padding: 56px 0;
+  /* --- BASTIDORES --- */
+  .bastidores__card {
+    flex: 0 0 255px;
   }
 
-  .metricas {
-    padding: 48px 0;
-  }
-
-  .metricas__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    align-items: start;
-  }
-
-  .metricas__number {
-    font-size: 2.2rem;
-  }
-
+  /* --- INSTAGRAM CAROUSEL --- */
   .ig-carousel__card {
     flex: 0 0 calc(50% - 10px);
     min-width: 240px;
@@ -2185,49 +2364,17 @@ h4 {
     font-size: 0.8rem;
   }
 
-  .sobre__cards {
-    grid-template-columns: 1fr;
-  }
-
-  .sobre__images {
-    min-height: 350px;
-  }
-
-  .sobre__photo--1 {
-    width: 220px;
-    height: 300px;
-  }
-
-  .sobre__photo--2 {
-    width: 180px;
-    height: 240px;
-  }
-
-  .servicos__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio__grid {
-    columns: 1;
-  }
-
-  .planos__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contato__buttons {
-    flex-direction: column;
-  }
-
-  .contato__buttons .btn {
-    text-align: center;
-  }
-
+  /* --- FOOTER --- */
   .footer__nav {
     flex-direction: column;
     gap: 16px;
   }
 
+  .footer__logo {
+    font-size: 1.25rem;
+  }
+
+  /* --- MISC --- */
   .clientes__nichos {
     display: flex;
     flex-wrap: wrap;
@@ -2238,11 +2385,15 @@ h4 {
 
 @media (max-width: 480px) {
   .hero__photo-placeholder {
-    max-width: 240px;
+    max-width: min(240px, 80vw);
   }
 
   .hero__photo {
-    max-width: 220px;
+    max-width: min(260px, 84vw);
+  }
+
+  .hero__title {
+    font-size: 1.5rem;
   }
 
   .hero__buttons .btn {
@@ -2252,6 +2403,18 @@ h4 {
 
   .hero__buttons {
     flex-direction: column;
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+  }
+
+  .planos__card {
+    padding: 28px 20px;
+  }
+
+  .processo__timeline {
+    padding: 0 4px;
   }
 }
 

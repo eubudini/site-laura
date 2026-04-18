@@ -450,19 +450,23 @@ h4 {
 
 @media (max-width: 768px) {
   .video-section {
-    padding: 24px 0;
+    padding: 0;
+  }
+
+  .video-section .container {
+    padding: 0;
+    max-width: 100%;
   }
 
   .video-section__wrapper {
     border-radius: 0;
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 16 / 9;
     max-width: 100%;
     box-shadow: none;
   }
 
   .video-section__wrapper video {
-    object-fit: contain;
-    background: #000;
+    object-fit: cover;
   }
 }
 

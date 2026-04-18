@@ -257,6 +257,27 @@ h4 {
 /* ================================================
    SEÇÃO 1 — HERO
    ================================================ */
+
+/* Animações de entrada */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero__name    { animation: heroFadeUp 0.6s ease both; animation-delay: 0.1s; }
+.hero__label   { animation: heroFadeUp 0.6s ease both; animation-delay: 0.2s; }
+.hero__title   { animation: heroFadeUp 0.7s ease both; animation-delay: 0.35s; }
+.hero__subtitle{ animation: heroFadeUp 0.7s ease both; animation-delay: 0.5s; }
+.hero__buttons { animation: heroFadeUp 0.7s ease both; animation-delay: 0.65s; }
+.hero__location{ animation: heroFadeUp 0.6s ease both; animation-delay: 0.75s; }
+.hero__image   { animation: heroFadeUp 0.8s ease both; animation-delay: 0.2s; }
+
+/* Marquee keyframe */
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 .hero {
   min-height: 100vh;
   background-color: #E8DFD0;
@@ -265,6 +286,57 @@ h4 {
   padding-top: 72px;
   position: relative;
   overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Wrapper do marquee na base */
+.hero__marquee {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 75%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero__marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+
+/* Cards placeholder */
+.hero__marquee-card {
+  flex-shrink: 0;
+  width: 120px;
+  height: 160px;
+  border-radius: 16px;
+  border: 6px solid #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  background-color: #d4c9ba;
+}
+
+.hero__marquee-card:nth-child(odd)  { transform: rotate(-3deg) translateY(10px); }
+.hero__marquee-card:nth-child(even) { transform: rotate(3deg) translateY(-6px); }
+
+/* Variações de cor para parecer conteúdo variado */
+.hero__marquee-card--1 { background-color: #c9bfb3; }
+.hero__marquee-card--2 { background-color: #b8a99a; }
+.hero__marquee-card--3 { background-color: #d8d0c4; }
+.hero__marquee-card--4 { background-color: #c4b8ab; }
+.hero__marquee-card--5 { background-color: #bfb3a6; }
+.hero__marquee-card--6 { background-color: #cfc5b9; }
+
+@media (max-width: 768px) {
+  .hero__marquee { height: 150px; }
+  .hero__marquee-card { width: 90px; height: 120px; }
 }
 
 .hero__palm-shadow {
@@ -308,6 +380,7 @@ h4 {
   align-items: center;
   position: relative;
   z-index: 1;
+  padding-bottom: 160px;
 }
 
 .hero__name {

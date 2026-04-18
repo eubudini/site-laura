@@ -261,7 +261,63 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------
-     6. ACTIVE NAV LINK ON SCROLL
+     6. BASTIDORES CARROSSEL
+     ------------------------------------------------ */
+  const bastidoresTrack = document.getElementById('bastidoresTrack');
+  if (bastidoresTrack) {
+    let bDragging = false;
+    let bStartX, bScrollLeft;
+
+    bastidoresTrack.addEventListener('mousedown', (e) => {
+      bDragging = true;
+      bastidoresTrack.classList.add('grabbing');
+      bStartX = e.pageX - bastidoresTrack.offsetLeft;
+      bScrollLeft = bastidoresTrack.scrollLeft;
+    });
+
+    bastidoresTrack.addEventListener('mouseleave', () => {
+      bDragging = false;
+      bastidoresTrack.classList.remove('grabbing');
+    });
+
+    bastidoresTrack.addEventListener('mouseup', () => {
+      bDragging = false;
+      bastidoresTrack.classList.remove('grabbing');
+    });
+
+    bastidoresTrack.addEventListener('mousemove', (e) => {
+      if (!bDragging) return;
+      e.preventDefault();
+      const x = e.pageX - bastidoresTrack.offsetLeft;
+      const walk = (x - bStartX) * 1.5;
+      bastidoresTrack.scrollLeft = bScrollLeft - walk;
+    });
+
+    const bPrev = document.querySelector('.bastidores__btn--prev');
+    const bNext = document.querySelector('.bastidores__btn--next');
+    const bScroll = 300;
+
+    if (bPrev) {
+      bPrev.addEventListener('click', () => {
+        bastidoresTrack.scrollBy({ left: -bScroll, behavior: 'smooth' });
+      });
+    }
+    if (bNext) {
+      bNext.addEventListener('click', () => {
+        bastidoresTrack.scrollBy({ left: bScroll, behavior: 'smooth' });
+      });
+    }
+
+    bastidoresTrack.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        window.scrollBy({ top: e.deltaY, behavior: 'auto' });
+        e.preventDefault();
+      }
+    }, { passive: false });
+  }
+
+  /* ------------------------------------------------
+     7. ACTIVE NAV LINK ON SCROLL
      ------------------------------------------------ */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__link');

@@ -856,8 +856,8 @@ h4 {
 /* Layout principal */
 .internacional__container {
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 72px;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 56px;
   align-items: center;
   position: relative;
   z-index: 1;

@@ -2313,16 +2313,17 @@ h4 {
   }
 
   .clientes__grid {
+    grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
-    gap: 16px;
+    gap: 12px;
   }
 
   .clientes__card {
-    padding: 28px 20px;
+    padding: 20px 14px;
   }
 
   .clientes__card h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   /* --- SERVIÇOS --- */

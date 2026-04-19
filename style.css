@@ -1240,7 +1240,7 @@ h4 {
   color: rgba(255,255,255,0.45);
   font-size: 1rem;
   max-width: 520px;
-  margin: 0 auto 80px;
+  margin: 0 auto 48px;
   line-height: 1.7;
 }
 
@@ -1283,7 +1283,7 @@ h4 {
   align-items: center;
   justify-content: center;
   background: #141414;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   flex-shrink: 0;
   position: relative;
   z-index: 1;
@@ -1306,7 +1306,7 @@ h4 {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(201,169,110,0.15);
   border-radius: 16px;
-  padding: 32px 24px;
+  padding: 20px 16px;
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -1319,26 +1319,26 @@ h4 {
 .processo__num {
   display: block;
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: rgba(201,169,110,0.55);
   line-height: 1;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .processo__title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   line-height: 1.4;
 }
 
 .processo__text {
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   color: rgba(255,255,255,0.5);
-  line-height: 1.75;
+  line-height: 1.65;
 }
 
 @media (max-width: 900px) {
@@ -1352,8 +1352,12 @@ h4 {
 
 @media (max-width: 520px) {
   .processo__timeline {
-    grid-template-columns: 1fr;
-    padding: 0 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 8px;
+  }
+  .processo__card {
+    padding: 14px 12px;
   }
 }
 

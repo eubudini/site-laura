@@ -16,6 +16,21 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preload" as="image" href="laura-hero.jpg">
   <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: { gold: '#c9a96e' },
+          fontFamily: {
+            playfair: ['"Playfair Display"', 'serif'],
+            inter: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 </head>
 <body>
 
@@ -358,50 +373,59 @@
   </section>
 
   <!-- SEÇÃO — PROCESSO -->
-  <section class="processo" id="processo">
-    <div class="container">
-      <div class="processo__header">
-        <span class="processo__eyebrow">O MÉTODO</span>
-        <h2 class="processo__heading">Como funciona o processo</h2>
-        <p class="processo__subtitle">Cada projeto segue uma jornada estruturada, do primeiro olhar à presença consolidada.</p>
+  <section id="processo" class="bg-[#141414] py-24 md:py-32">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <span class="text-[0.65rem] tracking-[0.28em] text-gold font-medium uppercase">O Método</span>
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold text-white mt-4 mb-4">Como funciona o processo</h2>
+        <p class="text-sm text-white/40 leading-relaxed max-w-sm mx-auto">Cada projeto segue uma jornada estruturada, do primeiro olhar à presença consolidada.</p>
       </div>
 
-      <div class="processo__list">
-        <div class="processo__item reveal">
-          <span class="processo__num">01</span>
-          <div class="processo__content">
-            <h3 class="processo__title">Entendimento da marca</h3>
-            <p class="processo__text">Leitura cuidadosa da identidade, dos objetivos e da forma como a marca deseja ser percebida.</p>
+      <!-- Steps -->
+      <div class="divide-y divide-white/[0.07]">
+
+        <!-- Step 1 -->
+        <div class="group flex items-start gap-8 py-8 cursor-default transition-all duration-300 hover:pl-4">
+          <span class="text-[0.65rem] tracking-widest text-gold/40 font-inter pt-1 shrink-0 group-hover:text-gold transition-colors duration-300">01</span>
+          <div class="flex-1">
+            <h3 class="font-playfair text-lg font-semibold text-white mb-2 group-hover:text-gold transition-colors duration-300">Entendimento da marca</h3>
+            <p class="text-sm text-white/40 leading-relaxed">Leitura cuidadosa da identidade, dos objetivos e da forma como a marca deseja ser percebida.</p>
           </div>
-          <span class="processo__arrow">↗</span>
+          <span class="text-white/0 group-hover:text-gold/50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-base shrink-0 mt-0.5">↗</span>
         </div>
 
-        <div class="processo__item reveal">
-          <span class="processo__num">02</span>
-          <div class="processo__content">
-            <h3 class="processo__title">Direção e planejamento</h3>
-            <p class="processo__text">Caminhos criativos, formatos e prioridades para construir uma presença mais estratégica e consistente.</p>
+        <!-- Step 2 -->
+        <div class="group flex items-start gap-8 py-8 cursor-default transition-all duration-300 hover:pl-4">
+          <span class="text-[0.65rem] tracking-widest text-gold/40 font-inter pt-1 shrink-0 group-hover:text-gold transition-colors duration-300">02</span>
+          <div class="flex-1">
+            <h3 class="font-playfair text-lg font-semibold text-white mb-2 group-hover:text-gold transition-colors duration-300">Direção e planejamento</h3>
+            <p class="text-sm text-white/40 leading-relaxed">Caminhos criativos, formatos e prioridades para construir uma presença mais estratégica e consistente.</p>
           </div>
-          <span class="processo__arrow">↗</span>
+          <span class="text-white/0 group-hover:text-gold/50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-base shrink-0 mt-0.5">↗</span>
         </div>
 
-        <div class="processo__item reveal">
-          <span class="processo__num">03</span>
-          <div class="processo__content">
-            <h3 class="processo__title">Produção e execução</h3>
-            <p class="processo__text">Estratégia transformada em conteúdo, comunicação e presença visual com intenção e consistência.</p>
+        <!-- Step 3 -->
+        <div class="group flex items-start gap-8 py-8 cursor-default transition-all duration-300 hover:pl-4">
+          <span class="text-[0.65rem] tracking-widest text-gold/40 font-inter pt-1 shrink-0 group-hover:text-gold transition-colors duration-300">03</span>
+          <div class="flex-1">
+            <h3 class="font-playfair text-lg font-semibold text-white mb-2 group-hover:text-gold transition-colors duration-300">Produção e execução</h3>
+            <p class="text-sm text-white/40 leading-relaxed">Estratégia transformada em conteúdo, comunicação e presença visual com intenção e consistência.</p>
           </div>
-          <span class="processo__arrow">↗</span>
+          <span class="text-white/0 group-hover:text-gold/50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-base shrink-0 mt-0.5">↗</span>
         </div>
 
-        <div class="processo__item reveal">
-          <span class="processo__num">04</span>
-          <div class="processo__content">
-            <h3 class="processo__title">Ajustes e continuidade</h3>
-            <p class="processo__text">Refinamento contínuo com base na evolução da marca, mantendo coerência e fortalecendo resultados.</p>
+        <!-- Step 4 -->
+        <div class="group flex items-start gap-8 py-8 cursor-default transition-all duration-300 hover:pl-4">
+          <span class="text-[0.65rem] tracking-widest text-gold/40 font-inter pt-1 shrink-0 group-hover:text-gold transition-colors duration-300">04</span>
+          <div class="flex-1">
+            <h3 class="font-playfair text-lg font-semibold text-white mb-2 group-hover:text-gold transition-colors duration-300">Ajustes e continuidade</h3>
+            <p class="text-sm text-white/40 leading-relaxed">Refinamento contínuo com base na evolução da marca, mantendo coerência e fortalecendo resultados.</p>
           </div>
-          <span class="processo__arrow">↗</span>
+          <span class="text-white/0 group-hover:text-gold/50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-base shrink-0 mt-0.5">↗</span>
         </div>
+
       </div>
     </div>
   </section>

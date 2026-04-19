@@ -1044,7 +1044,7 @@ h4 {
   .internacional__photo--main {
     display: block !important;
     width: 100% !important;
-    height: 260px !important;
+    height: 340px !important;
     margin-bottom: 12px !important;
     border-radius: 14px !important;
     overflow: hidden !important;
@@ -1061,7 +1061,7 @@ h4 {
   .internacional__photo--main img {
     display: block !important;
     width: 100% !important;
-    height: 260px !important;
+    height: 340px !important;
     object-fit: cover !important;
     position: relative !important;
     opacity: 1 !important;

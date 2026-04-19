@@ -2121,6 +2121,16 @@ h4 {
 
 /* MOBILE */
 @media (max-width: 768px) {
+  /* Desativa animações reveal no mobile para evitar elementos invisíveis */
+  .reveal,
+  .portfolio__item.reveal,
+  .internacional__photos.reveal,
+  .internacional__photo--main,
+  .internacional__photo--top {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .container {
     padding: 0 20px;
   }

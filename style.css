@@ -2319,11 +2319,24 @@ h4 {
   }
 
   .clientes__card {
-    padding: 20px 14px;
+    padding: 16px 12px;
   }
 
   .clientes__card h3 {
-    font-size: 1rem;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+
+  .clientes__card-role {
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .clientes__card-stats {
+    font-size: 0.65rem;
+    margin-bottom: 0;
+    line-height: 1.3;
   }
 
   /* --- SERVIÇOS --- */

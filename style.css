@@ -1033,12 +1033,14 @@ h4 {
   }
 
   .internacional__photos {
-    display: block;
-    grid-template-columns: unset;
-    grid-template-rows: unset;
+    display: block !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
     opacity: 1 !important;
     transform: none !important;
     visibility: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .internacional__photo--top,

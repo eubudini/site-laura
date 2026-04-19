@@ -1036,41 +1036,44 @@ h4 {
   }
 
   .internacional__photos {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 100%;
+    display: block;
     grid-template-columns: unset;
     grid-template-rows: unset;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
   }
 
-  .internacional__photo--main,
-  .internacional__photo--top {
+  .internacional__photo--top,
+  .internacional__photo--main {
+    display: block;
     width: 100%;
-    aspect-ratio: 4/3;
-    transform: none;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
-    grid-column: unset;
-    grid-row: unset;
-    position: relative;
+    height: 260px;
+    margin-bottom: 12px;
     border-radius: 14px;
     overflow: hidden;
+    position: relative;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    grid-column: unset;
+    grid-row: unset;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
   }
 
-  .internacional__photo--main { order: 2; }
-  .internacional__photo--top  { order: 1; }
-
-  .internacional__photo--main img,
-  .internacional__photo--top img {
-    position: absolute;
-    top: 0; left: 0;
+  .internacional__photo--top img,
+  .internacional__photo--main img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: static;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .internacional__photo--bottom {
-    display: none;
+    display: none !important;
   }
 
   .internacional__locations {
@@ -2126,9 +2129,12 @@ h4 {
   .portfolio__item.reveal,
   .internacional__photos.reveal,
   .internacional__photo--main,
-  .internacional__photo--top {
+  .internacional__photo--top,
+  .internacional__photos,
+  .internacional__photos * {
     opacity: 1 !important;
     transform: none !important;
+    visibility: visible !important;
   }
 
   .container {

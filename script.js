@@ -453,9 +453,22 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------
      11. SCROLL REVEAL GLOBAL — via Motion inView
      ------------------------------------------------ */
+  const isMobile = window.innerWidth <= 768;
   const revealElements = document.querySelectorAll('.reveal');
   revealElements.forEach(el => {
-    // Estado inicial
+    // No mobile, deixa o internacional sempre visível (iOS Safari compat)
+    if (isMobile && (
+      el.classList.contains('internacional__photos') ||
+      el.closest('.internacional__photos') ||
+      el.classList.contains('internacional__photo--top') ||
+      el.classList.contains('internacional__photo--main')
+    )) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.classList.add('active');
+      return;
+    }
+
     el.style.opacity = '0';
     el.style.transform = 'translateY(40px)';
 

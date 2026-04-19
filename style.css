@@ -2476,24 +2476,24 @@ h4 {
 
   /* --- PROCESSO --- */
   .processo__subtitle {
-    font-size: 0.93rem;
-    margin-bottom: 48px;
+    font-size: 0.88rem;
+    margin-bottom: 32px;
   }
 
   .processo__card {
-    padding: 24px 16px;
+    padding: 16px 14px;
   }
 
   .processo__num {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
   }
 
   .processo__title {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
   }
 
   .processo__text {
-    font-size: 0.83rem;
+    font-size: 0.78rem;
   }
 
   /* --- PORTFÓLIO --- */
@@ -2640,6 +2640,31 @@ h4 {
 
   .processo__timeline {
     padding: 0 4px;
+  }
+
+  /* Reaplica valores compactos sobrescritos pelo bloco 768px */
+  .processo__card {
+    padding: 8px 10px;
+  }
+
+  .processo__num {
+    font-size: 0.8rem;
+    margin-bottom: 1px;
+  }
+
+  .processo__title {
+    font-size: 0.72rem;
+    margin-bottom: 2px;
+  }
+
+  .processo__text {
+    font-size: 0.65rem;
+    line-height: 1.4;
+  }
+
+  .processo__subtitle {
+    font-size: 0.78rem;
+    margin-bottom: 20px;
   }
 }
 

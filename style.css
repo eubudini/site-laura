@@ -1353,37 +1353,43 @@ h4 {
 @media (max-width: 520px) {
   .processo__timeline {
     grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 0 8px;
+    gap: 8px;
+    padding: 0 4px;
   }
   .processo__step {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
-    gap: 14px;
+    gap: 10px;
     padding: 0;
   }
   .processo__dot {
     margin-bottom: 0;
     flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    margin-top: 4px;
+    width: 24px;
+    height: 24px;
+    margin-top: 0;
+  }
+  .processo__dot-inner {
+    width: 7px;
+    height: 7px;
   }
   .processo__card {
-    padding: 12px 14px;
+    padding: 10px 12px;
     flex: 1;
+    border-radius: 10px;
   }
   .processo__num {
-    font-size: 1.2rem;
-    margin-bottom: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
   }
   .processo__title {
-    font-size: 0.82rem;
-    margin-bottom: 4px;
+    font-size: 0.78rem;
+    margin-bottom: 3px;
   }
   .processo__text {
-    font-size: 0.73rem;
+    font-size: 0.7rem;
+    line-height: 1.5;
   }
 }
 

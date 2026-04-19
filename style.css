@@ -1036,21 +1036,28 @@ h4 {
   }
 
   .internacional__photos {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     max-width: 100%;
   }
 
   .internacional__photo--main {
-    grid-column: 1 / 3;
-    grid-row: 1;
-    aspect-ratio: 3/4;
+    order: 2;
+    aspect-ratio: 4/3;
+    transform: none;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
   }
 
-  .internacional__photo--top,
-  .internacional__photo--bottom {
-    transform: none;
+  .internacional__photo--top {
+    order: 1;
     aspect-ratio: 4/3;
+    transform: none;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+  }
+
+  .internacional__photo--bottom {
+    display: none;
   }
 
   .internacional__locations {

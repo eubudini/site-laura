@@ -2333,8 +2333,12 @@ h4 {
   }
 
   /* --- SEÇÕES GERAIS --- */
-  .sobre, .clientes, .servicos, .portfolio, .planos, .contato, .ig-carousel-section, .processo, .internacional {
+  .sobre, .clientes, .servicos, .planos, .contato, .ig-carousel-section, .processo, .internacional {
     padding: 60px 0;
+  }
+
+  .portfolio {
+    padding: 32px 0 60px;
   }
 
   /* --- SOBRE --- */
@@ -2366,7 +2370,7 @@ h4 {
 
   /* --- METRICAS --- */
   .metricas {
-    padding: 40px 0;
+    padding: 28px 0 16px;
   }
 
   .metricas__grid {

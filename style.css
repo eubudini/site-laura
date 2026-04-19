@@ -2230,29 +2230,47 @@ h4 {
 
   /* --- METRICAS --- */
   .metricas {
-    padding: 48px 0;
+    padding: 40px 0;
   }
 
   .metricas__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    align-items: start;
+    gap: 1px;
+    align-items: stretch;
+    background-color: #f0ece6;
   }
 
   .metricas__card {
-    padding: 28px 12px;
+    padding: 28px 16px 24px;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .metricas__icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+  }
+
+  .metricas__icon-box svg {
+    width: 20px;
+    height: 20px;
   }
 
   .metricas__number {
-    font-size: 2rem;
+    font-size: 1.7rem;
+    margin-bottom: 4px;
   }
 
   .metricas__title {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 2px;
   }
 
   .metricas__sub {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
   }
 
   /* --- CLIENTES --- */

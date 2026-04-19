@@ -1351,45 +1351,55 @@ h4 {
 }
 
 @media (max-width: 520px) {
+  .processo {
+    padding: 48px 0 60px;
+  }
+  .processo__heading {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+  .processo__subtitle {
+    font-size: 0.78rem;
+    margin-bottom: 24px;
+  }
   .processo__timeline {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 6px;
     padding: 0 16px;
   }
   .processo__step {
     flex-direction: row;
     align-items: center;
     text-align: left;
-    gap: 12px;
+    gap: 10px;
     padding: 0;
   }
   .processo__dot {
     margin-bottom: 0;
     flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    margin-top: 0;
+    width: 20px;
+    height: 20px;
   }
   .processo__dot-inner {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
   }
   .processo__card {
-    padding: 10px 12px;
+    padding: 8px 10px;
     flex: 1;
     border-radius: 8px;
   }
   .processo__num {
-    font-size: 0.95rem;
-    margin-bottom: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 1px;
   }
   .processo__title {
-    font-size: 0.78rem;
-    margin-bottom: 3px;
+    font-size: 0.72rem;
+    margin-bottom: 2px;
   }
   .processo__text {
-    font-size: 0.7rem;
-    line-height: 1.5;
+    font-size: 0.65rem;
+    line-height: 1.4;
   }
 }
 

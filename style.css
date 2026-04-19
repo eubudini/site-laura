@@ -2244,6 +2244,11 @@ h4 {
     justify-content: center;
   }
 
+  .contato__photo {
+    max-width: 100%;
+    aspect-ratio: 4/3;
+  }
+
   .contato__photo-placeholder {
     aspect-ratio: 16/9;
     max-width: 100%;
@@ -2361,12 +2366,12 @@ h4 {
   }
 
   /* --- SEÇÕES GERAIS --- */
-  .sobre, .clientes, .servicos, .planos, .contato, .ig-carousel-section, .processo, .internacional {
-    padding: 60px 0;
+  .sobre, .clientes, .servicos, .planos, .contato, .ig-carousel-section, .internacional {
+    padding: 56px 0;
   }
 
   .portfolio {
-    padding: 32px 0 60px;
+    padding: 28px 0 56px;
   }
 
   /* --- SOBRE --- */
@@ -2629,6 +2634,15 @@ h4 {
 }
 
 @media (max-width: 480px) {
+  /* --- HERO --- */
+  .hero {
+    padding-bottom: 40px;
+  }
+
+  .hero__container {
+    gap: 24px;
+  }
+
   .hero__photo-placeholder {
     max-width: min(240px, 80vw);
   }
@@ -2641,6 +2655,10 @@ h4 {
     font-size: 1.5rem;
   }
 
+  .hero__subtitle {
+    font-size: 0.88rem;
+  }
+
   .hero__buttons .btn {
     width: 100%;
     text-align: center;
@@ -2648,14 +2666,110 @@ h4 {
 
   .hero__buttons {
     flex-direction: column;
+    gap: 10px;
   }
 
+  /* --- SECTION TITLES & PADDING --- */
   .section-title {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
   }
 
+  .sobre, .clientes, .servicos, .planos, .contato, .internacional {
+    padding: 48px 0;
+  }
+
+  /* --- SOBRE --- */
+  .sobre__images {
+    min-height: 280px;
+  }
+
+  .sobre__photo--1 {
+    width: 175px;
+    height: 235px;
+  }
+
+  .sobre__photo--2 {
+    width: 145px;
+    height: 195px;
+  }
+
+  /* --- MÉTRICAS --- */
+  .metricas {
+    padding: 16px 0 8px;
+  }
+
+  .metricas__card {
+    padding: 20px 10px 16px;
+  }
+
+  .metricas__number {
+    font-size: 1.5rem;
+  }
+
+  /* --- CLIENTES --- */
+  .clientes__grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .clientes__card {
+    padding: 20px 16px;
+  }
+
+  /* --- SERVIÇOS --- */
+  .servicos__grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .servicos__card {
+    padding: 16px 14px;
+  }
+
+  /* --- INTERNACIONAL --- */
+  .internacional__photo--top,
+  .internacional__photo--main {
+    height: 240px !important;
+  }
+
+  .internacional__photo--top img,
+  .internacional__photo--main img {
+    height: 240px !important;
+  }
+
+  .internacional__title {
+    font-size: 1.4rem;
+  }
+
+  /* --- PORTFÓLIO --- */
+  .portfolio__grid {
+    columns: 1;
+  }
+
+  .portfolio__item img {
+    max-height: 320px;
+  }
+
+  .portfolio__subtitle {
+    font-size: 0.88rem;
+  }
+
+  /* --- PLANOS --- */
   .planos__card {
     padding: 28px 20px;
+  }
+
+  /* --- CONTATO --- */
+  .contato__info p {
+    font-size: 0.83rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .contato__photo {
+    max-width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 12px;
   }
 
   /* --- FOOTER --- */
@@ -2666,6 +2780,55 @@ h4 {
 
   .footer__brand {
     grid-column: auto;
+  }
+}
+
+/* Telas muito pequenas (360px) */
+@media (max-width: 380px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero__name {
+    font-size: 1rem;
+  }
+
+  .hero__title {
+    font-size: 1.35rem;
+  }
+
+  .hero__label {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.82rem;
+  }
+
+  .metricas__number {
+    font-size: 1.4rem;
+  }
+
+  .metricas__title {
+    font-size: 0.75rem;
+  }
+
+  .clientes__card h3 {
+    font-size: 0.95rem;
+  }
+
+  .servicos__card h4 {
+    font-size: 0.85rem;
+  }
+
+  .footer__logo {
+    font-size: 1.1rem;
   }
 }
 

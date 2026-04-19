@@ -1228,20 +1228,20 @@ h4 {
 
 .processo__heading {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 700;
   color: #fff;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .processo__subtitle {
   text-align: center;
   color: rgba(255,255,255,0.45);
-  font-size: 1rem;
-  max-width: 520px;
-  margin: 0 auto 48px;
-  line-height: 1.7;
+  font-size: 0.88rem;
+  max-width: 480px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
 }
 
 /* Timeline container */
@@ -1352,12 +1352,38 @@ h4 {
 
 @media (max-width: 520px) {
   .processo__timeline {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 10px;
     padding: 0 8px;
   }
+  .processo__step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 14px;
+    padding: 0;
+  }
+  .processo__dot {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    margin-top: 4px;
+  }
   .processo__card {
-    padding: 14px 12px;
+    padding: 12px 14px;
+    flex: 1;
+  }
+  .processo__num {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+  .processo__title {
+    font-size: 0.82rem;
+    margin-bottom: 4px;
+  }
+  .processo__text {
+    font-size: 0.73rem;
   }
 }
 

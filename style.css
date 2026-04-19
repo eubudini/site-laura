@@ -1045,7 +1045,7 @@ h4 {
     display: block;
     width: 100%;
     height: 260px;
-    aspect-ratio: unset;
+    aspect-ratio: auto;
     margin-bottom: 12px;
     border-radius: 14px;
     overflow: hidden;
@@ -1060,11 +1060,13 @@ h4 {
 
   .internacional__photo--top img,
   .internacional__photo--main img {
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: static;
+    display: block;
     opacity: 1 !important;
     visibility: visible !important;
   }

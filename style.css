@@ -1040,20 +1040,33 @@ h4 {
     flex-direction: column;
     gap: 12px;
     max-width: 100%;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
   }
 
-  .internacional__photo--main {
-    order: 2;
-    aspect-ratio: 4/3;
-    transform: none;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
-  }
-
+  .internacional__photo--main,
   .internacional__photo--top {
-    order: 1;
+    width: 100%;
     aspect-ratio: 4/3;
     transform: none;
     box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+    grid-column: unset;
+    grid-row: unset;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .internacional__photo--main { order: 2; }
+  .internacional__photo--top  { order: 1; }
+
+  .internacional__photo--main img,
+  .internacional__photo--top img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .internacional__photo--bottom {
@@ -2343,11 +2356,20 @@ h4 {
 
   .portfolio__item {
     margin-bottom: 10px;
+    break-inside: avoid;
   }
 
   .portfolio__item img {
     max-height: 220px;
     object-fit: cover;
+    display: block;
+    width: 100%;
+  }
+
+  /* Fix reveal bug no columns layout */
+  .portfolio__item.reveal {
+    opacity: 1;
+    transform: none;
   }
 
   .portfolio__subtitle {

@@ -973,7 +973,7 @@ h4 {
 .internacional__photo--main {
   grid-column: 1;
   grid-row: 1;
-  aspect-ratio: 2/3;
+  height: 480px;
   box-shadow: 0 24px 64px rgba(0,0,0,0.55);
 }
 
@@ -981,7 +981,7 @@ h4 {
 .internacional__photo--top {
   grid-column: 2;
   grid-row: 1;
-  aspect-ratio: 2/3;
+  height: 480px;
   transform: none;
   box-shadow: 0 16px 48px rgba(0,0,0,0.45);
 }
@@ -1042,31 +1042,28 @@ h4 {
 
   .internacional__photo--top,
   .internacional__photo--main {
-    display: block;
-    width: 100%;
-    height: 260px;
-    aspect-ratio: auto;
-    margin-bottom: 12px;
-    border-radius: 14px;
-    overflow: hidden;
-    position: relative;
+    display: block !important;
+    width: 100% !important;
+    height: 260px !important;
+    margin-bottom: 12px !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    position: relative !important;
     transform: none !important;
     opacity: 1 !important;
     visibility: visible !important;
-    grid-column: unset;
-    grid-row: unset;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+    grid-column: unset !important;
+    grid-row: unset !important;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35) !important;
   }
 
   .internacional__photo--top img,
   .internacional__photo--main img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    display: block !important;
+    width: 100% !important;
+    height: 260px !important;
+    object-fit: cover !important;
+    position: relative !important;
     opacity: 1 !important;
     visibility: visible !important;
   }

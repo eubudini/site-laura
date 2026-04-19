@@ -2341,11 +2341,29 @@ h4 {
 
   /* --- SERVIÇOS --- */
   .servicos__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .servicos__card {
-    padding: 28px 20px;
+    padding: 18px 14px;
+  }
+
+  .servicos__icon {
+    width: 36px;
+    height: 36px;
+    padding: 7px;
+    margin-bottom: 10px;
+  }
+
+  .servicos__card h4 {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .servicos__card p {
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
 
   .servicos__subtitle {

@@ -1354,13 +1354,13 @@ h4 {
   .processo__timeline {
     grid-template-columns: 1fr;
     gap: 8px;
-    padding: 0 4px;
+    padding: 0 16px;
   }
   .processo__step {
     flex-direction: row;
     align-items: center;
     text-align: left;
-    gap: 10px;
+    gap: 12px;
     padding: 0;
   }
   .processo__dot {
@@ -1377,7 +1377,7 @@ h4 {
   .processo__card {
     padding: 10px 12px;
     flex: 1;
-    border-radius: 10px;
+    border-radius: 8px;
   }
   .processo__num {
     font-size: 0.95rem;

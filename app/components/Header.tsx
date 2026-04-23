@@ -75,11 +75,7 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav
-            style={{
-              alignItems: "center",
-              gap: 36,
-            }}
-            className="hidden md:flex"
+            className="header-nav"
           >
             {links.map((l) => (
               <a
@@ -146,12 +142,11 @@ export default function Header() {
               border: "none",
               cursor: "pointer",
               padding: "10px 8px",
-              display: "flex",
               flexDirection: "column",
               gap: 5,
               minHeight: "auto",
             }}
-            className="flex md:hidden"
+            className="header-hamburger"
           >
             {[0, 1, 2].map((i) => (
               <motion.span
@@ -247,6 +242,21 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <style>{`
+        .header-nav {
+          display: flex;
+          align-items: center;
+          gap: 36px;
+        }
+        .header-hamburger {
+          display: none;
+        }
+        @media (max-width: 767px) {
+          .header-nav { display: none !important; }
+          .header-hamburger { display: flex !important; }
+        }
+      `}</style>
 
       {/* Overlay mobile menu */}
       <AnimatePresence>

@@ -1,0 +1,222 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+const items = [
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2293.jpg", label: "Captação de Conteúdo" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2297.jpg", label: "Editorial" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2298.jpg", label: "Marcas" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2299.jpg", label: "Posicionamento Digital" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2302.jpg", label: "Direção Criativa" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2292.jpg", label: "Direção Criativa" },
+];
+
+export default function Portfolio() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
+  return (
+    <section
+      id="portfolio"
+      style={{
+        background: "#FFFFFF",
+        padding: "120px 0",
+      }}
+    >
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px" }}>
+        {/* Header */}
+        <div style={{ marginBottom: 64 }}>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            style={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "0.62rem",
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              color: "var(--gold)",
+              marginBottom: 20,
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+            }}
+          >
+            <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
+            Portfólio
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
+              fontWeight: 500,
+              color: "var(--ink)",
+              maxWidth: 600,
+              lineHeight: 1.2,
+            }}
+          >
+            Projetos, marcas e conteúdos que ganharam forma com direção criativa.
+          </motion.h2>
+        </div>
+
+        {/* Grid masonry */}
+        <div
+          style={{
+            columns: 3,
+            columnGap: 16,
+            marginBottom: 56,
+          }}
+          className="portfolio-columns"
+        >
+          {items.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+              style={{
+                position: "relative",
+                marginBottom: 16,
+                breakInside: "avoid",
+                overflow: "hidden",
+                cursor: "pointer",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={item.src}
+                alt={item.label}
+                loading="lazy"
+                style={{
+                  width: "100%",
+                  display: "block",
+                  objectFit: "cover",
+                  transition: "transform 0.6s ease",
+                  transform: hovered === i ? "scale(1.04)" : "scale(1)",
+                }}
+              />
+              <div
+                className="portfolio-overlay"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "rgba(10,10,10,0.65)",
+                  display: "flex",
+                  alignItems: "flex-end",
+                  padding: "20px 20px",
+                  opacity: hovered === i ? 1 : 0,
+                  transition: "opacity 0.4s ease",
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "0.65rem",
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "var(--gold)",
+                  }}
+                >
+                  {item.label}
+                </p>
+              </div>
+              {/* Label mobile — sempre visível */}
+              <div
+                className="portfolio-label-mobile"
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  background: "linear-gradient(to top, rgba(10,10,10,0.8) 0%, transparent 100%)",
+                  padding: "28px 14px 12px",
+                  display: "none",
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "0.6rem",
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    color: "var(--gold)",
+                  }}
+                >
+                  {item.label}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div style={{ textAlign: "center" }}>
+          <a
+            href="https://www.instagram.com/laura.camponogara/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "0.78rem",
+              letterSpacing: "0.12em",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              color: "#FFFFFF",
+              background: "var(--ink)",
+              padding: "14px 36px",
+              textDecoration: "none",
+              display: "inline-block",
+              transition: "background 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "#C9A96E";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "var(--ink)";
+            }}
+          >
+            Ver mais no Instagram
+          </a>
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .portfolio-columns {
+            columns: 2 !important;
+          }
+          #portfolio {
+            padding: 80px 0 !important;
+          }
+          #portfolio > div {
+            padding: 0 20px !important;
+          }
+          .portfolio-overlay {
+            display: none !important;
+          }
+          .portfolio-label-mobile {
+            display: block !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .portfolio-columns {
+            columns: 1 !important;
+          }
+          #portfolio {
+            padding: 64px 0 !important;
+          }
+          #portfolio > div {
+            padding: 0 16px !important;
+          }
+        }
+      `}</style>
+    </section>
+  );
+}

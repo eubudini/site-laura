@@ -176,13 +176,13 @@ export default function Internacional() {
           }}
         >
           {[
-            { src: "/internacional-2.jpg", tag: "Zaira Nara · @zaira.nara", height: 480 },
-            { src: "/internacional-1.jpg", tag: "Camila Coutinho · @camilacoutinho", height: 480 },
+            { src: "/internacional-2.jpg", tag: "Zaira Nara · @zaira.nara" },
+            { src: "/internacional-1.jpg", tag: "Camila Coutinho · @camilacoutinho" },
           ].map((photo) => (
             <div
               key={photo.src}
               style={{
-                height: photo.height,
+                aspectRatio: "1/1",
                 overflow: "hidden",
                 position: "relative",
                 boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
@@ -232,44 +232,18 @@ export default function Internacional() {
           }
         }
         @media (max-width: 768px) {
-          #internacional {
-            padding: 72px 0 !important;
-          }
-          .internacional-grid {
-            padding: 0 20px !important;
-          }
+          #internacional { padding: 72px 0 !important; }
+          .internacional-grid { padding: 0 20px !important; }
           .internacional-fotos {
-            display: block !important;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
             max-width: 100% !important;
             margin: 0 !important;
           }
-          .internacional-fotos > div {
-            display: block !important;
-            width: 100% !important;
-            height: 340px !important;
-            margin-bottom: 12px !important;
-            border-radius: 14px !important;
-            box-shadow: 0 12px 32px rgba(0,0,0,0.35) !important;
-          }
-          .internacional-fotos > div img {
-            height: 340px !important;
-            width: 100% !important;
-            object-fit: cover !important;
-          }
         }
         @media (max-width: 480px) {
-          #internacional {
-            padding: 56px 0 !important;
-          }
-          .internacional-grid {
-            padding: 0 16px !important;
-          }
-          .internacional-fotos > div {
-            height: 240px !important;
-          }
-          .internacional-fotos > div img {
-            height: 240px !important;
-          }
+          #internacional { padding: 56px 0 !important; }
+          .internacional-grid { padding: 0 16px !important; }
         }
       `}</style>
     </section>

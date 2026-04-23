@@ -7,6 +7,8 @@ const cases = [
     name: "Marina Ciconet",
     handle: "@marinaciconet",
     tag: "Jornalismo · Conteúdo",
+    beforeImage: "/resultados/marina-antes.jpg",
+    afterImage: "/resultados/marina-depois.jpg",
     metrics: [
       { label: "Seguidores", before: "11K", after: "59.1K", growth: "+437%" },
       { label: "Engajamento", before: "0.8%", after: "4.2%", growth: "+425%" },
@@ -17,6 +19,8 @@ const cases = [
     name: "Mariana Penteado",
     handle: "@marianapenteado",
     tag: "Moda · Lifestyle",
+    beforeImage: "/resultados/mariana-antes.jpg",
+    afterImage: "/resultados/mariana-depois.jpg",
     metrics: [
       { label: "Seguidores", before: "42K", after: "198K", growth: "+371%" },
       { label: "Engajamento", before: "1.1%", after: "3.8%", growth: "+245%" },
@@ -27,6 +31,8 @@ const cases = [
     name: "A.MAR José Ignacio",
     handle: "@a.mar.joseignacio",
     tag: "Moda · Luxo",
+    beforeImage: "/resultados/amar-antes.jpg",
+    afterImage: "/resultados/amar-depois.jpg",
     metrics: [
       { label: "Seguidores", before: "8K", after: "43.7K", growth: "+446%" },
       { label: "Engajamento", before: "0.6%", after: "5.1%", growth: "+750%" },
@@ -35,6 +41,218 @@ const cases = [
   },
 ];
 
+function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.55, delay: idx * 0.1 }}
+      style={{
+        background: "#FFFFFF",
+        border: "1px solid rgba(10,10,10,0.07)",
+        overflow: "hidden",
+      }}
+    >
+      {/* Prints antes/depois */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+        {/* Antes */}
+        <div style={{ position: "relative" }}>
+          <div style={{
+            aspectRatio: "9/16",
+            background: "rgba(10,10,10,0.04)",
+            overflow: "hidden",
+            position: "relative",
+          }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={c.beforeImage}
+              alt={`${c.name} antes`}
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+            {/* Placeholder enquanto sem imagem */}
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "rgba(10,10,10,0.03)",
+            }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(10,10,10,0.15)" strokeWidth="1.2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+          </div>
+          <div style={{
+            position: "absolute",
+            top: 8,
+            left: 8,
+            background: "rgba(10,10,10,0.75)",
+            backdropFilter: "blur(4px)",
+            padding: "3px 10px",
+          }}>
+            <span style={{
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: "0.5rem",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.7)",
+            }}>Antes</span>
+          </div>
+        </div>
+
+        {/* Depois */}
+        <div style={{ position: "relative", borderLeft: "2px solid var(--gold)" }}>
+          <div style={{
+            aspectRatio: "9/16",
+            background: "rgba(10,10,10,0.04)",
+            overflow: "hidden",
+            position: "relative",
+          }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={c.afterImage}
+              alt={`${c.name} depois`}
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "rgba(10,10,10,0.03)",
+            }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(10,10,10,0.15)" strokeWidth="1.2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+          </div>
+          <div style={{
+            position: "absolute",
+            top: 8,
+            left: 8,
+            background: "rgba(201,169,110,0.9)",
+            backdropFilter: "blur(4px)",
+            padding: "3px 10px",
+          }}>
+            <span style={{
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: "0.5rem",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "#0A0A0A",
+            }}>Depois</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Dados */}
+      <div style={{ padding: "24px 24px 20px" }}>
+        <div style={{ marginBottom: 20 }}>
+          <p style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "1.1rem",
+            fontWeight: 600,
+            color: "var(--ink)",
+            marginBottom: 2,
+          }}>
+            {c.name}
+          </p>
+          <p style={{
+            fontFamily: "'IBM Plex Mono', monospace",
+            fontSize: "0.6rem",
+            color: "var(--ink-50)",
+          }}>
+            {c.handle}
+          </p>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          {c.metrics.map((m) => (
+            <div key={m.label}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 5 }}>
+                <span style={{
+                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontSize: "0.52rem",
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "var(--ink-50)",
+                }}>
+                  {m.label}
+                </span>
+                <span style={{
+                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontSize: "0.56rem",
+                  color: "#2D7A3A",
+                  fontWeight: 500,
+                }}>
+                  {m.growth}
+                </span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <span style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "0.9rem",
+                  color: "rgba(10,10,10,0.28)",
+                  fontWeight: 500,
+                  minWidth: 40,
+                  textAlign: "right",
+                }}>
+                  {m.before}
+                </span>
+                <div style={{ flex: 1, height: 2, background: "rgba(10,10,10,0.06)", position: "relative", overflow: "hidden" }}>
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: idx * 0.1 + 0.3 }}
+                    style={{
+                      position: "absolute",
+                      left: 0,
+                      top: 0,
+                      height: "100%",
+                      background: "linear-gradient(90deg, rgba(201,169,110,0.3), var(--gold))",
+                    }}
+                  />
+                </div>
+                <span style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "1rem",
+                  color: "var(--ink)",
+                  fontWeight: 600,
+                  minWidth: 40,
+                }}>
+                  {m.after}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop: 18, paddingTop: 16, borderTop: "1px solid rgba(10,10,10,0.06)" }}>
+          <span style={{
+            fontFamily: "'IBM Plex Mono', monospace",
+            fontSize: "0.52rem",
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            color: "var(--gold)",
+          }}>
+            {c.tag}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Resultados() {
   return (
     <section
@@ -42,12 +260,9 @@ export default function Resultados() {
       style={{
         background: "var(--parchment)",
         padding: "100px 0 80px",
-        position: "relative",
-        overflow: "hidden",
       }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px" }}>
-
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 64 }}>
           <motion.p
@@ -112,134 +327,7 @@ export default function Resultados() {
         {/* Cards */}
         <div className="results-grid">
           {cases.map((c, idx) => (
-            <motion.div
-              key={c.handle}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.55, delay: idx * 0.1 }}
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid rgba(10,10,10,0.07)",
-                padding: "32px 28px",
-                position: "relative",
-              }}
-            >
-              {/* Cliente */}
-              <div style={{ marginBottom: 28 }}>
-                <p style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                  color: "var(--ink)",
-                  marginBottom: 3,
-                }}>
-                  {c.name}
-                </p>
-                <p style={{
-                  fontFamily: "'IBM Plex Mono', monospace",
-                  fontSize: "0.6rem",
-                  color: "var(--ink-50)",
-                  letterSpacing: "0.04em",
-                }}>
-                  {c.handle}
-                </p>
-              </div>
-
-              {/* Métricas antes/depois */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                {c.metrics.map((m) => (
-                  <div key={m.label}>
-                    <div style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "baseline",
-                      marginBottom: 6,
-                    }}>
-                      <span style={{
-                        fontFamily: "'IBM Plex Mono', monospace",
-                        fontSize: "0.55rem",
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "var(--ink-50)",
-                      }}>
-                        {m.label}
-                      </span>
-                      <span style={{
-                        fontFamily: "'IBM Plex Mono', monospace",
-                        fontSize: "0.58rem",
-                        letterSpacing: "0.06em",
-                        color: "#2D7A3A",
-                        fontWeight: 500,
-                      }}>
-                        {m.growth}
-                      </span>
-                    </div>
-
-                    {/* Barra de progresso visual */}
-                    <div style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 10,
-                    }}>
-                      <span style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: "0.95rem",
-                        color: "rgba(10,10,10,0.3)",
-                        fontWeight: 500,
-                        minWidth: 44,
-                        textAlign: "right",
-                      }}>
-                        {m.before}
-                      </span>
-                      <div style={{
-                        flex: 1,
-                        height: 2,
-                        background: "rgba(10,10,10,0.06)",
-                        position: "relative",
-                        overflow: "hidden",
-                      }}>
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: "100%" }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: idx * 0.1 + 0.3 }}
-                          style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            height: "100%",
-                            background: "linear-gradient(90deg, rgba(201,169,110,0.3), var(--gold))",
-                          }}
-                        />
-                      </div>
-                      <span style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: "1.05rem",
-                        color: "var(--ink)",
-                        fontWeight: 600,
-                        minWidth: 44,
-                      }}>
-                        {m.after}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Tag */}
-              <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid rgba(10,10,10,0.06)" }}>
-                <span style={{
-                  fontFamily: "'IBM Plex Mono', monospace",
-                  fontSize: "0.53rem",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "var(--gold)",
-                }}>
-                  {c.tag}
-                </span>
-              </div>
-            </motion.div>
+            <ResultadoCard key={c.handle} c={c} idx={idx} />
           ))}
         </div>
 
@@ -266,17 +354,13 @@ export default function Resultados() {
           grid-template-columns: repeat(3, 1fr);
           gap: 20px;
         }
-        @media (max-width: 900px) {
-          .results-grid { grid-template-columns: 1fr !important; max-width: 480px !important; margin: 0 auto !important; }
+        @media (max-width: 1024px) {
+          .results-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 640px) {
+          .results-grid { grid-template-columns: 1fr !important; }
           #resultados { padding: 72px 0 60px !important; }
           #resultados > div { padding: 0 20px !important; }
-          .results-grid { max-width: 100% !important; }
-        }
-        @media (max-width: 480px) {
-          #resultados { padding: 60px 0 48px !important; }
-          #resultados > div { padding: 0 16px !important; }
         }
       `}</style>
     </section>

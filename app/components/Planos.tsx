@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { TiltCard } from "./TiltCard";
 
 const plans = [
   {
@@ -101,6 +102,12 @@ export default function Planos() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
+            >
+            <TiltCard
+              tiltLimit={8}
+              scale={1.02}
+              effect="gravitate"
+              spotlight={true}
               style={{
                 background: plan.featured ? "#FFFFFF" : "#141414",
                 border: plan.featured ? "none" : "1px solid rgba(255,255,255,0.07)",
@@ -108,6 +115,7 @@ export default function Planos() {
                 position: "relative",
                 display: "flex",
                 flexDirection: "column",
+                height: "100%",
               }}
             >
               {plan.badge && (
@@ -219,6 +227,7 @@ export default function Planos() {
               >
                 {plan.featured ? "Começar agora" : "Quero este plano"}
               </a>
+            </TiltCard>
             </motion.div>
           ))}
         </div>

@@ -69,7 +69,7 @@ export default function Internacional() {
           transition={{ duration: 0.7 }}
         >
           <p style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'IBM Plex Mono', monospace",
             fontSize: "0.62rem",
             letterSpacing: "0.28em",
             textTransform: "uppercase",
@@ -80,11 +80,11 @@ export default function Internacional() {
             gap: 12,
           }}>
             <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
-            Atuação Internacional
+            Experiência Internacional
           </p>
 
           <h2 style={{
-            fontFamily: "'Playfair Display', serif",
+            fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
             fontWeight: 500,
             color: "#FFFFFF",
@@ -92,11 +92,11 @@ export default function Internacional() {
             marginBottom: 28,
             letterSpacing: "-0.01em",
           }}>
-            Presença além das fronteiras
+            Repertório ampliado por experiências fora do país
           </h2>
 
           <p style={{
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Manrope', sans-serif",
             fontSize: "0.95rem",
             color: "rgba(255,255,255,0.5)",
             lineHeight: 1.9,
@@ -104,12 +104,12 @@ export default function Internacional() {
             fontWeight: 300,
             maxWidth: 460,
           }}>
-            Laura realizou produções de conteúdo presencial no Uruguai, em especial na região de
-            José Ignácio — um dos destinos mais exclusivos da América do Sul e referência mundial
-            de moda, lifestyle e turismo de luxo.
+            Laura já realizou produções de conteúdo presencial no Uruguai, em especial na região
+            de José Ignácio — um dos destinos mais exclusivos da América do Sul e referência em
+            moda, lifestyle e turismo de luxo.
           </p>
           <p style={{
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Manrope', sans-serif",
             fontSize: "0.95rem",
             color: "rgba(255,255,255,0.5)",
             lineHeight: 1.9,
@@ -117,8 +117,8 @@ export default function Internacional() {
             fontWeight: 300,
             maxWidth: 460,
           }}>
-            Uma experiência que amplia o olhar criativo e conecta marcas a um universo de
-            sofisticação, autenticidade e alcance internacional.
+            Essa vivência internacional soma repertório criativo e refinamento estético ao trabalho
+            que hoje atende marcas em Porto Alegre e em todo o Brasil.
           </p>
 
           {/* Rota */}
@@ -137,10 +137,10 @@ export default function Internacional() {
                 <div key={item.city} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <span style={{ fontSize: "1.4rem" }}>{item.flag}</span>
                   <div>
-                    <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "0.9rem", fontWeight: 500, color: "#FFFFFF" }}>
+                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.9rem", fontWeight: 500, color: "#FFFFFF" }}>
                       {item.city}
                     </p>
-                    <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.58rem", letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", textTransform: "uppercase" }}>
+                    <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.58rem", letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", textTransform: "uppercase" }}>
                       {item.country}
                     </p>
                   </div>
@@ -150,7 +150,7 @@ export default function Internacional() {
           </div>
 
           <span style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'IBM Plex Mono', monospace",
             fontSize: "0.65rem",
             letterSpacing: "0.1em",
             color: "rgba(201,169,110,0.8)",
@@ -158,7 +158,7 @@ export default function Internacional() {
             padding: "8px 18px",
             display: "inline-block",
           }}>
-            Destino de luxo · América do Sul · Referência global
+            Base em Porto Alegre · Atendimento para todo o Brasil
           </span>
         </motion.div>
 
@@ -206,7 +206,7 @@ export default function Internacional() {
                 padding: "5px 12px",
               }}>
                 <p style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'IBM Plex Mono', monospace",
                   fontSize: "0.5rem",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",

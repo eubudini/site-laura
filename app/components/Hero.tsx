@@ -69,7 +69,7 @@ export default function Hero() {
           <motion.p
             {...fadeUp(0.1)}
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'IBM Plex Mono', monospace",
               fontSize: "0.62rem",
               letterSpacing: "0.32em",
               textTransform: "uppercase",
@@ -95,7 +95,7 @@ export default function Hero() {
           <motion.h1
             {...fadeUp(0.2)}
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(2rem, 6vw, 4.2rem)",
               fontWeight: 500,
               lineHeight: 1.08,
@@ -118,7 +118,7 @@ export default function Hero() {
           <motion.p
             {...fadeUp(0.3)}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Manrope', sans-serif",
               fontSize: "clamp(0.9rem, 4vw, 1.05rem)",
               color: "rgba(10,10,10,0.58)",
               lineHeight: 1.85,
@@ -140,7 +140,7 @@ export default function Hero() {
             <a
               href="#resultados"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontSize: "0.78rem",
                 letterSpacing: "0.12em",
                 fontWeight: 500,
@@ -165,7 +165,7 @@ export default function Hero() {
             <a
               href="#contato"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontSize: "0.78rem",
                 letterSpacing: "0.12em",
                 fontWeight: 500,
@@ -194,14 +194,14 @@ export default function Hero() {
           <motion.p
             {...fadeUp(0.5)}
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'IBM Plex Mono', monospace",
               fontSize: "0.7rem",
               letterSpacing: "0.1em",
               color: "rgba(10,10,10,0.35)",
               marginTop: 36,
             }}
           >
-            Porto Alegre, RS · Atendimento remoto · Brasil & Internacional
+            Porto Alegre, RS · Presencial na região · Atendimento remoto para todo o Brasil
           </motion.p>
         </div>
 
@@ -256,45 +256,6 @@ export default function Hero() {
             />
           </div>
 
-          {/* Badge flutuante */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="hero-badge"
-            style={{
-              position: "absolute",
-              bottom: 32,
-              left: -24,
-              background: "var(--obsidian)",
-              border: "1px solid rgba(201,169,110,0.2)",
-              padding: "16px 24px",
-              zIndex: 2,
-            }}
-          >
-            <p
-              style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: "0.6rem",
-                letterSpacing: "0.2em",
-                color: "var(--gold)",
-                textTransform: "uppercase",
-                marginBottom: 4,
-              }}
-            >
-              José Ignácio · UY
-            </p>
-            <p
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "0.95rem",
-                color: "#FFFFFF",
-                fontWeight: 500,
-              }}
-            >
-              Atuação Internacional
-            </p>
-          </motion.div>
         </motion.div>
       </div>
 
@@ -317,7 +278,7 @@ export default function Hero() {
       >
         <span
           style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'IBM Plex Mono', monospace",
             fontSize: "0.58rem",
             letterSpacing: "0.2em",
             color: "rgba(10,10,10,0.3)",
@@ -354,11 +315,6 @@ export default function Hero() {
         @media (max-width: 768px) {
           .hero-inner {
             padding: 52px 20px 48px !important;
-          }
-          .hero-badge {
-            left: 16px !important;
-            bottom: 20px !important;
-            padding: 12px 18px !important;
           }
           .hero-ctas {
             flex-direction: column !important;

@@ -68,7 +68,7 @@ export default function Servicos() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'IBM Plex Mono', monospace",
                 fontSize: "0.62rem",
                 letterSpacing: "0.28em",
                 textTransform: "uppercase",
@@ -88,7 +88,7 @@ export default function Servicos() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
                 fontWeight: 500,
                 color: "var(--ink)",
@@ -104,7 +104,7 @@ export default function Servicos() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Manrope', sans-serif",
               fontSize: "0.95rem",
               color: "rgba(10,10,10,0.5)",
               lineHeight: 1.85,
@@ -141,7 +141,7 @@ export default function Servicos() {
             >
               <p
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'IBM Plex Mono', monospace",
                   fontSize: "0.62rem",
                   letterSpacing: "0.15em",
                   color: "rgba(201,169,110,0.5)",
@@ -152,7 +152,7 @@ export default function Servicos() {
               </p>
               <h3
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Cormorant Garamond', serif",
                   fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
                   fontWeight: 500,
                   color: "var(--ink)",
@@ -163,7 +163,7 @@ export default function Servicos() {
               </h3>
               <p
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Manrope', sans-serif",
                   fontSize: "0.875rem",
                   color: "rgba(10,10,10,0.5)",
                   lineHeight: 1.8,
@@ -190,10 +190,10 @@ export default function Servicos() {
           }}
           className="servicos-nota"
         >
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.68rem", letterSpacing: "0.08em", color: "rgba(10,10,10,0.4)" }}>
+          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.68rem", letterSpacing: "0.08em", color: "rgba(10,10,10,0.4)" }}>
             📍 Gravações presenciais em Porto Alegre e região
           </p>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.68rem", letterSpacing: "0.08em", color: "rgba(10,10,10,0.4)" }}>
+          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.68rem", letterSpacing: "0.08em", color: "rgba(10,10,10,0.4)" }}>
             🌐 Atendimento remoto para todo o Brasil
           </p>
         </motion.div>

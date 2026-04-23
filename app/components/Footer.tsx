@@ -26,7 +26,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <p style={{
-            fontFamily: "'Playfair Display', serif",
+            fontFamily: "'Cormorant Garamond', serif",
             fontSize: "1.3rem",
             fontWeight: 500,
             marginBottom: 10,
@@ -34,7 +34,7 @@ export default function Footer() {
             Laura Camponogara
           </p>
           <p style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'IBM Plex Mono', monospace",
             fontSize: "0.65rem",
             letterSpacing: "0.1em",
             color: "rgba(255,255,255,0.35)",
@@ -42,7 +42,7 @@ export default function Footer() {
             lineHeight: 1.7,
             maxWidth: 280,
           }}>
-            Estratégia de Conteúdo · Porto Alegre, RS · Atuação Internacional
+            Estratégia de Conteúdo · Porto Alegre, RS · Atendimento em todo o Brasil
           </p>
           <div style={{ display: "flex", gap: 10 }}>
             {[
@@ -104,7 +104,7 @@ export default function Footer() {
         {/* Navegação */}
         <div>
           <p style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'IBM Plex Mono', monospace",
             fontSize: "0.6rem",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
@@ -126,7 +126,7 @@ export default function Footer() {
                 key={href}
                 href={href}
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Manrope', sans-serif",
                   fontSize: "0.82rem",
                   color: "rgba(255,255,255,0.5)",
                   textDecoration: "none",
@@ -145,7 +145,7 @@ export default function Footer() {
         {/* Contato */}
         <div>
           <p style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'IBM Plex Mono', monospace",
             fontSize: "0.6rem",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
@@ -156,14 +156,14 @@ export default function Footer() {
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <a href="https://wa.me/5551985309613" target="_blank" rel="noopener noreferrer"
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s ease", fontWeight: 300 }}
+              style={{ fontFamily: "'Manrope', sans-serif", fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s ease", fontWeight: 300 }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.5)"; }}
             >
               (51) 98530-9613
             </a>
             <a href="https://www.instagram.com/laura.camponogara/" target="_blank" rel="noopener noreferrer"
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s ease", fontWeight: 300 }}
+              style={{ fontFamily: "'Manrope', sans-serif", fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s ease", fontWeight: 300 }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.5)"; }}
             >
@@ -186,7 +186,7 @@ export default function Footer() {
         className="footer-bottom"
       >
         <p style={{
-          fontFamily: "'DM Mono', monospace",
+          fontFamily: "'IBM Plex Mono', monospace",
           fontSize: "0.62rem",
           color: "rgba(255,255,255,0.22)",
           letterSpacing: "0.05em",
@@ -194,12 +194,12 @@ export default function Footer() {
           © 2026 Laura Camponogara. Todos os direitos reservados.
         </p>
         <p style={{
-          fontFamily: "'DM Mono', monospace",
+          fontFamily: "'IBM Plex Mono', monospace",
           fontSize: "0.62rem",
           color: "rgba(255,255,255,0.22)",
           letterSpacing: "0.05em",
         }}>
-          Porto Alegre, RS · Atuação Internacional
+          Porto Alegre, RS · Atendimento para todo o Brasil
         </p>
       </div>
 

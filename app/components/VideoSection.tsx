@@ -24,7 +24,7 @@ export default function VideoSection() {
       >
         <p
           style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'IBM Plex Mono', monospace",
             fontSize: "0.62rem",
             letterSpacing: "0.28em",
             textTransform: "uppercase",
@@ -100,7 +100,7 @@ export default function VideoSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
           style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'IBM Plex Mono', monospace",
             fontSize: "0.6rem",
             letterSpacing: "0.12em",
             color: "rgba(255,255,255,0.25)",
@@ -108,7 +108,7 @@ export default function VideoSection() {
             marginTop: 20,
           }}
         >
-          Captação presencial · José Ignácio, Uruguai
+          Produção realizada em José Ignácio, Uruguai
         </motion.p>
       </motion.div>
 

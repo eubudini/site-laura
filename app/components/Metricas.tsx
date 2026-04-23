@@ -87,7 +87,7 @@ export default function Metricas() {
           >
             <p
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)",
                 fontWeight: 500,
                 color: "#FFFFFF",
@@ -105,7 +105,7 @@ export default function Metricas() {
             </p>
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontSize: "0.85rem",
                 fontWeight: 500,
                 color: "rgba(255,255,255,0.75)",
@@ -116,7 +116,7 @@ export default function Metricas() {
             </p>
             <p
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'IBM Plex Mono', monospace",
                 fontSize: "0.62rem",
                 letterSpacing: "0.08em",
                 color: "var(--gold)",
@@ -146,7 +146,7 @@ export default function Metricas() {
           }
           .metrics-grid > div {
             padding: 28px 16px !important;
-            text-align: left !important;
+            text-align: center !important;
           }
         }
         @media (max-width: 360px) {

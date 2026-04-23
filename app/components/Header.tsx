@@ -61,7 +61,7 @@ export default function Header() {
           <a
             href="#hero"
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Cormorant Garamond', serif",
               fontSize: "1.2rem",
               fontWeight: 500,
               color: scrolled ? "#FFFFFF" : "#0A0A0A",
@@ -87,7 +87,7 @@ export default function Header() {
                 key={l.href}
                 href={l.href}
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Manrope', sans-serif",
                   fontSize: "0.8rem",
                   letterSpacing: "0.08em",
                   fontWeight: 400,
@@ -115,7 +115,7 @@ export default function Header() {
             <a
               href="#contato"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontSize: "0.78rem",
                 letterSpacing: "0.1em",
                 fontWeight: 500,
@@ -212,7 +212,7 @@ export default function Header() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.06 }}
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Cormorant Garamond', serif",
                   fontSize: "1.3rem",
                   color: "rgba(255,255,255,0.8)",
                   textDecoration: "none",
@@ -230,7 +230,7 @@ export default function Header() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.36 }}
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontSize: "0.78rem",
                 letterSpacing: "0.12em",
                 fontWeight: 500,

@@ -90,7 +90,7 @@ export default function Sobre() {
               position: "absolute",
               bottom: 80,
               left: -20,
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Cormorant Garamond', serif",
               fontSize: "6rem",
               fontWeight: 700,
               color: "rgba(201,169,110,0.06)",
@@ -113,7 +113,7 @@ export default function Sobre() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'IBM Plex Mono', monospace",
               fontSize: "0.62rem",
               letterSpacing: "0.28em",
               textTransform: "uppercase",
@@ -134,7 +134,7 @@ export default function Sobre() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
               fontWeight: 500,
               lineHeight: 1.2,
@@ -166,7 +166,7 @@ export default function Sobre() {
             />
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontSize: "1rem",
                 color: "rgba(10,10,10,0.55)",
                 lineHeight: 1.9,
@@ -180,7 +180,7 @@ export default function Sobre() {
             </p>
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontSize: "1rem",
                 color: "rgba(10,10,10,0.55)",
                 lineHeight: 1.9,
@@ -193,52 +193,6 @@ export default function Sobre() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="sobre-stats"
-            style={{
-              display: "flex",
-              gap: 32,
-              marginTop: 48,
-              paddingTop: 40,
-              borderTop: "1px solid rgba(10,10,10,0.08)",
-            }}
-          >
-            {[
-              { n: "14+", label: "Clientes" },
-              { n: "3", label: "Anos" },
-              { n: "BR · UY", label: "Atuação" },
-            ].map((item) => (
-              <div key={item.label}>
-                <p
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: "1.6rem",
-                    fontWeight: 500,
-                    color: "var(--ink)",
-                    lineHeight: 1,
-                    marginBottom: 4,
-                  }}
-                >
-                  {item.n}
-                </p>
-                <p
-                  style={{
-                    fontFamily: "'DM Mono', monospace",
-                    fontSize: "0.62rem",
-                    letterSpacing: "0.15em",
-                    textTransform: "uppercase",
-                    color: "rgba(10,10,10,0.4)",
-                  }}
-                >
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </div>
 
@@ -294,9 +248,6 @@ export default function Sobre() {
           }
           .sobre-foto-lc {
             display: none !important;
-          }
-          .sobre-stats {
-            gap: 20px !important;
           }
         }
       `}</style>

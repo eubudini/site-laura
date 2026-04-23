@@ -91,7 +91,7 @@ function BeforeAfterCard({ c }: { c: typeof cases[0] }) {
           >
             <span
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'IBM Plex Mono', monospace",
                 fontSize: "0.52rem",
                 letterSpacing: "0.16em",
                 textTransform: "uppercase",
@@ -108,7 +108,7 @@ function BeforeAfterCard({ c }: { c: typeof cases[0] }) {
             </span>
             <span
               style={{
-                fontFamily: "'DM Mono', monospace",
+                fontFamily: "'IBM Plex Mono', monospace",
                 fontSize: "0.52rem",
                 letterSpacing: "0.16em",
                 textTransform: "uppercase",
@@ -131,7 +131,7 @@ function BeforeAfterCard({ c }: { c: typeof cases[0] }) {
               position: "absolute",
               bottom: 12,
               right: 12,
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'IBM Plex Mono', monospace",
               fontSize: "0.48rem",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
@@ -160,7 +160,7 @@ function BeforeAfterCard({ c }: { c: typeof cases[0] }) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'IBM Plex Mono', monospace",
               fontSize: "0.6rem",
               letterSpacing: "0.05em",
               color: "var(--gold)",
@@ -171,10 +171,10 @@ function BeforeAfterCard({ c }: { c: typeof cases[0] }) {
             {c.initials}
           </div>
           <div>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.88rem", fontWeight: 500, color: "#FFFFFF", marginBottom: 2 }}>
+            <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "0.88rem", fontWeight: 500, color: "#FFFFFF", marginBottom: 2 }}>
               {c.name}
             </p>
-            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.62rem", color: "rgba(255,255,255,0.3)" }}>
+            <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.62rem", color: "rgba(255,255,255,0.3)" }}>
               {c.handle}
             </p>
           </div>
@@ -185,7 +185,7 @@ function BeforeAfterCard({ c }: { c: typeof cases[0] }) {
           {/* Antes */}
           <div>
             <p style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'IBM Plex Mono', monospace",
               fontSize: "0.5rem",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
@@ -197,14 +197,14 @@ function BeforeAfterCard({ c }: { c: typeof cases[0] }) {
             {Object.entries(c.before).map(([key, val]) => (
               <div key={key} style={{ marginBottom: 10 }}>
                 <p style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Cormorant Garamond', serif",
                   fontSize: "1.05rem",
                   color: "rgba(255,255,255,0.25)",
                   lineHeight: 1.1,
                   fontWeight: 500,
                 }}>{val}</p>
                 <p style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'IBM Plex Mono', monospace",
                   fontSize: "0.52rem",
                   color: "rgba(255,255,255,0.15)",
                   letterSpacing: "0.06em",
@@ -225,7 +225,7 @@ function BeforeAfterCard({ c }: { c: typeof cases[0] }) {
           {/* Depois */}
           <div>
             <p style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'IBM Plex Mono', monospace",
               fontSize: "0.5rem",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
@@ -238,14 +238,14 @@ function BeforeAfterCard({ c }: { c: typeof cases[0] }) {
             {Object.entries(c.after).map(([key, val]) => (
               <div key={key} style={{ marginBottom: 10, textAlign: "right" }}>
                 <p style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Cormorant Garamond', serif",
                   fontSize: "1.05rem",
                   color: "#FFFFFF",
                   lineHeight: 1.1,
                   fontWeight: 500,
                 }}>{val}</p>
                 <p style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "'IBM Plex Mono', monospace",
                   fontSize: "0.52rem",
                   color: "rgba(255,255,255,0.3)",
                   letterSpacing: "0.06em",
@@ -258,7 +258,7 @@ function BeforeAfterCard({ c }: { c: typeof cases[0] }) {
 
         {/* Tag */}
         <span style={{
-          fontFamily: "'DM Mono', monospace",
+          fontFamily: "'IBM Plex Mono', monospace",
           fontSize: "0.55rem",
           letterSpacing: "0.12em",
           textTransform: "uppercase",
@@ -293,7 +293,7 @@ export default function Resultados() {
           position: "absolute",
           bottom: -60,
           right: -60,
-          fontFamily: "'Playfair Display', serif",
+          fontFamily: "'Cormorant Garamond', serif",
           fontSize: "18rem",
           fontWeight: 700,
           color: "rgba(255,255,255,0.015)",
@@ -314,7 +314,7 @@ export default function Resultados() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'IBM Plex Mono', monospace",
               fontSize: "0.62rem",
               letterSpacing: "0.28em",
               textTransform: "uppercase",
@@ -336,7 +336,7 @@ export default function Resultados() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
               fontWeight: 500,
               color: "#FFFFFF",
@@ -355,7 +355,7 @@ export default function Resultados() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Manrope', sans-serif",
               fontSize: "0.9rem",
               color: "rgba(255,255,255,0.35)",
               maxWidth: 480,
@@ -387,7 +387,7 @@ export default function Resultados() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{
-            fontFamily: "'DM Mono', monospace",
+            fontFamily: "'IBM Plex Mono', monospace",
             fontSize: "0.62rem",
             color: "rgba(255,255,255,0.18)",
             textAlign: "center",

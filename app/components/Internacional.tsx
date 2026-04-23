@@ -53,7 +53,7 @@ export default function Internacional() {
           margin: "0 auto",
           padding: "0 32px",
           display: "grid",
-          gridTemplateColumns: "1fr 1.3fr",
+          gridTemplateColumns: "1fr 1.6fr",
           gap: 80,
           alignItems: "center",
           position: "relative",
@@ -170,8 +170,8 @@ export default function Internacional() {
           transition={{ duration: 0.8, delay: 0.15 }}
           className="internacional-fotos"
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            display: "flex",
+            flexDirection: "column",
             gap: 14,
           }}
         >
@@ -182,7 +182,7 @@ export default function Internacional() {
             <div
               key={photo.src}
               style={{
-                aspectRatio: "1/1",
+                aspectRatio: "4/3",
                 overflow: "hidden",
                 position: "relative",
                 boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
@@ -235,10 +235,8 @@ export default function Internacional() {
           #internacional { padding: 72px 0 !important; }
           .internacional-grid { padding: 0 20px !important; }
           .internacional-fotos {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
+            flex-direction: column !important;
             max-width: 100% !important;
-            margin: 0 !important;
           }
         }
         @media (max-width: 480px) {

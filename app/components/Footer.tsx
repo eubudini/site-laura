@@ -6,7 +6,7 @@ export default function Footer() {
       style={{
         background: "var(--obsidian-3)",
         color: "#FFFFFF",
-        padding: "60px 0 0",
+        padding: "48px 0 0",
         borderTop: "1px solid rgba(201,169,110,0.1)",
       }}
     >
@@ -17,8 +17,8 @@ export default function Footer() {
           padding: "0 32px",
           display: "grid",
           gridTemplateColumns: "2fr 1fr 1fr",
-          gap: 48,
-          paddingBottom: 48,
+          gap: 40,
+          paddingBottom: 36,
           borderBottom: "1px solid rgba(255,255,255,0.06)",
         }}
         className="footer-top"
@@ -113,7 +113,7 @@ export default function Footer() {
           }}>
             Navegação
           </p>
-          <nav style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <nav style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {[
               ["#hero", "Início"],
               ["#sobre", "Sobre"],
@@ -154,7 +154,7 @@ export default function Footer() {
           }}>
             Contato
           </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             <a href="https://wa.me/5551985309613" target="_blank" rel="noopener noreferrer"
               style={{ fontFamily: "'Manrope', sans-serif", fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s ease", fontWeight: 300 }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
@@ -207,26 +207,31 @@ export default function Footer() {
         @media (max-width: 768px) {
           .footer-top {
             grid-template-columns: 1fr 1fr !important;
-            gap: 36px !important;
-            padding: 0 20px 40px !important;
+            gap: 24px 20px !important;
+            padding: 0 20px 28px !important;
           }
           .footer-top > *:first-child {
             grid-column: 1 / -1 !important;
           }
+          .footer-top nav {
+            gap: 8px !important;
+          }
+          .footer-top > div:last-child > div {
+            gap: 8px !important;
+          }
           .footer-bottom {
             flex-direction: column !important;
-            gap: 8px !important;
+            gap: 4px !important;
             text-align: center !important;
-            padding: 20px !important;
+            padding: 14px 20px !important;
           }
         }
         @media (max-width: 480px) {
           .footer-top {
-            grid-template-columns: 1fr !important;
-            padding: 0 16px 36px !important;
+            padding: 0 16px 24px !important;
           }
           .footer-bottom {
-            padding: 16px !important;
+            padding: 12px 16px !important;
           }
         }
       `}</style>

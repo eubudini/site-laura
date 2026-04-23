@@ -9,6 +9,7 @@ import Internacional from "./components/Internacional";
 import Clientes from "./components/Clientes";
 import Servicos from "./components/Servicos";
 import Processo from "./components/Processo";
+import IntegrationsSection from "@/components/ui/integrations-section";
 import Planos from "./components/Planos";
 import Contato from "./components/Contato";
 import Footer from "./components/Footer";
@@ -28,6 +29,7 @@ export default function Home() {
         <Internacional />
         <Clientes />
         <Servicos />
+        <IntegrationsSection />
         <Processo />
         <Planos />
         <Contato />

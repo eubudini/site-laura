@@ -12,222 +12,191 @@ const InstagramIcon = () => (
   </svg>
 );
 
-const navLinks = [
-  { text: "Início", href: "#hero" },
-  { text: "Sobre", href: "#sobre" },
-  { text: "Portfólio", href: "#portfolio" },
-  { text: "Serviços", href: "#servicos" },
-  { text: "Planos", href: "#planos" },
-  { text: "Contato", href: "#contato" },
-];
-
-const serviceLinks = [
-  { text: "Captação & Edição", href: "#servicos" },
-  { text: "Gestão de Redes", href: "#servicos" },
-  { text: "Estratégia", href: "#servicos" },
-  { text: "Planejamento Mensal", href: "#servicos" },
+const sections = [
+  {
+    title: "Navegação",
+    links: [
+      { name: "Início", href: "#hero" },
+      { name: "Sobre", href: "#sobre" },
+      { name: "Portfólio", href: "#portfolio" },
+      { name: "Serviços", href: "#servicos" },
+      { name: "Planos", href: "#planos" },
+      { name: "Contato", href: "#contato" },
+    ],
+  },
+  {
+    title: "Serviços",
+    links: [
+      { name: "Captação & Edição", href: "#servicos" },
+      { name: "Gestão de Redes", href: "#servicos" },
+      { name: "Estratégia", href: "#servicos" },
+      { name: "Planejamento Mensal", href: "#servicos" },
+    ],
+  },
+  {
+    title: "Contato",
+    links: [
+      { name: "(51) 98530-9613", href: "https://wa.me/5551985309613" },
+      { name: "@laura.camponogara", href: "https://www.instagram.com/laura.camponogara/" },
+      { name: "Porto Alegre, RS", href: "#contato" },
+    ],
+  },
 ];
 
 const socialLinks = [
-  { text: "Instagram", href: "https://www.instagram.com/laura.camponogara/", icon: <InstagramIcon /> },
-  { text: "WhatsApp", href: "https://wa.me/5551985309613", icon: <WhatsAppIcon /> },
+  { icon: <InstagramIcon />, href: "https://www.instagram.com/laura.camponogara/", label: "Instagram" },
+  { icon: <WhatsAppIcon />, href: "https://wa.me/5551985309613", label: "WhatsApp" },
 ];
 
-const linkStyle = {
-  fontFamily: "'Manrope', sans-serif",
-  fontSize: "0.82rem",
-  color: "rgba(255,255,255,0.45)",
-  fontWeight: 300,
-  textDecoration: "none",
-  display: "block",
-  marginBottom: 12,
-  transition: "color 0.2s ease",
-};
-
-const colTitleStyle = {
-  fontFamily: "'IBM Plex Mono', monospace",
-  fontSize: "0.58rem",
-  letterSpacing: "0.18em",
-  textTransform: "uppercase" as const,
-  color: "rgba(255,255,255,0.28)",
-  marginBottom: 20,
-};
+const legalLinks = [
+  { name: "Porto Alegre, RS", href: "#" },
+  { name: "Todo o Brasil", href: "#" },
+];
 
 export default function Footer() {
   return (
-    <footer style={{
-      background: "var(--obsidian-3)",
-      borderTop: "1px solid rgba(201,169,110,0.1)",
-    }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "64px 40px 32px" }}>
+    <footer style={{ background: "var(--obsidian-3)", borderTop: "1px solid rgba(201,169,110,0.1)" }}>
+      <section className="py-20">
+        <div className="container mx-auto px-10">
+          <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
 
-        {/* Main grid */}
-        <div className="footer-grid">
+            {/* Brand side */}
+            <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
+              <p style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "1.35rem",
+                fontWeight: 500,
+                color: "#FFFFFF",
+              }}>
+                Laura Camponogara
+              </p>
+              <p style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontSize: "0.8rem",
+                color: "rgba(255,255,255,0.35)",
+                fontWeight: 300,
+                lineHeight: 1.7,
+                maxWidth: 240,
+              }}>
+                Estratégia de conteúdo e gestão de redes sociais para marcas com identidade.
+              </p>
+              <ul className="flex items-center space-x-4" style={{ color: "rgba(255,255,255,0.45)" }}>
+                {socialLinks.map((social, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      style={{
+                        width: 36,
+                        height: 36,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        border: "1px solid rgba(255,255,255,0.12)",
+                        color: "rgba(255,255,255,0.45)",
+                        textDecoration: "none",
+                        borderRadius: 4,
+                        transition: "all 0.2s ease",
+                      }}
+                      onMouseEnter={(e) => {
+                        const el = e.currentTarget as HTMLElement;
+                        el.style.color = "var(--gold)";
+                        el.style.borderColor = "rgba(201,169,110,0.4)";
+                      }}
+                      onMouseLeave={(e) => {
+                        const el = e.currentTarget as HTMLElement;
+                        el.style.color = "rgba(255,255,255,0.45)";
+                        el.style.borderColor = "rgba(255,255,255,0.12)";
+                      }}
+                    >
+                      {social.icon}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Brand column */}
-          <div className="footer-brand">
-            <p style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "1.35rem",
-              fontWeight: 500,
-              color: "#FFFFFF",
-              marginBottom: 12,
-            }}>
-              Laura Camponogara
-            </p>
-            <p style={{
-              fontFamily: "'Manrope', sans-serif",
-              fontSize: "0.8rem",
-              color: "rgba(255,255,255,0.35)",
-              fontWeight: 300,
-              lineHeight: 1.7,
-              maxWidth: 240,
-              marginBottom: 24,
-            }}>
-              Estratégia de conteúdo e gestão de redes sociais para marcas com identidade.
-            </p>
-            <div style={{ display: "flex", gap: 10 }}>
-              {socialLinks.map((s) => (
-                <a
-                  key={s.text}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.text}
-                  style={{
-                    width: 36,
-                    height: 36,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    color: "rgba(255,255,255,0.45)",
-                    textDecoration: "none",
-                    borderRadius: 4,
-                    transition: "all 0.2s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    const el = e.currentTarget as HTMLElement;
-                    el.style.color = "var(--gold)";
-                    el.style.borderColor = "rgba(201,169,110,0.4)";
-                  }}
-                  onMouseLeave={(e) => {
-                    const el = e.currentTarget as HTMLElement;
-                    el.style.color = "rgba(255,255,255,0.45)";
-                    el.style.borderColor = "rgba(255,255,255,0.12)";
-                  }}
-                >
-                  {s.icon}
-                </a>
+            {/* Sections grid */}
+            <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
+              {sections.map((section, sectionIdx) => (
+                <div key={sectionIdx}>
+                  <h3 style={{
+                    fontFamily: "'IBM Plex Mono', monospace",
+                    fontSize: "0.58rem",
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "rgba(255,255,255,0.28)",
+                    marginBottom: 20,
+                  }}>
+                    {section.title}
+                  </h3>
+                  <ul className="space-y-3">
+                    {section.links.map((link, linkIdx) => (
+                      <li key={linkIdx}>
+                        <a
+                          href={link.href}
+                          target={link.href.startsWith("http") ? "_blank" : undefined}
+                          rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                          style={{
+                            fontFamily: "'Manrope', sans-serif",
+                            fontSize: "0.82rem",
+                            color: "rgba(255,255,255,0.45)",
+                            fontWeight: 300,
+                            textDecoration: "none",
+                            transition: "color 0.2s ease",
+                          }}
+                          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
+                          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)"; }}
+                        >
+                          {link.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Nav column */}
-          <div>
-            <p style={colTitleStyle}>Navegação</p>
-            {navLinks.map((l) => (
-              <a
-                key={l.text}
-                href={l.href}
-                style={linkStyle}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)"; }}
-              >
-                {l.text}
-              </a>
-            ))}
-          </div>
-
-          {/* Services column */}
-          <div>
-            <p style={colTitleStyle}>Serviços</p>
-            {serviceLinks.map((l) => (
-              <a
-                key={l.text}
-                href={l.href}
-                style={linkStyle}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)"; }}
-              >
-                {l.text}
-              </a>
-            ))}
-          </div>
-
-          {/* Contact column */}
-          <div>
-            <p style={colTitleStyle}>Contato</p>
-            <a href="https://wa.me/5551985309613" target="_blank" rel="noopener noreferrer" style={linkStyle}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)"; }}
-            >
-              (51) 98530-9613
-            </a>
-            <a href="https://www.instagram.com/laura.camponogara/" target="_blank" rel="noopener noreferrer" style={linkStyle}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)"; }}
-            >
-              @laura.camponogara
-            </a>
-            <span style={{ ...linkStyle, cursor: "default" }}>
-              Porto Alegre, RS
-            </span>
+          {/* Bottom bar */}
+          <div
+            className="mt-8 flex flex-col justify-between gap-4 border-t py-8 md:flex-row md:items-center md:text-left"
+            style={{ borderColor: "rgba(255,255,255,0.06)" }}
+          >
+            <p className="order-2 lg:order-1" style={{
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: "0.6rem",
+              color: "rgba(255,255,255,0.2)",
+              letterSpacing: "0.05em",
+            }}>
+              © 2026 Laura Camponogara. Todos os direitos reservados.
+            </p>
+            <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
+              {legalLinks.map((link, idx) => (
+                <li key={idx}>
+                  <a
+                    href={link.href}
+                    style={{
+                      fontFamily: "'IBM Plex Mono', monospace",
+                      fontSize: "0.6rem",
+                      color: "rgba(255,255,255,0.2)",
+                      letterSpacing: "0.05em",
+                      textDecoration: "none",
+                      transition: "color 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.5)"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.2)"; }}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-
-        {/* Bottom bar */}
-        <div style={{
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-          marginTop: 48,
-          paddingTop: 24,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: 8,
-        }}>
-          <p style={{
-            fontFamily: "'IBM Plex Mono', monospace",
-            fontSize: "0.6rem",
-            color: "rgba(255,255,255,0.2)",
-            letterSpacing: "0.05em",
-          }}>
-            © 2026 Laura Camponogara. Todos os direitos reservados.
-          </p>
-          <p style={{
-            fontFamily: "'IBM Plex Mono', monospace",
-            fontSize: "0.6rem",
-            color: "rgba(255,255,255,0.2)",
-            letterSpacing: "0.05em",
-          }}>
-            Porto Alegre, RS · Todo o Brasil
-          </p>
-        </div>
-      </div>
-
-      <style>{`
-        .footer-grid {
-          display: grid;
-          grid-template-columns: 1.8fr 1fr 1fr 1fr;
-          gap: 48px;
-        }
-        @media (max-width: 900px) {
-          .footer-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 36px;
-          }
-          .footer-brand {
-            grid-column: 1 / -1;
-          }
-        }
-        @media (max-width: 540px) {
-          .footer-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-          }
-        }
-      `}</style>
+      </section>
     </footer>
   );
 }

@@ -69,7 +69,7 @@ export default function Internacional() {
           transition={{ duration: 0.7 }}
         >
           <p style={{
-            fontFamily: "'IBM Plex Mono', monospace",
+            fontFamily: "'DM Mono', monospace",
             fontSize: "0.62rem",
             letterSpacing: "0.28em",
             textTransform: "uppercase",
@@ -84,7 +84,7 @@ export default function Internacional() {
           </p>
 
           <h2 style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "'Playfair Display', serif",
             fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
             fontWeight: 500,
             color: "#FFFFFF",
@@ -96,7 +96,7 @@ export default function Internacional() {
           </h2>
 
           <p style={{
-            fontFamily: "'Manrope', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "0.95rem",
             color: "rgba(255,255,255,0.5)",
             lineHeight: 1.9,
@@ -109,7 +109,7 @@ export default function Internacional() {
             moda, lifestyle e turismo de luxo.
           </p>
           <p style={{
-            fontFamily: "'Manrope', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "0.95rem",
             color: "rgba(255,255,255,0.5)",
             lineHeight: 1.9,
@@ -137,10 +137,10 @@ export default function Internacional() {
                 <div key={item.city} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <span style={{ fontSize: "1.4rem" }}>{item.flag}</span>
                   <div>
-                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.9rem", fontWeight: 500, color: "#FFFFFF" }}>
+                    <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "0.9rem", fontWeight: 500, color: "#FFFFFF" }}>
                       {item.city}
                     </p>
-                    <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.58rem", letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", textTransform: "uppercase" }}>
+                    <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.58rem", letterSpacing: "0.1em", color: "rgba(255,255,255,0.3)", textTransform: "uppercase" }}>
                       {item.country}
                     </p>
                   </div>
@@ -150,7 +150,7 @@ export default function Internacional() {
           </div>
 
           <span style={{
-            fontFamily: "'IBM Plex Mono', monospace",
+            fontFamily: "'DM Mono', monospace",
             fontSize: "0.65rem",
             letterSpacing: "0.1em",
             color: "rgba(201,169,110,0.8)",
@@ -206,7 +206,7 @@ export default function Internacional() {
                 padding: "5px 12px",
               }}>
                 <p style={{
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: "'DM Mono', monospace",
                   fontSize: "0.5rem",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",

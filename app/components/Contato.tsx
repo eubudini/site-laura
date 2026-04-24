@@ -72,7 +72,7 @@ export default function Contato() {
           transition={{ duration: 0.7, delay: 0.15 }}
         >
           <p style={{
-            fontFamily: "'IBM Plex Mono', monospace",
+            fontFamily: "'DM Mono', monospace",
             fontSize: "0.62rem",
             letterSpacing: "0.28em",
             textTransform: "uppercase",
@@ -87,7 +87,7 @@ export default function Contato() {
           </p>
 
           <h2 style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "'Playfair Display', serif",
             fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
             fontWeight: 500,
             color: "var(--ink)",
@@ -101,7 +101,7 @@ export default function Contato() {
           <div style={{ width: 40, height: 1, background: "var(--gold)", opacity: 0.5, marginBottom: 28 }} />
 
           <p style={{
-            fontFamily: "'Manrope', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "1rem",
             color: "rgba(10,10,10,0.55)",
             lineHeight: 1.9,
@@ -112,7 +112,7 @@ export default function Contato() {
             resultados — você está no lugar certo.
           </p>
           <p style={{
-            fontFamily: "'Manrope', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "1rem",
             color: "rgba(10,10,10,0.55)",
             lineHeight: 1.9,
@@ -139,7 +139,7 @@ export default function Contato() {
                 alignItems: "baseline",
               }}>
                 <p style={{
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: "'DM Mono', monospace",
                   fontSize: "0.58rem",
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
@@ -152,7 +152,7 @@ export default function Contato() {
                 {item.href ? (
                   <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
                     style={{
-                      fontFamily: "'Manrope', sans-serif",
+                      fontFamily: "'DM Sans', sans-serif",
                       fontSize: "0.88rem",
                       color: "var(--ink)",
                       textDecoration: "none",
@@ -165,7 +165,7 @@ export default function Contato() {
                     {item.value}
                   </a>
                 ) : (
-                  <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "0.88rem", color: "var(--ink)", fontWeight: 400 }}>
+                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.88rem", color: "var(--ink)", fontWeight: 400 }}>
                     {item.value}
                   </p>
                 )}
@@ -180,7 +180,7 @@ export default function Contato() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontFamily: "'Manrope', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "0.78rem",
                 letterSpacing: "0.12em",
                 fontWeight: 500,
@@ -202,7 +202,7 @@ export default function Contato() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontFamily: "'Manrope', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "0.78rem",
                 letterSpacing: "0.12em",
                 fontWeight: 500,
@@ -230,7 +230,7 @@ export default function Contato() {
             <a
               href="mailto:laura.camponogara29@icloud.com"
               style={{
-                fontFamily: "'Manrope', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "0.78rem",
                 letterSpacing: "0.12em",
                 fontWeight: 500,

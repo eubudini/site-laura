@@ -6,11 +6,7 @@ export default function Sobre() {
   return (
     <section
       id="sobre"
-      style={{
-        background: "var(--parchment)",
-        padding: "140px 0",
-        overflow: "hidden",
-      }}
+      style={{ background: "var(--parchment)", padding: "140px 0", overflow: "hidden" }}
       className="sobre-section"
     >
       <div
@@ -79,7 +75,6 @@ export default function Sobre() {
             />
           </motion.div>
 
-          {/* Detalhe tipográfico decorativo */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -90,7 +85,7 @@ export default function Sobre() {
               position: "absolute",
               bottom: 80,
               left: -20,
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Playfair Display', serif",
               fontSize: "6rem",
               fontWeight: 700,
               color: "rgba(201,169,110,0.06)",
@@ -113,8 +108,8 @@ export default function Sobre() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             style={{
-              fontFamily: "'IBM Plex Mono', monospace",
-              fontSize: "0.62rem",
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "0.72rem",
               letterSpacing: "0.28em",
               textTransform: "uppercase",
               color: "var(--gold)",
@@ -134,8 +129,8 @@ export default function Sobre() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "clamp(2rem, 3.5vw, 3rem)",
               fontWeight: 500,
               lineHeight: 1.2,
               color: "var(--ink)",
@@ -155,100 +150,53 @@ export default function Sobre() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div
-              style={{
-                width: 40,
-                height: 1,
-                background: "var(--gold)",
-                opacity: 0.5,
-                marginBottom: 28,
-              }}
-            />
-            <p
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontSize: "1rem",
-                color: "rgba(10,10,10,0.55)",
-                lineHeight: 1.9,
-                marginBottom: 20,
-                fontWeight: 300,
-              }}
-            >
+            <div style={{ width: 40, height: 1, background: "var(--gold)", opacity: 0.5, marginBottom: 28 }} />
+            <p style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "1.1rem",
+              color: "rgba(10,10,10,0.55)",
+              lineHeight: 1.9,
+              marginBottom: 20,
+              fontWeight: 300,
+            }}>
               A maioria das marcas posta. Poucas se posicionam. A diferença está
               na estratégia por trás de cada imagem, legenda e decisão criativa —
               e é exatamente isso que eu trago ao seu projeto.
             </p>
-            <p
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontSize: "1rem",
-                color: "rgba(10,10,10,0.55)",
-                lineHeight: 1.9,
-                fontWeight: 300,
-              }}
-            >
+            <p style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "1.1rem",
+              color: "rgba(10,10,10,0.55)",
+              lineHeight: 1.9,
+              fontWeight: 300,
+            }}>
               Cada cliente recebe uma leitura única da sua marca, do seu público
               e dos canais onde sua voz precisa ser ouvida. Sem fórmula pronta.
               Com resultado real.
             </p>
           </motion.div>
-
         </div>
       </div>
 
       <style>{`
         @media (max-width: 900px) {
-          .sobre-grid {
-            grid-template-columns: 1fr !important;
-            gap: 48px !important;
-          }
+          .sobre-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
         }
         @media (max-width: 768px) {
-          .sobre-section {
-            padding: 72px 0 !important;
-          }
-          .sobre-inner {
-            padding: 0 20px !important;
-          }
-          .sobre-fotos {
-            min-height: 350px !important;
-            height: 350px !important;
-          }
-          .sobre-foto-principal {
-            width: 220px !important;
-            height: 300px !important;
-          }
-          .sobre-foto-secundaria {
-            display: block !important;
-            width: 180px !important;
-            height: 240px !important;
-          }
-          .sobre-foto-lc {
-            font-size: 4rem !important;
-          }
+          .sobre-section { padding: 72px 0 !important; }
+          .sobre-inner { padding: 0 20px !important; }
+          .sobre-fotos { min-height: 350px !important; height: 350px !important; }
+          .sobre-foto-principal { width: 220px !important; height: 300px !important; }
+          .sobre-foto-secundaria { display: block !important; width: 180px !important; height: 240px !important; }
+          .sobre-foto-lc { font-size: 4rem !important; }
         }
         @media (max-width: 480px) {
-          .sobre-section {
-            padding: 56px 0 !important;
-          }
-          .sobre-inner {
-            padding: 0 16px !important;
-          }
-          .sobre-fotos {
-            min-height: 280px !important;
-            height: 280px !important;
-          }
-          .sobre-foto-principal {
-            width: 175px !important;
-            height: 235px !important;
-          }
-          .sobre-foto-secundaria {
-            width: 145px !important;
-            height: 195px !important;
-          }
-          .sobre-foto-lc {
-            display: none !important;
-          }
+          .sobre-section { padding: 56px 0 !important; }
+          .sobre-inner { padding: 0 16px !important; }
+          .sobre-fotos { min-height: 280px !important; height: 280px !important; }
+          .sobre-foto-principal { width: 175px !important; height: 235px !important; }
+          .sobre-foto-secundaria { width: 145px !important; height: 195px !important; }
+          .sobre-foto-lc { display: none !important; }
         }
       `}</style>
     </section>

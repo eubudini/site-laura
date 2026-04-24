@@ -22,7 +22,6 @@ export default function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* Fundo decorativo */}
       <div
         aria-hidden
         style={{
@@ -31,8 +30,7 @@ export default function Hero() {
           right: 0,
           width: "55%",
           height: "100%",
-          background:
-            "linear-gradient(135deg, rgba(201,169,110,0.06) 0%, transparent 60%)",
+          background: "linear-gradient(135deg, rgba(201,169,110,0.06) 0%, transparent 60%)",
           pointerEvents: "none",
         }}
       />
@@ -45,8 +43,7 @@ export default function Hero() {
           width: 480,
           height: 480,
           borderRadius: "50%",
-          background:
-            "radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -69,8 +66,8 @@ export default function Hero() {
           <motion.p
             {...fadeUp(0.1)}
             style={{
-              fontFamily: "'IBM Plex Mono', monospace",
-              fontSize: "0.62rem",
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "0.72rem",
               letterSpacing: "0.32em",
               textTransform: "uppercase",
               color: "var(--gold)",
@@ -95,8 +92,8 @@ export default function Hero() {
           <motion.h1
             {...fadeUp(0.2)}
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(2rem, 6vw, 4.2rem)",
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "clamp(2.5rem, 6vw, 4.8rem)",
               fontWeight: 500,
               lineHeight: 1.08,
               color: "var(--ink)",
@@ -105,12 +102,7 @@ export default function Hero() {
             }}
           >
             Sua marca passou da hora{" "}
-            <em
-              style={{
-                fontStyle: "italic",
-                color: "var(--gold)",
-              }}
-            >
+            <em style={{ fontStyle: "italic", color: "var(--gold)" }}>
               de ser desejada.
             </em>
           </motion.h1>
@@ -118,8 +110,8 @@ export default function Hero() {
           <motion.p
             {...fadeUp(0.3)}
             style={{
-              fontFamily: "'Manrope', sans-serif",
-              fontSize: "clamp(0.9rem, 4vw, 1.05rem)",
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "clamp(1rem, 4vw, 1.15rem)",
               color: "rgba(10,10,10,0.58)",
               lineHeight: 1.85,
               maxWidth: 500,
@@ -140,8 +132,8 @@ export default function Hero() {
             <a
               href="#resultados"
               style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontSize: "0.78rem",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.88rem",
                 letterSpacing: "0.12em",
                 fontWeight: 500,
                 textTransform: "uppercase",
@@ -152,21 +144,16 @@ export default function Hero() {
                 transition: "all 0.3s ease",
                 display: "inline-block",
               }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "#C9A96E";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background =
-                  "var(--ink)";
-              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#C9A96E"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--ink)"; }}
             >
               Ver resultados reais
             </a>
             <a
               href="#contato"
               style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontSize: "0.78rem",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.88rem",
                 letterSpacing: "0.12em",
                 fontWeight: 500,
                 textTransform: "uppercase",
@@ -182,8 +169,7 @@ export default function Hero() {
                 (e.currentTarget as HTMLElement).style.color = "#C9A96E";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "rgba(10,10,10,0.3)";
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(10,10,10,0.3)";
                 (e.currentTarget as HTMLElement).style.color = "var(--ink)";
               }}
             >
@@ -194,8 +180,8 @@ export default function Hero() {
           <motion.p
             {...fadeUp(0.5)}
             style={{
-              fontFamily: "'IBM Plex Mono', monospace",
-              fontSize: "0.7rem",
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "0.75rem",
               letterSpacing: "0.1em",
               color: "rgba(10,10,10,0.35)",
               marginTop: 36,
@@ -211,13 +197,8 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }}
           className="hero-photo"
-          style={{
-            position: "relative",
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
+          style={{ position: "relative", display: "flex", justifyContent: "flex-end" }}
         >
-          {/* Moldura dourada decorativa */}
           <div
             aria-hidden
             style={{
@@ -246,16 +227,9 @@ export default function Hero() {
             <img
               src="/laura-hero.jpg"
               alt="Laura Camponogara"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center top",
-                display: "block",
-              }}
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
             />
           </div>
-
         </motion.div>
       </div>
 
@@ -278,8 +252,8 @@ export default function Hero() {
       >
         <span
           style={{
-            fontFamily: "'IBM Plex Mono', monospace",
-            fontSize: "0.58rem",
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "0.65rem",
             letterSpacing: "0.2em",
             color: "rgba(10,10,10,0.3)",
             textTransform: "uppercase",
@@ -290,11 +264,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          style={{
-            width: 1,
-            height: 32,
-            background: "linear-gradient(to bottom, rgba(10,10,10,0.3), transparent)",
-          }}
+          style={{ width: 1, height: 32, background: "linear-gradient(to bottom, rgba(10,10,10,0.3), transparent)" }}
         />
       </motion.div>
 
@@ -305,43 +275,20 @@ export default function Hero() {
             gap: 40px !important;
             text-align: center !important;
           }
-          .hero-photo {
-            order: -1 !important;
-          }
-          .hero-content > p:first-child {
-            justify-content: center !important;
-          }
+          .hero-photo { order: -1 !important; }
+          .hero-content > p:first-child { justify-content: center !important; }
         }
         @media (max-width: 768px) {
-          .hero-inner {
-            padding: 52px 20px 48px !important;
-          }
-          .hero-ctas {
-            flex-direction: column !important;
-          }
-          .hero-ctas a {
-            text-align: center !important;
-            justify-content: center !important;
-          }
-          .hero-photo > div:first-child {
-            max-width: min(300px, 82vw) !important;
-            margin: 0 auto !important;
-          }
+          .hero-inner { padding: 52px 20px 48px !important; }
+          .hero-ctas { flex-direction: column !important; }
+          .hero-ctas a { text-align: center !important; justify-content: center !important; }
+          .hero-photo > div:first-child { max-width: min(300px, 82vw) !important; margin: 0 auto !important; }
         }
         @media (max-width: 480px) {
-          .hero-inner {
-            padding: 40px 16px 40px !important;
-          }
-          .hero-scroll {
-            display: none !important;
-          }
-          .hero-photo > div:first-child {
-            max-width: min(260px, 84vw) !important;
-          }
-          .hero-ctas a {
-            width: 100% !important;
-            display: block !important;
-          }
+          .hero-inner { padding: 40px 16px 40px !important; }
+          .hero-scroll { display: none !important; }
+          .hero-photo > div:first-child { max-width: min(260px, 84vw) !important; }
+          .hero-ctas a { width: 100% !important; display: block !important; }
         }
       `}</style>
     </section>

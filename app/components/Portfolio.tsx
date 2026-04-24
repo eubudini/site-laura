@@ -32,7 +32,7 @@ export default function Portfolio() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             style={{
-              fontFamily: "'IBM Plex Mono', monospace",
+              fontFamily: "'DM Mono', monospace",
               fontSize: "0.62rem",
               letterSpacing: "0.28em",
               textTransform: "uppercase",
@@ -52,7 +52,7 @@ export default function Portfolio() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Playfair Display', serif",
               fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
               fontWeight: 500,
               color: "var(--ink)",
@@ -109,7 +109,7 @@ export default function Portfolio() {
                 }}
               >
                 <p style={{
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: "'DM Mono', monospace",
                   fontSize: "0.58rem",
                   letterSpacing: "0.16em",
                   textTransform: "uppercase",
@@ -128,7 +128,7 @@ export default function Portfolio() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              fontFamily: "'Manrope', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.78rem",
               letterSpacing: "0.12em",
               fontWeight: 500,

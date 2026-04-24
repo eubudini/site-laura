@@ -63,7 +63,7 @@ export default function Footer() {
             {/* Brand side */}
             <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
               <p style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Playfair Display', serif",
                 fontSize: "1.35rem",
                 fontWeight: 500,
                 color: "#FFFFFF",
@@ -71,7 +71,7 @@ export default function Footer() {
                 Laura Camponogara
               </p>
               <p style={{
-                fontFamily: "'Manrope', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "0.8rem",
                 color: "rgba(255,255,255,0.35)",
                 fontWeight: 300,
@@ -123,7 +123,7 @@ export default function Footer() {
               {sections.map((section, sectionIdx) => (
                 <div key={sectionIdx}>
                   <h3 style={{
-                    fontFamily: "'IBM Plex Mono', monospace",
+                    fontFamily: "'DM Mono', monospace",
                     fontSize: "0.58rem",
                     letterSpacing: "0.18em",
                     textTransform: "uppercase",
@@ -140,7 +140,7 @@ export default function Footer() {
                           target={link.href.startsWith("http") ? "_blank" : undefined}
                           rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                           style={{
-                            fontFamily: "'Manrope', sans-serif",
+                            fontFamily: "'DM Sans', sans-serif",
                             fontSize: "0.82rem",
                             color: "rgba(255,255,255,0.45)",
                             fontWeight: 300,
@@ -166,7 +166,7 @@ export default function Footer() {
             style={{ borderColor: "rgba(255,255,255,0.06)" }}
           >
             <p className="order-2 lg:order-1" style={{
-              fontFamily: "'IBM Plex Mono', monospace",
+              fontFamily: "'DM Mono', monospace",
               fontSize: "0.6rem",
               color: "rgba(255,255,255,0.2)",
               letterSpacing: "0.05em",
@@ -179,7 +179,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     style={{
-                      fontFamily: "'IBM Plex Mono', monospace",
+                      fontFamily: "'DM Mono', monospace",
                       fontSize: "0.6rem",
                       color: "rgba(255,255,255,0.2)",
                       letterSpacing: "0.05em",

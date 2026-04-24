@@ -47,7 +47,7 @@ export default function Planos() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 72 }}>
           <p style={{
-            fontFamily: "'IBM Plex Mono', monospace",
+            fontFamily: "'DM Mono', monospace",
             fontSize: "0.62rem",
             letterSpacing: "0.28em",
             textTransform: "uppercase",
@@ -63,7 +63,7 @@ export default function Planos() {
             <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
           </p>
           <h2 style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "'Playfair Display', serif",
             fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
             fontWeight: 500,
             color: "#FFFFFF",
@@ -97,7 +97,7 @@ export default function Planos() {
                   position: "absolute",
                   top: 20,
                   right: 20,
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: "'DM Mono', monospace",
                   fontSize: "0.58rem",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
@@ -110,7 +110,7 @@ export default function Planos() {
               )}
 
               <p style={{
-                fontFamily: "'IBM Plex Mono', monospace",
+                fontFamily: "'DM Mono', monospace",
                 fontSize: "0.62rem",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
@@ -121,7 +121,7 @@ export default function Planos() {
               </p>
 
               <h3 style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Playfair Display', serif",
                 fontSize: "1.8rem",
                 fontWeight: 500,
                 color: plan.featured ? "var(--ink)" : "#FFFFFF",
@@ -133,7 +133,7 @@ export default function Planos() {
               <div style={{ width: 32, height: 1, background: plan.featured ? "var(--gold)" : "rgba(201,169,110,0.3)", marginBottom: 20 }} />
 
               <p style={{
-                fontFamily: "'Manrope', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "0.88rem",
                 color: plan.featured ? "rgba(10,10,10,0.55)" : "rgba(255,255,255,0.45)",
                 lineHeight: 1.8,
@@ -146,7 +146,7 @@ export default function Planos() {
               <ul style={{ marginBottom: 36, flexGrow: 1 }}>
                 {plan.items.map((item) => (
                   <li key={item} style={{
-                    fontFamily: "'Manrope', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "0.85rem",
                     color: plan.featured ? "rgba(10,10,10,0.65)" : "rgba(255,255,255,0.65)",
                     padding: "9px 0",
@@ -165,7 +165,7 @@ export default function Planos() {
               <a
                 href="#contato"
                 style={{
-                  fontFamily: "'Manrope', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "0.78rem",
                   letterSpacing: "0.12em",
                   fontWeight: 500,
@@ -199,7 +199,7 @@ export default function Planos() {
         </div>
 
         <p style={{
-          fontFamily: "'Manrope', sans-serif",
+          fontFamily: "'DM Sans', sans-serif",
           fontSize: "0.85rem",
           color: "rgba(255,255,255,0.3)",
           textAlign: "center",
@@ -215,7 +215,7 @@ export default function Planos() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              fontFamily: "'Manrope', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.78rem",
               letterSpacing: "0.12em",
               fontWeight: 500,

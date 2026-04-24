@@ -73,7 +73,7 @@ export default function Clientes() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               style={{
-                fontFamily: "'IBM Plex Mono', monospace",
+                fontFamily: "'DM Mono', monospace",
                 fontSize: "0.62rem",
                 letterSpacing: "0.28em",
                 textTransform: "uppercase",
@@ -93,7 +93,7 @@ export default function Clientes() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Playfair Display', serif",
                 fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
                 fontWeight: 500,
                 color: "var(--ink)",
@@ -109,7 +109,7 @@ export default function Clientes() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             style={{
-              fontFamily: "'Manrope', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.95rem",
               color: "rgba(10,10,10,0.5)",
               lineHeight: 1.85,
@@ -153,7 +153,7 @@ export default function Clientes() {
               <div style={{ marginBottom: 20 }}>
                 <p
                   style={{
-                    fontFamily: "'Cormorant Garamond', serif",
+                    fontFamily: "'Playfair Display', serif",
                     fontSize: "clamp(1.8rem, 2.5vw, 2.4rem)",
                     fontWeight: 500,
                     color: "var(--gold)",
@@ -166,7 +166,7 @@ export default function Clientes() {
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <p
                     style={{
-                      fontFamily: "'IBM Plex Mono', monospace",
+                      fontFamily: "'DM Mono', monospace",
                       fontSize: "0.58rem",
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
@@ -178,7 +178,7 @@ export default function Clientes() {
                   {c.growth !== "↑" && (
                     <span
                       style={{
-                        fontFamily: "'IBM Plex Mono', monospace",
+                        fontFamily: "'DM Mono', monospace",
                         fontSize: "0.55rem",
                         letterSpacing: "0.08em",
                         color: "#4CAF50",
@@ -207,7 +207,7 @@ export default function Clientes() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontFamily: "'IBM Plex Mono', monospace",
+                    fontFamily: "'DM Mono', monospace",
                     fontSize: "0.55rem",
                     letterSpacing: "0.05em",
                     color: "var(--gold)",
@@ -219,7 +219,7 @@ export default function Clientes() {
                 <div>
                   <h3
                     style={{
-                      fontFamily: "'Cormorant Garamond', serif",
+                      fontFamily: "'Playfair Display', serif",
                       fontSize: "0.95rem",
                       fontWeight: 500,
                       color: "var(--ink)",
@@ -231,7 +231,7 @@ export default function Clientes() {
                   </h3>
                   <p
                     style={{
-                      fontFamily: "'Manrope', sans-serif",
+                      fontFamily: "'DM Sans', sans-serif",
                       fontSize: "0.72rem",
                       color: "rgba(10,10,10,0.45)",
                       fontWeight: 300,
@@ -246,7 +246,7 @@ export default function Clientes() {
               {c.quote && (
                 <p
                   style={{
-                    fontFamily: "'Manrope', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "0.8rem",
                     color: "rgba(10,10,10,0.5)",
                     lineHeight: 1.7,
@@ -264,7 +264,7 @@ export default function Clientes() {
               {/* Handle */}
               <p
                 style={{
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: "'DM Mono', monospace",
                   fontSize: "0.58rem",
                   letterSpacing: "0.08em",
                   color: "rgba(10,10,10,0.3)",
@@ -288,7 +288,7 @@ export default function Clientes() {
         >
           <p
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Playfair Display', serif",
               fontSize: "1.2rem",
               color: "var(--ink)",
               marginBottom: 24,
@@ -300,7 +300,7 @@ export default function Clientes() {
           <a
             href="#contato"
             style={{
-              fontFamily: "'Manrope', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.78rem",
               letterSpacing: "0.12em",
               fontWeight: 500,

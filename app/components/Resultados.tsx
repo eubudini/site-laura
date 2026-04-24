@@ -96,7 +96,7 @@ function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
             padding: "3px 10px",
           }}>
             <span style={{
-              fontFamily: "'IBM Plex Mono', monospace",
+              fontFamily: "'DM Mono', monospace",
               fontSize: "0.5rem",
               letterSpacing: "0.14em",
               textTransform: "uppercase",
@@ -144,7 +144,7 @@ function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
             padding: "3px 10px",
           }}>
             <span style={{
-              fontFamily: "'IBM Plex Mono', monospace",
+              fontFamily: "'DM Mono', monospace",
               fontSize: "0.5rem",
               letterSpacing: "0.14em",
               textTransform: "uppercase",
@@ -158,7 +158,7 @@ function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
       <div style={{ padding: "24px 24px 20px" }}>
         <div style={{ marginBottom: 20 }}>
           <p style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "'Playfair Display', serif",
             fontSize: "1.1rem",
             fontWeight: 600,
             color: "var(--ink)",
@@ -167,7 +167,7 @@ function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
             {c.name}
           </p>
           <p style={{
-            fontFamily: "'IBM Plex Mono', monospace",
+            fontFamily: "'DM Mono', monospace",
             fontSize: "0.6rem",
             color: "var(--ink-50)",
           }}>
@@ -180,7 +180,7 @@ function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
             <div key={m.label}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 5 }}>
                 <span style={{
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: "'DM Mono', monospace",
                   fontSize: "0.52rem",
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
@@ -189,7 +189,7 @@ function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
                   {m.label}
                 </span>
                 <span style={{
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: "'DM Mono', monospace",
                   fontSize: "0.56rem",
                   color: "#2D7A3A",
                   fontWeight: 500,
@@ -199,7 +199,7 @@ function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                 <span style={{
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "'Playfair Display', serif",
                   fontSize: "0.9rem",
                   color: "rgba(10,10,10,0.28)",
                   fontWeight: 500,
@@ -224,7 +224,7 @@ function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
                   />
                 </div>
                 <span style={{
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "'Playfair Display', serif",
                   fontSize: "1rem",
                   color: "var(--ink)",
                   fontWeight: 600,
@@ -239,7 +239,7 @@ function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
 
         <div style={{ marginTop: 18, paddingTop: 16, borderTop: "1px solid rgba(10,10,10,0.06)" }}>
           <span style={{
-            fontFamily: "'IBM Plex Mono', monospace",
+            fontFamily: "'DM Mono', monospace",
             fontSize: "0.52rem",
             letterSpacing: "0.1em",
             textTransform: "uppercase",
@@ -271,7 +271,7 @@ export default function Resultados() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             style={{
-              fontFamily: "'IBM Plex Mono', monospace",
+              fontFamily: "'DM Mono', monospace",
               fontSize: "0.6rem",
               letterSpacing: "0.28em",
               textTransform: "uppercase",
@@ -293,7 +293,7 @@ export default function Resultados() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Playfair Display', serif",
               fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
               fontWeight: 500,
               color: "var(--ink)",
@@ -312,7 +312,7 @@ export default function Resultados() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             style={{
-              fontFamily: "'Manrope', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.88rem",
               color: "var(--ink-50)",
               maxWidth: 440,
@@ -337,7 +337,7 @@ export default function Resultados() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{
-            fontFamily: "'IBM Plex Mono', monospace",
+            fontFamily: "'DM Mono', monospace",
             fontSize: "0.58rem",
             color: "var(--ink-20)",
             textAlign: "center",

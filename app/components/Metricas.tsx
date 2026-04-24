@@ -87,7 +87,7 @@ export default function Metricas() {
           >
             <p
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Playfair Display', serif",
                 fontSize: "clamp(2.4rem, 3.5vw, 3.2rem)",
                 fontWeight: 500,
                 color: "#FFFFFF",
@@ -105,7 +105,7 @@ export default function Metricas() {
             </p>
             <p
               style={{
-                fontFamily: "'Manrope', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "0.85rem",
                 fontWeight: 500,
                 color: "rgba(255,255,255,0.75)",
@@ -116,7 +116,7 @@ export default function Metricas() {
             </p>
             <p
               style={{
-                fontFamily: "'IBM Plex Mono', monospace",
+                fontFamily: "'DM Mono', monospace",
                 fontSize: "0.62rem",
                 letterSpacing: "0.08em",
                 color: "var(--gold)",

@@ -19,18 +19,23 @@ type Case = {
 
 const cases: Case[] = [
   {
-    name: "Marina Ciconet",
-    handle: "marinaciconet",
-    tag: "Jornalismo · Conteúdo",
-    bio: "Jornalista · Storytelling · Porto Alegre 🇧🇷",
-    initials: "MC",
-    postsCount: "412",
+    // ═══════════════════════════════════════════════════════════
+    // EDITE AQUI — DADOS DO CASE BRUNNEN
+    // Substitua os valores abaixo pelos dados reais.
+    // O resto do componente (mockup, animações) já se adapta automaticamente.
+    // ═══════════════════════════════════════════════════════════
+    name: "Brunnen",
+    handle: "brunnen",                                    // sem o @
+    tag: "Marca · Segmento",                              // ex: "Moda · Lifestyle"
+    bio: "Bio · Posicionamento · Localização",            // ex: "Slow fashion · Curitiba ✨"
+    initials: "BR",                                        // 2 letras p/ avatar
+    postsCount: "000",                                     // total de posts (depois)
     metrics: [
-      { label: "Seguidores", before: "11K", after: "59,1K", growth: "+437%" },
-      { label: "Engajamento", before: "0,8%", after: "4,2%", growth: "+425%" },
-      { label: "Alcance / mês", before: "6K", after: "48K", growth: "+700%" },
+      { label: "Seguidores",   before: "0K",  after: "0K",  growth: "+000%" },
+      { label: "Engajamento",  before: "0%",  after: "0%",  growth: "+000%" },
+      { label: "Alcance / mês", before: "0K", after: "0K",  growth: "+000%" },
     ],
-    highlight: "Reposicionamento editorial e narrativa pessoal mais clara levaram o perfil de mensagens fragmentadas para uma autoridade reconhecida no nicho.",
+    highlight: "Adicione aqui o texto editorial que descreve o impacto do trabalho com a marca Brunnen — qual era o cenário antes, o que foi implementado e o que mudou no posicionamento.",
     feedPalette: [
       "linear-gradient(135deg, #1a1a1a 0%, #2c2520 100%)",
       "linear-gradient(135deg, #c9a96e 0%, #8a7146 100%)",
@@ -60,28 +65,6 @@ const cases: Case[] = [
       "linear-gradient(135deg, #f0e6d4 0%, #c8b594 100%)",
       "linear-gradient(135deg, #1a1410 0%, #2c2218 100%)",
       "linear-gradient(135deg, #d4ba8c 0%, #8a7048 100%)",
-    ],
-  },
-  {
-    name: "A.MAR · José Ignacio",
-    handle: "a.mar.joseignacio",
-    tag: "Moda · Luxo",
-    bio: "Maison · José Ignacio 🇺🇾 · Slow Fashion",
-    initials: "AM",
-    postsCount: "324",
-    metrics: [
-      { label: "Seguidores", before: "8K", after: "43,7K", growth: "+446%" },
-      { label: "Engajamento", before: "0,6%", after: "5,1%", growth: "+750%" },
-      { label: "Alcance / mês", before: "4K", after: "62K", growth: "+1450%" },
-    ],
-    highlight: "Estética minimalista, presença em rotações editoriais e cobertura presencial em José Ignacio elevaram a marca ao patamar de luxo.",
-    feedPalette: [
-      "linear-gradient(135deg, #f5f0e8 0%, #c8b89c 100%)",
-      "linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%)",
-      "linear-gradient(135deg, #e0d4be 0%, #a08858 100%)",
-      "linear-gradient(135deg, #2a2a2a 0%, #3c3c3c 100%)",
-      "linear-gradient(135deg, #c9a96e 0%, #8a7146 100%)",
-      "linear-gradient(135deg, #f8f5f0 0%, #d8cdb8 100%)",
     ],
   },
 ];
@@ -126,12 +109,12 @@ function InstagramMockup({
       style={{
         position: "relative",
         width: "100%",
-        maxWidth: 168,
+        maxWidth: 152,
         margin: "0 auto",
         aspectRatio: "9/19",
         background: "#0A0A0A",
-        borderRadius: 22,
-        padding: 5,
+        borderRadius: 20,
+        padding: 4,
         boxShadow: isAfter
           ? "0 24px 60px rgba(184,149,106,0.22), 0 6px 20px rgba(0,0,0,0.18)"
           : "0 10px 28px rgba(0,0,0,0.10)",
@@ -470,7 +453,7 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
       style={{
         background: "#FFFFFF",
         border: "1px solid rgba(10,10,10,0.06)",
-        padding: "44px 28px 36px",
+        padding: "36px 32px 30px",
         position: "relative",
       }}
       className="resultado-card"
@@ -479,10 +462,10 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
       <div
         style={{
           position: "absolute",
-          top: 24,
-          right: 24,
+          top: 20,
+          right: 22,
           fontFamily: "'DM Mono', monospace",
-          fontSize: "0.55rem",
+          fontSize: "0.52rem",
           letterSpacing: "0.18em",
           color: "rgba(184,149,106,0.5)",
         }}
@@ -491,15 +474,15 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
       </div>
 
       {/* Identificação */}
-      <div style={{ marginBottom: 32, paddingRight: 80 }}>
+      <div style={{ marginBottom: 24, paddingRight: 70 }}>
         <p
           style={{
             fontFamily: "'DM Mono', monospace",
-            fontSize: "0.56rem",
+            fontSize: "0.54rem",
             letterSpacing: "0.22em",
             textTransform: "uppercase",
             color: "var(--gold)",
-            marginBottom: 8,
+            marginBottom: 6,
           }}
         >
           {c.tag}
@@ -508,11 +491,11 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
           className="serif-display"
           style={{
             fontFamily: "'Fraunces', serif",
-            fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
+            fontSize: "clamp(1.3rem, 2.1vw, 1.65rem)",
             fontWeight: 400,
             color: "var(--ink)",
             lineHeight: 1.15,
-            marginBottom: 4,
+            marginBottom: 3,
           }}
         >
           {c.name}
@@ -520,7 +503,7 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
         <p
           style={{
             fontFamily: "'DM Mono', monospace",
-            fontSize: "0.62rem",
+            fontSize: "0.58rem",
             color: "rgba(10,10,10,0.4)",
           }}
         >
@@ -533,9 +516,9 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
         style={{
           display: "grid",
           gridTemplateColumns: "1fr auto 1fr",
-          gap: 10,
+          gap: 14,
           alignItems: "center",
-          marginBottom: 32,
+          marginBottom: 26,
         }}
         className="mockups-row"
       >
@@ -588,14 +571,14 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
       </div>
 
       {/* Métricas */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 18, marginBottom: 28 }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 22 }}>
         {c.metrics.map((m, mIdx) => (
           <div key={m.label}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 8 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 6 }}>
               <span
                 style={{
                   fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.52rem",
+                  fontSize: "0.5rem",
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
                   color: "rgba(10,10,10,0.45)",
@@ -606,25 +589,25 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
               <span
                 style={{
                   fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.62rem",
+                  fontSize: "0.58rem",
                   letterSpacing: "0.05em",
                   fontWeight: 500,
                   color: "var(--gold)",
                   background: "var(--gold-light)",
-                  padding: "3px 10px",
+                  padding: "2px 9px",
                 }}
               >
                 {m.growth}
               </span>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
               <span
                 style={{
                   fontFamily: "'Fraunces', serif",
-                  fontSize: "1rem",
+                  fontSize: "0.92rem",
                   fontWeight: 400,
                   color: "rgba(10,10,10,0.32)",
-                  minWidth: 56,
+                  minWidth: 50,
                   textAlign: "right",
                   textDecoration: "line-through",
                   textDecorationThickness: "0.5px",
@@ -636,10 +619,10 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
               <span
                 style={{
                   fontFamily: "'Fraunces', serif",
-                  fontSize: "1.4rem",
+                  fontSize: "1.25rem",
                   fontWeight: 500,
                   color: "var(--ink)",
-                  minWidth: 64,
+                  minWidth: 56,
                   letterSpacing: "-0.01em",
                 }}
               >
@@ -653,7 +636,7 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
       {/* Highlight quote */}
       <div
         style={{
-          paddingTop: 24,
+          paddingTop: 18,
           borderTop: "1px solid rgba(10,10,10,0.08)",
         }}
       >
@@ -661,8 +644,8 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
           style={{
             fontFamily: "'Fraunces', serif",
             fontStyle: "italic",
-            fontSize: "0.92rem",
-            lineHeight: 1.65,
+            fontSize: "0.86rem",
+            lineHeight: 1.6,
             color: "rgba(10,10,10,0.65)",
             fontWeight: 300,
           }}
@@ -680,13 +663,13 @@ export default function Resultados() {
       id="resultados"
       style={{
         background: "var(--parchment)",
-        padding: "140px 0 100px",
+        padding: "100px 0 80px",
         position: "relative",
       }}
     >
-      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 32px" }}>
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: 80, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
+        <div style={{ textAlign: "center", marginBottom: 56, maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -694,20 +677,20 @@ export default function Resultados() {
             transition={{ duration: 0.5 }}
             style={{
               fontFamily: "'DM Mono', monospace",
-              fontSize: "0.62rem",
+              fontSize: "0.6rem",
               letterSpacing: "0.32em",
               textTransform: "uppercase",
               color: "var(--gold)",
-              marginBottom: 22,
+              marginBottom: 18,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               gap: 14,
             }}
           >
-            <span style={{ display: "block", width: 32, height: 1, background: "var(--gold)" }} />
+            <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
             Casos reais
-            <span style={{ display: "block", width: 32, height: 1, background: "var(--gold)" }} />
+            <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 18 }}
@@ -717,12 +700,12 @@ export default function Resultados() {
             className="serif-display"
             style={{
               fontFamily: "'Fraunces', serif",
-              fontSize: "clamp(2rem, 4vw, 3.4rem)",
+              fontSize: "clamp(1.7rem, 3.2vw, 2.7rem)",
               fontWeight: 400,
               color: "var(--ink)",
-              marginBottom: 22,
-              lineHeight: 1.08,
-              letterSpacing: "-0.025em",
+              marginBottom: 18,
+              lineHeight: 1.1,
+              letterSpacing: "-0.022em",
             }}
           >
             O antes e o depois <em style={{ fontStyle: "italic", color: "var(--gold)" }}>de uma marca</em>{" "}
@@ -735,16 +718,15 @@ export default function Resultados() {
             transition={{ duration: 0.5, delay: 0.2 }}
             style={{
               fontFamily: "'Inter Tight', sans-serif",
-              fontSize: "1rem",
+              fontSize: "0.94rem",
               color: "rgba(10,10,10,0.55)",
-              maxWidth: 540,
+              maxWidth: 520,
               margin: "0 auto",
-              lineHeight: 1.75,
+              lineHeight: 1.7,
               fontWeight: 300,
             }}
           >
-            Estes não são números genéricos: são marcas que confiaram em estratégia,
-            direção criativa e produção contínua — e colheram crescimento expressivo.
+            Marcas que confiaram em estratégia, direção criativa e produção contínua — e colheram crescimento expressivo.
           </motion.p>
         </div>
 
@@ -763,12 +745,12 @@ export default function Resultados() {
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{
             fontFamily: "'DM Mono', monospace",
-            fontSize: "0.58rem",
+            fontSize: "0.54rem",
             letterSpacing: "0.08em",
             color: "rgba(10,10,10,0.32)",
             textAlign: "center",
-            marginTop: 56,
-            maxWidth: 600,
+            marginTop: 40,
+            maxWidth: 580,
             marginLeft: "auto",
             marginRight: "auto",
             lineHeight: 1.7,
@@ -782,30 +764,27 @@ export default function Resultados() {
       <style>{`
         .results-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 24px;
+          max-width: 1080px;
+          margin: 0 auto;
         }
-        @media (max-width: 1100px) {
-          .results-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media (max-width: 720px) {
+        @media (max-width: 760px) {
           .results-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
-          #resultados { padding: 72px 0 56px !important; }
-          .resultado-card { padding: 32px 22px 28px !important; }
+          #resultados { padding: 64px 0 52px !important; }
+          .resultado-card { padding: 28px 22px 24px !important; }
         }
         /* Mockups antes/depois — empilhar quando o card for estreito */
-        @media (max-width: 560px) {
+        @media (max-width: 480px) {
           .mockups-row {
             grid-template-columns: 1fr !important;
-            gap: 24px !important;
+            gap: 22px !important;
           }
           .arrow-mid {
             transform: rotate(90deg) !important;
             justify-self: center;
           }
-        }
-        @media (max-width: 480px) {
-          .resultado-card { padding: 28px 18px 24px !important; }
+          .resultado-card { padding: 24px 18px 22px !important; }
         }
       `}</style>
     </section>

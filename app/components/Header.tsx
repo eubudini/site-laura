@@ -194,23 +194,23 @@ export default function Header() {
 
       <style>{`
         .header-inner {
+          position: relative;
           height: 76px;
-          display: grid;
-          grid-template-columns: 1fr auto 1fr;
+          display: flex;
           align-items: center;
-          gap: 32px;
+          justify-content: space-between;
         }
         .header-logo {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          justify-self: start;
           font-family: 'Fraunces', serif;
           font-size: 1.05rem;
           font-weight: 400;
           letter-spacing: 0.005em;
           text-decoration: none;
           transition: color 0.3s ease;
+          z-index: 2;
         }
         .header-logo-mark {
           display: inline-block;
@@ -223,10 +223,14 @@ export default function Header() {
           font-style: italic;
         }
         .header-nav {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
           display: flex;
           align-items: center;
           gap: 36px;
-          justify-self: center;
+          z-index: 1;
         }
         .header-link {
           font-family: 'Inter Tight', sans-serif;
@@ -236,9 +240,10 @@ export default function Header() {
           text-decoration: none;
           text-transform: uppercase;
           transition: color 0.3s ease;
+          white-space: nowrap;
         }
         .header-cta-wrap {
-          justify-self: end;
+          z-index: 2;
         }
         .header-cta {
           display: inline-block;
@@ -254,17 +259,13 @@ export default function Header() {
         }
         .header-hamburger {
           display: none;
-          justify-self: end;
         }
-        @media (max-width: 1023px) {
-          .header-nav { gap: 24px; }
+        @media (max-width: 1100px) {
+          .header-nav { gap: 26px; }
           .header-link { font-size: 0.68rem; letter-spacing: 0.14em; }
         }
-        @media (max-width: 860px) {
-          .header-inner {
-            grid-template-columns: 1fr auto;
-            height: 68px;
-          }
+        @media (max-width: 920px) {
+          .header-inner { height: 68px; }
           .header-nav, .header-cta-wrap { display: none !important; }
           .header-hamburger { display: flex !important; }
         }

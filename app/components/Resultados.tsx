@@ -1,255 +1,676 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
-const cases = [
+type Metric = { label: string; before: string; after: string; growth: string };
+
+type Case = {
+  name: string;
+  handle: string;
+  tag: string;
+  bio: string;
+  initials: string;
+  postsCount: string;
+  metrics: Metric[];
+  highlight: string;
+  feedPalette: [string, string, string, string, string, string];
+};
+
+const cases: Case[] = [
   {
     name: "Marina Ciconet",
-    handle: "@marinaciconet",
+    handle: "marinaciconet",
     tag: "Jornalismo · Conteúdo",
-    beforeImage: "/resultados/marina-antes.jpg",
-    afterImage: "/resultados/marina-depois.jpg",
+    bio: "Jornalista · Storytelling · Porto Alegre 🇧🇷",
+    initials: "MC",
+    postsCount: "412",
     metrics: [
-      { label: "Seguidores", before: "11K", after: "59.1K", growth: "+437%" },
-      { label: "Engajamento", before: "0.8%", after: "4.2%", growth: "+425%" },
-      { label: "Alcance/mês", before: "6K", after: "48K", growth: "+700%" },
+      { label: "Seguidores", before: "11K", after: "59,1K", growth: "+437%" },
+      { label: "Engajamento", before: "0,8%", after: "4,2%", growth: "+425%" },
+      { label: "Alcance / mês", before: "6K", after: "48K", growth: "+700%" },
+    ],
+    highlight: "Reposicionamento editorial e narrativa pessoal mais clara levaram o perfil de mensagens fragmentadas para uma autoridade reconhecida no nicho.",
+    feedPalette: [
+      "linear-gradient(135deg, #1a1a1a 0%, #2c2520 100%)",
+      "linear-gradient(135deg, #c9a96e 0%, #8a7146 100%)",
+      "linear-gradient(135deg, #f5f0e8 0%, #d8cdb8 100%)",
+      "linear-gradient(135deg, #2e2823 0%, #4a3f30 100%)",
+      "linear-gradient(135deg, #d4b88a 0%, #a08858 100%)",
+      "linear-gradient(135deg, #1f1a14 0%, #3a2f22 100%)",
     ],
   },
   {
     name: "Mariana Penteado",
-    handle: "@marianapenteado",
+    handle: "marianapenteado",
     tag: "Moda · Lifestyle",
-    beforeImage: "/resultados/mariana-antes.jpg",
-    afterImage: "/resultados/mariana-depois.jpg",
+    bio: "Moda · Lifestyle · Direção criativa ✨",
+    initials: "MP",
+    postsCount: "856",
     metrics: [
       { label: "Seguidores", before: "42K", after: "198K", growth: "+371%" },
-      { label: "Engajamento", before: "1.1%", after: "3.8%", growth: "+245%" },
-      { label: "Alcance/mês", before: "22K", after: "180K", growth: "+718%" },
+      { label: "Engajamento", before: "1,1%", after: "3,8%", growth: "+245%" },
+      { label: "Alcance / mês", before: "22K", after: "180K", growth: "+718%" },
+    ],
+    highlight: "Direção criativa consistente, captação editorial e narrativa premium transformaram um perfil de moda em referência nacional.",
+    feedPalette: [
+      "linear-gradient(135deg, #e8dcc8 0%, #b89d75 100%)",
+      "linear-gradient(135deg, #2a2018 0%, #4a3a28 100%)",
+      "linear-gradient(135deg, #c9a96e 0%, #6a5538 100%)",
+      "linear-gradient(135deg, #f0e6d4 0%, #c8b594 100%)",
+      "linear-gradient(135deg, #1a1410 0%, #2c2218 100%)",
+      "linear-gradient(135deg, #d4ba8c 0%, #8a7048 100%)",
     ],
   },
   {
-    name: "A.MAR José Ignacio",
-    handle: "@a.mar.joseignacio",
+    name: "A.MAR · José Ignacio",
+    handle: "a.mar.joseignacio",
     tag: "Moda · Luxo",
-    beforeImage: "/resultados/amar-antes.jpg",
-    afterImage: "/resultados/amar-depois.jpg",
+    bio: "Maison · José Ignacio 🇺🇾 · Slow Fashion",
+    initials: "AM",
+    postsCount: "324",
     metrics: [
-      { label: "Seguidores", before: "8K", after: "43.7K", growth: "+446%" },
-      { label: "Engajamento", before: "0.6%", after: "5.1%", growth: "+750%" },
-      { label: "Alcance/mês", before: "4K", after: "62K", growth: "+1450%" },
+      { label: "Seguidores", before: "8K", after: "43,7K", growth: "+446%" },
+      { label: "Engajamento", before: "0,6%", after: "5,1%", growth: "+750%" },
+      { label: "Alcance / mês", before: "4K", after: "62K", growth: "+1450%" },
+    ],
+    highlight: "Estética minimalista, presença em rotações editoriais e cobertura presencial em José Ignacio elevaram a marca ao patamar de luxo.",
+    feedPalette: [
+      "linear-gradient(135deg, #f5f0e8 0%, #c8b89c 100%)",
+      "linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%)",
+      "linear-gradient(135deg, #e0d4be 0%, #a08858 100%)",
+      "linear-gradient(135deg, #2a2a2a 0%, #3c3c3c 100%)",
+      "linear-gradient(135deg, #c9a96e 0%, #8a7146 100%)",
+      "linear-gradient(135deg, #f8f5f0 0%, #d8cdb8 100%)",
     ],
   },
 ];
 
-function ResultadoCard({ c, idx }: { c: typeof cases[0]; idx: number }) {
+/* ───────── Counter (anima de "before" para "after") ───────── */
+function GrowthBar({ delay = 0 }: { delay?: number }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.55, delay: idx * 0.1 }}
+    <div style={{ position: "relative", height: 2, background: "rgba(10,10,10,0.06)", overflow: "hidden", flex: 1 }}>
+      <motion.div
+        initial={{ width: 0 }}
+        whileInView={{ width: "100%" }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.1, delay, ease: [0.22, 1, 0.36, 1] }}
+        style={{
+          position: "absolute",
+          left: 0,
+          top: 0,
+          height: "100%",
+          background: "linear-gradient(90deg, rgba(184,149,106,0.15), var(--gold-soft) 60%, var(--gold))",
+        }}
+      />
+    </div>
+  );
+}
+
+/* ───────── Instagram Phone Mockup ───────── */
+function InstagramMockup({
+  c,
+  variant,
+  isAfter,
+}: {
+  c: Case;
+  variant: "before" | "after";
+  isAfter: boolean;
+}) {
+  const followers = variant === "before" ? c.metrics[0].before : c.metrics[0].after;
+  const verified = isAfter;
+  const muted = !isAfter;
+
+  return (
+    <div
       style={{
-        background: "#FFFFFF",
-        border: "1px solid rgba(10,10,10,0.07)",
-        overflow: "hidden",
+        position: "relative",
+        width: "100%",
+        maxWidth: 240,
+        margin: "0 auto",
+        aspectRatio: "9/19",
+        background: "#0A0A0A",
+        borderRadius: 28,
+        padding: 6,
+        boxShadow: isAfter
+          ? "0 30px 80px rgba(184,149,106,0.18), 0 8px 24px rgba(0,0,0,0.18)"
+          : "0 12px 36px rgba(0,0,0,0.10)",
       }}
     >
-      {/* Prints antes/depois */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-        {/* Antes */}
-        <div style={{ position: "relative" }}>
-          <div style={{
-            aspectRatio: "9/16",
-            background: "rgba(10,10,10,0.04)",
-            overflow: "hidden",
-            position: "relative",
-          }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={c.beforeImage}
-              alt={`${c.name} antes`}
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-            />
-            {/* Placeholder enquanto sem imagem */}
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "rgba(10,10,10,0.03)",
-            }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(10,10,10,0.15)" strokeWidth="1.2">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-            </div>
-          </div>
-          <div style={{
-            position: "absolute",
-            top: 8,
-            left: 8,
-            background: "rgba(10,10,10,0.75)",
-            backdropFilter: "blur(4px)",
-            padding: "3px 10px",
-          }}>
-            <span style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: "0.5rem",
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.7)",
-            }}>Antes</span>
-          </div>
-        </div>
-
-        {/* Depois */}
-        <div style={{ position: "relative", borderLeft: "2px solid var(--gold)" }}>
-          <div style={{
-            aspectRatio: "9/16",
-            background: "rgba(10,10,10,0.04)",
-            overflow: "hidden",
-            position: "relative",
-          }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={c.afterImage}
-              alt={`${c.name} depois`}
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-            />
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "rgba(10,10,10,0.03)",
-            }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(10,10,10,0.15)" strokeWidth="1.2">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-            </div>
-          </div>
-          <div style={{
-            position: "absolute",
-            top: 8,
-            left: 8,
-            background: "rgba(201,169,110,0.9)",
-            backdropFilter: "blur(4px)",
-            padding: "3px 10px",
-          }}>
-            <span style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: "0.5rem",
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              color: "#0A0A0A",
-            }}>Depois</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Dados */}
-      <div style={{ padding: "24px 24px 20px" }}>
-        <div style={{ marginBottom: 20 }}>
-          <p style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "1.1rem",
+      {/* Notch */}
+      <div
+        style={{
+          position: "absolute",
+          top: 6,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: 60,
+          height: 14,
+          background: "#0A0A0A",
+          borderRadius: "0 0 10px 10px",
+          zIndex: 4,
+        }}
+      />
+      {/* Screen */}
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          background: "#FFFFFF",
+          borderRadius: 22,
+          overflow: "hidden",
+          position: "relative",
+          filter: muted ? "saturate(0.55) contrast(0.92)" : "none",
+        }}
+      >
+        {/* Status bar */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "8px 14px 4px",
+            fontFamily: "'Inter Tight', sans-serif",
+            fontSize: "0.42rem",
             fontWeight: 600,
-            color: "var(--ink)",
-            marginBottom: 2,
-          }}>
-            {c.name}
-          </p>
-          <p style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "0.6rem",
-            color: "var(--ink-50)",
-          }}>
-            {c.handle}
-          </p>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-          {c.metrics.map((m) => (
-            <div key={m.label}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 5 }}>
-                <span style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.52rem",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "var(--ink-50)",
-                }}>
-                  {m.label}
-                </span>
-                <span style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.56rem",
-                  color: "#2D7A3A",
-                  fontWeight: 500,
-                }}>
-                  {m.growth}
-                </span>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <span style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "0.9rem",
-                  color: "rgba(10,10,10,0.28)",
-                  fontWeight: 500,
-                  minWidth: 40,
-                  textAlign: "right",
-                }}>
-                  {m.before}
-                </span>
-                <div style={{ flex: 1, height: 2, background: "rgba(10,10,10,0.06)", position: "relative", overflow: "hidden" }}>
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: idx * 0.1 + 0.3 }}
-                    style={{
-                      position: "absolute",
-                      left: 0,
-                      top: 0,
-                      height: "100%",
-                      background: "linear-gradient(90deg, rgba(201,169,110,0.3), var(--gold))",
-                    }}
-                  />
-                </div>
-                <span style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "1rem",
-                  color: "var(--ink)",
-                  fontWeight: 600,
-                  minWidth: 40,
-                }}>
-                  {m.after}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ marginTop: 18, paddingTop: 16, borderTop: "1px solid rgba(10,10,10,0.06)" }}>
-          <span style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "0.52rem",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: "var(--gold)",
-          }}>
-            {c.tag}
+            color: "#0A0A0A",
+          }}
+        >
+          <span>9:41</span>
+          <span style={{ display: "flex", gap: 3, alignItems: "center" }}>
+            <span style={{ width: 12, height: 6, background: "#0A0A0A", borderRadius: 1.5 }} />
           </span>
         </div>
+
+        {/* Username header */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "4px 14px 8px",
+            borderBottom: "0.5px solid rgba(0,0,0,0.06)",
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "'Inter Tight', sans-serif",
+              fontSize: "0.55rem",
+              fontWeight: 600,
+              color: "#0A0A0A",
+              display: "flex",
+              alignItems: "center",
+              gap: 3,
+            }}
+          >
+            {c.handle}
+            {verified && (
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="#3897f0">
+                <path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12zm-13 5l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+              </svg>
+            )}
+          </span>
+          <span style={{ fontSize: "0.55rem", color: "#0A0A0A" }}>···</span>
+        </div>
+
+        {/* Profile area */}
+        <div style={{ padding: "10px 14px 0" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            {/* Avatar */}
+            <div
+              style={{
+                width: 42,
+                height: 42,
+                borderRadius: "50%",
+                padding: 1.5,
+                background: isAfter
+                  ? "linear-gradient(135deg, #f5e6c8, #c9a96e, #8a7146)"
+                  : "rgba(0,0,0,0.12)",
+                flexShrink: 0,
+              }}
+            >
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "50%",
+                  background: isAfter
+                    ? "linear-gradient(135deg, #1a1a1a, #2c2520)"
+                    : "rgba(0,0,0,0.18)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontFamily: "'Fraunces', serif",
+                  fontSize: "0.65rem",
+                  fontWeight: 500,
+                  color: isAfter ? "#f5e6c8" : "rgba(255,255,255,0.5)",
+                  border: "1.5px solid #FFFFFF",
+                }}
+              >
+                {c.initials}
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div style={{ display: "flex", gap: 12, flex: 1, justifyContent: "space-around" }}>
+              {[
+                { v: c.postsCount, l: "posts" },
+                { v: followers, l: "seguidores" },
+                { v: "—", l: "seguindo" },
+              ].map((s) => (
+                <div key={s.l} style={{ textAlign: "center" }}>
+                  <p
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontSize: "0.55rem",
+                      fontWeight: 700,
+                      color: "#0A0A0A",
+                      lineHeight: 1.1,
+                    }}
+                  >
+                    {s.v}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      fontSize: "0.42rem",
+                      color: "rgba(0,0,0,0.7)",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {s.l}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Name + bio */}
+          <div style={{ marginTop: 8 }}>
+            <p
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontSize: "0.5rem",
+                fontWeight: 600,
+                color: "#0A0A0A",
+              }}
+            >
+              {c.name}
+            </p>
+            <p
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontSize: "0.46rem",
+                color: "rgba(0,0,0,0.7)",
+                lineHeight: 1.4,
+                marginTop: 1,
+              }}
+            >
+              {isAfter ? c.bio : "—"}
+            </p>
+          </div>
+
+          {/* Buttons */}
+          <div style={{ display: "flex", gap: 4, marginTop: 10 }}>
+            <div
+              style={{
+                flex: 1,
+                background: isAfter ? "#0A0A0A" : "rgba(0,0,0,0.06)",
+                color: isAfter ? "#FFFFFF" : "rgba(0,0,0,0.4)",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontSize: "0.45rem",
+                fontWeight: 600,
+                padding: "4px 0",
+                textAlign: "center",
+                borderRadius: 4,
+              }}
+            >
+              Seguir
+            </div>
+            <div
+              style={{
+                flex: 1,
+                background: "rgba(0,0,0,0.04)",
+                color: "rgba(0,0,0,0.6)",
+                fontFamily: "'Inter Tight', sans-serif",
+                fontSize: "0.45rem",
+                fontWeight: 600,
+                padding: "4px 0",
+                textAlign: "center",
+                borderRadius: 4,
+              }}
+            >
+              Mensagem
+            </div>
+          </div>
+
+          {/* Highlights */}
+          <div style={{ display: "flex", gap: 10, marginTop: 12, padding: "0 2px" }}>
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
+                <div
+                  style={{
+                    width: 28,
+                    height: 28,
+                    borderRadius: "50%",
+                    border: "1px solid rgba(0,0,0,0.15)",
+                    background: isAfter
+                      ? `linear-gradient(135deg, ${["#1a1a1a", "#c9a96e", "#2c2520", "#d4ba8c"][i - 1]}, rgba(0,0,0,0.4))`
+                      : "rgba(0,0,0,0.06)",
+                  }}
+                />
+                <span
+                  style={{
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontSize: "0.36rem",
+                    color: "rgba(0,0,0,0.5)",
+                  }}
+                >
+                  {isAfter ? ["Bastidores", "Eventos", "Press", "Estilo"][i - 1] : "—"}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tabs */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+            borderTop: "0.5px solid rgba(0,0,0,0.08)",
+            borderBottom: "0.5px solid rgba(0,0,0,0.08)",
+            marginTop: 10,
+            padding: "5px 0",
+          }}
+        >
+          <span style={{ width: 12, height: 1, background: "#0A0A0A" }} />
+          <span style={{ width: 12, height: 1, background: "rgba(0,0,0,0.2)" }} />
+          <span style={{ width: 12, height: 1, background: "rgba(0,0,0,0.2)" }} />
+        </div>
+
+        {/* Feed grid */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: 1.5,
+            padding: "1.5px",
+          }}
+        >
+          {c.feedPalette.map((bg, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 + i * 0.04 }}
+              style={{
+                aspectRatio: "1/1",
+                background: isAfter ? bg : "linear-gradient(135deg, #d4d4d4 0%, #b0b0b0 100%)",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              {!isAfter && (
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    backgroundImage:
+                      "repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 6px)",
+                  }}
+                />
+              )}
+              {/* Tipo de post overlay (Reel/Carrossel) — só no after */}
+              {isAfter && i % 2 === 0 && (
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 3,
+                    right: 3,
+                    width: 7,
+                    height: 7,
+                  }}
+                >
+                  <svg viewBox="0 0 24 24" fill="white" style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }}>
+                    <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" />
+                  </svg>
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </motion.div>
+    </div>
+  );
+}
+
+/* ───────── Card de caso ───────── */
+function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    if (inView) {
+      const t = setTimeout(() => setRevealed(true), 500 + idx * 200);
+      return () => clearTimeout(t);
+    }
+  }, [inView, idx]);
+
+  return (
+    <motion.article
+      ref={ref}
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      style={{
+        background: "#FFFFFF",
+        border: "1px solid rgba(10,10,10,0.06)",
+        padding: "48px 36px 40px",
+        position: "relative",
+      }}
+      className="resultado-card"
+    >
+      {/* Index ribbon */}
+      <div
+        style={{
+          position: "absolute",
+          top: 24,
+          right: 24,
+          fontFamily: "'DM Mono', monospace",
+          fontSize: "0.55rem",
+          letterSpacing: "0.18em",
+          color: "rgba(184,149,106,0.5)",
+        }}
+      >
+        CASE / {String(idx + 1).padStart(2, "0")}
+      </div>
+
+      {/* Identificação */}
+      <div style={{ marginBottom: 32, paddingRight: 80 }}>
+        <p
+          style={{
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "0.56rem",
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "var(--gold)",
+            marginBottom: 8,
+          }}
+        >
+          {c.tag}
+        </p>
+        <h3
+          className="serif-display"
+          style={{
+            fontFamily: "'Fraunces', serif",
+            fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
+            fontWeight: 400,
+            color: "var(--ink)",
+            lineHeight: 1.15,
+            marginBottom: 4,
+          }}
+        >
+          {c.name}
+        </h3>
+        <p
+          style={{
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "0.62rem",
+            color: "rgba(10,10,10,0.4)",
+          }}
+        >
+          @{c.handle}
+        </p>
+      </div>
+
+      {/* Mockups antes/depois */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1fr",
+          gap: 16,
+          alignItems: "center",
+          marginBottom: 36,
+        }}
+        className="mockups-row"
+      >
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+          <span
+            style={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "0.52rem",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "rgba(10,10,10,0.4)",
+              padding: "5px 14px",
+              border: "1px solid rgba(10,10,10,0.12)",
+            }}
+          >
+            Antes
+          </span>
+          <InstagramMockup c={c} variant="before" isAfter={false} />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={revealed ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}
+          className="arrow-mid"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5">
+            <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </motion.div>
+
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+          <span
+            style={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "0.52rem",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--gold)",
+              padding: "5px 14px",
+              border: "1px solid var(--gold-mid)",
+              background: "var(--gold-light)",
+            }}
+          >
+            Depois
+          </span>
+          <InstagramMockup c={c} variant="after" isAfter={true} />
+        </div>
+      </div>
+
+      {/* Métricas */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 18, marginBottom: 28 }}>
+        {c.metrics.map((m, mIdx) => (
+          <div key={m.label}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 8 }}>
+              <span
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.52rem",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "rgba(10,10,10,0.45)",
+                }}
+              >
+                {m.label}
+              </span>
+              <span
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.62rem",
+                  letterSpacing: "0.05em",
+                  fontWeight: 500,
+                  color: "var(--gold)",
+                  background: "var(--gold-light)",
+                  padding: "3px 10px",
+                }}
+              >
+                {m.growth}
+              </span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span
+                style={{
+                  fontFamily: "'Fraunces', serif",
+                  fontSize: "1rem",
+                  fontWeight: 400,
+                  color: "rgba(10,10,10,0.32)",
+                  minWidth: 56,
+                  textAlign: "right",
+                  textDecoration: "line-through",
+                  textDecorationThickness: "0.5px",
+                }}
+              >
+                {m.before}
+              </span>
+              <GrowthBar delay={idx * 0.1 + 0.3 + mIdx * 0.1} />
+              <span
+                style={{
+                  fontFamily: "'Fraunces', serif",
+                  fontSize: "1.4rem",
+                  fontWeight: 500,
+                  color: "var(--ink)",
+                  minWidth: 64,
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                {m.after}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Highlight quote */}
+      <div
+        style={{
+          paddingTop: 24,
+          borderTop: "1px solid rgba(10,10,10,0.08)",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "'Fraunces', serif",
+            fontStyle: "italic",
+            fontSize: "0.92rem",
+            lineHeight: 1.65,
+            color: "rgba(10,10,10,0.65)",
+            fontWeight: 300,
+          }}
+        >
+          {c.highlight}
+        </p>
+      </div>
+    </motion.article>
   );
 }
 
@@ -259,12 +680,13 @@ export default function Resultados() {
       id="resultados"
       style={{
         background: "var(--parchment)",
-        padding: "100px 0 80px",
+        padding: "140px 0 100px",
+        position: "relative",
       }}
     >
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px" }}>
+      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: 64 }}>
+        <div style={{ textAlign: "center", marginBottom: 80, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -272,39 +694,39 @@ export default function Resultados() {
             transition={{ duration: 0.5 }}
             style={{
               fontFamily: "'DM Mono', monospace",
-              fontSize: "0.6rem",
-              letterSpacing: "0.28em",
+              fontSize: "0.62rem",
+              letterSpacing: "0.32em",
               textTransform: "uppercase",
               color: "var(--gold)",
-              marginBottom: 18,
+              marginBottom: 22,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              gap: 12,
+              gap: 14,
             }}
           >
-            <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
-            Resultados
-            <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
+            <span style={{ display: "block", width: 32, height: 1, background: "var(--gold)" }} />
+            Casos reais
+            <span style={{ display: "block", width: 32, height: 1, background: "var(--gold)" }} />
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="serif-display"
             style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
-              fontWeight: 500,
+              fontFamily: "'Fraunces', serif",
+              fontSize: "clamp(2rem, 4vw, 3.4rem)",
+              fontWeight: 400,
               color: "var(--ink)",
-              marginBottom: 14,
-              lineHeight: 1.2,
+              marginBottom: 22,
+              lineHeight: 1.08,
+              letterSpacing: "-0.025em",
             }}
           >
-            Números reais.{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold)" }}>
-              Transformações reais.
-            </em>
+            O antes e o depois <em style={{ fontStyle: "italic", color: "var(--gold)" }}>de uma marca</em>{" "}
+            que decide se posicionar.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -312,25 +734,28 @@ export default function Resultados() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "0.88rem",
-              color: "var(--ink-50)",
-              maxWidth: 440,
+              fontFamily: "'Inter Tight', sans-serif",
+              fontSize: "1rem",
+              color: "rgba(10,10,10,0.55)",
+              maxWidth: 540,
               margin: "0 auto",
-              lineHeight: 1.7,
+              lineHeight: 1.75,
+              fontWeight: 300,
             }}
           >
-            Marcas que apostaram em estratégia e colheram resultados concretos.
+            Estes não são números genéricos: são marcas que confiaram em estratégia,
+            direção criativa e produção contínua — e colheram crescimento expressivo.
           </motion.p>
         </div>
 
-        {/* Cards */}
+        {/* Grid de cases */}
         <div className="results-grid">
           {cases.map((c, idx) => (
             <ResultadoCard key={c.handle} c={c} idx={idx} />
           ))}
         </div>
 
+        {/* Disclaimer */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -339,12 +764,18 @@ export default function Resultados() {
           style={{
             fontFamily: "'DM Mono', monospace",
             fontSize: "0.58rem",
-            color: "var(--ink-20)",
+            letterSpacing: "0.08em",
+            color: "rgba(10,10,10,0.32)",
             textAlign: "center",
-            marginTop: 36,
+            marginTop: 56,
+            maxWidth: 600,
+            marginLeft: "auto",
+            marginRight: "auto",
+            lineHeight: 1.7,
           }}
         >
-          * Números baseados nos resultados acumulados durante o período de acompanhamento.
+          * Dados acumulados ao longo do período de acompanhamento estratégico. Mockups ilustrativos
+          baseados nos dados reais de cada perfil — referência visual, não captura literal.
         </motion.p>
       </div>
 
@@ -352,15 +783,21 @@ export default function Resultados() {
         .results-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          gap: 24px;
         }
-        @media (max-width: 1024px) {
+        @media (max-width: 1100px) {
           .results-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
-        @media (max-width: 640px) {
+        @media (max-width: 720px) {
           .results-grid { grid-template-columns: 1fr !important; }
-          #resultados { padding: 72px 0 60px !important; }
-          #resultados > div { padding: 0 20px !important; }
+          #resultados { padding: 84px 0 64px !important; }
+          #resultados > div { padding: 0 18px !important; }
+          .resultado-card { padding: 32px 22px 28px !important; }
+          .mockups-row { gap: 8px !important; }
+          .arrow-mid { transform: scale(0.8) !important; }
+        }
+        @media (max-width: 480px) {
+          .resultado-card { padding: 28px 18px 24px !important; }
         }
       `}</style>
     </section>

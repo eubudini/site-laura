@@ -88,7 +88,7 @@ export default function Servicos() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Fraunces', serif",
                 fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
                 fontWeight: 500,
                 color: "var(--ink)",
@@ -104,7 +104,7 @@ export default function Servicos() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter Tight', sans-serif",
               fontSize: "0.95rem",
               color: "rgba(10,10,10,0.5)",
               lineHeight: 1.85,
@@ -152,7 +152,7 @@ export default function Servicos() {
               </p>
               <h3
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Fraunces', serif",
                   fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
                   fontWeight: 500,
                   color: "var(--ink)",
@@ -163,7 +163,7 @@ export default function Servicos() {
               </h3>
               <p
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter Tight', sans-serif",
                   fontSize: "0.875rem",
                   color: "rgba(10,10,10,0.5)",
                   lineHeight: 1.8,

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap');
 
 @import "tailwindcss";
 
@@ -10,19 +10,20 @@
   --chalk: #FFFFFF;
   --parchment: #F8F5F1;
   --parchment-dark: #EDE8E1;
-  --gold: #C9A96E;
-  --gold-light: rgba(201,169,110,0.12);
-  --gold-mid: rgba(201,169,110,0.35);
-  --obsidian: #0C0C0C;
-  --obsidian-2: #141414;
+  --gold: #B8956A;
+  --gold-soft: #C9A96E;
+  --gold-light: rgba(184,149,106,0.10);
+  --gold-mid: rgba(184,149,106,0.32);
+  --obsidian: #0A0A0A;
+  --obsidian-2: #131313;
   --obsidian-3: #1C1C1C;
 }
 
 @theme inline {
   --color-background: var(--parchment);
   --color-foreground: var(--ink);
-  --font-sans: 'DM Sans', sans-serif;
-  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter Tight', sans-serif;
+  --font-serif: 'Fraunces', serif;
   --font-mono: 'DM Mono', monospace;
 }
 
@@ -39,7 +40,7 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter Tight', sans-serif;
   font-weight: 400;
   color: var(--ink);
   background-color: var(--parchment);
@@ -47,6 +48,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* ── Fraunces — fine optical-size tuning para títulos ── */
+.serif-display {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+  letter-spacing: -0.02em;
 }
 
 /* ── Typography balance ───────────────────────────── */

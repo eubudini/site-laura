@@ -65,7 +65,7 @@ export default function Processo() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Fraunces', serif",
               fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
               fontWeight: 500,
               color: "#FFFFFF",
@@ -81,7 +81,7 @@ export default function Processo() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter Tight', sans-serif",
               fontSize: "0.88rem",
               color: "rgba(255,255,255,0.35)",
               maxWidth: 440,
@@ -147,7 +147,7 @@ export default function Processo() {
               <div>
                 <h3
                   style={{
-                    fontFamily: "'Playfair Display', serif",
+                    fontFamily: "'Fraunces', serif",
                     fontSize: "1.15rem",
                     fontWeight: 500,
                     color: "#FFFFFF",
@@ -159,7 +159,7 @@ export default function Processo() {
                 </h3>
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Inter Tight', sans-serif",
                     fontSize: "0.85rem",
                     color: "rgba(255,255,255,0.38)",
                     lineHeight: 1.8,
@@ -171,7 +171,7 @@ export default function Processo() {
               </div>
               <span
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Inter Tight', sans-serif",
                   fontSize: "0.9rem",
                   color: "transparent",
                   paddingTop: 2,

@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Marcas from "./components/Marcas";
 import VideoSection from "./components/VideoSection";
 import Sobre from "./components/Sobre";
 import Metricas from "./components/Metricas";
@@ -20,6 +21,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Marcas />
         <VideoSection />
         <Sobre />
         <Metricas />
@@ -28,7 +30,7 @@ export default function Home() {
         <Internacional />
         <Clientes />
         <Servicos />
-<Processo />
+        <Processo />
         <Planos />
         <Contato />
       </main>

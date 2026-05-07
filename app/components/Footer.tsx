@@ -63,7 +63,7 @@ export default function Footer() {
             {/* Brand side */}
             <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
               <p style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Fraunces', serif",
                 fontSize: "1.35rem",
                 fontWeight: 500,
                 color: "#FFFFFF",
@@ -71,7 +71,7 @@ export default function Footer() {
                 Laura Camponogara
               </p>
               <p style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter Tight', sans-serif",
                 fontSize: "0.8rem",
                 color: "rgba(255,255,255,0.35)",
                 fontWeight: 300,
@@ -140,7 +140,7 @@ export default function Footer() {
                           target={link.href.startsWith("http") ? "_blank" : undefined}
                           rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                           style={{
-                            fontFamily: "'DM Sans', sans-serif",
+                            fontFamily: "'Inter Tight', sans-serif",
                             fontSize: "0.82rem",
                             color: "rgba(255,255,255,0.45)",
                             fontWeight: 300,

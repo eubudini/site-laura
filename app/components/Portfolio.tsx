@@ -52,7 +52,7 @@ export default function Portfolio() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Fraunces', serif",
               fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
               fontWeight: 500,
               color: "var(--ink)",
@@ -128,7 +128,7 @@ export default function Portfolio() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter Tight', sans-serif",
               fontSize: "0.78rem",
               letterSpacing: "0.12em",
               fontWeight: 500,

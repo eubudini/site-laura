@@ -91,18 +91,19 @@ export default function Hero() {
 
           <motion.h1
             {...fadeUp(0.2)}
+            className="serif-display"
             style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(2.5rem, 6vw, 4.8rem)",
-              fontWeight: 500,
-              lineHeight: 1.08,
+              fontFamily: "'Fraunces', serif",
+              fontSize: "clamp(2.6rem, 6.4vw, 5.2rem)",
+              fontWeight: 400,
+              lineHeight: 1.02,
               color: "var(--ink)",
               marginBottom: 28,
-              letterSpacing: "-0.01em",
+              letterSpacing: "-0.035em",
             }}
           >
             Sua marca passou da hora{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold)" }}>
+            <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--gold)" }}>
               de ser desejada.
             </em>
           </motion.h1>
@@ -110,19 +111,72 @@ export default function Hero() {
           <motion.p
             {...fadeUp(0.3)}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "clamp(1rem, 4vw, 1.15rem)",
-              color: "rgba(10,10,10,0.58)",
-              lineHeight: 1.85,
-              maxWidth: 500,
-              marginBottom: 48,
+              fontFamily: "'Inter Tight', sans-serif",
+              fontSize: "clamp(1rem, 4vw, 1.18rem)",
+              color: "rgba(10,10,10,0.62)",
+              lineHeight: 1.7,
+              maxWidth: 520,
+              marginBottom: 40,
               fontWeight: 300,
+              letterSpacing: "-0.005em",
             }}
           >
             Crio estratégias de conteúdo que transformam perfis comuns em
             referências do segmento — com direção criativa, posicionamento e
             produção que para o scroll.
           </motion.p>
+
+          {/* Microbadge prova social */}
+          <motion.div
+            {...fadeUp(0.35)}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 14,
+              padding: "8px 18px 8px 8px",
+              border: "1px solid rgba(10,10,10,0.10)",
+              background: "rgba(255,255,255,0.6)",
+              backdropFilter: "blur(8px)",
+              marginBottom: 36,
+            }}
+          >
+            <div style={{ display: "flex", marginLeft: -2 }}>
+              {["MC", "MP", "AM"].map((i, idx) => (
+                <div
+                  key={i}
+                  style={{
+                    width: 26,
+                    height: 26,
+                    borderRadius: "50%",
+                    background: ["linear-gradient(135deg,#1a1a1a,#3a3024)", "linear-gradient(135deg,#c9a96e,#8a7146)", "linear-gradient(135deg,#2c2520,#5a4830)"][idx],
+                    border: "2px solid var(--parchment)",
+                    fontFamily: "'Fraunces', serif",
+                    fontSize: "0.55rem",
+                    color: "#f5e6c8",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginLeft: idx === 0 ? 0 : -8,
+                    fontWeight: 500,
+                  }}
+                >
+                  {i}
+                </div>
+              ))}
+            </div>
+            <span
+              style={{
+                fontFamily: "'Inter Tight', sans-serif",
+                fontSize: "0.72rem",
+                color: "rgba(10,10,10,0.7)",
+                fontWeight: 400,
+                letterSpacing: "0.01em",
+              }}
+            >
+              <strong style={{ color: "var(--ink)", fontWeight: 600 }}>+14 marcas</strong> que cresceram em média{" "}
+              <strong style={{ color: "var(--gold)", fontWeight: 600 }}>+418%</strong>
+            </span>
+          </motion.div>
 
           <motion.div
             {...fadeUp(0.4)}
@@ -132,7 +186,7 @@ export default function Hero() {
             <a
               href="#resultados"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter Tight', sans-serif",
                 fontSize: "0.88rem",
                 letterSpacing: "0.12em",
                 fontWeight: 500,
@@ -152,7 +206,7 @@ export default function Hero() {
             <a
               href="#contato"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Inter Tight', sans-serif",
                 fontSize: "0.88rem",
                 letterSpacing: "0.12em",
                 fontWeight: 500,

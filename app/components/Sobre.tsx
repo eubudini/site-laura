@@ -85,7 +85,7 @@ export default function Sobre() {
               position: "absolute",
               bottom: 80,
               left: -20,
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Fraunces', serif",
               fontSize: "6rem",
               fontWeight: 700,
               color: "rgba(201,169,110,0.06)",
@@ -128,18 +128,19 @@ export default function Sobre() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
+            className="serif-display"
             style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(2rem, 3.5vw, 3rem)",
-              fontWeight: 500,
-              lineHeight: 1.2,
+              fontFamily: "'Fraunces', serif",
+              fontSize: "clamp(2.1rem, 3.8vw, 3.2rem)",
+              fontWeight: 400,
+              lineHeight: 1.08,
               color: "var(--ink)",
               marginBottom: 28,
-              letterSpacing: "-0.01em",
+              letterSpacing: "-0.03em",
             }}
           >
             Você não precisa de mais conteúdo.{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold)" }}>
+            <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--gold)" }}>
               Precisa do conteúdo certo.
             </em>
           </motion.h2>
@@ -152,28 +153,100 @@ export default function Sobre() {
           >
             <div style={{ width: 40, height: 1, background: "var(--gold)", opacity: 0.5, marginBottom: 28 }} />
             <p style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "1.1rem",
-              color: "rgba(10,10,10,0.55)",
-              lineHeight: 1.9,
-              marginBottom: 20,
+              fontFamily: "'Inter Tight', sans-serif",
+              fontSize: "1.08rem",
+              color: "rgba(10,10,10,0.6)",
+              lineHeight: 1.78,
+              marginBottom: 24,
               fontWeight: 300,
+              letterSpacing: "-0.005em",
             }}>
               A maioria das marcas posta. Poucas se posicionam. A diferença está
               na estratégia por trás de cada imagem, legenda e decisão criativa —
               e é exatamente isso que eu trago ao seu projeto.
             </p>
+
+            {/* Pull quote editorial */}
+            <blockquote
+              style={{
+                margin: "32px 0",
+                paddingLeft: 28,
+                borderLeft: "2px solid var(--gold)",
+                position: "relative",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "'Fraunces', serif",
+                  fontStyle: "italic",
+                  fontSize: "1.4rem",
+                  fontWeight: 400,
+                  lineHeight: 1.4,
+                  color: "var(--ink)",
+                  letterSpacing: "-0.015em",
+                }}
+              >
+                Não trabalho com conteúdo de volume.
+                <br />
+                Trabalho com conteúdo que <em style={{ color: "var(--gold)" }}>posiciona</em>.
+              </p>
+            </blockquote>
+
             <p style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "1.1rem",
-              color: "rgba(10,10,10,0.55)",
-              lineHeight: 1.9,
+              fontFamily: "'Inter Tight', sans-serif",
+              fontSize: "1.08rem",
+              color: "rgba(10,10,10,0.6)",
+              lineHeight: 1.78,
               fontWeight: 300,
+              letterSpacing: "-0.005em",
             }}>
               Cada cliente recebe uma leitura única da sua marca, do seu público
               e dos canais onde sua voz precisa ser ouvida. Sem fórmula pronta.
               Com resultado real.
             </p>
+
+            {/* Signature */}
+            <div
+              style={{
+                marginTop: 36,
+                paddingTop: 24,
+                borderTop: "1px solid rgba(10,10,10,0.08)",
+                display: "flex",
+                gap: 32,
+                flexWrap: "wrap",
+              }}
+            >
+              {[
+                { l: "Direção", v: "Criativa & Editorial" },
+                { l: "Base", v: "Porto Alegre · RS" },
+                { l: "Atendimento", v: "Brasil + Uruguai" },
+              ].map((s) => (
+                <div key={s.l}>
+                  <p
+                    style={{
+                      fontFamily: "'DM Mono', monospace",
+                      fontSize: "0.55rem",
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "rgba(10,10,10,0.4)",
+                      marginBottom: 4,
+                    }}
+                  >
+                    {s.l}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "'Fraunces', serif",
+                      fontSize: "0.92rem",
+                      color: "var(--ink)",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {s.v}
+                  </p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

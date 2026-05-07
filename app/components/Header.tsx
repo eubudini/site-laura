@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { label: "Sobre", href: "#sobre" },
+  { label: "Manifesto", href: "#sobre" },
+  { label: "Método", href: "#servicos" },
   { label: "Resultados", href: "#resultados" },
   { label: "Portfólio", href: "#portfolio" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Planos", href: "#planos" },
+  { label: "Investimento", href: "#planos" },
 ];
 
 export default function Header() {

@@ -1,15 +1,9 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Marcas from "./components/Marcas";
-import VideoSection from "./components/VideoSection";
-import Sobre from "./components/Sobre";
-import Metricas from "./components/Metricas";
-import Resultados from "./components/Resultados";
+import Manifesto from "./components/Manifesto";
+import Metodologia from "./components/Metodologia";
+import Prova from "./components/Prova";
 import Portfolio from "./components/Portfolio";
-import Internacional from "./components/Internacional";
-import Clientes from "./components/Clientes";
-import Servicos from "./components/Servicos";
-import Processo from "./components/Processo";
 import Planos from "./components/Planos";
 import Contato from "./components/Contato";
 import Footer from "./components/Footer";
@@ -21,16 +15,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Marcas />
-        <VideoSection />
-        <Sobre />
-        <Metricas />
-        <Resultados />
+        <Manifesto />
+        <Metodologia />
+        <Prova />
         <Portfolio />
-        <Internacional />
-        <Clientes />
-        <Servicos />
-        <Processo />
         <Planos />
         <Contato />
       </main>

@@ -17,20 +17,20 @@ const sections = [
     title: "Navegação",
     links: [
       { name: "Início", href: "#hero" },
-      { name: "Sobre", href: "#sobre" },
+      { name: "Manifesto", href: "#sobre" },
+      { name: "Método", href: "#servicos" },
       { name: "Resultados", href: "#resultados" },
       { name: "Portfólio", href: "#portfolio" },
-      { name: "Serviços", href: "#servicos" },
-      { name: "Planos", href: "#planos" },
+      { name: "Investimento", href: "#planos" },
     ],
   },
   {
-    title: "Serviços",
+    title: "Atuação",
     links: [
-      { name: "Captação & Edição", href: "#servicos" },
-      { name: "Gestão de Redes", href: "#servicos" },
-      { name: "Estratégia", href: "#servicos" },
-      { name: "Planejamento Mensal", href: "#servicos" },
+      { name: "Estratégia & Direção", href: "#servicos" },
+      { name: "Captação & Produção", href: "#servicos" },
+      { name: "Distribuição & Tráfego", href: "#servicos" },
+      { name: "Cobertura presencial", href: "#servicos" },
     ],
   },
   {

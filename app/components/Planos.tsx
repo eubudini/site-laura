@@ -59,18 +59,35 @@ export default function Planos() {
             gap: 12,
           }}>
             <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
-            Planos
+            Investimento
             <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
           </p>
           <h2 style={{
             fontFamily: "'Fraunces', serif",
             fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
-            fontWeight: 500,
+            fontWeight: 400,
             color: "#FFFFFF",
-            marginBottom: 16,
+            marginBottom: 18,
+            lineHeight: 1.12,
+            letterSpacing: "-0.02em",
           }}>
-            Invista no que realmente transforma a percepção da sua marca
+            Para marcas que entendem que conteúdo é{" "}
+            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
+              ativo de posicionamento
+            </em>.
           </h2>
+          <p style={{
+            fontFamily: "'Inter Tight', sans-serif",
+            fontSize: "0.94rem",
+            color: "rgba(255,255,255,0.5)",
+            lineHeight: 1.7,
+            fontWeight: 300,
+            maxWidth: 540,
+            margin: "0 auto",
+          }}>
+            Dois caminhos integrados. O primeiro, para quem precisa de produção
+            autoral. O segundo, para quem quer presença consolidada com gestão completa.
+          </p>
         </div>
 
         {/* Cards com TiltCard */}

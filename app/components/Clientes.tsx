@@ -5,358 +5,280 @@ import { motion } from "framer-motion";
 const clients = [
   {
     name: "Marina Ciconet",
-    role: "Jornalista e criadora de conteúdo",
-    stats: "59,1K",
-    statLabel: "seguidores",
-    growth: "+437%",
+    role: "Jornalismo · Conteúdo",
     handle: "@marinaciconet",
     initials: "MC",
-    quote: "A Laura entendeu minha voz antes de eu entender. Hoje sou referência onde antes era só ruído.",
+    quote: "A Laura entendeu minha voz antes de eu entender.",
   },
   {
     name: "Mariana Penteado",
-    role: "Influenciadora de moda e lifestyle",
-    stats: "198K",
-    statLabel: "seguidores",
-    growth: "+371%",
+    role: "Moda · Lifestyle",
     handle: "@marianapenteado",
     initials: "MP",
-    quote: "Direção editorial cirúrgica. Cada post passou a comunicar marca, não conteúdo solto.",
+    quote: "Cada post passou a comunicar marca, não conteúdo solto.",
   },
   {
     name: "Brunnen",
     role: "Moda feminina",
-    stats: "8,7K",
-    statLabel: "seguidores",
-    growth: "↑",
     handle: "@brunnenmodafeminina",
     initials: "BR",
-    quote: "Estética e estratégia caminhando juntas. A presença digital virou um ativo da marca.",
+    quote: "Estética e estratégia juntas. Virou ativo da marca.",
   },
   {
     name: "A.MAR José Ignacio",
-    role: "Moda e lifestyle de luxo",
-    stats: "43,7K",
-    statLabel: "seguidores",
-    growth: "+446%",
+    role: "Maison · Luxo",
     handle: "@a.mar.joseignacio",
     initials: "AM",
-    quote: "Cobertura presencial em Uruguai elevou nosso patamar. Resultado: marca premium percebida.",
+    quote: "Cobertura presencial elevou nosso patamar premium.",
   },
 ];
 
 export default function Clientes() {
   return (
-    <section
-      id="clientes"
-      style={{
-        background: "var(--parchment-dark)",
-        padding: "120px 0",
-      }}
-    >
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px" }}>
+    <section id="clientes" className="clientes-section">
+      <div className="container-x">
         {/* Header */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 60,
-            marginBottom: 72,
-            alignItems: "end",
-          }}
-          className="clientes-header"
-        >
+        <div className="clientes-header">
           <div>
             <motion.p
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: "0.62rem",
-                letterSpacing: "0.28em",
-                textTransform: "uppercase",
-                color: "var(--gold)",
-                marginBottom: 20,
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-              }}
+              className="clientes-kicker"
             >
-              <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
-              Clientes
+              <span className="clientes-kicker__rule" aria-hidden />
+              Quem confia
             </motion.p>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              style={{
-                fontFamily: "'Fraunces', serif",
-                fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
-                fontWeight: 500,
-                color: "var(--ink)",
-                lineHeight: 1.2,
-              }}
+              className="clientes-h2"
             >
-              Marcas e profissionais que confiaram no meu olhar
+              Marcas que apostaram em <em>direção autoral</em>.
             </motion.h2>
           </div>
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontSize: "0.95rem",
-              color: "rgba(10,10,10,0.5)",
-              lineHeight: 1.85,
-              fontWeight: 300,
-            }}
+            className="clientes-sub"
           >
-            Cada cliente é uma história de transformação. Aqui estão alguns que apostaram
-            em estratégia e colheram resultados expressivos.
+            Profissionais e maisons que escolheram estratégia consistente — e
+            transformaram presença em posicionamento.
           </motion.p>
         </div>
 
-        {/* Grid de clientes */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 1,
-            background: "rgba(10,10,10,0.08)",
-            marginBottom: 72,
-          }}
-          className="clients-grid"
-        >
+        {/* Grid */}
+        <div className="clientes-grid">
           {clients.map((c, i) => (
-            <motion.div
+            <motion.article
               key={c.handle}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              style={{
-                background: "var(--parchment-dark)",
-                padding: "40px 32px",
-                transition: "background 0.3s ease",
-                display: "flex",
-                flexDirection: "column",
-                gap: 0,
-              }}
-              whileHover={{ background: "#FFFFFF" }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="client-card"
             >
-              {/* Stat highlight */}
-              <div style={{ marginBottom: 20 }}>
-                <p
-                  style={{
-                    fontFamily: "'Fraunces', serif",
-                    fontSize: "clamp(1.8rem, 2.5vw, 2.4rem)",
-                    fontWeight: 500,
-                    color: "var(--gold)",
-                    lineHeight: 1,
-                    marginBottom: 4,
-                  }}
-                >
-                  {c.stats}
-                </p>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <p
-                    style={{
-                      fontFamily: "'DM Mono', monospace",
-                      fontSize: "0.58rem",
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      color: "rgba(10,10,10,0.35)",
-                    }}
-                  >
-                    {c.statLabel}
-                  </p>
-                  {c.growth !== "↑" && (
-                    <span
-                      style={{
-                        fontFamily: "'DM Mono', monospace",
-                        fontSize: "0.55rem",
-                        letterSpacing: "0.08em",
-                        color: "#4CAF50",
-                        background: "rgba(76,175,80,0.1)",
-                        padding: "2px 6px",
-                      }}
-                    >
-                      {c.growth}
-                    </span>
-                  )}
+              {/* Quote (protagonista) */}
+              <blockquote className="client-card__quote">
+                <span className="client-card__quote-mark" aria-hidden>“</span>
+                {c.quote}
+              </blockquote>
+
+              {/* Identidade */}
+              <footer className="client-card__id">
+                <div className="client-card__avatar">{c.initials}</div>
+                <div className="client-card__meta">
+                  <p className="client-card__name">{c.name}</p>
+                  <p className="client-card__role">{c.role}</p>
                 </div>
-              </div>
-
-              {/* Divider */}
-              <div style={{ width: "100%", height: 1, background: "rgba(10,10,10,0.07)", marginBottom: 20 }} />
-
-              {/* Cliente info */}
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: c.quote ? 16 : 0 }}>
-                <div
-                  style={{
-                    width: 36,
-                    height: 36,
-                    borderRadius: "50%",
-                    background: "rgba(201,169,110,0.12)",
-                    border: "1px solid rgba(201,169,110,0.25)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontFamily: "'DM Mono', monospace",
-                    fontSize: "0.55rem",
-                    letterSpacing: "0.05em",
-                    color: "var(--gold)",
-                    flexShrink: 0,
-                  }}
-                >
-                  {c.initials}
-                </div>
-                <div>
-                  <h3
-                    style={{
-                      fontFamily: "'Fraunces', serif",
-                      fontSize: "0.95rem",
-                      fontWeight: 500,
-                      color: "var(--ink)",
-                      marginBottom: 2,
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {c.name}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "0.72rem",
-                      color: "rgba(10,10,10,0.45)",
-                      fontWeight: 300,
-                    }}
-                  >
-                    {c.role}
-                  </p>
-                </div>
-              </div>
-
-              {/* Quote — quando disponível */}
-              {c.quote && (
-                <p
-                  style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "0.8rem",
-                    color: "rgba(10,10,10,0.5)",
-                    lineHeight: 1.7,
-                    fontWeight: 300,
-                    fontStyle: "italic",
-                    borderLeft: "2px solid var(--gold)",
-                    paddingLeft: 12,
-                    marginTop: 4,
-                  }}
-                >
-                  &ldquo;{c.quote}&rdquo;
-                </p>
-              )}
-
-              {/* Handle */}
-              <p
-                style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.58rem",
-                  letterSpacing: "0.08em",
-                  color: "rgba(10,10,10,0.3)",
-                  marginTop: "auto",
-                  paddingTop: 16,
-                }}
-              >
-                {c.handle}
-              </p>
-            </motion.div>
+                <span className="client-card__handle">{c.handle}</span>
+              </footer>
+            </motion.article>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          style={{ textAlign: "center" }}
-        >
-          <p
-            style={{
-              fontFamily: "'Fraunces', serif",
-              fontSize: "1.2rem",
-              color: "var(--ink)",
-              marginBottom: 24,
-              fontStyle: "italic",
-            }}
-          >
-            Quer fazer parte desta lista?
-          </p>
-          <a
-            href="#contato"
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontSize: "0.78rem",
-              letterSpacing: "0.12em",
-              fontWeight: 500,
-              textTransform: "uppercase",
-              color: "#FFFFFF",
-              background: "var(--ink)",
-              padding: "14px 36px",
-              textDecoration: "none",
-              display: "inline-block",
-              transition: "background 0.3s ease",
-              minHeight: "auto",
-            }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#C9A96E"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--ink)"; }}
-          >
-            Fale comigo
-          </a>
-        </motion.div>
       </div>
 
       <style>{`
-        @media (max-width: 1024px) {
-          .clients-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
+        .clientes-section {
+          background: var(--parchment-dark);
+          padding: clamp(72px, 10vw, 120px) 0 clamp(64px, 8vw, 100px);
+        }
+
+        /* Header */
+        .clientes-header {
+          display: grid;
+          grid-template-columns: 1.15fr 1fr;
+          gap: 64px;
+          margin-bottom: clamp(48px, 6vw, 72px);
+          align-items: end;
+        }
+        .clientes-kicker {
+          font-family: 'DM Mono', monospace;
+          font-size: 0.6rem;
+          letter-spacing: 0.32em;
+          text-transform: uppercase;
+          color: var(--gold);
+          margin-bottom: 18px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .clientes-kicker__rule {
+          display: block;
+          width: 28px;
+          height: 1px;
+          background: var(--gold);
+        }
+        .clientes-h2 {
+          font-family: 'Fraunces', serif;
+          font-size: clamp(1.7rem, 3vw, 2.5rem);
+          font-weight: 400;
+          color: var(--ink);
+          line-height: 1.12;
+          letter-spacing: -0.02em;
+          max-width: 600px;
+        }
+        .clientes-h2 em {
+          font-style: italic;
+          color: var(--gold);
+        }
+        .clientes-sub {
+          font-family: 'Inter Tight', sans-serif;
+          font-size: 0.94rem;
+          color: rgba(10,10,10,0.55);
+          line-height: 1.75;
+          font-weight: 300;
+          max-width: 420px;
+        }
+
+        /* Grid */
+        .clientes-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 16px;
+        }
+
+        /* Card */
+        .client-card {
+          background: #FFFFFF;
+          border: 1px solid rgba(10,10,10,0.06);
+          padding: 32px 26px 24px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 28px;
+          min-height: 240px;
+          transition: border-color 0.4s ease, transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        .client-card:hover {
+          border-color: rgba(184,149,106,0.4);
+          transform: translateY(-2px);
+          box-shadow: 0 24px 52px -28px rgba(184,149,106,0.25);
+        }
+
+        /* Quote */
+        .client-card__quote {
+          margin: 0;
+          padding: 0;
+          font-family: 'Fraunces', serif;
+          font-style: italic;
+          font-size: 0.98rem;
+          line-height: 1.5;
+          color: var(--ink);
+          font-weight: 400;
+          letter-spacing: -0.005em;
+          position: relative;
+          padding-left: 0;
+        }
+        .client-card__quote-mark {
+          font-family: 'Fraunces', serif;
+          font-size: 1.8rem;
+          color: var(--gold);
+          line-height: 1;
+          margin-right: 4px;
+          font-style: normal;
+          vertical-align: -8px;
+          opacity: 0.6;
+        }
+
+        /* Identidade */
+        .client-card__id {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          column-gap: 12px;
+          row-gap: 8px;
+          align-items: center;
+          padding-top: 20px;
+          border-top: 1px solid rgba(10,10,10,0.07);
+        }
+        .client-card__avatar {
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background: rgba(201,169,110,0.10);
+          border: 1px solid rgba(201,169,110,0.28);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'DM Mono', monospace;
+          font-size: 0.55rem;
+          letter-spacing: 0.04em;
+          color: var(--gold);
+          font-weight: 500;
+        }
+        .client-card__meta {
+          display: flex;
+          flex-direction: column;
+          gap: 1px;
+        }
+        .client-card__name {
+          font-family: 'Fraunces', serif;
+          font-size: 0.92rem;
+          font-weight: 500;
+          color: var(--ink);
+          line-height: 1.2;
+          letter-spacing: -0.005em;
+        }
+        .client-card__role {
+          font-family: 'DM Mono', monospace;
+          font-size: 0.52rem;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: rgba(10,10,10,0.42);
+        }
+        .client-card__handle {
+          grid-column: 1 / -1;
+          font-family: 'DM Mono', monospace;
+          font-size: 0.56rem;
+          letter-spacing: 0.1em;
+          color: rgba(10,10,10,0.32);
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+          .clientes-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 900px) {
           .clientes-header {
-            grid-template-columns: 1fr !important;
-            gap: 20px !important;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            align-items: start;
           }
+          .clientes-sub { max-width: 560px; }
         }
-        @media (max-width: 768px) {
-          #clientes {
-            padding: 80px 0 !important;
+        @media (max-width: 560px) {
+          .clientes-grid { grid-template-columns: 1fr; gap: 14px; }
+          .client-card {
+            padding: 26px 22px 22px;
+            min-height: 0;
+            gap: 22px;
           }
-          #clientes > div {
-            padding: 0 20px !important;
-          }
-          .clients-grid > div {
-            padding: 28px 20px !important;
-          }
-          .clientes-header {
-            margin-bottom: 48px !important;
-          }
-        }
-        @media (max-width: 480px) {
-          .clients-grid {
-            grid-template-columns: 1fr !important;
-          }
-          #clientes {
-            padding: 64px 0 !important;
-          }
-          #clientes > div {
-            padding: 0 16px !important;
-          }
+          .client-card__quote { font-size: 0.96rem; }
         }
       `}</style>
     </section>

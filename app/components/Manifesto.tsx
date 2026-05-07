@@ -148,7 +148,7 @@ export default function Manifesto() {
         }
         .manifesto-kicker {
           font-family: 'DM Mono', monospace;
-          font-size: 0.62rem;
+          font-size: 0.74rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
           color: var(--gold);
@@ -193,7 +193,7 @@ export default function Manifesto() {
           border-left: 2px solid var(--gold);
           font-family: 'Fraunces', serif;
           font-style: italic;
-          font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+          font-size: clamp(1.32rem, 2vw, 1.65rem);
           font-weight: 400;
           line-height: 1.4;
           color: var(--ink);
@@ -205,9 +205,9 @@ export default function Manifesto() {
         }
         .manifesto-p {
           font-family: 'Inter Tight', sans-serif;
-          font-size: 1rem;
-          color: rgba(10,10,10,0.62);
-          line-height: 1.78;
+          font-size: 1.08rem;
+          color: rgba(10,10,10,0.65);
+          line-height: 1.8;
           margin-bottom: 22px;
           font-weight: 300;
           letter-spacing: -0.005em;
@@ -228,15 +228,15 @@ export default function Manifesto() {
         }
         .manifesto-cred__label {
           font-family: 'DM Mono', monospace;
-          font-size: 0.55rem;
+          font-size: 0.65rem;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: rgba(10,10,10,0.4);
-          margin-bottom: 4px;
+          color: rgba(10,10,10,0.45);
+          margin-bottom: 5px;
         }
         .manifesto-cred__value {
           font-family: 'Fraunces', serif;
-          font-size: 0.95rem;
+          font-size: 1.02rem;
           color: var(--ink);
           font-weight: 500;
           letter-spacing: -0.005em;
@@ -247,9 +247,9 @@ export default function Manifesto() {
           margin-top: 32px;
           font-family: 'Fraunces', serif;
           font-style: italic;
-          font-size: 0.96rem;
+          font-size: 1.05rem;
           line-height: 1.6;
-          color: rgba(10,10,10,0.55);
+          color: rgba(10,10,10,0.6);
           letter-spacing: -0.005em;
           padding-top: 24px;
           border-top: 1px dashed rgba(184,149,106,0.4);
@@ -323,17 +323,17 @@ export default function Manifesto() {
         .manifesto-visual__sig-name {
           font-family: 'Fraunces', serif;
           font-style: italic;
-          font-size: 0.95rem;
+          font-size: 1.05rem;
           color: #FFFFFF;
           letter-spacing: 0;
           text-shadow: 0 1px 8px rgba(0,0,0,0.4);
         }
         .manifesto-visual__sig-role {
           font-family: 'DM Mono', monospace;
-          font-size: 0.5rem;
+          font-size: 0.6rem;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.78);
+          color: rgba(255,255,255,0.82);
           text-shadow: 0 1px 6px rgba(0,0,0,0.4);
         }
 

@@ -172,7 +172,7 @@ export default function Hero() {
         /* KICKER */
         .hero-kicker {
           font-family: 'DM Mono', monospace;
-          font-size: 0.72rem;
+          font-size: 0.78rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
           color: var(--gold);
@@ -208,10 +208,10 @@ export default function Hero() {
         /* DESC */
         .hero-desc {
           font-family: 'Inter Tight', sans-serif;
-          font-size: clamp(1rem, 1.6vw, 1.18rem);
-          color: rgba(10,10,10,0.62);
-          line-height: 1.7;
-          max-width: 520px;
+          font-size: clamp(1.08rem, 1.7vw, 1.28rem);
+          color: rgba(10,10,10,0.65);
+          line-height: 1.72;
+          max-width: 540px;
           margin-bottom: 36px;
           font-weight: 300;
           letter-spacing: -0.005em;
@@ -235,12 +235,12 @@ export default function Hero() {
           margin-left: -2px;
         }
         .hero-trust__avatar {
-          width: 26px;
-          height: 26px;
+          width: 30px;
+          height: 30px;
           border-radius: 50%;
           border: 2px solid var(--parchment);
           font-family: 'Fraunces', serif;
-          font-size: 0.55rem;
+          font-size: 0.62rem;
           color: #f5e6c8;
           display: flex;
           align-items: center;
@@ -249,8 +249,8 @@ export default function Hero() {
         }
         .hero-trust__label {
           font-family: 'Inter Tight', sans-serif;
-          font-size: 0.72rem;
-          color: rgba(10,10,10,0.7);
+          font-size: 0.82rem;
+          color: rgba(10,10,10,0.72);
           font-weight: 400;
           letter-spacing: 0.01em;
         }
@@ -271,11 +271,11 @@ export default function Hero() {
         }
         .hero-cta {
           font-family: 'Inter Tight', sans-serif;
-          font-size: 0.86rem;
+          font-size: 0.94rem;
           letter-spacing: 0.12em;
           font-weight: 500;
           text-transform: uppercase;
-          padding: 15px 32px;
+          padding: 17px 36px;
           text-decoration: none;
           transition: all 0.3s ease;
           display: inline-flex;
@@ -299,9 +299,9 @@ export default function Hero() {
         /* LOCATION */
         .hero-location {
           font-family: 'DM Mono', monospace;
-          font-size: 0.72rem;
+          font-size: 0.78rem;
           letter-spacing: 0.1em;
-          color: rgba(10,10,10,0.4);
+          color: rgba(10,10,10,0.45);
           line-height: 1.6;
         }
 

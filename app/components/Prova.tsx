@@ -509,17 +509,17 @@ export default function Prova() {
         }
         .prova-stat__label {
           font-family: 'Inter Tight', sans-serif;
-          font-size: 0.84rem;
+          font-size: 0.94rem;
           font-weight: 500;
-          color: rgba(255,255,255,0.78);
-          margin-bottom: 4px;
+          color: rgba(255,255,255,0.82);
+          margin-bottom: 5px;
         }
         .prova-stat__sub {
           font-family: 'DM Mono', monospace;
-          font-size: 0.58rem;
+          font-size: 0.68rem;
           letter-spacing: 0.08em;
           color: var(--gold);
-          opacity: 0.7;
+          opacity: 0.78;
         }
 
         /* CASES WRAP */
@@ -532,7 +532,7 @@ export default function Prova() {
         }
         .prova-kicker {
           font-family: 'DM Mono', monospace;
-          font-size: 0.6rem;
+          font-size: 0.74rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
           color: var(--gold);
@@ -563,11 +563,11 @@ export default function Prova() {
         }
         .prova-sub {
           font-family: 'Inter Tight', sans-serif;
-          font-size: 0.94rem;
-          color: rgba(10,10,10,0.55);
-          max-width: 540px;
+          font-size: 1.05rem;
+          color: rgba(10,10,10,0.6);
+          max-width: 580px;
           margin: 0 auto;
-          line-height: 1.7;
+          line-height: 1.72;
           font-weight: 300;
         }
 
@@ -615,7 +615,7 @@ export default function Prova() {
           padding: 0;
           font-family: 'Fraunces', serif;
           font-style: italic;
-          font-size: 0.9rem;
+          font-size: 1.02rem;
           line-height: 1.5;
           color: var(--ink);
           font-weight: 400;
@@ -639,8 +639,8 @@ export default function Prova() {
           gap: 10px;
         }
         .prova-quote__avatar {
-          width: 28px;
-          height: 28px;
+          width: 32px;
+          height: 32px;
           border-radius: 50%;
           background: rgba(201,169,110,0.10);
           border: 1px solid rgba(201,169,110,0.28);
@@ -648,14 +648,14 @@ export default function Prova() {
           align-items: center;
           justify-content: center;
           font-family: 'DM Mono', monospace;
-          font-size: 0.5rem;
+          font-size: 0.6rem;
           color: var(--gold);
           flex-shrink: 0;
         }
         .prova-quote__name {
           display: block;
           font-family: 'Fraunces', serif;
-          font-size: 0.84rem;
+          font-size: 0.94rem;
           color: var(--ink);
           font-weight: 500;
           line-height: 1.2;
@@ -663,11 +663,11 @@ export default function Prova() {
         .prova-quote__role {
           display: block;
           font-family: 'DM Mono', monospace;
-          font-size: 0.48rem;
+          font-size: 0.6rem;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: rgba(10,10,10,0.42);
-          margin-top: 2px;
+          color: rgba(10,10,10,0.45);
+          margin-top: 3px;
         }
 
         /* BRANDS WALL */
@@ -679,7 +679,7 @@ export default function Prova() {
         }
         .prova-brands__label {
           font-family: 'DM Mono', monospace;
-          font-size: 0.58rem;
+          font-size: 0.7rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
           color: var(--gold);
@@ -714,12 +714,12 @@ export default function Prova() {
 
         .prova-disclaimer {
           font-family: 'DM Mono', monospace;
-          font-size: 0.54rem;
+          font-size: 0.62rem;
           letter-spacing: 0.08em;
-          color: rgba(10,10,10,0.32);
+          color: rgba(10,10,10,0.38);
           text-align: center;
           margin-top: 40px;
-          max-width: 580px;
+          max-width: 600px;
           margin-left: auto;
           margin-right: auto;
           line-height: 1.7;

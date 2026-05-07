@@ -183,7 +183,7 @@ export default function Metodologia() {
         }
         .metod-kicker {
           font-family: 'DM Mono', monospace;
-          font-size: 0.62rem;
+          font-size: 0.74rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
           color: var(--gold);
@@ -214,11 +214,11 @@ export default function Metodologia() {
         }
         .metod-sub {
           font-family: 'Inter Tight', sans-serif;
-          font-size: 0.96rem;
-          color: rgba(255,255,255,0.5);
+          font-size: 1.05rem;
+          color: rgba(255,255,255,0.55);
           line-height: 1.75;
           font-weight: 300;
-          max-width: 540px;
+          max-width: 580px;
           margin: 0 auto;
         }
 
@@ -281,7 +281,7 @@ export default function Metodologia() {
           align-items: center;
           gap: 12px;
           font-family: 'DM Mono', monospace;
-          font-size: 0.58rem;
+          font-size: 0.7rem;
           letter-spacing: 0.28em;
           text-transform: uppercase;
           color: var(--gold);
@@ -305,7 +305,7 @@ export default function Metodologia() {
         .act__promise {
           font-family: 'Fraunces', serif;
           font-style: italic;
-          font-size: clamp(1rem, 1.4vw, 1.18rem);
+          font-size: clamp(1.12rem, 1.55vw, 1.32rem);
           color: var(--gold);
           line-height: 1.4;
           margin-bottom: 18px;
@@ -313,11 +313,11 @@ export default function Metodologia() {
         }
         .act__desc {
           font-family: 'Inter Tight', sans-serif;
-          font-size: 0.92rem;
-          color: rgba(255,255,255,0.55);
+          font-size: 1.02rem;
+          color: rgba(255,255,255,0.6);
           line-height: 1.78;
           font-weight: 300;
-          max-width: 460px;
+          max-width: 480px;
         }
 
         /* BODY */
@@ -328,10 +328,10 @@ export default function Metodologia() {
         }
         .act__small-label {
           font-family: 'DM Mono', monospace;
-          font-size: 0.55rem;
+          font-size: 0.68rem;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.5);
           margin-bottom: 14px;
         }
         .act__list {
@@ -347,9 +347,9 @@ export default function Metodologia() {
           align-items: flex-start;
           gap: 12px;
           font-family: 'Inter Tight', sans-serif;
-          font-size: 0.86rem;
-          color: rgba(255,255,255,0.78);
-          line-height: 1.5;
+          font-size: 0.96rem;
+          color: rgba(255,255,255,0.82);
+          line-height: 1.55;
           font-weight: 400;
         }
         .act__check {
@@ -376,7 +376,7 @@ export default function Metodologia() {
         }
         .act__step-num {
           font-family: 'DM Mono', monospace;
-          font-size: 0.56rem;
+          font-size: 0.68rem;
           letter-spacing: 0.22em;
           color: var(--gold);
           margin-bottom: 10px;
@@ -384,7 +384,7 @@ export default function Metodologia() {
         }
         .act__step-title {
           font-family: 'Fraunces', serif;
-          font-size: 1.02rem;
+          font-size: 1.12rem;
           font-weight: 500;
           color: #FFFFFF;
           margin-bottom: 6px;
@@ -392,9 +392,9 @@ export default function Metodologia() {
         }
         .act__step-desc {
           font-family: 'Inter Tight', sans-serif;
-          font-size: 0.82rem;
-          color: rgba(255,255,255,0.5);
-          line-height: 1.65;
+          font-size: 0.92rem;
+          color: rgba(255,255,255,0.55);
+          line-height: 1.7;
           font-weight: 300;
         }
 

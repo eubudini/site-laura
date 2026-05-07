@@ -115,12 +115,12 @@ export default function Planos() {
                   top: 20,
                   right: 20,
                   fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.58rem",
+                  fontSize: "0.7rem",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
                   color: plan.featured ? "var(--gold)" : "rgba(255,255,255,0.4)",
                   background: plan.featured ? "rgba(201,169,110,0.12)" : "rgba(255,255,255,0.05)",
-                  padding: "4px 12px",
+                  padding: "5px 13px",
                 }}>
                   {plan.badge}
                 </span>
@@ -128,18 +128,18 @@ export default function Planos() {
 
               <p style={{
                 fontFamily: "'DM Mono', monospace",
-                fontSize: "0.62rem",
+                fontSize: "0.74rem",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
                 color: plan.featured ? "var(--gold)" : "rgba(201,169,110,0.6)",
-                marginBottom: 12,
+                marginBottom: 14,
               }}>
                 {plan.tag}
               </p>
 
               <h3 style={{
                 fontFamily: "'Fraunces', serif",
-                fontSize: "1.8rem",
+                fontSize: "2rem",
                 fontWeight: 500,
                 color: plan.featured ? "var(--ink)" : "#FFFFFF",
                 marginBottom: 16,
@@ -151,9 +151,9 @@ export default function Planos() {
 
               <p style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "0.88rem",
-                color: plan.featured ? "rgba(10,10,10,0.55)" : "rgba(255,255,255,0.45)",
-                lineHeight: 1.8,
+                fontSize: "1rem",
+                color: plan.featured ? "rgba(10,10,10,0.6)" : "rgba(255,255,255,0.55)",
+                lineHeight: 1.78,
                 marginBottom: 32,
                 fontWeight: 300,
               }}>
@@ -164,16 +164,16 @@ export default function Planos() {
                 {plan.items.map((item) => (
                   <li key={item} style={{
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "0.85rem",
-                    color: plan.featured ? "rgba(10,10,10,0.65)" : "rgba(255,255,255,0.65)",
-                    padding: "9px 0",
+                    fontSize: "0.96rem",
+                    color: plan.featured ? "rgba(10,10,10,0.7)" : "rgba(255,255,255,0.72)",
+                    padding: "11px 0",
                     borderBottom: plan.featured ? "1px solid rgba(10,10,10,0.07)" : "1px solid rgba(255,255,255,0.06)",
                     display: "flex",
                     alignItems: "center",
                     gap: 12,
-                    fontWeight: 300,
+                    fontWeight: 400,
                   }}>
-                    <span style={{ color: "var(--gold)", fontSize: "0.7rem", flexShrink: 0 }}>✓</span>
+                    <span style={{ color: "var(--gold)", fontSize: "0.85rem", flexShrink: 0 }}>✓</span>
                     {item}
                   </li>
                 ))}
@@ -183,7 +183,7 @@ export default function Planos() {
                 href="#contato"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "0.78rem",
+                  fontSize: "0.9rem",
                   letterSpacing: "0.12em",
                   fontWeight: 500,
                   textTransform: "uppercase",
@@ -217,8 +217,8 @@ export default function Planos() {
 
         <p style={{
           fontFamily: "'Inter Tight', sans-serif",
-          fontSize: "0.85rem",
-          color: "rgba(255,255,255,0.3)",
+          fontSize: "0.96rem",
+          color: "rgba(255,255,255,0.4)",
           textAlign: "center",
           marginBottom: 32,
           fontWeight: 300,
@@ -233,7 +233,7 @@ export default function Planos() {
             rel="noopener noreferrer"
             style={{
               fontFamily: "'Inter Tight', sans-serif",
-              fontSize: "0.78rem",
+              fontSize: "0.9rem",
               letterSpacing: "0.12em",
               fontWeight: 500,
               textTransform: "uppercase",

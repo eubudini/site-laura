@@ -36,7 +36,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 body {
@@ -44,7 +44,7 @@ body {
   font-weight: 400;
   color: var(--ink);
   background-color: var(--parchment);
-  line-height: 1.7;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -98,12 +98,12 @@ a, button {
 ::-webkit-scrollbar-track { background: var(--obsidian); }
 ::-webkit-scrollbar-thumb { background: var(--gold-mid); border-radius: 2px; }
 
-/* ── Mobile base ──────────────────────────────────── */
+/* ── Mobile base — atinge WCAG mínimo 16px ───────────── */
 @media (max-width: 768px) {
-  html { font-size: 15px; }
+  html { font-size: 16.5px; }
 }
 @media (max-width: 480px) {
-  html { font-size: 14px; }
+  html { font-size: 16px; }
 }
 
 /* ── Seções: garantir overflow-x seguro ─────────────── */

@@ -205,7 +205,7 @@ export default function Header() {
           align-items: center;
           gap: 10px;
           font-family: 'Fraunces', serif;
-          font-size: 1.05rem;
+          font-size: 1.18rem;
           font-weight: 400;
           line-height: 1;
           letter-spacing: 0.005em;
@@ -240,8 +240,8 @@ export default function Header() {
         }
         .header-link {
           font-family: 'Inter Tight', sans-serif;
-          font-size: 0.72rem;
-          letter-spacing: 0.18em;
+          font-size: 0.82rem;
+          letter-spacing: 0.16em;
           font-weight: 400;
           line-height: 1;
           text-decoration: none;
@@ -260,11 +260,11 @@ export default function Header() {
           display: inline-flex;
           align-items: center;
           font-family: 'Inter Tight', sans-serif;
-          font-size: 0.7rem;
-          letter-spacing: 0.18em;
+          font-size: 0.8rem;
+          letter-spacing: 0.16em;
           font-weight: 500;
           line-height: 1;
-          padding: 11px 22px;
+          padding: 12px 24px;
           border-radius: 1px;
           text-decoration: none;
           text-transform: uppercase;

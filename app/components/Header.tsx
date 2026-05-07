@@ -207,6 +207,7 @@ export default function Header() {
           font-family: 'Fraunces', serif;
           font-size: 1.05rem;
           font-weight: 400;
+          line-height: 1;
           letter-spacing: 0.005em;
           text-decoration: none;
           transition: color 0.3s ease;
@@ -218,9 +219,13 @@ export default function Header() {
           height: 6px;
           border-radius: 50%;
           opacity: 0.85;
+          transform: translateY(1px);
         }
         .header-logo-text {
           font-style: italic;
+          display: inline-block;
+          line-height: 1;
+          transform: translateY(-2px);
         }
         .header-nav {
           position: absolute;
@@ -230,6 +235,7 @@ export default function Header() {
           display: flex;
           align-items: center;
           gap: 36px;
+          line-height: 1;
           z-index: 1;
         }
         .header-link {
@@ -237,20 +243,27 @@ export default function Header() {
           font-size: 0.72rem;
           letter-spacing: 0.18em;
           font-weight: 400;
+          line-height: 1;
           text-decoration: none;
           text-transform: uppercase;
           transition: color 0.3s ease;
           white-space: nowrap;
+          display: inline-flex;
+          align-items: center;
         }
         .header-cta-wrap {
           z-index: 2;
+          display: inline-flex;
+          align-items: center;
         }
         .header-cta {
-          display: inline-block;
+          display: inline-flex;
+          align-items: center;
           font-family: 'Inter Tight', sans-serif;
           font-size: 0.7rem;
           letter-spacing: 0.18em;
           font-weight: 500;
+          line-height: 1;
           padding: 11px 22px;
           border-radius: 1px;
           text-decoration: none;

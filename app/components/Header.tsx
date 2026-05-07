@@ -23,10 +23,13 @@ export default function Header() {
 
   const handleLinkClick = () => setMenuOpen(false);
 
+  const linkBase = scrolled ? "rgba(255,255,255,0.7)" : "rgba(10,10,10,0.7)";
+  const linkHover = scrolled ? "#FFFFFF" : "#0A0A0A";
+
   return (
     <>
       <motion.header
-        initial={{ y: -20, opacity: 0 }}
+        initial={{ y: -16, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }}
         style={{
@@ -35,95 +38,49 @@ export default function Header() {
           left: 0,
           width: "100%",
           zIndex: 1000,
-          background: scrolled
-            ? "rgba(10,10,10,0.92)"
-            : "transparent",
-          backdropFilter: scrolled ? "blur(16px)" : "none",
+          background: scrolled ? "rgba(10,10,10,0.78)" : "transparent",
+          backdropFilter: scrolled ? "blur(20px) saturate(140%)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(20px) saturate(140%)" : "none",
           borderBottom: scrolled
-            ? "1px solid rgba(201,169,110,0.12)"
+            ? "1px solid rgba(201,169,110,0.10)"
             : "1px solid transparent",
-          transition: "all 0.4s ease",
+          transition: "background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease",
         }}
       >
-        <div
-          style={{
-            maxWidth: 1280,
-            margin: "0 auto",
-            padding: "0 20px",
-            height: 68,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-          className="header-inner"
-        >
-          {/* Logo */}
-          <a
-            href="#hero"
-            style={{
-              fontFamily: "'Fraunces', serif",
-              fontSize: "1.2rem",
-              fontWeight: 500,
-              color: scrolled ? "#FFFFFF" : "#0A0A0A",
-              letterSpacing: "0.02em",
-              textDecoration: "none",
-              transition: "color 0.3s ease",
-            }}
-          >
-            Laura Camponogara
+        <div className="container-x header-inner">
+          {/* Logo (esquerda) */}
+          <a href="#hero" className="header-logo" style={{ color: scrolled ? "#FFFFFF" : "#0A0A0A" }}>
+            <span className="header-logo-mark" style={{ background: "var(--gold)" }} />
+            <span className="header-logo-text">Laura Camponogara</span>
           </a>
 
-          {/* Desktop Nav */}
-          <nav
-            className="header-nav"
-          >
+          {/* Nav central */}
+          <nav className="header-nav">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "0.8rem",
-                  letterSpacing: "0.08em",
-                  fontWeight: 400,
-                  color: scrolled
-                    ? "rgba(255,255,255,0.65)"
-                    : "rgba(10,10,10,0.65)",
-                  textDecoration: "none",
-                  transition: "color 0.3s ease",
-                  textTransform: "uppercase",
-                }}
-                onMouseEnter={(e) =>
-                  ((e.target as HTMLElement).style.color = scrolled
-                    ? "#C9A96E"
-                    : "#0A0A0A")
-                }
-                onMouseLeave={(e) =>
-                  ((e.target as HTMLElement).style.color = scrolled
-                    ? "rgba(255,255,255,0.65)"
-                    : "rgba(10,10,10,0.65)")
-                }
+                className="header-link"
+                style={{ color: linkBase }}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = linkHover)}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = linkBase)}
               >
                 {l.label}
               </a>
             ))}
+          </nav>
+
+          {/* CTA direita */}
+          <div className="header-cta-wrap">
             <a
               href="#contato"
+              className="header-cta"
               style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "0.78rem",
-                letterSpacing: "0.1em",
-                fontWeight: 500,
-                color: "#0A0A0A",
+                color: scrolled ? "#0A0A0A" : "#0A0A0A",
                 background: "#C9A96E",
-                padding: "10px 24px",
-                borderRadius: "2px",
-                textDecoration: "none",
-                textTransform: "uppercase",
-                transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "#B8966A";
+                (e.currentTarget as HTMLElement).style.background = "#B8956A";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.background = "#C9A96E";
@@ -131,22 +88,14 @@ export default function Header() {
             >
               Contato
             </a>
-          </nav>
+          </div>
 
           {/* Mobile Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: "10px 8px",
-              flexDirection: "column",
-              gap: 5,
-              minHeight: "auto",
-            }}
             className="header-hamburger"
+            style={{ background: "none", border: "none", cursor: "pointer", padding: "10px 8px", flexDirection: "column", gap: 5, minHeight: "auto" }}
           >
             {[0, 1, 2].map((i) => (
               <motion.span
@@ -244,16 +193,79 @@ export default function Header() {
       </AnimatePresence>
 
       <style>{`
+        .header-inner {
+          height: 76px;
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+          align-items: center;
+          gap: 32px;
+        }
+        .header-logo {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          justify-self: start;
+          font-family: 'Fraunces', serif;
+          font-size: 1.05rem;
+          font-weight: 400;
+          letter-spacing: 0.005em;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        .header-logo-mark {
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          opacity: 0.85;
+        }
+        .header-logo-text {
+          font-style: italic;
+        }
         .header-nav {
           display: flex;
           align-items: center;
           gap: 36px;
+          justify-self: center;
+        }
+        .header-link {
+          font-family: 'Inter Tight', sans-serif;
+          font-size: 0.72rem;
+          letter-spacing: 0.18em;
+          font-weight: 400;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: color 0.3s ease;
+        }
+        .header-cta-wrap {
+          justify-self: end;
+        }
+        .header-cta {
+          display: inline-block;
+          font-family: 'Inter Tight', sans-serif;
+          font-size: 0.7rem;
+          letter-spacing: 0.18em;
+          font-weight: 500;
+          padding: 11px 22px;
+          border-radius: 1px;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: background 0.3s ease, transform 0.3s ease;
         }
         .header-hamburger {
           display: none;
+          justify-self: end;
         }
-        @media (max-width: 767px) {
-          .header-nav { display: none !important; }
+        @media (max-width: 1023px) {
+          .header-nav { gap: 24px; }
+          .header-link { font-size: 0.68rem; letter-spacing: 0.14em; }
+        }
+        @media (max-width: 860px) {
+          .header-inner {
+            grid-template-columns: 1fr auto;
+            height: 68px;
+          }
+          .header-nav, .header-cta-wrap { display: none !important; }
           .header-hamburger { display: flex !important; }
         }
       `}</style>

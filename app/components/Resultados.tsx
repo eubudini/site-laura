@@ -126,28 +126,28 @@ function InstagramMockup({
       style={{
         position: "relative",
         width: "100%",
-        maxWidth: 240,
+        maxWidth: 168,
         margin: "0 auto",
         aspectRatio: "9/19",
         background: "#0A0A0A",
-        borderRadius: 28,
-        padding: 6,
+        borderRadius: 22,
+        padding: 5,
         boxShadow: isAfter
-          ? "0 30px 80px rgba(184,149,106,0.18), 0 8px 24px rgba(0,0,0,0.18)"
-          : "0 12px 36px rgba(0,0,0,0.10)",
+          ? "0 24px 60px rgba(184,149,106,0.22), 0 6px 20px rgba(0,0,0,0.18)"
+          : "0 10px 28px rgba(0,0,0,0.10)",
       }}
     >
       {/* Notch */}
       <div
         style={{
           position: "absolute",
-          top: 6,
+          top: 5,
           left: "50%",
           transform: "translateX(-50%)",
-          width: 60,
-          height: 14,
+          width: 44,
+          height: 11,
           background: "#0A0A0A",
-          borderRadius: "0 0 10px 10px",
+          borderRadius: "0 0 8px 8px",
           zIndex: 4,
         }}
       />
@@ -157,7 +157,7 @@ function InstagramMockup({
           width: "100%",
           height: "100%",
           background: "#FFFFFF",
-          borderRadius: 22,
+          borderRadius: 18,
           overflow: "hidden",
           position: "relative",
           filter: muted ? "saturate(0.55) contrast(0.92)" : "none",
@@ -169,16 +169,16 @@ function InstagramMockup({
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            padding: "8px 14px 4px",
+            padding: "6px 10px 3px",
             fontFamily: "'Inter Tight', sans-serif",
-            fontSize: "0.42rem",
+            fontSize: "0.36rem",
             fontWeight: 600,
             color: "#0A0A0A",
           }}
         >
           <span>9:41</span>
-          <span style={{ display: "flex", gap: 3, alignItems: "center" }}>
-            <span style={{ width: 12, height: 6, background: "#0A0A0A", borderRadius: 1.5 }} />
+          <span style={{ display: "flex", gap: 2, alignItems: "center" }}>
+            <span style={{ width: 9, height: 4, background: "#0A0A0A", borderRadius: 1 }} />
           </span>
         </div>
 
@@ -188,41 +188,41 @@ function InstagramMockup({
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            padding: "4px 14px 8px",
+            padding: "3px 10px 6px",
             borderBottom: "0.5px solid rgba(0,0,0,0.06)",
           }}
         >
           <span
             style={{
               fontFamily: "'Inter Tight', sans-serif",
-              fontSize: "0.55rem",
+              fontSize: "0.42rem",
               fontWeight: 600,
               color: "#0A0A0A",
               display: "flex",
               alignItems: "center",
-              gap: 3,
+              gap: 2,
             }}
           >
             {c.handle}
             {verified && (
-              <svg width="8" height="8" viewBox="0 0 24 24" fill="#3897f0">
+              <svg width="6" height="6" viewBox="0 0 24 24" fill="#3897f0">
                 <path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12zm-13 5l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
               </svg>
             )}
           </span>
-          <span style={{ fontSize: "0.55rem", color: "#0A0A0A" }}>···</span>
+          <span style={{ fontSize: "0.42rem", color: "#0A0A0A" }}>···</span>
         </div>
 
         {/* Profile area */}
-        <div style={{ padding: "10px 14px 0" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        <div style={{ padding: "7px 10px 0" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
             {/* Avatar */}
             <div
               style={{
-                width: 42,
-                height: 42,
+                width: 30,
+                height: 30,
                 borderRadius: "50%",
-                padding: 1.5,
+                padding: 1,
                 background: isAfter
                   ? "linear-gradient(135deg, #f5e6c8, #c9a96e, #8a7146)"
                   : "rgba(0,0,0,0.12)",
@@ -241,10 +241,10 @@ function InstagramMockup({
                   alignItems: "center",
                   justifyContent: "center",
                   fontFamily: "'Fraunces', serif",
-                  fontSize: "0.65rem",
+                  fontSize: "0.5rem",
                   fontWeight: 500,
                   color: isAfter ? "#f5e6c8" : "rgba(255,255,255,0.5)",
-                  border: "1.5px solid #FFFFFF",
+                  border: "1px solid #FFFFFF",
                 }}
               >
                 {c.initials}
@@ -252,7 +252,7 @@ function InstagramMockup({
             </div>
 
             {/* Stats */}
-            <div style={{ display: "flex", gap: 12, flex: 1, justifyContent: "space-around" }}>
+            <div style={{ display: "flex", gap: 6, flex: 1, justifyContent: "space-around" }}>
               {[
                 { v: c.postsCount, l: "posts" },
                 { v: followers, l: "seguidores" },
@@ -262,7 +262,7 @@ function InstagramMockup({
                   <p
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "0.55rem",
+                      fontSize: "0.42rem",
                       fontWeight: 700,
                       color: "#0A0A0A",
                       lineHeight: 1.1,
@@ -273,7 +273,7 @@ function InstagramMockup({
                   <p
                     style={{
                       fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "0.42rem",
+                      fontSize: "0.32rem",
                       color: "rgba(0,0,0,0.7)",
                       lineHeight: 1.2,
                     }}
@@ -286,11 +286,11 @@ function InstagramMockup({
           </div>
 
           {/* Name + bio */}
-          <div style={{ marginTop: 8 }}>
+          <div style={{ marginTop: 6 }}>
             <p
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "0.5rem",
+                fontSize: "0.38rem",
                 fontWeight: 600,
                 color: "#0A0A0A",
               }}
@@ -300,7 +300,7 @@ function InstagramMockup({
             <p
               style={{
                 fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "0.46rem",
+                fontSize: "0.34rem",
                 color: "rgba(0,0,0,0.7)",
                 lineHeight: 1.4,
                 marginTop: 1,
@@ -311,18 +311,18 @@ function InstagramMockup({
           </div>
 
           {/* Buttons */}
-          <div style={{ display: "flex", gap: 4, marginTop: 10 }}>
+          <div style={{ display: "flex", gap: 3, marginTop: 7 }}>
             <div
               style={{
                 flex: 1,
                 background: isAfter ? "#0A0A0A" : "rgba(0,0,0,0.06)",
                 color: isAfter ? "#FFFFFF" : "rgba(0,0,0,0.4)",
                 fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "0.45rem",
+                fontSize: "0.34rem",
                 fontWeight: 600,
-                padding: "4px 0",
+                padding: "3px 0",
                 textAlign: "center",
-                borderRadius: 4,
+                borderRadius: 3,
               }}
             >
               Seguir
@@ -333,11 +333,11 @@ function InstagramMockup({
                 background: "rgba(0,0,0,0.04)",
                 color: "rgba(0,0,0,0.6)",
                 fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "0.45rem",
+                fontSize: "0.34rem",
                 fontWeight: 600,
-                padding: "4px 0",
+                padding: "3px 0",
                 textAlign: "center",
-                borderRadius: 4,
+                borderRadius: 3,
               }}
             >
               Mensagem
@@ -345,13 +345,13 @@ function InstagramMockup({
           </div>
 
           {/* Highlights */}
-          <div style={{ display: "flex", gap: 10, marginTop: 12, padding: "0 2px" }}>
+          <div style={{ display: "flex", gap: 7, marginTop: 9, padding: "0 1px" }}>
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
+              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
                 <div
                   style={{
-                    width: 28,
-                    height: 28,
+                    width: 20,
+                    height: 20,
                     borderRadius: "50%",
                     border: "1px solid rgba(0,0,0,0.15)",
                     background: isAfter
@@ -362,7 +362,7 @@ function InstagramMockup({
                 <span
                   style={{
                     fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "0.36rem",
+                    fontSize: "0.28rem",
                     color: "rgba(0,0,0,0.5)",
                   }}
                 >
@@ -381,13 +381,13 @@ function InstagramMockup({
             alignItems: "center",
             borderTop: "0.5px solid rgba(0,0,0,0.08)",
             borderBottom: "0.5px solid rgba(0,0,0,0.08)",
-            marginTop: 10,
-            padding: "5px 0",
+            marginTop: 8,
+            padding: "4px 0",
           }}
         >
-          <span style={{ width: 12, height: 1, background: "#0A0A0A" }} />
-          <span style={{ width: 12, height: 1, background: "rgba(0,0,0,0.2)" }} />
-          <span style={{ width: 12, height: 1, background: "rgba(0,0,0,0.2)" }} />
+          <span style={{ width: 10, height: 1, background: "#0A0A0A" }} />
+          <span style={{ width: 10, height: 1, background: "rgba(0,0,0,0.2)" }} />
+          <span style={{ width: 10, height: 1, background: "rgba(0,0,0,0.2)" }} />
         </div>
 
         {/* Feed grid */}
@@ -395,8 +395,8 @@ function InstagramMockup({
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr 1fr",
-            gap: 1.5,
-            padding: "1.5px",
+            gap: 1,
+            padding: "1px",
           }}
         >
           {c.feedPalette.map((bg, i) => (
@@ -428,10 +428,10 @@ function InstagramMockup({
                 <div
                   style={{
                     position: "absolute",
-                    top: 3,
-                    right: 3,
-                    width: 7,
-                    height: 7,
+                    top: 2,
+                    right: 2,
+                    width: 6,
+                    height: 6,
                   }}
                 >
                   <svg viewBox="0 0 24 24" fill="white" style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }}>
@@ -470,7 +470,7 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
       style={{
         background: "#FFFFFF",
         border: "1px solid rgba(10,10,10,0.06)",
-        padding: "48px 36px 40px",
+        padding: "44px 28px 36px",
         position: "relative",
       }}
       className="resultado-card"
@@ -533,21 +533,21 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
         style={{
           display: "grid",
           gridTemplateColumns: "1fr auto 1fr",
-          gap: 16,
+          gap: 10,
           alignItems: "center",
-          marginBottom: 36,
+          marginBottom: 32,
         }}
         className="mockups-row"
       >
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
           <span
             style={{
               fontFamily: "'DM Mono', monospace",
-              fontSize: "0.52rem",
+              fontSize: "0.5rem",
               letterSpacing: "0.22em",
               textTransform: "uppercase",
               color: "rgba(10,10,10,0.4)",
-              padding: "5px 14px",
+              padding: "4px 12px",
               border: "1px solid rgba(10,10,10,0.12)",
             }}
           >
@@ -560,23 +560,23 @@ function ResultadoCard({ c, idx }: { c: Case; idx: number }) {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={revealed ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}
+          style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, marginTop: 22 }}
           className="arrow-mid"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5">
             <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </motion.div>
 
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
           <span
             style={{
               fontFamily: "'DM Mono', monospace",
-              fontSize: "0.52rem",
+              fontSize: "0.5rem",
               letterSpacing: "0.22em",
               textTransform: "uppercase",
               color: "var(--gold)",
-              padding: "5px 14px",
+              padding: "4px 12px",
               border: "1px solid var(--gold-mid)",
               background: "var(--gold-light)",
             }}
@@ -789,12 +789,20 @@ export default function Resultados() {
           .results-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 720px) {
-          .results-grid { grid-template-columns: 1fr !important; }
-          #resultados { padding: 84px 0 64px !important; }
-          #resultados > div { padding: 0 18px !important; }
+          .results-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+          #resultados { padding: 72px 0 56px !important; }
           .resultado-card { padding: 32px 22px 28px !important; }
-          .mockups-row { gap: 8px !important; }
-          .arrow-mid { transform: scale(0.8) !important; }
+        }
+        /* Mockups antes/depois — empilhar quando o card for estreito */
+        @media (max-width: 560px) {
+          .mockups-row {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+          .arrow-mid {
+            transform: rotate(90deg) !important;
+            justify-self: center;
+          }
         }
         @media (max-width: 480px) {
           .resultado-card { padding: 28px 18px 24px !important; }

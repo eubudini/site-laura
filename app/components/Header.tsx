@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CTA } from "./_base";
 
 const links = [
   { label: "Manifesto", href: "#sobre" },
@@ -11,9 +12,13 @@ const links = [
   { label: "Investimento", href: "#planos" },
 ];
 
+const MENU_ID = "primary-mobile-menu";
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -21,10 +26,46 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleLinkClick = () => setMenuOpen(false);
+  // Esc fecha + focus trap simples + retorna foco ao toggle
+  useEffect(() => {
+    if (!menuOpen) return;
+    const previouslyFocused = toggleRef.current;
 
-  const linkBase = scrolled ? "rgba(255,255,255,0.7)" : "rgba(10,10,10,0.7)";
-  const linkHover = scrolled ? "#FFFFFF" : "#0A0A0A";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        return;
+      }
+      if (e.key === "Tab" && dialogRef.current) {
+        const focusables = dialogRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled])'
+        );
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", onKey);
+    // foca primeiro link ao abrir
+    const first = dialogRef.current?.querySelector<HTMLElement>("a[href]");
+    first?.focus();
+
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      // ao fechar, devolve foco ao toggle (snapshot do ref capturado no efeito)
+      previouslyFocused?.focus();
+    };
+  }, [menuOpen]);
+
+  const handleLinkClick = () => setMenuOpen(false);
 
   return (
     <>
@@ -32,39 +73,19 @@ export default function Header() {
         initial={{ y: -16, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          zIndex: 1000,
-          background: scrolled ? "rgba(10,10,10,0.78)" : "transparent",
-          backdropFilter: scrolled ? "blur(20px) saturate(140%)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(20px) saturate(140%)" : "none",
-          borderBottom: scrolled
-            ? "1px solid rgba(201,169,110,0.10)"
-            : "1px solid transparent",
-          transition: "background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease",
-        }}
+        className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}
       >
         <div className="container-x header-inner">
           {/* Logo (esquerda) */}
-          <a href="#hero" className="header-logo" style={{ color: scrolled ? "#FFFFFF" : "#0A0A0A" }}>
-            <span className="header-logo-mark" style={{ background: "var(--gold)" }} />
+          <a href="#hero" className="header-logo">
+            <span className="header-logo-mark" aria-hidden />
             <span className="header-logo-text">Laura Camponogara</span>
           </a>
 
           {/* Nav central */}
-          <nav className="header-nav">
+          <nav className="header-nav" aria-label="Principal">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="header-link"
-                style={{ color: linkBase }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = linkHover)}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = linkBase)}
-              >
+              <a key={l.href} href={l.href} className="header-link">
                 {l.label}
               </a>
             ))}
@@ -72,30 +93,19 @@ export default function Header() {
 
           {/* CTA direita */}
           <div className="header-cta-wrap">
-            <a
-              href="#contato"
-              className="header-cta"
-              style={{
-                color: scrolled ? "#0A0A0A" : "#0A0A0A",
-                background: "#C9A96E",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "#B8956A";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "#C9A96E";
-              }}
-            >
+            <CTA href="#contato" variant="gold" size="sm">
               Contato
-            </a>
+            </CTA>
           </div>
 
           {/* Mobile Toggle */}
           <button
+            ref={toggleRef}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+            aria-controls={MENU_ID}
             className="header-hamburger"
-            style={{ background: "none", border: "none", cursor: "pointer", padding: "10px 8px", flexDirection: "column", gap: 5, minHeight: "auto" }}
           >
             {[0, 1, 2].map((i) => (
               <motion.span
@@ -110,41 +120,28 @@ export default function Header() {
                     : { rotate: 0, y: 0, opacity: 1 }
                 }
                 transition={{ duration: 0.25 }}
-                style={{
-                  display: "block",
-                  width: 22,
-                  height: 1.5,
-                  background: scrolled ? "#FFFFFF" : "#0A0A0A",
-                }}
+                className="header-hamburger__bar"
+                aria-hidden
               />
             ))}
           </button>
         </div>
       </motion.header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (dialog) */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            ref={dialogRef}
+            id={MENU_ID}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu principal"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }}
-            style={{
-              position: "fixed",
-              top: 0,
-              right: 0,
-              width: "72vw",
-              maxWidth: 320,
-              height: "100vh",
-              background: "#0C0C0C",
-              zIndex: 1001,
-              padding: "96px 40px 40px",
-              display: "flex",
-              flexDirection: "column",
-              gap: 28,
-              borderLeft: "1px solid rgba(201,169,110,0.15)",
-            }}
+            className="header-mobile-dialog"
           >
             {links.map((l, i) => (
               <motion.a
@@ -154,45 +151,54 @@ export default function Header() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.06 }}
-                style={{
-                  fontFamily: "'Fraunces', serif",
-                  fontSize: "1.3rem",
-                  color: "rgba(255,255,255,0.8)",
-                  textDecoration: "none",
-                  borderBottom: "1px solid rgba(255,255,255,0.06)",
-                  paddingBottom: 16,
-                }}
+                className="header-mobile-link"
               >
                 {l.label}
               </motion.a>
             ))}
-            <motion.a
+            <a
               href="#contato"
               onClick={handleLinkClick}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.36 }}
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "0.78rem",
-                letterSpacing: "0.12em",
-                fontWeight: 500,
-                color: "#0A0A0A",
-                background: "#C9A96E",
-                padding: "14px 24px",
-                textAlign: "center",
-                textDecoration: "none",
-                textTransform: "uppercase",
-                marginTop: 12,
-              }}
+              className="header-mobile-cta"
             >
               Falar com a Laura
-            </motion.a>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
 
+      {/* Overlay mobile menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setMenuOpen(false)}
+            className="header-overlay"
+            aria-hidden
+          />
+        )}
+      </AnimatePresence>
+
       <style>{`
+        .site-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          background: transparent;
+          border-bottom: 1px solid transparent;
+          transition: background var(--duration-base) ease, border-color var(--duration-base) ease, backdrop-filter var(--duration-base) ease;
+        }
+        .site-header--scrolled {
+          background: rgba(10,10,10,0.78);
+          backdrop-filter: blur(20px) saturate(140%);
+          -webkit-backdrop-filter: blur(20px) saturate(140%);
+          border-bottom-color: rgba(201,169,110,0.10);
+        }
+
         .header-inner {
           position: relative;
           height: 76px;
@@ -204,20 +210,23 @@ export default function Header() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          font-family: 'Fraunces', serif;
+          font-family: var(--font-fraunces), 'Fraunces', serif;
           font-size: 1.18rem;
           font-weight: 400;
           line-height: 1;
           letter-spacing: 0.005em;
           text-decoration: none;
-          transition: color 0.3s ease;
+          color: var(--ink);
+          transition: color var(--duration-base) ease;
           z-index: 2;
         }
+        .site-header--scrolled .header-logo { color: #FFFFFF; }
         .header-logo-mark {
           display: inline-block;
           width: 6px;
           height: 6px;
           border-radius: 50%;
+          background: var(--gold);
           opacity: 0.85;
           transform: translateY(1px);
         }
@@ -227,6 +236,7 @@ export default function Header() {
           line-height: 1;
           transform: translateY(-2px);
         }
+
         .header-nav {
           position: absolute;
           left: 50%;
@@ -239,40 +249,50 @@ export default function Header() {
           z-index: 1;
         }
         .header-link {
-          font-family: 'Inter Tight', sans-serif;
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
           font-size: 0.82rem;
           letter-spacing: 0.16em;
           font-weight: 400;
           line-height: 1;
           text-decoration: none;
           text-transform: uppercase;
-          transition: color 0.3s ease;
+          color: rgba(10,10,10,0.7);
+          transition: color var(--duration-base) ease;
           white-space: nowrap;
           display: inline-flex;
           align-items: center;
         }
+        .header-link:hover { color: var(--ink); }
+        .site-header--scrolled .header-link { color: rgba(255,255,255,0.7); }
+        .site-header--scrolled .header-link:hover { color: #FFFFFF; }
+
         .header-cta-wrap {
           z-index: 2;
           display: inline-flex;
           align-items: center;
         }
-        .header-cta {
-          display: inline-flex;
-          align-items: center;
-          font-family: 'Inter Tight', sans-serif;
-          font-size: 0.8rem;
-          letter-spacing: 0.16em;
-          font-weight: 500;
-          line-height: 1;
-          padding: 12px 24px;
-          border-radius: 1px;
-          text-decoration: none;
-          text-transform: uppercase;
-          transition: background 0.3s ease, transform 0.3s ease;
-        }
+
         .header-hamburger {
           display: none;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 10px 8px;
+          flex-direction: column;
+          gap: 5px;
+          min-height: 44px;
+          min-width: 44px;
+          align-items: center;
+          justify-content: center;
         }
+        .header-hamburger__bar {
+          display: block;
+          width: 22px;
+          height: 1.5px;
+          background: var(--ink);
+        }
+        .site-header--scrolled .header-hamburger__bar { background: #FFFFFF; }
+
         @media (max-width: 1100px) {
           .header-nav { gap: 26px; }
           .header-link { font-size: 0.68rem; letter-spacing: 0.14em; }
@@ -282,25 +302,54 @@ export default function Header() {
           .header-nav, .header-cta-wrap { display: none !important; }
           .header-hamburger { display: flex !important; }
         }
-      `}</style>
 
-      {/* Overlay mobile menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setMenuOpen(false)}
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: "rgba(0,0,0,0.5)",
-              zIndex: 1000,
-            }}
-          />
-        )}
-      </AnimatePresence>
+        /* Mobile dialog */
+        .header-mobile-dialog {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 72vw;
+          max-width: 320px;
+          height: 100vh;
+          background: #0C0C0C;
+          z-index: 1001;
+          padding: 96px 40px 40px;
+          display: flex;
+          flex-direction: column;
+          gap: 28px;
+          border-left: 1px solid rgba(201,169,110,0.15);
+        }
+        .header-mobile-link {
+          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-size: 1.3rem;
+          color: rgba(255,255,255,0.85);
+          text-decoration: none;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+          padding-bottom: 16px;
+        }
+        .header-mobile-cta {
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-size: 0.78rem;
+          letter-spacing: 0.12em;
+          font-weight: 500;
+          color: var(--ink);
+          background: var(--gold-soft);
+          padding: 14px 24px;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          margin-top: 12px;
+          transition: background var(--duration-base) var(--ease-editorial);
+        }
+        .header-mobile-cta:hover { background: var(--gold); }
+
+        .header-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.5);
+          z-index: 1000;
+        }
+      `}</style>
     </>
   );
 }

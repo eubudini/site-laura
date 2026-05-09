@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap');
-
 @import "tailwindcss";
 
+/* Fonts: carregadas via next/font/google em app/layout.tsx (zero render-blocking).
+   Os literais 'Fraunces' / 'Inter Tight' / 'DM Mono' nos componentes resolvem
+   pelas CSS variables --font-fraunces / --font-inter-tight / --font-dm-mono
+   declaradas no <html> pelo next/font, mas mantemos o nome da família no
+   font-stack como fallback explicito em caso de hidratacao tardia. */
+
 :root {
+  /* ─── Color ───────────────────────────────────────── */
   --ink: #0A0A0A;
   --ink-80: rgba(10,10,10,0.8);
   --ink-50: rgba(10,10,10,0.5);
@@ -12,19 +17,79 @@
   --parchment-dark: #EDE8E1;
   --gold: #B8956A;
   --gold-soft: #C9A96E;
+  --gold-text: #8E6E42;        /* WCAG AA-safe sobre parchment p/ texto pequeno */
   --gold-light: rgba(184,149,106,0.10);
   --gold-mid: rgba(184,149,106,0.32);
   --obsidian: #0A0A0A;
   --obsidian-2: #131313;
   --obsidian-3: #1C1C1C;
+
+  /* ─── Spacing scale (Sprint 2 - DS fundacao) ──────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ─── Breakpoints (4 canonicos, nunca novos) ──────── */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* ─── Type scale ──────────────────────────────────── */
+  --text-display:      clamp(2.4rem, 6vw, 5rem);    /* H1 hero */
+  --text-h2:           clamp(2rem, 3.6vw, 3rem);
+  --text-h3:           clamp(1.4rem, 2.4vw, 2rem);
+  --text-lg:           1.125rem;
+  --text-body:         1rem;
+  --text-sm:           0.875rem;
+  --text-mono-kicker:  0.74rem;
+  --text-caption:      0.65rem;
+
+  /* ─── Motion tokens ───────────────────────────────── */
+  --duration-fast: 0.2s;
+  --duration-base: 0.35s;
+  --duration-slow: 0.7s;
+  --ease-editorial: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-quart: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
   --color-background: var(--parchment);
   --color-foreground: var(--ink);
-  --font-sans: 'Inter Tight', sans-serif;
-  --font-serif: 'Fraunces', serif;
-  --font-mono: 'DM Mono', monospace;
+  --font-sans: var(--font-inter-tight), 'Inter Tight', sans-serif;
+  --font-serif: var(--font-fraunces), 'Fraunces', serif;
+  --font-mono: var(--font-dm-mono), 'DM Mono', monospace;
+
+  /* Tailwind v4: registrar breakpoints custom */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Tailwind v4: spacing utilities (p-1 = 4px, p-2 = 8px, ...) */
+  --spacing-1:  4px;
+  --spacing-2:  8px;
+  --spacing-3:  12px;
+  --spacing-4:  16px;
+  --spacing-5:  20px;
+  --spacing-6:  24px;
+  --spacing-8:  32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
 }
 
 *, *::before, *::after {
@@ -40,7 +105,7 @@ html {
 }
 
 body {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
   font-weight: 400;
   color: var(--ink);
   background-color: var(--parchment);
@@ -51,14 +116,14 @@ body {
   font-feature-settings: "ss01", "cv11";
 }
 
-/* ── Fraunces — fine optical-size tuning para títulos ── */
+/* ── Fraunces: fine optical-size tuning para títulos ── */
 .serif-display {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-fraunces), 'Fraunces', serif;
   font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
   letter-spacing: -0.02em;
 }
 
-/* ── Container utility — fonte única de margens ─────── */
+/* ── Container utility: fonte única de margens ─────── */
 .container-x {
   width: 100%;
   max-width: 1280px;
@@ -98,7 +163,7 @@ a, button {
 ::-webkit-scrollbar-track { background: var(--obsidian); }
 ::-webkit-scrollbar-thumb { background: var(--gold-mid); border-radius: 2px; }
 
-/* ── Mobile base — atinge WCAG mínimo 16px ───────────── */
+/* ── Mobile base: atinge WCAG mínimo 16px ───────────── */
 @media (max-width: 768px) {
   html { font-size: 16.5px; }
 }
@@ -109,4 +174,42 @@ a, button {
 /* ── Seções: garantir overflow-x seguro ─────────────── */
 section {
   overflow-x: hidden;
+}
+
+/* ── Skip-to-content (a11y) ───────────────────────── */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 8px;
+  background: var(--ink);
+  color: #FFFFFF;
+  padding: 10px 16px;
+  z-index: 9999;
+  font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-to-content:focus {
+  top: 8px;
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ── Focus-visible global ─────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* ── Reduced motion ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

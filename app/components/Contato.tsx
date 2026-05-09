@@ -1,28 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { Kicker, CTA, EditorialFrame } from "./_base";
 
 export default function Contato() {
   return (
-    <section
-      id="contato"
-      style={{
-        background: "var(--parchment)",
-        padding: "120px 0",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1280,
-          margin: "0 auto",
-          padding: "0 32px",
-          display: "grid",
-          gridTemplateColumns: "1fr 1.2fr",
-          gap: 100,
-          alignItems: "start",
-        }}
-        className="contato-grid"
-      >
+    <section id="contato" className="section-pad-y-lg contato-section">
+      <div className="contato-grid container-x">
         {/* Foto */}
         <motion.div
           initial={{ opacity: 0, x: -24 }}
@@ -30,38 +15,18 @@ export default function Contato() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="contato-foto"
-          style={{ position: "relative" }}
         >
-          {/* Moldura decorativa */}
-          <div
-            aria-hidden
-            style={{
-              position: "absolute",
-              top: 20,
-              left: 20,
-              right: -20,
-              bottom: -20,
-              border: "1px solid rgba(201,169,110,0.2)",
-              pointerEvents: "none",
-            }}
-          />
-          <div
-            style={{
-              width: "100%",
-              maxWidth: 420,
-              aspectRatio: "3/4",
-              overflow: "hidden",
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/portfolio/Fotos/IMG_8883.jpg"
-              alt="Laura Camponogara"
-              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
-            />
-          </div>
+          <EditorialFrame offset={20} position="bl">
+            <div className="contato-foto__inner">
+              <Image
+                src="/portfolio/Fotos/IMG_8883.jpg"
+                alt="Laura Camponogara"
+                fill
+                sizes="(max-width: 900px) 100vw, 420px"
+                className="contato-foto__img"
+              />
+            </div>
+          </EditorialFrame>
         </motion.div>
 
         {/* Conteúdo */}
@@ -71,195 +36,155 @@ export default function Contato() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          <p style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "0.62rem",
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            color: "var(--gold)",
-            marginBottom: 20,
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-          }}>
-            <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
-            Contato
-          </p>
+          <Kicker>Contato</Kicker>
 
-          <h2 style={{
-            fontFamily: "'Fraunces', serif",
-            fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
-            fontWeight: 500,
-            color: "var(--ink)",
-            lineHeight: 1.2,
-            marginBottom: 28,
-          }}>
-            Pronta para transformar a sua marca em{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold)" }}>referência?</em>
+          <h2 className="contato-h2">
+            Pronta para transformar a sua marca em <em>referência?</em>
           </h2>
 
-          <div style={{ width: 40, height: 1, background: "var(--gold)", opacity: 0.5, marginBottom: 28 }} />
+          <div className="contato-rule" aria-hidden />
 
-          <p style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontSize: "1rem",
-            color: "rgba(10,10,10,0.55)",
-            lineHeight: 1.9,
-            marginBottom: 16,
-            fontWeight: 300,
-          }}>
+          <p className="contato-p">
             Se você sente que sua marca merece mais reconhecimento, mais desejo e mais
-            resultados — você está no lugar certo.
+            resultados, você está no lugar certo.
           </p>
-          <p style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontSize: "1rem",
-            color: "rgba(10,10,10,0.55)",
-            lineHeight: 1.9,
-            marginBottom: 48,
-            fontWeight: 300,
-          }}>
+          <p className="contato-p contato-p--last">
             Me conta sobre o seu negócio, onde você está hoje e onde quer chegar. A próxima
             sessão pode mudar o jogo para sempre.
           </p>
 
           {/* Info de contato */}
-          <div style={{ marginBottom: 40 }}>
+          <div className="contato-info">
             {[
               { label: "WhatsApp", value: "+55 (51) 98530-9613", href: "https://wa.me/5551985309613" },
               { label: "E-mail", value: "laura.camponogara29@icloud.com", href: "mailto:laura.camponogara29@icloud.com" },
               { label: "Instagram", value: "@laura.camponogara", href: "https://www.instagram.com/laura.camponogara/" },
-              { label: "Localização", value: "Porto Alegre, RS · Presencial na região e remoto para todo o Brasil", href: undefined },
+              { label: "Localização", value: "Porto Alegre, RS · Presencial na região e remoto para todo o Brasil", href: undefined as string | undefined },
             ].map((item) => (
-              <div key={item.label} style={{
-                display: "flex",
-                gap: 20,
-                padding: "14px 0",
-                borderBottom: "1px solid rgba(10,10,10,0.07)",
-                alignItems: "baseline",
-              }}>
-                <p style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.58rem",
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                  color: "rgba(10,10,10,0.35)",
-                  minWidth: 90,
-                  flexShrink: 0,
-                }}>
-                  {item.label}
-                </p>
+              <div key={item.label} className="contato-row">
+                <p className="contato-row__label">{item.label}</p>
                 {item.href ? (
-                  <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
-                    style={{
-                      fontFamily: "'Inter Tight', sans-serif",
-                      fontSize: "0.88rem",
-                      color: "var(--ink)",
-                      textDecoration: "none",
-                      fontWeight: 400,
-                      transition: "color 0.2s ease",
-                    }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--gold)"; }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--ink)"; }}
+                  <a
+                    className="contato-row__link"
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     {item.value}
                   </a>
                 ) : (
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "0.88rem", color: "var(--ink)", fontWeight: 400 }}>
-                    {item.value}
-                  </p>
+                  <p className="contato-row__text">{item.value}</p>
                 )}
               </div>
             ))}
           </div>
 
           {/* Botões */}
-          <div className="contato-buttons" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <a
-              href="https://wa.me/5551985309613"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "0.78rem",
-                letterSpacing: "0.12em",
-                fontWeight: 500,
-                textTransform: "uppercase",
-                color: "#FFFFFF",
-                background: "var(--ink)",
-                padding: "14px 28px",
-                textDecoration: "none",
-                display: "inline-block",
-                transition: "background 0.3s ease",
-              }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#C9A96E"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--ink)"; }}
-            >
+          <div className="contato-buttons">
+            <CTA href="https://wa.me/5551985309613" target="_blank" rel="noopener noreferrer" variant="primary" size="sm">
               WhatsApp
-            </a>
-            <a
-              href="https://www.instagram.com/laura.camponogara/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "0.78rem",
-                letterSpacing: "0.12em",
-                fontWeight: 500,
-                textTransform: "uppercase",
-                color: "var(--ink)",
-                border: "1px solid rgba(10,10,10,0.25)",
-                padding: "14px 28px",
-                textDecoration: "none",
-                display: "inline-block",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.borderColor = "#C9A96E";
-                el.style.color = "#C9A96E";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.borderColor = "rgba(10,10,10,0.25)";
-                el.style.color = "var(--ink)";
-              }}
-            >
+            </CTA>
+            <CTA href="https://www.instagram.com/laura.camponogara/" target="_blank" rel="noopener noreferrer" variant="secondary" size="sm">
               Instagram
-            </a>
-            <a
-              href="mailto:laura.camponogara29@icloud.com"
-              style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "0.78rem",
-                letterSpacing: "0.12em",
-                fontWeight: 500,
-                textTransform: "uppercase",
-                color: "var(--ink)",
-                border: "1px solid rgba(10,10,10,0.25)",
-                padding: "14px 28px",
-                textDecoration: "none",
-                display: "inline-block",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.borderColor = "#C9A96E";
-                el.style.color = "#C9A96E";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.borderColor = "rgba(10,10,10,0.25)";
-                el.style.color = "var(--ink)";
-              }}
-            >
+            </CTA>
+            <CTA href="mailto:laura.camponogara29@icloud.com" variant="secondary" size="sm">
               E-mail
-            </a>
+            </CTA>
           </div>
         </motion.div>
       </div>
 
       <style>{`
+        .contato-section { background: var(--parchment); }
+        .contato-grid {
+          display: grid;
+          grid-template-columns: 1fr 1.2fr;
+          gap: 100px;
+          align-items: start;
+        }
+        .contato-foto { position: relative; }
+        .contato-foto__inner {
+          width: 100%;
+          max-width: 420px;
+          aspect-ratio: 3 / 4;
+          overflow: hidden;
+          position: relative;
+          background: var(--parchment-dark);
+        }
+        .contato-foto__img {
+          object-fit: cover;
+          object-position: center top;
+        }
+
+        .contato-h2 {
+          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-size: clamp(1.8rem, 3vw, 2.6rem);
+          font-weight: 500;
+          color: var(--ink);
+          line-height: 1.2;
+          margin-top: var(--space-5);
+          margin-bottom: 28px;
+        }
+        .contato-h2 em {
+          font-style: italic;
+          color: var(--gold);
+        }
+        .contato-rule {
+          width: 40px;
+          height: 1px;
+          background: var(--gold);
+          opacity: 0.5;
+          margin-bottom: 28px;
+        }
+        .contato-p {
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-size: 1rem;
+          color: rgba(10,10,10,0.62);
+          line-height: 1.9;
+          margin-bottom: 16px;
+          font-weight: 300;
+        }
+        .contato-p--last { margin-bottom: 48px; }
+
+        .contato-info { margin-bottom: 40px; }
+        .contato-row {
+          display: flex;
+          gap: 20px;
+          padding: 14px 0;
+          border-bottom: 1px solid rgba(10,10,10,0.07);
+          align-items: baseline;
+        }
+        .contato-row__label {
+          font-family: var(--font-dm-mono), 'DM Mono', monospace;
+          font-size: 0.58rem;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: rgba(10,10,10,0.55);
+          min-width: 90px;
+          flex-shrink: 0;
+        }
+        .contato-row__link {
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-size: 0.88rem;
+          color: var(--ink);
+          text-decoration: none;
+          font-weight: 400;
+          transition: color var(--duration-fast) ease;
+        }
+        .contato-row__link:hover { color: var(--gold); }
+        .contato-row__text {
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-size: 0.88rem;
+          color: var(--ink);
+          font-weight: 400;
+        }
+
+        .contato-buttons {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+
         @media (max-width: 900px) {
           .contato-grid {
             grid-template-columns: 1fr !important;
@@ -267,33 +192,14 @@ export default function Contato() {
           }
         }
         @media (max-width: 768px) {
-          #contato {
-            padding: 80px 0 !important;
-          }
-          #contato > div {
-            padding: 0 20px !important;
-          }
-          .contato-foto {
-            display: none !important;
-          }
-          .contato-grid {
-            gap: 0 !important;
-          }
+          #contato { padding: 80px 0 !important; }
+          .contato-foto { display: none !important; }
+          .contato-grid { gap: 0 !important; }
         }
         @media (max-width: 480px) {
-          #contato {
-            padding: 64px 0 !important;
-          }
-          #contato > div {
-            padding: 0 16px !important;
-          }
-          #contato .contato-buttons {
-            flex-direction: column !important;
-          }
-          #contato .contato-buttons a {
-            text-align: center !important;
-            width: 100% !important;
-          }
+          #contato { padding: 64px 0 !important; }
+          .contato-buttons { flex-direction: column; }
+          .contato-buttons > * { width: 100% !important; }
         }
       `}</style>
     </section>

@@ -21,13 +21,6 @@ export type Case = {
   feedPalette: [string, string, string, string, string, string];
 };
 
-export type Quote = {
-  name: string;
-  role: string;
-  initials: string;
-  quote: string;
-};
-
 export type Brand = {
   name: string;
   style: "italic" | "normal";
@@ -88,13 +81,6 @@ export const cases: Case[] = [
       "linear-gradient(135deg, #d4ba8c 0%, #8a7048 100%)",
     ],
   },
-];
-
-export const quotes: Quote[] = [
-  { name: "Marina Ciconet", role: "Jornalismo · Conteúdo", initials: "MC", quote: "Entendeu minha voz antes de eu entender." },
-  { name: "Mariana Penteado", role: "Moda · Lifestyle", initials: "MP", quote: "Cada post passou a comunicar marca." },
-  { name: "Brunnen", role: "Moda feminina", initials: "BR", quote: "Estética e estratégia juntas. Virou ativo." },
-  { name: "A.MAR José Ignacio", role: "Maison · Luxo", initials: "AM", quote: "Cobertura presencial elevou nosso patamar." },
 ];
 
 export const brands: Brand[] = [

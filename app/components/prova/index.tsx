@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { SectionHeader } from "../_base";
 import { Stats } from "./Stats";
 import { CaseCard } from "./CaseCard";
-import { QuoteWall } from "./QuoteWall";
 import { BrandWall } from "./BrandWall";
 import { cases } from "./data";
 
@@ -42,8 +41,6 @@ export default function Prova() {
               <CaseCard key={c.handle} c={c} idx={idx} />
             ))}
           </div>
-
-          <QuoteWall />
 
           <BrandWall />
 

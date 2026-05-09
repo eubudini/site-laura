@@ -12,6 +12,7 @@
   --parchment-dark: #EDE8E1;
   --gold: #B8956A;
   --gold-soft: #C9A96E;
+  --gold-text: #8E6E42;        /* WCAG AA-safe sobre parchment p/ texto pequeno */
   --gold-light: rgba(184,149,106,0.10);
   --gold-mid: rgba(184,149,106,0.32);
   --obsidian: #0A0A0A;
@@ -51,14 +52,14 @@ body {
   font-feature-settings: "ss01", "cv11";
 }
 
-/* ── Fraunces — fine optical-size tuning para títulos ── */
+/* ── Fraunces: fine optical-size tuning para títulos ── */
 .serif-display {
   font-family: 'Fraunces', serif;
   font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
   letter-spacing: -0.02em;
 }
 
-/* ── Container utility — fonte única de margens ─────── */
+/* ── Container utility: fonte única de margens ─────── */
 .container-x {
   width: 100%;
   max-width: 1280px;
@@ -98,7 +99,7 @@ a, button {
 ::-webkit-scrollbar-track { background: var(--obsidian); }
 ::-webkit-scrollbar-thumb { background: var(--gold-mid); border-radius: 2px; }
 
-/* ── Mobile base — atinge WCAG mínimo 16px ───────────── */
+/* ── Mobile base: atinge WCAG mínimo 16px ───────────── */
 @media (max-width: 768px) {
   html { font-size: 16.5px; }
 }
@@ -109,4 +110,42 @@ a, button {
 /* ── Seções: garantir overflow-x seguro ─────────────── */
 section {
   overflow-x: hidden;
+}
+
+/* ── Skip-to-content (a11y) ───────────────────────── */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 8px;
+  background: var(--ink);
+  color: #FFFFFF;
+  padding: 10px 16px;
+  z-index: 9999;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-to-content:focus {
+  top: 8px;
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ── Focus-visible global ─────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* ── Reduced motion ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

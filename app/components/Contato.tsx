@@ -6,22 +6,19 @@ export default function Contato() {
   return (
     <section
       id="contato"
+      className="section-pad-y-lg"
       style={{
         background: "var(--parchment)",
-        padding: "120px 0",
       }}
     >
       <div
         style={{
-          maxWidth: 1280,
-          margin: "0 auto",
-          padding: "0 32px",
           display: "grid",
           gridTemplateColumns: "1fr 1.2fr",
           gap: 100,
           alignItems: "start",
         }}
-        className="contato-grid"
+        className="contato-grid container-x"
       >
         {/* Foto */}
         <motion.div
@@ -109,7 +106,7 @@ export default function Contato() {
             fontWeight: 300,
           }}>
             Se você sente que sua marca merece mais reconhecimento, mais desejo e mais
-            resultados — você está no lugar certo.
+            resultados, você está no lugar certo.
           </p>
           <p style={{
             fontFamily: "'Inter Tight', sans-serif",

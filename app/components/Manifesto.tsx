@@ -78,14 +78,14 @@ export default function Manifesto() {
             <p className="manifesto-p">
               A maioria das marcas posta. Poucas se posicionam. A diferença está
               na estratégia por trás de cada imagem, legenda e decisão criativa
-              — e é exatamente isso que entrego em cada projeto.
+              e é exatamente isso que entrego em cada projeto.
             </p>
 
             <p className="manifesto-p">
               Cada cliente recebe uma leitura única da sua marca, do seu público
               e dos canais onde a voz precisa ser ouvida. Sem fórmula pronta.
               Com produção autoral em <strong>Porto Alegre, no Brasil e em
-              José Ignácio (Uruguai)</strong> — onde dirijo conteúdo para
+              José Ignácio (Uruguai)</strong>, onde dirijo conteúdo para
               maisons de luxo e referências de moda.
             </p>
 
@@ -100,7 +100,7 @@ export default function Manifesto() {
 
             <p className="manifesto-filter">
               Não atendo todo mundo. Atendo marcas que entendem que conteúdo é
-              ativo de posicionamento — não obrigação de calendário.
+              ativo de posicionamento, não obrigação de calendário.
             </p>
           </motion.div>
 
@@ -255,7 +255,7 @@ export default function Manifesto() {
           border-top: 1px dashed rgba(184,149,106,0.4);
         }
 
-        /* VISUAL — vídeo framed editorial */
+        /* VISUAL: vídeo framed editorial */
         .manifesto-visual {
           position: relative;
           width: 100%;

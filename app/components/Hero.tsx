@@ -40,7 +40,7 @@ export default function Hero() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/laura-hero.jpg"
-              alt="Laura Camponogara — Estrategista de Conteúdo"
+              alt="Laura Camponogara, Estrategista de Conteúdo"
               className="hero-photo__img"
             />
             {/* Signature overlay (mobile) */}
@@ -54,7 +54,7 @@ export default function Hero() {
         {/* DESCRIÇÃO */}
         <motion.p {...fadeUp(0.3)} className="hero-desc">
           Crio estratégias de conteúdo que transformam perfis comuns em
-          referências do segmento — com direção criativa, posicionamento e
+          referências do segmento, com direção criativa, posicionamento e
           produção que para o scroll.
         </motion.p>
 
@@ -141,7 +141,7 @@ export default function Hero() {
           pointer-events: none;
         }
 
-        /* Desktop — grid 2-col com áreas */
+        /* Desktop: grid 2-col com áreas */
         .hero-grid {
           max-width: 1280px;
           margin: 0 auto;
@@ -367,7 +367,7 @@ export default function Hero() {
         }
 
         /* ═══════════════════════════════════════════════
-           MOBILE — Reordering editorial vertical
+           MOBILE: Reordering editorial vertical
            1. KICKER
            2. H1
            3. PHOTO (com signature embaixo)

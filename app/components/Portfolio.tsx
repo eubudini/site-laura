@@ -18,12 +18,12 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
+      className="section-pad-y"
       style={{
         background: "#FFFFFF",
-        padding: "80px 0 64px",
       }}
     >
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px" }}>
+      <div className="container-x">
         {/* Header */}
         <div style={{ marginBottom: 40 }}>
           <motion.p

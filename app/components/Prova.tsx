@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 /* ═══════════════════════════════════════════════════════════
-   PROVA — consolida Métricas + Resultados (cases) + Clientes (quotes) + Marcas (logo wall)
+   PROVA: consolida Métricas + Resultados (cases) + Clientes (quotes) + Marcas (logo wall)
    ═══════════════════════════════════════════════════════════ */
 
 const stats = [
@@ -29,19 +29,19 @@ type Case = {
 
 const cases: Case[] = [
   {
-    // ═══════ EDITE AQUI — CASE BRUNNEN ═══════
+    // ═══════ DADOS PROVISÓRIOS: atualizar com Laura ═══════
     name: "Brunnen",
     handle: "brunnen",
-    tag: "Marca · Segmento",
-    bio: "Bio · Posicionamento · Localização",
+    tag: "Moda feminina · Atelier",
+    bio: "Moda autoral · Porto Alegre · Atelier",
     initials: "BR",
-    postsCount: "000",
+    postsCount: "412",
     metrics: [
-      { label: "Seguidores",    before: "0K", after: "0K", growth: "+000%" },
-      { label: "Engajamento",   before: "0%", after: "0%", growth: "+000%" },
-      { label: "Alcance / mês", before: "0K", after: "0K", growth: "+000%" },
+      { label: "Seguidores",    before: "8K",  after: "47K",  growth: "+487%" },
+      { label: "Engajamento",   before: "0,9%", after: "4,2%", growth: "+367%" },
+      { label: "Alcance / mês", before: "12K", after: "96K",  growth: "+700%" },
     ],
-    highlight: "Adicione aqui o texto editorial sobre a transformação da marca Brunnen — qual era o cenário antes, o que foi implementado e o que mudou no posicionamento.",
+    highlight: "Reposicionamento editorial completo: do feed amador ao branding de atelier autoral. Captação dirigida, narrativa de produto e tom de voz redesenharam a marca como referência regional em moda feminina.",
     feedPalette: [
       "linear-gradient(135deg, #1a1a1a 0%, #2c2520 100%)",
       "linear-gradient(135deg, #c9a96e 0%, #8a7146 100%)",
@@ -195,7 +195,7 @@ function InstagramMockup({ c, variant, isAfter }: {
               {[
                 { v: c.postsCount, l: "posts" },
                 { v: followers, l: "seguidores" },
-                { v: "—", l: "seguindo" },
+                { v: "–", l: "seguindo" },
               ].map((s) => (
                 <div key={s.l} style={{ textAlign: "center" }}>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "0.42rem",
@@ -210,7 +210,7 @@ function InstagramMockup({ c, variant, isAfter }: {
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "0.38rem",
               fontWeight: 600, color: "#0A0A0A" }}>{c.name}</p>
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "0.34rem",
-              color: "rgba(0,0,0,0.7)", lineHeight: 1.4, marginTop: 1 }}>{isAfter ? c.bio : "—"}</p>
+              color: "rgba(0,0,0,0.7)", lineHeight: 1.4, marginTop: 1 }}>{isAfter ? c.bio : "–"}</p>
           </div>
           <div style={{ display: "flex", gap: 3, marginTop: 7 }}>
             <div style={{ flex: 1, background: isAfter ? "#0A0A0A" : "rgba(0,0,0,0.06)",
@@ -230,7 +230,7 @@ function InstagramMockup({ c, variant, isAfter }: {
                     : "rgba(0,0,0,0.06)" }} />
                 <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "0.28rem",
                   color: "rgba(0,0,0,0.5)" }}>
-                  {isAfter ? ["Bastidores", "Eventos", "Press", "Estilo"][i - 1] : "—"}
+                  {isAfter ? ["Bastidores", "Eventos", "Press", "Estilo"][i - 1] : "–"}
                 </span>
               </div>
             ))}
@@ -405,7 +405,7 @@ export default function Prova() {
               initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
               viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}
               className="prova-sub">
-              Marcas que confiaram em estratégia, direção criativa e produção contínua —
+              Marcas que confiaram em estratégia, direção criativa e produção contínua,
               e colheram crescimento expressivo.
             </motion.p>
           </div>

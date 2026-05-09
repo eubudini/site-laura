@@ -12,8 +12,9 @@ import WhatsAppFloat from "./components/WhatsAppFloat";
 export default function Home() {
   return (
     <>
+      <a href="#hero" className="skip-to-content">Pular para o conteúdo</a>
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <Manifesto />
         <Metodologia />

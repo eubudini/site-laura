@@ -53,7 +53,7 @@ const acts: Act[] = [
     roman: "III",
     label: "Crescer",
     title: "Distribuição & Performance",
-    promise: "Crescimento com previsibilidade — não na sorte.",
+    promise: "Crescimento com previsibilidade, não na sorte.",
     desc: "O conteúdo certo, no canal certo, para o público certo. Distribuição editorial em múltiplas plataformas e tráfego pago para acelerar com inteligência.",
     deliverables: [
       "Estratégia por canal (IG, TikTok, LinkedIn, YouTube)",
@@ -157,7 +157,7 @@ export default function Metodologia() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="metod-sub"
           >
-            Um sistema integrado — não cardápio de serviços. Cada ato é etapa de
+            Um sistema integrado, não cardápio de serviços. Cada ato é etapa de
             um único movimento: posicionar, produzir e crescer.
           </motion.p>
         </div>

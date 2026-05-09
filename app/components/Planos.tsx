@@ -19,7 +19,7 @@ const plans = [
   {
     name: "Premium",
     tag: "Gestão de Redes Sociais",
-    desc: "A solução completa para quem quer crescimento de verdade. Gestão, estratégia, produção e presença — tudo integrado e alinhado à sua identidade.",
+    desc: "A solução completa para quem quer crescimento de verdade. Gestão, estratégia, produção e presença, tudo integrado e alinhado à sua identidade.",
     items: [
       "Gestão completa das redes sociais",
       "Estratégia e criação de conteúdo",
@@ -37,12 +37,12 @@ export default function Planos() {
   return (
     <section
       id="planos"
+      className="section-pad-y-lg"
       style={{
         background: "var(--obsidian)",
-        padding: "120px 0",
       }}
     >
-      <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 32px" }}>
+      <div className="container-x container-x--narrow">
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 72 }}>

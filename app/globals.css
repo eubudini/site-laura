@@ -3,6 +3,7 @@
 @import "tailwindcss";
 
 :root {
+  /* ─── Color ───────────────────────────────────────── */
   --ink: #0A0A0A;
   --ink-80: rgba(10,10,10,0.8);
   --ink-50: rgba(10,10,10,0.5);
@@ -18,6 +19,44 @@
   --obsidian: #0A0A0A;
   --obsidian-2: #131313;
   --obsidian-3: #1C1C1C;
+
+  /* ─── Spacing scale (Sprint 2 - DS fundacao) ──────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ─── Breakpoints (4 canonicos, nunca novos) ──────── */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* ─── Type scale ──────────────────────────────────── */
+  --text-display:      clamp(2.4rem, 6vw, 5rem);    /* H1 hero */
+  --text-h2:           clamp(2rem, 3.6vw, 3rem);
+  --text-h3:           clamp(1.4rem, 2.4vw, 2rem);
+  --text-lg:           1.125rem;
+  --text-body:         1rem;
+  --text-sm:           0.875rem;
+  --text-mono-kicker:  0.74rem;
+  --text-caption:      0.65rem;
+
+  /* ─── Motion tokens ───────────────────────────────── */
+  --duration-fast: 0.2s;
+  --duration-base: 0.35s;
+  --duration-slow: 0.7s;
+  --ease-editorial: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-quart: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
@@ -26,6 +65,27 @@
   --font-sans: 'Inter Tight', sans-serif;
   --font-serif: 'Fraunces', serif;
   --font-mono: 'DM Mono', monospace;
+
+  /* Tailwind v4: registrar breakpoints custom */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Tailwind v4: spacing utilities (p-1 = 4px, p-2 = 8px, ...) */
+  --spacing-1:  4px;
+  --spacing-2:  8px;
+  --spacing-3:  12px;
+  --spacing-4:  16px;
+  --spacing-5:  20px;
+  --spacing-6:  24px;
+  --spacing-8:  32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
 }
 
 *, *::before, *::after {

@@ -29,7 +29,7 @@ const sections = [
     links: [
       { name: "Estratégia & Direção", href: "#servicos" },
       { name: "Captação & Produção", href: "#servicos" },
-      { name: "Distribuição & Mídia", href: "#servicos" },
+      { name: "Distribuição & Tráfego", href: "#servicos" },
       { name: "Cobertura presencial", href: "#servicos" },
     ],
   },
@@ -83,7 +83,7 @@ export default function Footer() {
               marginBottom: 24,
             }}
           >
-            Direção criativa, estratégia editorial e produção autoral para marcas de identidade.
+            Estratégia de conteúdo e gestão de redes sociais para marcas com identidade.
           </p>
           <div className="footer-social">
             {socialLinks.map((social, idx) => (
@@ -192,7 +192,7 @@ export default function Footer() {
               letterSpacing: "0.06em",
             }}
           >
-            Porto Alegre, RS · Atendimento nacional
+            Porto Alegre, RS · Atendimento Brasil
           </p>
         </div>
       </div>

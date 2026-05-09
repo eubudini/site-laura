@@ -2,15 +2,15 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Kicker, CTA } from "./_base";
+import { CTA } from "./_base";
 
 const items = [
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2293.jpg", label: "Captação editorial" },
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2297.jpg", label: "Editorial de moda" },
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2298.jpg", label: "Direção de marca" },
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2299.jpg", label: "Posicionamento" },
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2302.jpg", label: "Direção criativa" },
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2292.jpg", label: "Direção criativa" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2293.jpg", label: "Captação de Conteúdo" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2297.jpg", label: "Editorial" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2298.jpg", label: "Marcas" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2299.jpg", label: "Posicionamento Digital" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2302.jpg", label: "Direção Criativa" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2292.jpg", label: "Direção Criativa" },
 ];
 
 export default function Portfolio() {
@@ -19,15 +19,6 @@ export default function Portfolio() {
       <div className="container-x">
         {/* Header */}
         <div style={{ marginBottom: 40 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            style={{ marginBottom: "var(--space-5)" }}
-          >
-            <Kicker>Portfólio</Kicker>
-          </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +26,7 @@ export default function Portfolio() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="portfolio-h2"
           >
-            Marcas e narrativas que tomaram forma sob direção.
+            Projetos, marcas e conteúdos que ganharam forma com direção criativa.
           </motion.h2>
         </div>
 
@@ -72,7 +63,7 @@ export default function Portfolio() {
             variant="primary"
             size="md"
           >
-            Acompanhar no Instagram
+            Ver mais no Instagram
           </CTA>
         </div>
       </div>

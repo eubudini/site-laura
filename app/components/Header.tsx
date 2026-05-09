@@ -161,7 +161,7 @@ export default function Header() {
               onClick={handleLinkClick}
               className="header-mobile-cta"
             >
-              Falar com Laura
+              Falar com a Laura
             </a>
           </motion.div>
         )}

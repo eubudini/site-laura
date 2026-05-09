@@ -23,15 +23,13 @@ export default function Prova() {
             transition={{ duration: 0.7 }}
           >
             <SectionHeader
-              kicker="Prova"
-              kickerDual
               align="center"
               title={
                 <>
-                  Resultado é consequência. <em>Da leitura certa.</em>
+                  Não são números genéricos. <em>São transformações reais.</em>
                 </>
               }
-              sub="Marcas conduzidas em estratégia, direção criativa e produção contínua. O crescimento veio depois."
+              sub="Marcas que confiaram em estratégia, direção criativa e produção contínua, e colheram crescimento expressivo."
               maxWidth={700}
             />
           </motion.div>
@@ -45,7 +43,8 @@ export default function Prova() {
           <BrandWall />
 
           <p className="prova-disclaimer">
-            * Dados acumulados no período de acompanhamento. Mockups ilustrativos sobre números reais.
+            * Dados acumulados ao longo do período de acompanhamento estratégico. Mockups
+            ilustrativos baseados em dados reais.
           </p>
         </div>
       </div>

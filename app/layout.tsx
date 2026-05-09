@@ -29,22 +29,22 @@ const SITE_URL = "https://lauracamponogara.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Laura Camponogara | Direção Criativa & Estratégia Editorial",
+  title: "Laura Camponogara | Estratégia de Conteúdo & Presença Digital",
   description:
-    "Direção criativa, posicionamento e produção autoral para marcas de moda e lifestyle. Captação no Brasil e no Uruguai.",
+    "Ajudo marcas a construírem uma imagem mais forte, desejável e consistente por meio de conteúdo, posicionamento e presença nos canais certos.",
   keywords: [
-    "direção criativa",
     "estratégia de conteúdo",
-    "posicionamento de marca",
-    "produção editorial",
-    "moda",
+    "social media",
+    "posicionamento digital",
+    "presença digital",
     "Porto Alegre",
+    "direção criativa",
   ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Laura Camponogara | Direção Criativa para marcas de moda e lifestyle",
+    title: "Laura Camponogara | Presença Digital com Estratégia e Estética",
     description:
-      "Estratégia editorial, direção criativa e produção autoral. Para marcas que tratam presença como ativo.",
+      "Ajudo marcas a construírem uma imagem mais forte, desejável e consistente.",
     type: "website",
     locale: "pt_BR",
     url: SITE_URL,
@@ -52,9 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Laura Camponogara | Direção Criativa",
+    title: "Laura Camponogara | Estratégia de Conteúdo",
     description:
-      "Direção criativa, estratégia editorial e produção autoral para marcas de identidade.",
+      "Estratégia, direção criativa e presença digital para marcas que querem ser referência.",
   },
 };
 

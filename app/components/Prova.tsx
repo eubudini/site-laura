@@ -195,7 +195,7 @@ function InstagramMockup({ c, variant, isAfter }: {
               {[
                 { v: c.postsCount, l: "posts" },
                 { v: followers, l: "seguidores" },
-                { v: "–", l: "seguindo" },
+                { v: "...", l: "seguindo" },
               ].map((s) => (
                 <div key={s.l} style={{ textAlign: "center" }}>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "0.42rem",
@@ -210,7 +210,7 @@ function InstagramMockup({ c, variant, isAfter }: {
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "0.38rem",
               fontWeight: 600, color: "#0A0A0A" }}>{c.name}</p>
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "0.34rem",
-              color: "rgba(0,0,0,0.7)", lineHeight: 1.4, marginTop: 1 }}>{isAfter ? c.bio : "–"}</p>
+              color: "rgba(0,0,0,0.7)", lineHeight: 1.4, marginTop: 1 }}>{isAfter ? c.bio : "..."}</p>
           </div>
           <div style={{ display: "flex", gap: 3, marginTop: 7 }}>
             <div style={{ flex: 1, background: isAfter ? "#0A0A0A" : "rgba(0,0,0,0.06)",
@@ -230,7 +230,7 @@ function InstagramMockup({ c, variant, isAfter }: {
                     : "rgba(0,0,0,0.06)" }} />
                 <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: "0.28rem",
                   color: "rgba(0,0,0,0.5)" }}>
-                  {isAfter ? ["Bastidores", "Eventos", "Press", "Estilo"][i - 1] : "–"}
+                  {isAfter ? ["Bastidores", "Eventos", "Press", "Estilo"][i - 1] : "..."}
                 </span>
               </div>
             ))}

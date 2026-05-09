@@ -2,57 +2,57 @@
 
 import { motion } from "framer-motion";
 
-type Act = {
-  roman: string;
+type Step = {
+  num: string;
   label: string;
   title: string;
   promise: string;
   desc: string;
   deliverables: string[];
-  step: { n: string; title: string; desc: string };
+  detail: { n: string; title: string; desc: string };
 };
 
-const acts: Act[] = [
+const steps: Step[] = [
   {
-    roman: "I",
-    label: "Posicionar",
-    title: "Estratégia & Direção",
-    promise: "A diferença entre publicar e ser percebida.",
-    desc: "Antes de qualquer captação, sua marca precisa saber o que dizer, para quem e por quê. É aqui que o conteúdo deixa de ser tarefa e vira posicionamento.",
+    num: "01",
+    label: "Diagnóstico",
+    title: "Estratégia e direção",
+    promise: "Antes de produzir, a gente entende.",
+    desc: "Sua marca precisa saber o que dizer, para quem e por quê. Faço uma leitura completa do seu posicionamento, do seu público e do mercado em que você compete. É aqui que o conteúdo deixa de ser tarefa e vira posicionamento.",
     deliverables: [
       "Diagnóstico de marca, benchmarks e leitura competitiva",
       "Pilares editoriais, tom de voz e mapa de mensagens",
       "Calendário estratégico mensal por canal",
       "Reposicionamento de bio, capa e destaques",
     ],
-    step: {
+    detail: {
       n: "01",
       title: "Imersão na sua marca",
-      desc: "Vamos juntos entender o que você representa, o que seu público espera e onde sua comunicação pode ser mais poderosa.",
+      desc: "Sentamos juntas para entender o que você representa, o que seu público espera e onde sua comunicação pode ser mais forte.",
     },
   },
   {
-    roman: "II",
-    label: "Produzir",
-    title: "Captação & Direção Criativa",
-    promise: "Conteúdo que para o scroll. Sem fórmula.",
-    desc: "Produção autoral com identidade visual e padrão editorial. Cada peça traduz a essência da marca com estética, autenticidade e potencial de conexão.",
+    num: "02",
+    label: "Produção",
+    title: "Captação e direção criativa",
+    promise: "Conteúdo que faz o scroll parar.",
+    desc: "Produção autoral com identidade visual e padrão editorial. Cada foto, cada vídeo, cada legenda traduz a essência da marca. É o mesmo cuidado que aplico com Marina Ciconet, A.MAR José Ignácio e Brunnen.",
     deliverables: [
       "Direção criativa, moodboard e roteiros editoriais",
       "Captação fotográfica e em vídeo profissional",
       "Edição com tratamento de cor e padronização",
       "Cobertura presencial de eventos e lançamentos",
     ],
-    step: {
+    detail: {
       n: "02",
       title: "Direção criativa em movimento",
       desc: "Caminhos visuais, formatos e prioridades definidos para que cada conteúdo sirva a um propósito claro.",
     },
   },
   {
-    roman: "III",
-    label: "Crescer",
-    title: "Distribuição & Performance",
+    num: "03",
+    label: "Crescimento",
+    title: "Distribuição e performance",
     promise: "Crescimento com previsibilidade, não na sorte.",
     desc: "O conteúdo certo, no canal certo, para o público certo. Distribuição editorial em múltiplas plataformas e tráfego pago para acelerar com inteligência.",
     deliverables: [
@@ -61,10 +61,10 @@ const acts: Act[] = [
       "Setup e gestão de Meta Ads e Google Ads",
       "Análise mensal de performance e otimização contínua",
     ],
-    step: {
+    detail: {
       n: "03",
       title: "Evolução contínua",
-      desc: "Monitoramento, refinamento e adaptação constante para que sua marca só cresça com o tempo.",
+      desc: "Monitoramento, refinamento e ajuste constante para que sua marca cresça mês a mês.",
     },
   },
 ];
@@ -77,7 +77,7 @@ function Check() {
   );
 }
 
-function ActBlock({ act, idx }: { act: Act; idx: number }) {
+function StepBlock({ step, idx }: { step: Step; idx: number }) {
   const flipped = idx % 2 === 1;
   return (
     <motion.article
@@ -88,25 +88,25 @@ function ActBlock({ act, idx }: { act: Act; idx: number }) {
       className={`act ${flipped ? "act--flipped" : ""}`}
       data-idx={idx}
     >
-      {/* Roman number gigante */}
-      <div className="act__roman" aria-hidden>{act.roman}</div>
+      {/* Numero gigante de fundo */}
+      <div className="act__roman" aria-hidden>{step.num}</div>
 
       <div className="act__inner">
         <div className="act__head">
           <span className="act__label">
             <span className="act__label-rule" aria-hidden />
-            Ato {act.roman} · {act.label}
+            {step.num} · {step.label}
           </span>
-          <h3 className="act__title">{act.title}</h3>
-          <p className="act__promise">{act.promise}</p>
-          <p className="act__desc">{act.desc}</p>
+          <h3 className="act__title">{step.title}</h3>
+          <p className="act__promise">{step.promise}</p>
+          <p className="act__desc">{step.desc}</p>
         </div>
 
         <div className="act__body">
           <div className="act__deliverables-wrap">
             <p className="act__small-label">O que está incluído</p>
             <ul className="act__list">
-              {act.deliverables.map((d) => (
+              {step.deliverables.map((d) => (
                 <li key={d} className="act__item">
                   <span className="act__check"><Check /></span>
                   <span>{d}</span>
@@ -116,9 +116,9 @@ function ActBlock({ act, idx }: { act: Act; idx: number }) {
           </div>
 
           <div className="act__step">
-            <p className="act__step-num">{act.step.n}</p>
-            <p className="act__step-title">{act.step.title}</p>
-            <p className="act__step-desc">{act.step.desc}</p>
+            <p className="act__step-num">{step.detail.n}</p>
+            <p className="act__step-title">{step.detail.title}</p>
+            <p className="act__step-desc">{step.detail.desc}</p>
           </div>
         </div>
       </div>
@@ -138,7 +138,7 @@ export default function Metodologia() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="metod-h2"
           >
-            Da estratégia à execução, <em>em três atos</em>.
+            Como eu trabalho com sua marca, <em>do diagnóstico à entrega</em>.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -147,14 +147,14 @@ export default function Metodologia() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="metod-sub"
           >
-            Um sistema integrado, não cardápio de serviços. Cada ato é etapa de
-            um único movimento: posicionar, produzir e crescer.
+            Não é cardápio de serviços. São três etapas integradas que fazem sua
+            marca sair do achismo e virar referência: entender, produzir e crescer.
           </motion.p>
         </div>
 
         <div className="acts">
-          {acts.map((a, i) => (
-            <ActBlock key={a.label} act={a} idx={i} />
+          {steps.map((s, i) => (
+            <StepBlock key={s.label} step={s} idx={i} />
           ))}
         </div>
       </div>
@@ -231,7 +231,7 @@ export default function Metodologia() {
           top: 24px;
           left: -8px;
           font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
-          font-size: clamp(8rem, 16vw, 14rem);
+          font-size: clamp(7rem, 14vw, 12rem);
           font-weight: 500;
           color: rgba(201,169,110,0.07);
           line-height: 0.85;

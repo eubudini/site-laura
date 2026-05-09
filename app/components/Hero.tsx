@@ -32,7 +32,7 @@ export default function Hero() {
         {/* H1 */}
         <motion.h1 {...fadeUp(0.2)} className="hero-h1 serif-display">
           Sua marca passou da hora{" "}
-          <em>de ser desejada.</em>
+          <em>de virar referência.</em>
         </motion.h1>
 
         {/* PHOTO */}
@@ -67,9 +67,9 @@ export default function Hero() {
 
         {/* DESCRIÇÃO */}
         <motion.p {...fadeUp(0.3)} className="hero-desc">
-          Crio estratégias de conteúdo que transformam perfis comuns em
-          referências do segmento, com direção criativa, posicionamento e
-          produção que para o scroll.
+          Direção criativa, estratégia e produção de conteúdo para marcas como
+          Marina Ciconet, A.MAR José Ignácio e Brunnen. Transformo perfis
+          comuns em referência no segmento.
         </motion.p>
 
         {/* TRUST BADGE */}
@@ -89,8 +89,8 @@ export default function Hero() {
             ))}
           </div>
           <span className="hero-trust__label">
-            <strong>+14 marcas</strong> que cresceram em média{" "}
-            <strong className="hero-trust__pct">+418%</strong>
+            <strong>+14 marcas atendidas</strong>, com crescimento médio de{" "}
+            <strong className="hero-trust__pct">+418%</strong> em seguidores qualificados
           </span>
         </motion.div>
 
@@ -106,7 +106,7 @@ export default function Hero() {
 
         {/* LOCATION */}
         <motion.p {...fadeUp(0.5)} className="hero-location">
-          Porto Alegre, RS · Presencial na região · Atendimento remoto para todo o Brasil
+          Porto Alegre · Captação no Brasil e em José Ignácio (Uruguai) · Atendimento remoto para todo o Brasil
         </motion.p>
       </div>
 

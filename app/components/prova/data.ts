@@ -27,10 +27,10 @@ export type Brand = {
 };
 
 export const stats: Stat[] = [
-  { value: 14, suffix: "+", label: "Marcas atendidas", sub: "Empresas e marcas pessoais" },
+  { value: 14, suffix: "+", label: "Marcas atendidas", sub: "Entre empresas e marcas pessoais" },
   { value: 418, prefix: "+", suffix: "%", label: "Crescimento médio", sub: "Em seguidores qualificados" },
   { value: 59, prefix: "+", suffix: "M", label: "Visualizações em Reels", sub: "Nos últimos 12 meses" },
-  { value: 4327, prefix: "+", label: "Leads gerados", sub: "Direto do Instagram", separator: "." },
+  { value: 4327, prefix: "+", label: "Leads gerados", sub: "Direto pelo Instagram", separator: "." },
 ];
 
 export const cases: Case[] = [
@@ -38,8 +38,8 @@ export const cases: Case[] = [
     // ═══════ DADOS PROVISÓRIOS: atualizar com Laura ═══════
     name: "Brunnen",
     handle: "brunnen",
-    tag: "Moda feminina · Atelier",
-    bio: "Moda autoral · Porto Alegre · Atelier",
+    tag: "Moda feminina autoral",
+    bio: "Moda autoral · Porto Alegre",
     initials: "BR",
     postsCount: "412",
     metrics: [
@@ -48,7 +48,7 @@ export const cases: Case[] = [
       { label: "Alcance / mês", before: "12K", after: "96K", growth: "+700%" },
     ],
     highlight:
-      "Reposicionamento editorial completo: do feed amador ao branding de atelier autoral. Captação dirigida, narrativa de produto e tom de voz redesenharam a marca como referência regional em moda feminina.",
+      "Reposicionamento completo: o feed amador deu lugar a uma marca autoral, com captação dirigida, narrativa de produto e um tom de voz consistente. A Brunnen virou referência regional em moda feminina.",
     feedPalette: [
       "linear-gradient(135deg, #1a1a1a 0%, #2c2520 100%)",
       "linear-gradient(135deg, #c9a96e 0%, #8a7146 100%)",
@@ -71,7 +71,7 @@ export const cases: Case[] = [
       { label: "Alcance / mês", before: "22K", after: "180K", growth: "+718%" },
     ],
     highlight:
-      "Direção criativa consistente, captação editorial e narrativa premium transformaram um perfil de moda em referência nacional.",
+      "Direção criativa consistente, captação editorial e narrativa premium fizeram um perfil de moda virar referência nacional.",
     feedPalette: [
       "linear-gradient(135deg, #e8dcc8 0%, #b89d75 100%)",
       "linear-gradient(135deg, #2a2018 0%, #4a3a28 100%)",

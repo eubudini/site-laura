@@ -27,9 +27,9 @@ const sections = [
   {
     title: "Atuação",
     links: [
-      { name: "Estratégia & Direção", href: "#servicos" },
-      { name: "Captação & Produção", href: "#servicos" },
-      { name: "Distribuição & Tráfego", href: "#servicos" },
+      { name: "Estratégia e direção", href: "#servicos" },
+      { name: "Captação e produção", href: "#servicos" },
+      { name: "Distribuição e tráfego", href: "#servicos" },
       { name: "Cobertura presencial", href: "#servicos" },
     ],
   },
@@ -83,7 +83,7 @@ export default function Footer() {
               marginBottom: 24,
             }}
           >
-            Estratégia de conteúdo e gestão de redes sociais para marcas com identidade.
+            Direção criativa e gestão de redes sociais para marcas como Marina Ciconet, A.MAR José Ignácio e Brunnen.
           </p>
           <div className="footer-social">
             {socialLinks.map((social, idx) => (
@@ -192,7 +192,7 @@ export default function Footer() {
               letterSpacing: "0.06em",
             }}
           >
-            Porto Alegre, RS · Atendimento Brasil
+            Porto Alegre · Brasil e Uruguai
           </p>
         </div>
       </div>

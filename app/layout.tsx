@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter_Tight, DM_Mono } from "next/font/google";
+import { Bodoni_Moda, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "700", "900"],
   style: ["normal", "italic"],
-  variable: "--font-fraunces",
+  variable: "--font-bodoni-moda",
   display: "swap",
 });
 
-const interTight = Inter_Tight({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-inter-tight",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -105,7 +105,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${fraunces.variable} ${interTight.variable} ${dmMono.variable}`}
+      className={`${bodoniModa.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
       <body>
         <script

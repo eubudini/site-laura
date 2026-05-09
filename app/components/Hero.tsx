@@ -196,7 +196,7 @@ export default function Hero() {
 
         /* H1 */
         .hero-h1 {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: var(--text-display);
           font-weight: 400;
           line-height: 1.02;
@@ -212,7 +212,7 @@ export default function Hero() {
 
         /* DESC */
         .hero-desc {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: clamp(1.08rem, 1.7vw, 1.28rem);
           color: rgba(10,10,10,0.65);
           line-height: 1.72;
@@ -244,7 +244,7 @@ export default function Hero() {
           height: 30px;
           border-radius: 50%;
           border: 2px solid var(--parchment);
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: 0.62rem;
           color: #f5e6c8;
           display: flex;
@@ -253,7 +253,7 @@ export default function Hero() {
           font-weight: 500;
         }
         .hero-trust__label {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.82rem;
           color: rgba(10,10,10,0.72);
           font-weight: 400;
@@ -275,7 +275,7 @@ export default function Hero() {
           margin-bottom: var(--space-8);
         }
         .hero-cta {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.94rem;
           letter-spacing: 0.12em;
           font-weight: 500;
@@ -390,7 +390,7 @@ export default function Hero() {
             z-index: 2;
           }
           .hero-photo__sig-name {
-            font-family: var(--font-fraunces), 'Fraunces', serif;
+            font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
             font-style: italic;
             font-size: 0.95rem;
             color: var(--ink);

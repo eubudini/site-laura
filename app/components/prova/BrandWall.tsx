@@ -57,7 +57,7 @@ export function BrandWall() {
           gap: 28px 44px;
         }
         .prova-brand {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(1rem, 1.6vw, 1.35rem);
           font-weight: 400;
           color: rgba(10,10,10,0.6);

@@ -200,7 +200,7 @@ export default function Metodologia() {
           background: var(--gold);
         }
         .metod-h2 {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(2rem, 3.6vw, 3rem);
           font-weight: 400;
           color: #FFFFFF;
@@ -213,7 +213,7 @@ export default function Metodologia() {
           color: var(--gold);
         }
         .metod-sub {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 1.05rem;
           color: rgba(255,255,255,0.55);
           line-height: 1.75;
@@ -240,7 +240,7 @@ export default function Metodologia() {
           position: absolute;
           top: 24px;
           left: -8px;
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(8rem, 16vw, 14rem);
           font-weight: 500;
           color: rgba(201,169,110,0.07);
@@ -294,7 +294,7 @@ export default function Metodologia() {
           background: var(--gold);
         }
         .act__title {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(1.6rem, 2.6vw, 2.2rem);
           font-weight: 400;
           color: #FFFFFF;
@@ -303,7 +303,7 @@ export default function Metodologia() {
           margin-bottom: 14px;
         }
         .act__promise {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-style: italic;
           font-size: clamp(1.12rem, 1.55vw, 1.32rem);
           color: var(--gold);
@@ -312,7 +312,7 @@ export default function Metodologia() {
           letter-spacing: -0.005em;
         }
         .act__desc {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 1.02rem;
           color: rgba(255,255,255,0.6);
           line-height: 1.78;
@@ -346,7 +346,7 @@ export default function Metodologia() {
           display: flex;
           align-items: flex-start;
           gap: 12px;
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.96rem;
           color: rgba(255,255,255,0.82);
           line-height: 1.55;
@@ -383,7 +383,7 @@ export default function Metodologia() {
           text-transform: uppercase;
         }
         .act__step-title {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: 1.12rem;
           font-weight: 500;
           color: #FFFFFF;
@@ -391,7 +391,7 @@ export default function Metodologia() {
           line-height: 1.3;
         }
         .act__step-desc {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.92rem;
           color: rgba(255,255,255,0.55);
           line-height: 1.7;

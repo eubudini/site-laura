@@ -77,6 +77,21 @@ exigencia editorial, documentar como excecao na story e nao no codigo solto.
 | `--text-mono-kicker` | `0.74rem` | Kicker monoespacado |
 | `--text-caption` | `0.65rem` | Avatares, labels micro |
 
+#### Tipografia (font-families)
+
+Carregadas exclusivamente via `next/font/google` em `app/layout.tsx` e
+expostas como CSS variables consumidas em `--font-sans` / `--font-serif`.
+
+| Variable | Familia | Uso |
+|---|---|---|
+| `--font-bodoni-moda` | Bodoni Moda (400/500/700/900) | Display / serif editorial (H1, H2, blockquotes) |
+| `--font-dm-sans` | DM Sans (300/400/500/600/700) | Body / sans (paragrafos, UI, navegacao) |
+| `--font-dm-mono` | DM Mono (300/400/500) | Kicker monoespacado, labels editoriais |
+
+Anti-padrao: importar fontes via `@import url` ou `<link>`. Toda fonte passa
+pelo loader `next/font/google` para garantir auto-host, font-display swap e
+zero CLS.
+
 ### 1.5 Motion
 
 | Token | Valor | Uso |

@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Kicker } from "./_base";
 
 const IconMuted = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -38,16 +39,15 @@ export default function Manifesto() {
   return (
     <section id="sobre" className="manifesto-section">
       <div className="container-x">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="manifesto-kicker"
+          style={{ marginBottom: "var(--space-5)" }}
         >
-          <span className="manifesto-kicker__rule" aria-hidden />
-          Manifesto
-        </motion.p>
+          <Kicker>Manifesto</Kicker>
+        </motion.div>
 
         <motion.h2
           initial={{ opacity: 0, y: 18 }}
@@ -147,7 +147,7 @@ export default function Manifesto() {
           overflow: hidden;
         }
         .manifesto-kicker {
-          font-family: 'DM Mono', monospace;
+          font-family: var(--font-dm-mono), 'DM Mono', monospace;
           font-size: 0.74rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
@@ -164,7 +164,7 @@ export default function Manifesto() {
           background: var(--gold);
         }
         .manifesto-h2 {
-          font-family: 'Fraunces', serif;
+          font-family: var(--font-fraunces), 'Fraunces', serif;
           font-size: clamp(2rem, 4vw, 3.4rem);
           font-weight: 400;
           color: var(--ink);
@@ -191,7 +191,7 @@ export default function Manifesto() {
           margin: 0 0 32px;
           padding-left: 24px;
           border-left: 2px solid var(--gold);
-          font-family: 'Fraunces', serif;
+          font-family: var(--font-fraunces), 'Fraunces', serif;
           font-style: italic;
           font-size: clamp(1.32rem, 2vw, 1.65rem);
           font-weight: 400;
@@ -204,7 +204,7 @@ export default function Manifesto() {
           color: var(--gold);
         }
         .manifesto-p {
-          font-family: 'Inter Tight', sans-serif;
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
           font-size: 1.08rem;
           color: rgba(10,10,10,0.65);
           line-height: 1.8;
@@ -227,7 +227,7 @@ export default function Manifesto() {
           flex-wrap: wrap;
         }
         .manifesto-cred__label {
-          font-family: 'DM Mono', monospace;
+          font-family: var(--font-dm-mono), 'DM Mono', monospace;
           font-size: 0.65rem;
           letter-spacing: 0.18em;
           text-transform: uppercase;
@@ -235,7 +235,7 @@ export default function Manifesto() {
           margin-bottom: 5px;
         }
         .manifesto-cred__value {
-          font-family: 'Fraunces', serif;
+          font-family: var(--font-fraunces), 'Fraunces', serif;
           font-size: 1.02rem;
           color: var(--ink);
           font-weight: 500;
@@ -245,7 +245,7 @@ export default function Manifesto() {
         /* FILTER (não-cliente) */
         .manifesto-filter {
           margin-top: 32px;
-          font-family: 'Fraunces', serif;
+          font-family: var(--font-fraunces), 'Fraunces', serif;
           font-style: italic;
           font-size: 1.05rem;
           line-height: 1.6;
@@ -321,7 +321,7 @@ export default function Manifesto() {
           z-index: 2;
         }
         .manifesto-visual__sig-name {
-          font-family: 'Fraunces', serif;
+          font-family: var(--font-fraunces), 'Fraunces', serif;
           font-style: italic;
           font-size: 1.05rem;
           color: #FFFFFF;
@@ -329,7 +329,7 @@ export default function Manifesto() {
           text-shadow: 0 1px 8px rgba(0,0,0,0.4);
         }
         .manifesto-visual__sig-role {
-          font-family: 'DM Mono', monospace;
+          font-family: var(--font-dm-mono), 'DM Mono', monospace;
           font-size: 0.6rem;
           letter-spacing: 0.22em;
           text-transform: uppercase;

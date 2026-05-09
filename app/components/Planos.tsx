@@ -1,6 +1,7 @@
 "use client";
 
 import { TiltCard } from "./TiltCard";
+import { Kicker, CTA } from "./_base";
 
 const plans = [
   {
@@ -35,63 +36,25 @@ const plans = [
 
 export default function Planos() {
   return (
-    <section
-      id="planos"
-      className="section-pad-y-lg"
-      style={{
-        background: "var(--obsidian)",
-      }}
-    >
+    <section id="planos" className="section-pad-y-lg planos-section">
       <div className="container-x container-x--narrow">
-
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: 72 }}>
-          <p style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "0.62rem",
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            color: "var(--gold)",
-            marginBottom: 20,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 12,
-          }}>
-            <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
+        <div className="planos-header">
+          <Kicker align="center" dual>
             Investimento
-            <span style={{ display: "block", width: 28, height: 1, background: "var(--gold)" }} />
-          </p>
-          <h2 style={{
-            fontFamily: "'Fraunces', serif",
-            fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
-            fontWeight: 400,
-            color: "#FFFFFF",
-            marginBottom: 18,
-            lineHeight: 1.12,
-            letterSpacing: "-0.02em",
-          }}>
+          </Kicker>
+          <h2 className="planos-h2">
             Para marcas que entendem que conteúdo é{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-              ativo de posicionamento
-            </em>.
+            <em>ativo de posicionamento</em>.
           </h2>
-          <p style={{
-            fontFamily: "'Inter Tight', sans-serif",
-            fontSize: "0.94rem",
-            color: "rgba(255,255,255,0.5)",
-            lineHeight: 1.7,
-            fontWeight: 300,
-            maxWidth: 540,
-            margin: "0 auto",
-          }}>
+          <p className="planos-sub">
             Dois caminhos integrados. O primeiro, para quem precisa de produção
             autoral. O segundo, para quem quer presença consolidada com gestão completa.
           </p>
         </div>
 
         {/* Cards com TiltCard */}
-        <div className="plans-grid" style={{ marginBottom: 48 }}>
+        <div className="plans-grid">
           {plans.map((plan) => (
             <TiltCard
               key={plan.name}
@@ -109,166 +72,192 @@ export default function Planos() {
                 cursor: "default",
               }}
             >
-              {plan.badge && (
-                <span style={{
-                  position: "absolute",
-                  top: 20,
-                  right: 20,
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.7rem",
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  color: plan.featured ? "var(--gold)" : "rgba(255,255,255,0.4)",
-                  background: plan.featured ? "rgba(201,169,110,0.12)" : "rgba(255,255,255,0.05)",
-                  padding: "5px 13px",
-                }}>
-                  {plan.badge}
-                </span>
-              )}
+              {plan.badge && <span className={`plan-badge ${plan.featured ? "plan-badge--featured" : ""}`}>{plan.badge}</span>}
 
-              <p style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: "0.74rem",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: plan.featured ? "var(--gold)" : "rgba(201,169,110,0.6)",
-                marginBottom: 14,
-              }}>
-                {plan.tag}
-              </p>
+              <p className={`plan-tag ${plan.featured ? "plan-tag--featured" : ""}`}>{plan.tag}</p>
 
-              <h3 style={{
-                fontFamily: "'Fraunces', serif",
-                fontSize: "2rem",
-                fontWeight: 500,
-                color: plan.featured ? "var(--ink)" : "#FFFFFF",
-                marginBottom: 16,
-              }}>
-                {plan.name}
-              </h3>
+              <h3 className={`plan-name ${plan.featured ? "plan-name--featured" : ""}`}>{plan.name}</h3>
 
-              <div style={{ width: 32, height: 1, background: plan.featured ? "var(--gold)" : "rgba(201,169,110,0.3)", marginBottom: 20 }} />
+              <div className={`plan-rule ${plan.featured ? "plan-rule--featured" : ""}`} />
 
-              <p style={{
-                fontFamily: "'Inter Tight', sans-serif",
-                fontSize: "1rem",
-                color: plan.featured ? "rgba(10,10,10,0.6)" : "rgba(255,255,255,0.55)",
-                lineHeight: 1.78,
-                marginBottom: 32,
-                fontWeight: 300,
-              }}>
-                {plan.desc}
-              </p>
+              <p className={`plan-desc ${plan.featured ? "plan-desc--featured" : ""}`}>{plan.desc}</p>
 
-              <ul style={{ marginBottom: 36, flexGrow: 1 }}>
+              <ul className={`plan-list ${plan.featured ? "plan-list--featured" : ""}`}>
                 {plan.items.map((item) => (
-                  <li key={item} style={{
-                    fontFamily: "'Inter Tight', sans-serif",
-                    fontSize: "0.96rem",
-                    color: plan.featured ? "rgba(10,10,10,0.7)" : "rgba(255,255,255,0.72)",
-                    padding: "11px 0",
-                    borderBottom: plan.featured ? "1px solid rgba(10,10,10,0.07)" : "1px solid rgba(255,255,255,0.06)",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 12,
-                    fontWeight: 400,
-                  }}>
-                    <span style={{ color: "var(--gold)", fontSize: "0.85rem", flexShrink: 0 }}>✓</span>
+                  <li key={item}>
+                    <span className="plan-check">✓</span>
                     {item}
                   </li>
                 ))}
               </ul>
 
-              <a
+              <CTA
                 href="#contato"
-                style={{
-                  fontFamily: "'Inter Tight', sans-serif",
-                  fontSize: "0.9rem",
-                  letterSpacing: "0.12em",
-                  fontWeight: 500,
-                  textTransform: "uppercase",
-                  color: plan.featured ? "#FFFFFF" : "var(--gold)",
-                  background: plan.featured ? "var(--ink)" : "transparent",
-                  border: plan.featured ? "none" : "1px solid rgba(201,169,110,0.4)",
-                  padding: "14px 28px",
-                  textDecoration: "none",
-                  textAlign: "center",
-                  display: "block",
-                  transition: "all 0.3s ease",
-                  position: "relative",
-                  zIndex: 20,
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  if (plan.featured) el.style.background = "#C9A96E";
-                  else { el.style.background = "rgba(201,169,110,0.1)"; el.style.borderColor = "#C9A96E"; }
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  if (plan.featured) el.style.background = "var(--ink)";
-                  else { el.style.background = "transparent"; el.style.borderColor = "rgba(201,169,110,0.4)"; }
-                }}
+                variant={plan.featured ? "primary" : "ghost"}
+                size="md"
+                fullWidth
+                style={{ position: "relative", zIndex: 20 }}
               >
                 {plan.featured ? "Começar agora" : "Quero este plano"}
-              </a>
+              </CTA>
             </TiltCard>
           ))}
         </div>
 
-        <p style={{
-          fontFamily: "'Inter Tight', sans-serif",
-          fontSize: "0.96rem",
-          color: "rgba(255,255,255,0.4)",
-          textAlign: "center",
-          marginBottom: 32,
-          fontWeight: 300,
-        }}>
+        <p className="planos-note">
           Cada marca é única. Converse com a Laura e monte o projeto ideal para o seu momento.
         </p>
 
         <div style={{ textAlign: "center" }}>
-          <a
+          <CTA
             href="https://wa.me/5551985309613"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              fontFamily: "'Inter Tight', sans-serif",
-              fontSize: "0.9rem",
-              letterSpacing: "0.12em",
-              fontWeight: 500,
-              textTransform: "uppercase",
-              color: "#0A0A0A",
-              background: "var(--gold)",
-              padding: "14px 36px",
-              textDecoration: "none",
-              display: "inline-block",
-              transition: "background 0.3s ease",
-            }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#B8966A"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--gold)"; }}
+            variant="gold"
+            size="md"
           >
             Falar com a Laura
-          </a>
+          </CTA>
         </div>
       </div>
 
       <style>{`
+        .planos-section { background: var(--obsidian); }
+
+        .planos-header {
+          text-align: center;
+          margin-bottom: 72px;
+        }
+        .planos-header > * + * { margin-top: var(--space-5); }
+        .planos-h2 {
+          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-size: clamp(1.8rem, 3vw, 2.6rem);
+          font-weight: 400;
+          color: #FFFFFF;
+          line-height: 1.12;
+          letter-spacing: -0.02em;
+        }
+        .planos-h2 em {
+          font-style: italic;
+          color: var(--gold);
+          font-weight: 400;
+        }
+        .planos-sub {
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-size: 0.94rem;
+          color: rgba(255,255,255,0.55);
+          line-height: 1.7;
+          font-weight: 300;
+          max-width: 540px;
+          margin-inline: auto;
+        }
+
         .plans-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 24px;
+          margin-bottom: 48px;
         }
+
+        .plan-badge {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          font-family: var(--font-dm-mono), 'DM Mono', monospace;
+          font-size: 0.7rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.4);
+          background: rgba(255,255,255,0.05);
+          padding: 5px 13px;
+        }
+        .plan-badge--featured {
+          color: var(--gold);
+          background: rgba(201,169,110,0.12);
+        }
+
+        .plan-tag {
+          font-family: var(--font-dm-mono), 'DM Mono', monospace;
+          font-size: 0.74rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: rgba(201,169,110,0.6);
+          margin-bottom: 14px;
+        }
+        .plan-tag--featured { color: var(--gold); }
+
+        .plan-name {
+          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-size: 2rem;
+          font-weight: 500;
+          color: #FFFFFF;
+          margin-bottom: 16px;
+        }
+        .plan-name--featured { color: var(--ink); }
+
+        .plan-rule {
+          width: 32px;
+          height: 1px;
+          background: rgba(201,169,110,0.3);
+          margin-bottom: 20px;
+        }
+        .plan-rule--featured { background: var(--gold); }
+
+        .plan-desc {
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-size: 1rem;
+          color: rgba(255,255,255,0.6);
+          line-height: 1.78;
+          margin-bottom: 32px;
+          font-weight: 300;
+        }
+        .plan-desc--featured { color: rgba(10,10,10,0.65); }
+
+        .plan-list {
+          margin-bottom: 36px;
+          flex-grow: 1;
+          list-style: none;
+          padding: 0;
+        }
+        .plan-list li {
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-size: 0.96rem;
+          color: rgba(255,255,255,0.78);
+          padding: 11px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-weight: 400;
+        }
+        .plan-list--featured li {
+          color: rgba(10,10,10,0.75);
+          border-bottom-color: rgba(10,10,10,0.07);
+        }
+        .plan-check {
+          color: var(--gold);
+          font-size: 0.85rem;
+          flex-shrink: 0;
+        }
+
+        .planos-note {
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-size: 0.96rem;
+          color: rgba(255,255,255,0.45);
+          text-align: center;
+          margin-bottom: 32px;
+          font-weight: 300;
+        }
+
         @media (max-width: 720px) {
           .plans-grid { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 768px) {
           #planos { padding: 80px 0 !important; }
-          #planos > div { padding: 0 20px !important; }
           .plans-grid > div { padding: 32px 24px !important; }
         }
         @media (max-width: 480px) {
           #planos { padding: 64px 0 !important; }
-          #planos > div { padding: 0 16px !important; }
         }
       `}</style>
     </section>

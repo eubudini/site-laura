@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { CTA, EditorialFrame } from "./_base";
 
 // ease-editorial (espelha --ease-editorial em globals.css)
 const EASE_EDITORIAL: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
@@ -50,20 +52,23 @@ export default function Hero() {
           }}
           className="hero-photo"
         >
-          <div className="hero-photo__frame" aria-hidden />
-          <div className="hero-photo__inner">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/laura-hero.jpg"
-              alt="Laura Camponogara, Estrategista de Conteúdo"
-              className="hero-photo__img"
-            />
-            {/* Signature overlay (mobile) */}
-            <div className="hero-photo__signature" aria-hidden>
-              <span className="hero-photo__sig-name">Laura Camponogara</span>
-              <span className="hero-photo__sig-role">Estrategista de Conteúdo</span>
+          <EditorialFrame offset={20} position="tr">
+            <div className="hero-photo__inner">
+              <Image
+                src="/laura-hero.jpg"
+                alt="Laura Camponogara, Estrategista de Conteúdo"
+                fill
+                priority
+                sizes="(max-width: 900px) 280px, 460px"
+                className="hero-photo__img"
+              />
+              {/* Signature overlay (mobile) */}
+              <div className="hero-photo__signature" aria-hidden>
+                <span className="hero-photo__sig-name">Laura Camponogara</span>
+                <span className="hero-photo__sig-role">Estrategista de Conteúdo</span>
+              </div>
             </div>
-          </div>
+          </EditorialFrame>
         </motion.div>
 
         {/* DESCRIÇÃO */}
@@ -97,12 +102,12 @@ export default function Hero() {
 
         {/* CTAs */}
         <motion.div {...fadeUp(0.4)} className="hero-ctas">
-          <a href="#resultados" className="hero-cta hero-cta--primary">
+          <CTA href="#resultados" variant="primary" size="lg">
             Ver resultados reais
-          </a>
-          <a href="#contato" className="hero-cta hero-cta--secondary">
+          </CTA>
+          <CTA href="#contato" variant="secondary" size="lg">
             Quero isso para a minha marca
-          </a>
+          </CTA>
         </motion.div>
 
         {/* LOCATION */}
@@ -190,7 +195,7 @@ export default function Hero() {
 
         /* KICKER */
         .hero-kicker {
-          font-family: 'DM Mono', monospace;
+          font-family: var(--font-dm-mono), 'DM Mono', monospace;
           font-size: var(--text-mono-kicker);
           letter-spacing: 0.32em;
           text-transform: uppercase;
@@ -210,7 +215,7 @@ export default function Hero() {
 
         /* H1 */
         .hero-h1 {
-          font-family: 'Fraunces', serif;
+          font-family: var(--font-fraunces), 'Fraunces', serif;
           font-size: var(--text-display);
           font-weight: 400;
           line-height: 1.02;
@@ -226,7 +231,7 @@ export default function Hero() {
 
         /* DESC */
         .hero-desc {
-          font-family: 'Inter Tight', sans-serif;
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
           font-size: clamp(1.08rem, 1.7vw, 1.28rem);
           color: rgba(10,10,10,0.65);
           line-height: 1.72;
@@ -258,7 +263,7 @@ export default function Hero() {
           height: 30px;
           border-radius: 50%;
           border: 2px solid var(--parchment);
-          font-family: 'Fraunces', serif;
+          font-family: var(--font-fraunces), 'Fraunces', serif;
           font-size: 0.62rem;
           color: #f5e6c8;
           display: flex;
@@ -267,7 +272,7 @@ export default function Hero() {
           font-weight: 500;
         }
         .hero-trust__label {
-          font-family: 'Inter Tight', sans-serif;
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
           font-size: 0.82rem;
           color: rgba(10,10,10,0.72);
           font-weight: 400;
@@ -289,7 +294,7 @@ export default function Hero() {
           margin-bottom: var(--space-8);
         }
         .hero-cta {
-          font-family: 'Inter Tight', sans-serif;
+          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
           font-size: 0.94rem;
           letter-spacing: 0.12em;
           font-weight: 500;
@@ -317,7 +322,7 @@ export default function Hero() {
 
         /* LOCATION */
         .hero-location {
-          font-family: 'DM Mono', monospace;
+          font-family: var(--font-dm-mono), 'DM Mono', monospace;
           font-size: 0.78rem;
           letter-spacing: 0.1em;
           color: rgba(10,10,10,0.45);
@@ -326,36 +331,24 @@ export default function Hero() {
 
         /* PHOTO */
         .hero-photo {
-          position: relative;
           display: flex;
           justify-content: flex-end;
           width: 100%;
         }
-        .hero-photo__frame {
-          position: absolute;
-          top: -20px;
-          right: -20px;
-          width: calc(100% - 40px);
-          height: calc(100% - 40px);
-          border: 1px solid rgba(201,169,110,0.25);
-          pointer-events: none;
-          z-index: 0;
+        .hero-photo > .ds-frame {
+          width: 100%;
+          max-width: 460px;
         }
         .hero-photo__inner {
           width: 100%;
-          max-width: 460px;
           aspect-ratio: 3 / 4;
           background: var(--parchment-dark);
           position: relative;
-          z-index: 1;
           overflow: hidden;
         }
         .hero-photo__img {
-          width: 100%;
-          height: 100%;
           object-fit: cover;
           object-position: center top;
-          display: block;
         }
         .hero-photo__signature {
           display: none;
@@ -373,7 +366,7 @@ export default function Hero() {
           gap: 8px;
         }
         .hero-scroll__label {
-          font-family: 'DM Mono', monospace;
+          font-family: var(--font-dm-mono), 'DM Mono', monospace;
           font-size: 0.65rem;
           letter-spacing: 0.2em;
           color: rgba(10,10,10,0.3);
@@ -424,12 +417,6 @@ export default function Hero() {
             margin-left: auto;
             margin-right: auto;
           }
-          .hero-photo__frame {
-            top: -12px;
-            right: -12px;
-            width: calc(100% - 24px);
-            height: calc(100% - 24px);
-          }
           .hero-photo__inner {
             max-width: 100%;
             aspect-ratio: 4 / 5;
@@ -446,14 +433,14 @@ export default function Hero() {
             z-index: 2;
           }
           .hero-photo__sig-name {
-            font-family: 'Fraunces', serif;
+            font-family: var(--font-fraunces), 'Fraunces', serif;
             font-style: italic;
             font-size: 0.95rem;
             color: var(--ink);
             letter-spacing: 0.005em;
           }
           .hero-photo__sig-role {
-            font-family: 'DM Mono', monospace;
+            font-family: var(--font-dm-mono), 'DM Mono', monospace;
             font-size: 0.55rem;
             letter-spacing: 0.22em;
             text-transform: uppercase;
@@ -466,7 +453,7 @@ export default function Hero() {
 
         @media (max-width: 768px) {
           .hero-grid { padding: 56px 22px 48px; }
-          .hero-cta {
+          .hero-ctas .ds-cta {
             width: 100%;
             font-size: 0.82rem;
             padding: 14px 24px;

@@ -62,7 +62,7 @@ export default function Footer() {
         <div className="footer-brand">
           <p
             style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: "var(--font-fraunces), 'Fraunces', serif",
               fontSize: "1.4rem",
               fontWeight: 500,
               color: "#FFFFFF",
@@ -74,7 +74,7 @@ export default function Footer() {
           </p>
           <p
             style={{
-              fontFamily: "'Inter Tight', sans-serif",
+              fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif",
               fontSize: "0.86rem",
               color: "rgba(255,255,255,0.45)",
               fontWeight: 300,
@@ -128,7 +128,7 @@ export default function Footer() {
             <div key={sectionIdx}>
               <h3
                 style={{
-                  fontFamily: "'DM Mono', monospace",
+                  fontFamily: "var(--font-dm-mono), 'DM Mono', monospace",
                   fontSize: "0.6rem",
                   letterSpacing: "0.22em",
                   textTransform: "uppercase",
@@ -146,7 +146,7 @@ export default function Footer() {
                       target={link.href.startsWith("http") ? "_blank" : undefined}
                       rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       style={{
-                        fontFamily: "'Inter Tight', sans-serif",
+                        fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif",
                         fontSize: "0.86rem",
                         color: "rgba(255,255,255,0.5)",
                         fontWeight: 300,
@@ -176,7 +176,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "var(--font-dm-mono), 'DM Mono', monospace",
               fontSize: "0.62rem",
               color: "rgba(255,255,255,0.3)",
               letterSpacing: "0.06em",
@@ -186,7 +186,7 @@ export default function Footer() {
           </p>
           <p
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "var(--font-dm-mono), 'DM Mono', monospace",
               fontSize: "0.62rem",
               color: "rgba(255,255,255,0.3)",
               letterSpacing: "0.06em",

@@ -70,22 +70,24 @@ export default function Manifesto() {
             className="manifesto-text"
           >
             <blockquote className="manifesto-pull">
-              Não opero por volume.
+              Direção criativa que constrói desejo.
               <br />
-              Opero por <em>posicionamento</em>.
+              E <em>reputação</em>.
             </blockquote>
 
             <p className="manifesto-p">
-              A maioria das marcas publica. Poucas se posicionam. A distância
-              entre uma coisa e outra está na estratégia por trás de cada
+              Existe uma diferença silenciosa entre marcas que aparecem e
+              marcas que ficam. Ela vive na estratégia por trás de cada
               imagem, cada legenda, cada decisão de direção. É esse o trabalho.
             </p>
 
             <p className="manifesto-p">
               Cada projeto começa por uma leitura própria: marca, público,
-              território. Sem fórmula. Com produção autoral em{" "}
+              território. Sem fórmula. Produção autoral em{" "}
               <strong>Porto Alegre, no Brasil e em José Ignácio (Uruguai)</strong>,
-              dirigindo conteúdo para maisons e referências de moda.
+              dirigindo conteúdo para maisons e referências de moda. Entre os
+              clientes, <strong>Marina Ciconet, Mariana Penteado, A.MAR José
+              Ignácio</strong> e <strong>Brunnen</strong>.
             </p>
 
             <div className="manifesto-credentials">
@@ -98,8 +100,9 @@ export default function Manifesto() {
             </div>
 
             <p className="manifesto-filter">
-              Não atendo todo mundo. Atendo marcas que entendem conteúdo como
-              ativo de posicionamento, não como obrigação de calendário.
+              Trabalho com marcas que tratam conteúdo como ativo de marca:
+              estratégia, direção criativa, posicionamento, produção e captação
+              sob a mesma assinatura.
             </p>
           </motion.div>
 

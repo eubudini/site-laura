@@ -6,21 +6,21 @@ import { CTA } from "./_base";
 const plans = [
   {
     name: "Essencial",
-    tag: "Captação & Edição de Conteúdo",
-    desc: "Conteúdo profissional, estético e pronto para usar. Para marcas que querem qualidade de produção sem gestão de perfil.",
+    tag: "Captação e edição de conteúdo",
+    desc: "Conteúdo profissional, estético e pronto para usar. Para marcas que querem produção de qualidade sem precisar entregar a gestão do perfil.",
     items: [
       "Captação de vídeos e fotos",
       "Edição de vídeos e tratamento de imagens",
       "Conteúdos pensados para redes sociais",
       "Entrega organizada em pasta (Drive)",
-      "Uso livre do material pelo cliente",
+      "Você usa o material como e onde quiser",
     ],
     featured: false,
   },
   {
     name: "Premium",
-    tag: "Gestão de Redes Sociais",
-    desc: "A solução completa para quem quer crescimento de verdade. Gestão, estratégia, produção e presença, tudo integrado e alinhado à sua identidade.",
+    tag: "Gestão completa de redes sociais",
+    desc: "Para quem quer crescimento de verdade. Gestão, estratégia, captação e presença, tudo conectado e alinhado à sua identidade.",
     items: [
       "Gestão completa das redes sociais",
       "Estratégia e criação de conteúdo",
@@ -41,12 +41,12 @@ export default function Planos() {
         {/* Header */}
         <div className="planos-header">
           <h2 className="planos-h2">
-            Para marcas que entendem que conteúdo é{" "}
-            <em>ativo de posicionamento</em>.
+            Para marcas que tratam conteúdo como{" "}
+            <em>ferramenta de posicionamento</em>.
           </h2>
           <p className="planos-sub">
-            Dois caminhos integrados. O primeiro, para quem precisa de produção
-            autoral. O segundo, para quem quer presença consolidada com gestão completa.
+            Dois caminhos. O primeiro, para quem precisa só de produção autoral
+            de qualidade. O segundo, para quem quer presença consolidada com a gestão inteira na minha mão.
           </p>
         </div>
 
@@ -102,7 +102,7 @@ export default function Planos() {
         </div>
 
         <p className="planos-note">
-          Cada marca é única. Converse com a Laura e monte o projeto ideal para o seu momento.
+          Cada marca é diferente. Conversa comigo e a gente monta o projeto certo pro seu momento.
         </p>
 
         <div style={{ textAlign: "center" }}>

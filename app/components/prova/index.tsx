@@ -26,11 +26,11 @@ export default function Prova() {
               align="center"
               title={
                 <>
-                  Não são números genéricos. <em>São transformações reais.</em>
+                  Não são números bonitos no slide. <em>São marcas que cresceram de verdade.</em>
                 </>
               }
-              sub="Marcas que confiaram em estratégia, direção criativa e produção contínua, e colheram crescimento expressivo."
-              maxWidth={700}
+              sub="Marina Ciconet, Mariana Penteado, A.MAR José Ignácio, Brunnen e outras marcas que confiaram na estratégia, na direção criativa e na produção contínua, e colheram resultado real."
+              maxWidth={720}
             />
           </motion.div>
 
@@ -43,8 +43,7 @@ export default function Prova() {
           <BrandWall />
 
           <p className="prova-disclaimer">
-            * Dados acumulados ao longo do período de acompanhamento estratégico. Mockups
-            ilustrativos baseados em dados reais.
+            * Números acumulados durante o período em que a marca esteve sob direção estratégica. Mockups ilustrativos com dados reais.
           </p>
         </div>
       </div>

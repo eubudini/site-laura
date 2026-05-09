@@ -48,7 +48,7 @@ export function CaseCard({ c, idx }: Props) {
       transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="case-card"
     >
-      <div className="case-card__index">CASE / {String(idx + 1).padStart(2, "0")}</div>
+      <div className="case-card__index">CLIENTE / {String(idx + 1).padStart(2, "0")}</div>
       <div className="case-card__head">
         <p className="case-card__tag">{c.tag}</p>
         <h3 className="case-card__name">{c.name}</h3>

@@ -116,25 +116,6 @@ export default function Hero() {
         </motion.p>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={reduced ? { opacity: 1 } : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: reduced ? 0 : 0.8, delay: reduced ? 0 : 1.2 }}
-        className="hero-scroll"
-      >
-        <span className="hero-scroll__label">Scroll</span>
-        <motion.div
-          animate={reduced ? { y: 0 } : { y: [0, 8, 0] }}
-          transition={
-            reduced
-              ? { duration: 0 }
-              : { duration: 1.8, repeat: Infinity, ease: "easeInOut" }
-          }
-          className="hero-scroll__line"
-        />
-      </motion.div>
-
       <style>{`
         .hero-section {
           min-height: 100vh;
@@ -354,30 +335,6 @@ export default function Hero() {
           display: none;
         }
 
-        /* SCROLL INDICATOR */
-        .hero-scroll {
-          position: absolute;
-          bottom: 36px;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 8px;
-        }
-        .hero-scroll__label {
-          font-family: var(--font-dm-mono), 'DM Mono', monospace;
-          font-size: 0.65rem;
-          letter-spacing: 0.2em;
-          color: rgba(10,10,10,0.3);
-          text-transform: uppercase;
-        }
-        .hero-scroll__line {
-          width: 1px;
-          height: 32px;
-          background: linear-gradient(to bottom, rgba(10,10,10,0.3), transparent);
-        }
-
         /* ═══════════════════════════════════════════════
            MOBILE: Reordering editorial vertical
            1. KICKER
@@ -461,7 +418,6 @@ export default function Hero() {
           .hero-ctas { flex-direction: column; gap: 10px; }
           .hero-trust { padding: 7px 14px 7px 7px; }
           .hero-trust__label { font-size: 0.68rem; }
-          .hero-scroll { display: none; }
         }
 
         @media (max-width: 480px) {

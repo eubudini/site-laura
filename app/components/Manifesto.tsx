@@ -46,7 +46,7 @@ export default function Manifesto() {
           transition={{ duration: 0.5 }}
           style={{ marginBottom: "var(--space-5)" }}
         >
-          <Kicker>Manifesto</Kicker>
+          <Kicker>Sobre</Kicker>
         </motion.div>
 
         <motion.h2

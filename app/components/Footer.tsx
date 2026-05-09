@@ -17,7 +17,7 @@ const sections = [
     title: "Navegação",
     links: [
       { name: "Início", href: "#hero" },
-      { name: "Manifesto", href: "#sobre" },
+      { name: "Sobre", href: "#sobre" },
       { name: "Método", href: "#servicos" },
       { name: "Resultados", href: "#resultados" },
       { name: "Portfólio", href: "#portfolio" },

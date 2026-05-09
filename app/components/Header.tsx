@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CTA } from "./_base";
 
 const links = [
-  { label: "Manifesto", href: "#sobre" },
+  { label: "Sobre", href: "#sobre" },
   { label: "Método", href: "#servicos" },
   { label: "Resultados", href: "#resultados" },
   { label: "Portfólio", href: "#portfolio" },

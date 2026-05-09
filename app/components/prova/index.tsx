@@ -28,10 +28,10 @@ export default function Prova() {
               align="center"
               title={
                 <>
-                  Não são números genéricos. <em>São transformações reais.</em>
+                  Resultado é consequência. <em>Da leitura certa.</em>
                 </>
               }
-              sub="Marcas que confiaram em estratégia, direção criativa e produção contínua, e colheram crescimento expressivo."
+              sub="Marcas conduzidas em estratégia, direção criativa e produção contínua. O crescimento veio depois."
               maxWidth={700}
             />
           </motion.div>
@@ -45,8 +45,7 @@ export default function Prova() {
           <BrandWall />
 
           <p className="prova-disclaimer">
-            * Dados acumulados ao longo do período de acompanhamento estratégico. Mockups
-            ilustrativos baseados em dados reais.
+            * Dados acumulados no período de acompanhamento. Mockups ilustrativos sobre números reais.
           </p>
         </div>
       </div>

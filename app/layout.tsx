@@ -29,9 +29,9 @@ const SITE_URL = "https://lauracamponogara.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Laura Camponogara | Direção criativa e estratégia de conteúdo",
+  title: "Laura Camponogara | Estratégia de Conteúdo & Presença Digital",
   description:
-    "Direção criativa, estratégia e produção de conteúdo para marcas como Marina Ciconet, A.MAR José Ignácio e Brunnen. Porto Alegre, Brasil e Uruguai.",
+    "Ajudo marcas a construírem uma imagem mais forte, desejável e consistente por meio de conteúdo, posicionamento e presença nos canais certos.",
   keywords: [
     "estratégia de conteúdo",
     "social media",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Laura Camponogara | Direção criativa para marcas que viram referência",
+    title: "Laura Camponogara | Presença Digital com Estratégia e Estética",
     description:
-      "Direção criativa, estratégia e produção para marcas como Marina Ciconet, A.MAR José Ignácio e Brunnen.",
+      "Ajudo marcas a construírem uma imagem mais forte, desejável e consistente.",
     type: "website",
     locale: "pt_BR",
     url: SITE_URL,
@@ -52,9 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Laura Camponogara | Direção criativa e estratégia de conteúdo",
+    title: "Laura Camponogara | Estratégia de Conteúdo",
     description:
-      "Direção criativa, estratégia e produção para marcas que querem virar referência.",
+      "Estratégia, direção criativa e presença digital para marcas que querem ser referência.",
   },
 };
 
@@ -62,7 +62,7 @@ const personLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Laura Camponogara",
-  jobTitle: "Estrategista de Conteúdo e Direção Criativa",
+  jobTitle: "Estrategista de Conteúdo & Direção Criativa",
   url: SITE_URL,
   image: `${SITE_URL}/laura-hero.jpg`,
   sameAs: ["https://www.instagram.com/laura.camponogara/"],
@@ -77,9 +77,9 @@ const personLd = {
 const serviceLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Laura Camponogara | Direção criativa e estratégia de conteúdo",
+  name: "Laura Camponogara | Estratégia de Conteúdo",
   description:
-    "Estratégia de conteúdo, direção criativa, captação editorial e gestão de redes sociais para marcas como Marina Ciconet, A.MAR José Ignácio e Brunnen.",
+    "Estratégia de conteúdo, direção criativa, captação editorial e gestão de redes sociais para marcas com identidade.",
   url: SITE_URL,
   image: `${SITE_URL}/laura-hero.jpg`,
   telephone: "+55-51-98530-9613",

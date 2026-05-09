@@ -45,8 +45,8 @@ export default function Manifesto() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="manifesto-h2"
         >
-          Tem marca que posta.{" "}
-          <em>Tem marca que é percebida.</em>
+          A diferença entre publicar{" "}
+          <em>e ser percebida.</em>
         </motion.h2>
 
         <div className="manifesto-grid">
@@ -59,23 +59,23 @@ export default function Manifesto() {
             className="manifesto-text"
           >
             <blockquote className="manifesto-pull">
-              Não trabalho com volume de post.
+              Não trabalho com conteúdo de volume.
               <br />
               Trabalho com conteúdo que <em>posiciona</em>.
             </blockquote>
 
             <p className="manifesto-p">
-              A maioria das marcas só posta. Poucas se posicionam. A diferença
-              está na estratégia por trás de cada foto, cada legenda e cada decisão
-              criativa. É isso que entrego em todos os projetos que assino.
+              A maioria das marcas posta. Poucas se posicionam. A diferença está
+              na estratégia por trás de cada imagem, legenda e decisão criativa
+              e é exatamente isso que entrego em cada projeto.
             </p>
 
             <p className="manifesto-p">
-              Cada cliente recebe uma leitura própria da sua marca, do público e
-              dos canais onde a voz precisa chegar. Sem fórmula pronta. Faço captação
-              em <strong>Porto Alegre, no Brasil e em José Ignácio, no Uruguai</strong>,
-              onde dirijo conteúdo para marcas como <strong>Marina Ciconet, Mariana
-              Penteado, A.MAR e Brunnen</strong>.
+              Cada cliente recebe uma leitura única da sua marca, do seu público
+              e dos canais onde a voz precisa ser ouvida. Sem fórmula pronta.
+              Com produção autoral em <strong>Porto Alegre, no Brasil e em
+              José Ignácio (Uruguai)</strong>, onde dirijo conteúdo para
+              maisons de luxo e referências de moda.
             </p>
 
             <div className="manifesto-credentials">
@@ -89,7 +89,7 @@ export default function Manifesto() {
 
             <p className="manifesto-filter">
               Não atendo todo mundo. Atendo marcas que entendem que conteúdo é
-              ferramenta de posicionamento, não obrigação de calendário.
+              ativo de posicionamento, não obrigação de calendário.
             </p>
           </motion.div>
 

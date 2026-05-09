@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Kicker } from "./_base";
 
 type Act = {
   roman: string;
@@ -18,54 +17,54 @@ const acts: Act[] = [
     roman: "I",
     label: "Posicionar",
     title: "Estratégia & Direção",
-    promise: "Antes do frame, a leitura.",
-    desc: "Toda captação começa muito antes da câmera. O ponto de partida é entender o que a marca representa, para quem fala e por que importa. É o momento em que o conteúdo deixa de ser entrega e passa a ser posicionamento.",
+    promise: "A diferença entre publicar e ser percebida.",
+    desc: "Antes de qualquer captação, sua marca precisa saber o que dizer, para quem e por quê. É aqui que o conteúdo deixa de ser tarefa e vira posicionamento.",
     deliverables: [
-      "Diagnóstico de marca, leitura competitiva e benchmarks",
+      "Diagnóstico de marca, benchmarks e leitura competitiva",
       "Pilares editoriais, tom de voz e mapa de mensagens",
-      "Calendário estratégico por canal",
+      "Calendário estratégico mensal por canal",
       "Reposicionamento de bio, capa e destaques",
     ],
     step: {
       n: "01",
-      title: "Imersão",
-      desc: "Compreender território, público e referências antes de qualquer decisão criativa.",
+      title: "Imersão na sua marca",
+      desc: "Vamos juntos entender o que você representa, o que seu público espera e onde sua comunicação pode ser mais poderosa.",
     },
   },
   {
     roman: "II",
     label: "Produzir",
     title: "Captação & Direção Criativa",
-    promise: "Estética que sustenta a narrativa.",
-    desc: "Produção autoral com padrão editorial. Cada peça nasce de uma decisão de direção: o que a imagem precisa dizer, em que ritmo, com qual textura. Captação no Brasil e no Uruguai.",
+    promise: "Conteúdo que para o scroll. Sem fórmula.",
+    desc: "Produção autoral com identidade visual e padrão editorial. Cada peça traduz a essência da marca com estética, autenticidade e potencial de conexão.",
     deliverables: [
       "Direção criativa, moodboard e roteiros editoriais",
-      "Captação fotográfica e em vídeo",
+      "Captação fotográfica e em vídeo profissional",
       "Edição com tratamento de cor e padronização",
       "Cobertura presencial de eventos e lançamentos",
     ],
     step: {
       n: "02",
-      title: "Direção em movimento",
-      desc: "Formatos, prioridades e referências definidos para que cada peça sirva a um propósito claro.",
+      title: "Direção criativa em movimento",
+      desc: "Caminhos visuais, formatos e prioridades definidos para que cada conteúdo sirva a um propósito claro.",
     },
   },
   {
     roman: "III",
     label: "Crescer",
     title: "Distribuição & Performance",
-    promise: "Presença com método, não com sorte.",
-    desc: "O conteúdo certo, no canal certo, para o público certo. Distribuição editorial em múltiplas plataformas e mídia paga calibrada para acelerar com critério.",
+    promise: "Crescimento com previsibilidade, não na sorte.",
+    desc: "O conteúdo certo, no canal certo, para o público certo. Distribuição editorial em múltiplas plataformas e tráfego pago para acelerar com inteligência.",
     deliverables: [
-      "Estratégia por canal (Instagram, TikTok, LinkedIn, YouTube)",
-      "Adaptação de formatos (Reels, Shorts, carrosséis)",
+      "Estratégia por canal (IG, TikTok, LinkedIn, YouTube)",
+      "Adaptação de formatos (Reels, Shorts, Carrosséis)",
       "Setup e gestão de Meta Ads e Google Ads",
-      "Leitura mensal de performance e ajustes contínuos",
+      "Análise mensal de performance e otimização contínua",
     ],
     step: {
       n: "03",
-      title: "Refinamento",
-      desc: "Monitoramento, ajuste e iteração para que a marca ganhe densidade ao longo do tempo.",
+      title: "Evolução contínua",
+      desc: "Monitoramento, refinamento e adaptação constante para que sua marca só cresça com o tempo.",
     },
   },
 ];
@@ -105,7 +104,7 @@ function ActBlock({ act, idx }: { act: Act; idx: number }) {
 
         <div className="act__body">
           <div className="act__deliverables-wrap">
-            <p className="act__small-label">Escopo</p>
+            <p className="act__small-label">O que está incluído</p>
             <ul className="act__list">
               {act.deliverables.map((d) => (
                 <li key={d} className="act__item">
@@ -132,15 +131,6 @@ export default function Metodologia() {
     <section id="servicos" className="metod-section">
       <div className="container-x">
         <div className="metod-header">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            style={{ marginBottom: "var(--space-5)" }}
-          >
-            <Kicker align="center">Método</Kicker>
-          </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -157,8 +147,8 @@ export default function Metodologia() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="metod-sub"
           >
-            Não é cardápio de serviços. É um sistema integrado: posicionar,
-            produzir, crescer.
+            Um sistema integrado, não cardápio de serviços. Cada ato é etapa de
+            um único movimento: posicionar, produzir e crescer.
           </motion.p>
         </div>
 

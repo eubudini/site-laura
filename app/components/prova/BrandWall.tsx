@@ -14,7 +14,7 @@ export function BrandWall() {
     >
       <p className="prova-brands__label">
         <span className="prova-brands__rule" aria-hidden />
-        Marcas conduzidas
+        Marcas atendidas
       </p>
       <div className="prova-brands__list">
         {brands.map((b) => (

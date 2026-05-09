@@ -1,33 +1,33 @@
 "use client";
 
 import { TiltCard } from "./TiltCard";
-import { Kicker, CTA } from "./_base";
+import { CTA } from "./_base";
 
 const plans = [
   {
     name: "Essencial",
-    tag: "Captação & Edição",
-    desc: "Produção autoral pronta para usar. Para marcas que precisam de imagem editorial sem gestão integral de perfil.",
+    tag: "Captação & Edição de Conteúdo",
+    desc: "Conteúdo profissional, estético e pronto para usar. Para marcas que querem qualidade de produção sem gestão de perfil.",
     items: [
-      "Captação fotográfica e em vídeo",
-      "Edição com tratamento de cor e padronização",
-      "Material adaptado às redes",
-      "Entrega organizada em Drive",
-      "Uso livre do material",
+      "Captação de vídeos e fotos",
+      "Edição de vídeos e tratamento de imagens",
+      "Conteúdos pensados para redes sociais",
+      "Entrega organizada em pasta (Drive)",
+      "Uso livre do material pelo cliente",
     ],
     featured: false,
   },
   {
     name: "Premium",
-    tag: "Direção Integral",
-    desc: "Estratégia, direção, produção e gestão sob uma única assinatura criativa. Para marcas que querem presença consolidada e identidade consistente.",
+    tag: "Gestão de Redes Sociais",
+    desc: "A solução completa para quem quer crescimento de verdade. Gestão, estratégia, produção e presença, tudo integrado e alinhado à sua identidade.",
     items: [
-      "Gestão completa das redes",
-      "Estratégia e linha editorial",
-      "Captação e edição autoral",
-      "Curadoria de feed e narrativa visual",
-      "Planejamento mensal por canal",
-      "Acompanhamento criativo contínuo",
+      "Gestão completa das redes sociais",
+      "Estratégia e criação de conteúdo",
+      "Captação e edição profissional",
+      "Organização e curadoria do feed",
+      "Planejamento mensal com calendário",
+      "Apoio criativo contínuo",
     ],
     featured: true,
     badge: "Recomendado",
@@ -40,16 +40,13 @@ export default function Planos() {
       <div className="container-x container-x--narrow">
         {/* Header */}
         <div className="planos-header">
-          <Kicker align="center" dual>
-            Investimento
-          </Kicker>
           <h2 className="planos-h2">
-            Para marcas que tratam conteúdo como{" "}
+            Para marcas que entendem que conteúdo é{" "}
             <em>ativo de posicionamento</em>.
           </h2>
           <p className="planos-sub">
-            Dois caminhos. O primeiro, produção autoral pontual. O segundo,
-            direção integral de presença.
+            Dois caminhos integrados. O primeiro, para quem precisa de produção
+            autoral. O segundo, para quem quer presença consolidada com gestão completa.
           </p>
         </div>
 
@@ -98,14 +95,14 @@ export default function Planos() {
                 fullWidth
                 style={{ position: "relative", zIndex: 20 }}
               >
-                {plan.featured ? "Iniciar projeto" : "Conversar sobre o escopo"}
+                {plan.featured ? "Começar agora" : "Quero este plano"}
               </CTA>
             </TiltCard>
           ))}
         </div>
 
         <p className="planos-note">
-          Cada marca pede uma leitura própria. Os escopos se ajustam ao momento do projeto.
+          Cada marca é única. Converse com a Laura e monte o projeto ideal para o seu momento.
         </p>
 
         <div style={{ textAlign: "center" }}>
@@ -116,7 +113,7 @@ export default function Planos() {
             variant="gold"
             size="md"
           >
-            Falar com Laura
+            Falar com a Laura
           </CTA>
         </div>
       </div>

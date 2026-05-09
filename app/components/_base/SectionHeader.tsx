@@ -17,7 +17,7 @@ import { Kicker } from "./Kicker";
  *  - theme?: "light" | "dark" (cor do h2 e sub)
  */
 export type SectionHeaderProps = {
-  kicker: string;
+  kicker?: string;
   kickerDual?: boolean;
   title: ReactNode;
   sub?: ReactNode;
@@ -52,9 +52,11 @@ export function SectionHeader({
         marginBottom: "clamp(48px, 6vw, 80px)",
       }}
     >
-      <Kicker align={isCenter ? "center" : "start"} dual={kickerDual} style={{ marginBottom: "var(--space-5)" }}>
-        {kicker}
-      </Kicker>
+      {kicker && (
+        <Kicker align={isCenter ? "center" : "start"} dual={kickerDual} style={{ marginBottom: "var(--space-5)" }}>
+          {kicker}
+        </Kicker>
+      )}
       <h2
         style={{
           fontFamily: "var(--font-bodoni-moda), 'Bodoni Moda', serif",

@@ -117,7 +117,7 @@ export default function Contato() {
         }
 
         .contato-h2 {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(1.8rem, 3vw, 2.6rem);
           font-weight: 500;
           color: var(--ink);
@@ -137,7 +137,7 @@ export default function Contato() {
           margin-bottom: 28px;
         }
         .contato-p {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 1rem;
           color: rgba(10,10,10,0.62);
           line-height: 1.9;
@@ -164,7 +164,7 @@ export default function Contato() {
           flex-shrink: 0;
         }
         .contato-row__link {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.88rem;
           color: var(--ink);
           text-decoration: none;
@@ -173,7 +173,7 @@ export default function Contato() {
         }
         .contato-row__link:hover { color: var(--gold); }
         .contato-row__text {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.88rem;
           color: var(--ink);
           font-weight: 400;

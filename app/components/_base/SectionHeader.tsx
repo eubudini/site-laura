@@ -57,7 +57,7 @@ export function SectionHeader({
       </Kicker>
       <h2
         style={{
-          fontFamily: "var(--font-fraunces), 'Fraunces', serif",
+          fontFamily: "var(--font-bodoni-moda), 'Bodoni Moda', serif",
           fontSize: "var(--text-h2)",
           fontWeight: 400,
           color: titleColor,
@@ -71,7 +71,7 @@ export function SectionHeader({
       {sub && (
         <p
           style={{
-            fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif",
+            fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
             fontSize: "var(--text-lg)",
             color: subColor,
             lineHeight: 1.72,

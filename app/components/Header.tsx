@@ -210,7 +210,7 @@ export default function Header() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: 1.18rem;
           font-weight: 400;
           line-height: 1;
@@ -249,7 +249,7 @@ export default function Header() {
           z-index: 1;
         }
         .header-link {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.82rem;
           letter-spacing: 0.16em;
           font-weight: 400;
@@ -320,7 +320,7 @@ export default function Header() {
           border-left: 1px solid rgba(201,169,110,0.15);
         }
         .header-mobile-link {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: 1.3rem;
           color: rgba(255,255,255,0.85);
           text-decoration: none;
@@ -328,7 +328,7 @@ export default function Header() {
           padding-bottom: 16px;
         }
         .header-mobile-cta {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.78rem;
           letter-spacing: 0.12em;
           font-weight: 500;

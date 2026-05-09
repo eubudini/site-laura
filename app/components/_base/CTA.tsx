@@ -56,7 +56,7 @@ export function CTA({
       </a>
       <style>{`
         .ds-cta {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-weight: 500;
           letter-spacing: 0.12em;
           text-transform: uppercase;

@@ -82,7 +82,7 @@ export default function Portfolio() {
           background: #FFFFFF;
         }
         .portfolio-h2 {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(1.8rem, 3vw, 2.6rem);
           font-weight: 500;
           color: var(--ink);

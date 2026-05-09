@@ -163,7 +163,7 @@ export default function Manifesto() {
           background: var(--gold);
         }
         .manifesto-h2 {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(2rem, 4vw, 3.4rem);
           font-weight: 400;
           color: var(--ink);
@@ -190,7 +190,7 @@ export default function Manifesto() {
           margin: 0 0 32px;
           padding-left: 24px;
           border-left: 2px solid var(--gold);
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-style: italic;
           font-size: clamp(1.32rem, 2vw, 1.65rem);
           font-weight: 400;
@@ -203,7 +203,7 @@ export default function Manifesto() {
           color: var(--gold);
         }
         .manifesto-p {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 1.08rem;
           color: rgba(10,10,10,0.65);
           line-height: 1.8;
@@ -234,7 +234,7 @@ export default function Manifesto() {
           margin-bottom: 5px;
         }
         .manifesto-cred__value {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: 1.02rem;
           color: var(--ink);
           font-weight: 500;
@@ -244,7 +244,7 @@ export default function Manifesto() {
         /* FILTER (não-cliente) */
         .manifesto-filter {
           margin-top: 32px;
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-style: italic;
           font-size: 1.05rem;
           line-height: 1.6;
@@ -320,7 +320,7 @@ export default function Manifesto() {
           z-index: 2;
         }
         .manifesto-visual__sig-name {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-style: italic;
           font-size: 1.05rem;
           color: #FFFFFF;

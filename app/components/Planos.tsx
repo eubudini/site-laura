@@ -130,7 +130,7 @@ export default function Planos() {
         }
         .planos-header > * + * { margin-top: var(--space-5); }
         .planos-h2 {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(1.8rem, 3vw, 2.6rem);
           font-weight: 400;
           color: #FFFFFF;
@@ -143,7 +143,7 @@ export default function Planos() {
           font-weight: 400;
         }
         .planos-sub {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.94rem;
           color: rgba(255,255,255,0.55);
           line-height: 1.7;
@@ -187,7 +187,7 @@ export default function Planos() {
         .plan-tag--featured { color: var(--gold); }
 
         .plan-name {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: 2rem;
           font-weight: 500;
           color: #FFFFFF;
@@ -204,7 +204,7 @@ export default function Planos() {
         .plan-rule--featured { background: var(--gold); }
 
         .plan-desc {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 1rem;
           color: rgba(255,255,255,0.6);
           line-height: 1.78;
@@ -220,7 +220,7 @@ export default function Planos() {
           padding: 0;
         }
         .plan-list li {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.96rem;
           color: rgba(255,255,255,0.78);
           padding: 11px 0;
@@ -241,7 +241,7 @@ export default function Planos() {
         }
 
         .planos-note {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.96rem;
           color: rgba(255,255,255,0.45);
           text-align: center;

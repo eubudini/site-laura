@@ -62,7 +62,7 @@ export default function Footer() {
         <div className="footer-brand">
           <p
             style={{
-              fontFamily: "var(--font-fraunces), 'Fraunces', serif",
+              fontFamily: "var(--font-bodoni-moda), 'Bodoni Moda', serif",
               fontSize: "1.4rem",
               fontWeight: 500,
               color: "#FFFFFF",
@@ -74,7 +74,7 @@ export default function Footer() {
           </p>
           <p
             style={{
-              fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif",
+              fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
               fontSize: "0.86rem",
               color: "rgba(255,255,255,0.45)",
               fontWeight: 300,
@@ -146,7 +146,7 @@ export default function Footer() {
                       target={link.href.startsWith("http") ? "_blank" : undefined}
                       rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       style={{
-                        fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif",
+                        fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
                         fontSize: "0.86rem",
                         color: "rgba(255,255,255,0.5)",
                         fontWeight: 300,

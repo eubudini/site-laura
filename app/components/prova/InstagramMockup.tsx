@@ -67,7 +67,7 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontFamily: "var(--font-fraunces), 'Fraunces', serif",
+                  fontFamily: "var(--font-bodoni-moda), 'Bodoni Moda', serif",
                   fontSize: "0.5rem",
                   fontWeight: 500,
                   color: isAfter ? "#f5e6c8" : "rgba(255,255,255,0.5)",
@@ -86,7 +86,7 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
                 <div key={s.l} style={{ textAlign: "center" }}>
                   <p
                     style={{
-                      fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif",
+                      fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
                       fontSize: "0.42rem",
                       fontWeight: 700,
                       color: "#0A0A0A",
@@ -97,7 +97,7 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
                   </p>
                   <p
                     style={{
-                      fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif",
+                      fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
                       fontSize: "0.32rem",
                       color: "rgba(0,0,0,0.7)",
                       lineHeight: 1.2,
@@ -110,12 +110,12 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
             </div>
           </div>
           <div style={{ marginTop: 6 }}>
-            <p style={{ fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif", fontSize: "0.38rem", fontWeight: 600, color: "#0A0A0A" }}>
+            <p style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif", fontSize: "0.38rem", fontWeight: 600, color: "#0A0A0A" }}>
               {c.name}
             </p>
             <p
               style={{
-                fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif",
+                fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
                 fontSize: "0.34rem",
                 color: "rgba(0,0,0,0.7)",
                 lineHeight: 1.4,
@@ -131,7 +131,7 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
                 flex: 1,
                 background: isAfter ? "#0A0A0A" : "rgba(0,0,0,0.06)",
                 color: isAfter ? "#FFFFFF" : "rgba(0,0,0,0.4)",
-                fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif",
+                fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
                 fontSize: "0.34rem",
                 fontWeight: 600,
                 padding: "3px 0",
@@ -146,7 +146,7 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
                 flex: 1,
                 background: "rgba(0,0,0,0.04)",
                 color: "rgba(0,0,0,0.6)",
-                fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif",
+                fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
                 fontSize: "0.34rem",
                 fontWeight: 600,
                 padding: "3px 0",
@@ -171,7 +171,7 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
                       : "rgba(0,0,0,0.06)",
                   }}
                 />
-                <span style={{ fontFamily: "var(--font-inter-tight), 'Inter Tight', sans-serif", fontSize: "0.28rem", color: "rgba(0,0,0,0.5)" }}>
+                <span style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif", fontSize: "0.28rem", color: "rgba(0,0,0,0.5)" }}>
                   {isAfter ? ["Bastidores", "Eventos", "Press", "Estilo"][i - 1] : "..."}
                 </span>
               </div>
@@ -255,7 +255,7 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
           justify-content: space-between;
           align-items: center;
           padding: 6px 10px 3px;
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.36rem;
           font-weight: 600;
           color: #0A0A0A;
@@ -268,7 +268,7 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
           border-bottom: 0.5px solid rgba(0,0,0,0.06);
         }
         .ig-mockup__handle {
-          font-family: var(--font-inter-tight), 'Inter Tight', sans-serif;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.42rem;
           font-weight: 600;
           color: #0A0A0A;

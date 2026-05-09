@@ -122,7 +122,7 @@ export function CaseCard({ c, idx }: Props) {
           margin-bottom: 6px;
         }
         .case-card__name {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(1.3rem, 2.1vw, 1.65rem);
           font-weight: 400;
           color: var(--ink);
@@ -204,7 +204,7 @@ export function CaseCard({ c, idx }: Props) {
           gap: 12px;
         }
         .case-card__metric-before {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: 0.92rem;
           font-weight: 400;
           color: rgba(10,10,10,0.32);
@@ -214,7 +214,7 @@ export function CaseCard({ c, idx }: Props) {
           text-decoration-thickness: 0.5px;
         }
         .case-card__metric-after {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: 1.25rem;
           font-weight: 500;
           color: var(--ink);
@@ -226,7 +226,7 @@ export function CaseCard({ c, idx }: Props) {
           border-top: 1px solid rgba(10,10,10,0.08);
         }
         .case-card__highlight p {
-          font-family: var(--font-fraunces), 'Fraunces', serif;
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-style: italic;
           font-size: 0.86rem;
           line-height: 1.6;

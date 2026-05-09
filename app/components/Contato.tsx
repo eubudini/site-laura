@@ -39,18 +39,18 @@ export default function Contato() {
           <Kicker>Contato</Kicker>
 
           <h2 className="contato-h2">
-            Pronta para transformar a sua marca em <em>referência?</em>
+            Sua marca pronta para se tornar <em>referência.</em>
           </h2>
 
           <div className="contato-rule" aria-hidden />
 
           <p className="contato-p">
-            Se você sente que sua marca merece mais reconhecimento, mais desejo e mais
-            resultados, você está no lugar certo.
+            Se a sua marca já tem substância e merece uma leitura à altura,
+            esse é o lugar.
           </p>
           <p className="contato-p contato-p--last">
-            Me conta sobre o seu negócio, onde você está hoje e onde quer chegar. A próxima
-            sessão pode mudar o jogo para sempre.
+            Conte sobre o projeto, o momento e o destino. A conversa é o
+            primeiro ato.
           </p>
 
           {/* Info de contato */}
@@ -59,7 +59,7 @@ export default function Contato() {
               { label: "WhatsApp", value: "+55 (51) 98530-9613", href: "https://wa.me/5551985309613" },
               { label: "E-mail", value: "laura.camponogara29@icloud.com", href: "mailto:laura.camponogara29@icloud.com" },
               { label: "Instagram", value: "@laura.camponogara", href: "https://www.instagram.com/laura.camponogara/" },
-              { label: "Localização", value: "Porto Alegre, RS · Presencial na região e remoto para todo o Brasil", href: undefined as string | undefined },
+              { label: "Localização", value: "Porto Alegre, RS · Captação Brasil e Uruguai · Atendimento nacional", href: undefined as string | undefined },
             ].map((item) => (
               <div key={item.label} className="contato-row">
                 <p className="contato-row__label">{item.label}</p>

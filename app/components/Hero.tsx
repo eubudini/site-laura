@@ -32,13 +32,13 @@ export default function Hero() {
         {/* KICKER */}
         <motion.p {...fadeUp(0.1)} className="hero-kicker">
           <span className="hero-kicker__rule" aria-hidden />
-          Estratégia de Conteúdo · Posicionamento Digital
+          Direção Criativa · Estratégia Editorial
         </motion.p>
 
         {/* H1 */}
         <motion.h1 {...fadeUp(0.2)} className="hero-h1 serif-display">
-          Sua marca passou da hora{" "}
-          <em>de ser desejada.</em>
+          Marcas existem.{" "}
+          <em>Algumas se tornam desejo.</em>
         </motion.h1>
 
         {/* PHOTO */}
@@ -73,9 +73,9 @@ export default function Hero() {
 
         {/* DESCRIÇÃO */}
         <motion.p {...fadeUp(0.3)} className="hero-desc">
-          Crio estratégias de conteúdo que transformam perfis comuns em
-          referências do segmento, com direção criativa, posicionamento e
-          produção que para o scroll.
+          Direção criativa, posicionamento e produção editorial para marcas
+          que entendem presença como ativo. Da estratégia ao frame final, cada
+          decisão constrói percepção.
         </motion.p>
 
         {/* TRUST BADGE */}
@@ -95,7 +95,7 @@ export default function Hero() {
             ))}
           </div>
           <span className="hero-trust__label">
-            <strong>+14 marcas</strong> que cresceram em média{" "}
+            <strong>+14 marcas</strong> conduzidas. Crescimento médio de{" "}
             <strong className="hero-trust__pct">+418%</strong>
           </span>
         </motion.div>
@@ -103,16 +103,16 @@ export default function Hero() {
         {/* CTAs */}
         <motion.div {...fadeUp(0.4)} className="hero-ctas">
           <CTA href="#resultados" variant="primary" size="lg">
-            Ver resultados reais
+            Ver cases
           </CTA>
           <CTA href="#contato" variant="secondary" size="lg">
-            Quero isso para a minha marca
+            Iniciar uma conversa
           </CTA>
         </motion.div>
 
         {/* LOCATION */}
         <motion.p {...fadeUp(0.5)} className="hero-location">
-          Porto Alegre, RS · Presencial na região · Atendimento remoto para todo o Brasil
+          Porto Alegre, RS · Captação no Brasil e no Uruguai · Atendimento nacional
         </motion.p>
       </div>
 

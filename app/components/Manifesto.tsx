@@ -56,7 +56,7 @@ export default function Manifesto() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="manifesto-h2"
         >
-          A diferença entre publicar{" "}
+          Entre publicar{" "}
           <em>e ser percebida.</em>
         </motion.h2>
 
@@ -70,23 +70,22 @@ export default function Manifesto() {
             className="manifesto-text"
           >
             <blockquote className="manifesto-pull">
-              Não trabalho com conteúdo de volume.
+              Não opero por volume.
               <br />
-              Trabalho com conteúdo que <em>posiciona</em>.
+              Opero por <em>posicionamento</em>.
             </blockquote>
 
             <p className="manifesto-p">
-              A maioria das marcas posta. Poucas se posicionam. A diferença está
-              na estratégia por trás de cada imagem, legenda e decisão criativa
-              e é exatamente isso que entrego em cada projeto.
+              A maioria das marcas publica. Poucas se posicionam. A distância
+              entre uma coisa e outra está na estratégia por trás de cada
+              imagem, cada legenda, cada decisão de direção. É esse o trabalho.
             </p>
 
             <p className="manifesto-p">
-              Cada cliente recebe uma leitura única da sua marca, do seu público
-              e dos canais onde a voz precisa ser ouvida. Sem fórmula pronta.
-              Com produção autoral em <strong>Porto Alegre, no Brasil e em
-              José Ignácio (Uruguai)</strong>, onde dirijo conteúdo para
-              maisons de luxo e referências de moda.
+              Cada projeto começa por uma leitura própria: marca, público,
+              território. Sem fórmula. Com produção autoral em{" "}
+              <strong>Porto Alegre, no Brasil e em José Ignácio (Uruguai)</strong>,
+              dirigindo conteúdo para maisons e referências de moda.
             </p>
 
             <div className="manifesto-credentials">
@@ -99,8 +98,8 @@ export default function Manifesto() {
             </div>
 
             <p className="manifesto-filter">
-              Não atendo todo mundo. Atendo marcas que entendem que conteúdo é
-              ativo de posicionamento, não obrigação de calendário.
+              Não atendo todo mundo. Atendo marcas que entendem conteúdo como
+              ativo de posicionamento, não como obrigação de calendário.
             </p>
           </motion.div>
 
@@ -132,7 +131,7 @@ export default function Manifesto() {
               </button>
               <div className="manifesto-visual__caption">
                 <span className="manifesto-visual__sig-name">Laura Camponogara</span>
-                <span className="manifesto-visual__sig-role">Direção · Estratégia · Captação</span>
+                <span className="manifesto-visual__sig-role">Direção Criativa · Estratégia · Produção</span>
               </div>
             </div>
           </motion.div>

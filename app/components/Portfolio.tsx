@@ -5,12 +5,12 @@ import Image from "next/image";
 import { Kicker, CTA } from "./_base";
 
 const items = [
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2293.jpg", label: "Captação de Conteúdo" },
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2297.jpg", label: "Editorial" },
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2298.jpg", label: "Marcas" },
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2299.jpg", label: "Posicionamento Digital" },
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2302.jpg", label: "Direção Criativa" },
-  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2292.jpg", label: "Direção Criativa" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2293.jpg", label: "Captação editorial" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2297.jpg", label: "Editorial de moda" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2298.jpg", label: "Direção de marca" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2299.jpg", label: "Posicionamento" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2302.jpg", label: "Direção criativa" },
+  { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2292.jpg", label: "Direção criativa" },
 ];
 
 export default function Portfolio() {
@@ -35,7 +35,7 @@ export default function Portfolio() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="portfolio-h2"
           >
-            Projetos, marcas e conteúdos que ganharam forma com direção criativa.
+            Marcas e narrativas que tomaram forma sob direção.
           </motion.h2>
         </div>
 
@@ -72,7 +72,7 @@ export default function Portfolio() {
             variant="primary"
             size="md"
           >
-            Ver mais no Instagram
+            Acompanhar no Instagram
           </CTA>
         </div>
       </div>

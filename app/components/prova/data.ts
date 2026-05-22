@@ -24,6 +24,10 @@ export type Case = {
 export type Brand = {
   name: string;
   style: "italic" | "normal";
+  /** Avatar oficial da marca. Quando ausente, renderiza só o nome. */
+  logo?: string;
+  /** Perfil do Instagram, para link. */
+  handle?: string;
 };
 
 export const stats: Stat[] = [
@@ -83,12 +87,14 @@ export const cases: Case[] = [
   },
 ];
 
+// logo: caminho do arquivo oficial (PNG transparente). Quando ausente,
+// o marquee renderiza o nome em wordmark tipográfico ate o arquivo chegar.
 export const brands: Brand[] = [
-  { name: "A.MAR", style: "italic" },
+  { name: "A.MAR", style: "italic", handle: "a.mar.joseignacio" },
   { name: "H.STERN", style: "normal" },
-  { name: "Brunnen", style: "italic" },
+  { name: "Brunnen", style: "italic", handle: "brunnenmodafeminina" },
   { name: "RESI", style: "normal" },
-  { name: "Mariana Penteado", style: "italic" },
-  { name: "Marina Ciconet", style: "normal" },
+  { name: "Mariana Penteado", style: "italic", handle: "marianapenteado" },
+  { name: "Marina Ciconet", style: "normal", handle: "marinaciconet" },
   { name: "Casa das Gurias", style: "italic" },
 ];

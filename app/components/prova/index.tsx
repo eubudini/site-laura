@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { SectionHeader } from "../_base";
 import { Stats } from "./Stats";
 import { CaseCard } from "./CaseCard";
-import { BrandWall } from "./BrandWall";
 import { cases } from "./data";
 
 export default function Prova() {
@@ -39,8 +38,6 @@ export default function Prova() {
               <CaseCard key={c.handle} c={c} idx={idx} />
             ))}
           </div>
-
-          <BrandWall />
 
           <p className="prova-disclaimer">
             * Dados acumulados ao longo do período de acompanhamento estratégico. Mockups

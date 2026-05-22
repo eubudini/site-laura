@@ -87,12 +87,14 @@ export const cases: Case[] = [
   },
 ];
 
+// logo: caminho do arquivo oficial (PNG transparente). Quando ausente,
+// o marquee renderiza o nome em wordmark tipográfico ate o arquivo chegar.
 export const brands: Brand[] = [
-  { name: "A.MAR", style: "italic", logo: "/marcas/amar.jpg", handle: "a.mar.joseignacio" },
+  { name: "A.MAR", style: "italic", handle: "a.mar.joseignacio" },
   { name: "H.STERN", style: "normal" },
-  { name: "Brunnen", style: "italic", logo: "/marcas/brunnen.jpg", handle: "brunnenmodafeminina" },
+  { name: "Brunnen", style: "italic", handle: "brunnenmodafeminina" },
   { name: "RESI", style: "normal" },
-  { name: "Mariana Penteado", style: "italic", logo: "/marcas/marianapenteado.jpg", handle: "marianapenteado" },
-  { name: "Marina Ciconet", style: "normal", logo: "/marcas/marinaciconet.jpg", handle: "marinaciconet" },
+  { name: "Mariana Penteado", style: "italic", handle: "marianapenteado" },
+  { name: "Marina Ciconet", style: "normal", handle: "marinaciconet" },
   { name: "Casa das Gurias", style: "italic" },
 ];

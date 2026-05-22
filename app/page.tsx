@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import BrandMarquee from "./components/BrandMarquee";
 import Manifesto from "./components/Manifesto";
 import Metodologia from "./components/Metodologia";
 import Prova from "./components/prova";
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main id="main">
         <Hero />
+        <BrandMarquee />
         <Manifesto />
         <Metodologia />
         <Prova />

@@ -250,6 +250,8 @@ export default function Internacional() {
           grid-template-columns: 1fr 1fr;
           gap: 16px;
           align-items: start;
+          width: 100%;
+          min-width: 0;
         }
         .intl__photo {
           position: relative;

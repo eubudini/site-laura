@@ -238,9 +238,10 @@ export function CaseCard({ c, idx }: Props) {
           .case-card { padding: 28px 22px 24px; }
         }
         @media (max-width: 480px) {
-          .mockups-row { grid-template-columns: 1fr; gap: 22px; }
-          .arrow-mid { transform: rotate(90deg); justify-self: center; }
-          .case-card { padding: 24px 18px 22px; }
+          /* mockups continuam lado a lado, so mais compactos */
+          .mockups-row { gap: 6px; }
+          .arrow-mid { margin-top: 16px; }
+          .case-card { padding: 24px 14px 22px; }
         }
       `}</style>
     </motion.article>

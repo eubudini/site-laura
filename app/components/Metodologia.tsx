@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 
 type Act = {
-  roman: string;
   marker: string;
   title: string;
   phrase: string;
@@ -12,7 +11,6 @@ type Act = {
 
 const acts: Act[] = [
   {
-    roman: "I",
     marker: "01 · Posicionar",
     title: "Encontrar a sua voz",
     phrase:
@@ -25,7 +23,6 @@ const acts: Act[] = [
     ],
   },
   {
-    roman: "II",
     marker: "02 · Produzir",
     title: "Dar imagem a ela",
     phrase:
@@ -38,7 +35,6 @@ const acts: Act[] = [
     ],
   },
   {
-    roman: "III",
     marker: "03 · Crescer",
     title: "Levar mais longe",
     phrase:
@@ -71,8 +67,6 @@ function ActBlock({ act, idx }: { act: Act; idx: number }) {
       className={`act ${flipped ? "act--flipped" : ""}`}
       data-idx={idx}
     >
-      <div className="act__roman" aria-hidden>{act.roman}</div>
-
       <div className="act__inner">
         <div className="act__head">
           <span className="act__label">
@@ -180,25 +174,6 @@ export default function Metodologia() {
           border-top: 1px solid rgba(10,10,10,0.10);
         }
         .act:first-child { border-top: none; padding-top: 0; }
-
-        .act__roman {
-          position: absolute;
-          top: 16px;
-          left: -8px;
-          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
-          font-size: clamp(7rem, 14vw, 12rem);
-          font-weight: 500;
-          color: rgba(184,149,106,0.16);
-          line-height: 0.85;
-          letter-spacing: -0.05em;
-          pointer-events: none;
-          user-select: none;
-          z-index: 0;
-        }
-        .act--flipped .act__roman {
-          left: auto;
-          right: -8px;
-        }
 
         .act__inner {
           position: relative;
@@ -311,16 +286,6 @@ export default function Metodologia() {
             grid-column: 1;
             grid-row: auto;
           }
-          .act__roman {
-            font-size: 7rem;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-          }
-          .act--flipped .act__roman {
-            left: 50%;
-            right: auto;
-          }
           .act { padding: 32px 0; }
           .act:first-child { padding-top: 8px; }
           .act__phrase { max-width: 100%; }
@@ -328,7 +293,6 @@ export default function Metodologia() {
         @media (max-width: 480px) {
           .metod-section { padding: 48px 0; }
           .act { padding: 26px 0; }
-          .act__roman { font-size: 5.5rem; }
           .act__title { font-size: 1.5rem; }
           .act__phrase { font-size: 0.95rem; }
           .act__item { font-size: 0.92rem; }

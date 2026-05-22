@@ -56,20 +56,21 @@ export default function Hero() {
                 sizes="(max-width: 900px) 280px, 460px"
                 className="hero-photo__img"
               />
-              {/* Signature overlay (mobile) */}
-              <div className="hero-photo__signature" aria-hidden>
-                <span className="hero-photo__sig-name">Laura Camponogara</span>
-                <span className="hero-photo__sig-role">Estrategista de Conteúdo</span>
-              </div>
             </div>
           </EditorialFrame>
+          {/* Assinatura — legenda editorial ancorada (mobile) */}
+          <div className="hero-photo__signature" aria-hidden>
+            <span className="hero-photo__sig-rule" />
+            <span className="hero-photo__sig-name">Laura Camponogara</span>
+            <span className="hero-photo__sig-role">Estrategista de Conteúdo</span>
+          </div>
         </motion.div>
 
         {/* DESCRIÇÃO */}
         <motion.p {...fadeUp(0.3)} className="hero-desc">
-          Crio estratégias de conteúdo que transformam perfis comuns em
-          referências do segmento, com direção criativa, posicionamento e
-          produção que para o scroll.
+          Crio estratégias de conteúdo que transformam perfis comuns em{" "}
+          <em>referências do segmento</em>, com <em>direção criativa</em>,
+          posicionamento e produção que para o scroll.
         </motion.p>
 
         {/* TRUST BADGE */}
@@ -214,6 +215,19 @@ export default function Hero() {
           margin-bottom: var(--space-10);
           font-weight: 300;
           letter-spacing: -0.005em;
+        }
+        .hero-desc::before {
+          content: '';
+          display: block;
+          width: 44px;
+          height: 1px;
+          background: var(--gold);
+          margin-bottom: 22px;
+        }
+        .hero-desc em {
+          font-style: italic;
+          font-weight: 400;
+          color: var(--gold-text);
         }
 
         /* TRUST */
@@ -361,12 +375,13 @@ export default function Hero() {
           .hero-ctas     { order: 6; margin-bottom: 24px; }
           .hero-location { order: 7; }
 
-          /* Foto editorial: menor + signature embaixo */
+          /* Foto editorial: menor + assinatura ancorada embaixo */
           .hero-photo {
             justify-content: center;
+            flex-direction: column;
+            align-items: center;
             max-width: 320px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 44px;
           }
           .hero-photo__inner {
             max-width: 100%;
@@ -375,18 +390,22 @@ export default function Hero() {
           .hero-photo__signature {
             display: flex;
             flex-direction: column;
-            position: absolute;
-            bottom: -42px;
-            left: 0;
-            right: 0;
+            align-items: center;
             text-align: center;
             gap: 3px;
-            z-index: 2;
+            margin-top: 20px;
+          }
+          .hero-photo__sig-rule {
+            display: block;
+            width: 28px;
+            height: 1px;
+            background: var(--gold);
+            margin-bottom: 8px;
           }
           .hero-photo__sig-name {
             font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: var(--ink);
             letter-spacing: 0.005em;
           }
@@ -396,9 +415,6 @@ export default function Hero() {
             letter-spacing: 0.22em;
             text-transform: uppercase;
             color: var(--gold);
-          }
-          .hero-photo {
-            margin-bottom: 80px !important;
           }
         }
 

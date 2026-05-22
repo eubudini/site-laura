@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, DM_Sans, DM_Mono } from "next/font/google";
+import { Fraunces, Inter_Tight, DM_Mono } from "next/font/google";
 import "./globals.css";
 
-const bodoniModa = Bodoni_Moda({
+// Fraunces — serifada editorial dos títulos. Mantém a variável
+// --font-bodoni-moda para não tocar em todos os componentes.
+const displaySerif = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-bodoni-moda",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const bodySans = Inter_Tight({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
@@ -105,7 +107,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${bodoniModa.variable} ${dmSans.variable} ${dmMono.variable}`}
+      className={`${displaySerif.variable} ${bodySans.variable} ${dmMono.variable}`}
     >
       <body>
         <script

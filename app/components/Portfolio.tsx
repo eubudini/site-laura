@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CTA } from "./_base";
+import { TiltCard } from "./TiltCard";
 
 const items = [
   { src: "/portfolio/Fotos/Marcas/NOVOS/IMG_2293.jpg", label: "Captação de Conteúdo" },
@@ -41,16 +42,18 @@ export default function Portfolio() {
               transition={{ duration: 0.45, delay: (i % 3) * 0.07 }}
               className="portfolio-item"
             >
-              <Image
-                src={item.src}
-                alt={item.label}
-                fill
-                sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 426px"
-                className="portfolio-img"
-              />
-              <figcaption className="portfolio-caption">
-                <span>{item.label}</span>
-              </figcaption>
+              <TiltCard tiltLimit={6} scale={1} perspective={1000} className="portfolio-tilt">
+                <Image
+                  src={item.src}
+                  alt={item.label}
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 426px"
+                  className="portfolio-img"
+                />
+                <figcaption className="portfolio-caption">
+                  <span>{item.label}</span>
+                </figcaption>
+              </TiltCard>
             </motion.figure>
           ))}
         </div>
@@ -88,10 +91,13 @@ export default function Portfolio() {
         }
         .portfolio-item {
           position: relative;
-          overflow: hidden;
           aspect-ratio: 4 / 5;
           margin: 0;
           cursor: pointer;
+        }
+        .portfolio-tilt {
+          width: 100%;
+          height: 100%;
         }
         .portfolio-img {
           object-fit: cover;

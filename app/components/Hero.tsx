@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { CTA, EditorialFrame } from "./_base";
@@ -22,8 +23,16 @@ export default function Hero() {
   const reduced = useReducedMotion();
   const fadeUp = buildFadeUp(reduced);
 
+  // Parallax sutil da foto ao rolar a seção
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const photoY = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : -54]);
+
   return (
-    <section id="hero" className="hero-section">
+    <section ref={sectionRef} id="hero" className="hero-section">
       {/* Background ornamentos */}
       <div className="hero-bg-1" aria-hidden />
       <div className="hero-bg-2" aria-hidden />
@@ -44,6 +53,7 @@ export default function Hero() {
             delay: reduced ? 0 : 0.15,
             ease: EASE_EDITORIAL,
           }}
+          style={{ y: photoY }}
           className="hero-photo"
         >
           <EditorialFrame offset={20} position="tr">

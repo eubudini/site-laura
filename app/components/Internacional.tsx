@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Internacional() {
@@ -25,13 +24,7 @@ export default function Internacional() {
       </div>
 
       <div className="container-x intl__container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="intl__content"
-        >
+        <div className="intl__content">
           <p className="intl__eyebrow">
             <span className="intl__eyebrow-rule" aria-hidden />
             Atuação Internacional
@@ -74,15 +67,9 @@ export default function Internacional() {
           <div className="intl__badge">
             Destino de luxo &nbsp;·&nbsp; América do Sul &nbsp;·&nbsp; Referência global
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="intl__photos"
-        >
+        <div className="intl__photos">
           <figure className="intl__photo intl__photo--main">
             <Image
               src="/internacional-2.jpg"
@@ -103,7 +90,7 @@ export default function Internacional() {
             />
             <figcaption className="intl__photo-tag">Camila Coutinho · @camilacoutinho</figcaption>
           </figure>
-        </motion.div>
+        </div>
       </div>
 
       <style>{`

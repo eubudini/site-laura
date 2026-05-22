@@ -31,13 +31,13 @@ export default function Internacional() {
           </p>
           <h2 className="intl__title">Presença além das fronteiras</h2>
           <p className="intl__desc">
-            Laura realizou produções de conteúdo presencial no Uruguai, em
-            especial na região de José Ignácio, um dos destinos mais exclusivos
-            da América do Sul e referência mundial de moda, lifestyle e turismo
+            Realizei produções de conteúdo presencial no Uruguai, em especial
+            na região de José Ignácio, um dos destinos mais exclusivos da
+            América do Sul e referência mundial de moda, lifestyle e turismo
             de luxo.
           </p>
           <p className="intl__desc">
-            Uma experiência que amplia o olhar criativo e conecta marcas a um
+            Uma experiência que amplia meu olhar criativo e conecta marcas a um
             universo de sofisticação, autenticidade e alcance internacional.
           </p>
 

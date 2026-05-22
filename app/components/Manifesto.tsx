@@ -143,7 +143,7 @@ export default function Manifesto() {
           display: grid;
           grid-template-columns: 1.05fr 1fr;
           gap: 80px;
-          align-items: start;
+          align-items: center;
         }
 
         /* TEXT */

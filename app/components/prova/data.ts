@@ -19,8 +19,6 @@ export type Case = {
   metrics: Metric[];
   highlight: string;
   feedPalette: [string, string, string, string, string, string];
-  /** Fotos reais do feed (after). Quando ausente, usa feedPalette como fallback. */
-  feedImages?: [string, string, string, string, string, string];
 };
 
 export type Brand = {
@@ -74,14 +72,6 @@ export const cases: Case[] = [
     ],
     highlight:
       "Direção criativa consistente, captação editorial e narrativa premium transformaram um perfil de moda em referência nacional.",
-    feedImages: [
-      "/portfolio/Fotos/Marcas/MARIANA-PENTEADO/IMG_6090.jpg",
-      "/portfolio/Fotos/Marcas/MARIANA-PENTEADO/IMG_6136.jpg",
-      "/portfolio/Fotos/Marcas/MARIANA-PENTEADO/IMG_6147.jpg",
-      "/portfolio/Fotos/Marcas/MARIANA-PENTEADO/IMG_6169.jpg",
-      "/portfolio/Fotos/Marcas/MARIANA-PENTEADO/IMG_6208.jpg",
-      "/portfolio/Fotos/Marcas/MARIANA-PENTEADO/IMG_6232.jpg",
-    ],
     feedPalette: [
       "linear-gradient(135deg, #e8dcc8 0%, #b89d75 100%)",
       "linear-gradient(135deg, #2a2018 0%, #4a3a28 100%)",

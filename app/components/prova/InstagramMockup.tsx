@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import type { Case } from "./data";
 
 type Props = {
@@ -199,15 +198,6 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
                 overflow: "hidden",
               }}
             >
-              {isAfter && c.feedImages && (
-                <Image
-                  src={c.feedImages[i]}
-                  alt={`${c.name} — feed ${i + 1}`}
-                  fill
-                  sizes="60px"
-                  style={{ objectFit: "cover" }}
-                />
-              )}
               {!isAfter && (
                 <div
                   style={{
@@ -218,7 +208,7 @@ export function InstagramMockup({ c, variant, isAfter }: Props) {
                   }}
                 />
               )}
-              {isAfter && !c.feedImages && i % 2 === 0 && (
+              {isAfter && i % 2 === 0 && (
                 <div style={{ position: "absolute", top: 2, right: 2, width: 6, height: 6 }}>
                   <svg viewBox="0 0 24 24" fill="white" style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }}>
                     <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" />

@@ -41,6 +41,9 @@ export function Stats() {
         .prova-stat {
           padding: clamp(6px, 1.4vw, 18px) clamp(16px, 2.2vw, 32px);
           text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
         /* Hairline vertical sutil separando os numeros (so no desktop). */
         .prova-stat + .prova-stat {
@@ -55,18 +58,27 @@ export function Stats() {
           margin-bottom: 12px;
           letter-spacing: -0.02em;
         }
+        /* min-height reserva 2 linhas: rotulos de 1 e 2 linhas ficam
+           alinhados e os subtitulos comecam todos na mesma altura. */
         .prova-stat__label {
           font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.95rem;
           font-weight: 500;
           color: var(--ink);
+          line-height: 1.3;
+          min-height: 2.6em;
           margin-bottom: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         .prova-stat__sub {
           font-family: var(--font-dm-mono), 'DM Mono', monospace;
           font-size: 0.68rem;
           letter-spacing: 0.06em;
+          line-height: 1.4;
           color: var(--gold-text);
+          min-height: 2.8em;
         }
 
         @media (max-width: 760px) {

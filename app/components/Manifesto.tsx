@@ -53,8 +53,6 @@ export default function Manifesto() {
             className="manifesto-text"
           >
             <blockquote className="manifesto-pull">
-              Não trabalho com conteúdo de volume.
-              <br />
               Trabalho com conteúdo que <em>posiciona</em>.
             </blockquote>
 

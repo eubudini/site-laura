@@ -71,15 +71,21 @@ export function Stats() {
           opacity: 0.85;
         }
 
-        @media (max-width: 900px) {
-          .prova-stats-grid { grid-template-columns: repeat(2, 1fr); }
+        /* Mantém os 4 cards lado a lado também no mobile, em escala menor. */
+        @media (max-width: 700px) {
+          .prova-stats-band { padding: 44px 0; }
+          .prova-stats-grid { padding: 0 var(--space-4); }
+          .prova-stat { padding: 22px 8px; }
+          .prova-stat__value { font-size: 5vw; margin-bottom: 6px; }
+          .prova-stat__label { font-size: 0.7rem; line-height: 1.25; }
+          .prova-stat__sub { font-size: 0.54rem; letter-spacing: 0.04em; }
         }
-        @media (max-width: 560px) {
-          .prova-stats-band { padding: 48px 0; }
-          .prova-stat { padding: 28px 18px; }
-        }
-        @media (max-width: 360px) {
-          .prova-stats-grid { grid-template-columns: 1fr; }
+        @media (max-width: 420px) {
+          .prova-stats-band { padding: 36px 0; }
+          .prova-stat { padding: 18px 5px; }
+          .prova-stat__value { font-size: 4.6vw; }
+          .prova-stat__label { font-size: 0.6rem; }
+          .prova-stat__sub { font-size: 0.46rem; }
         }
       `}</style>
     </div>

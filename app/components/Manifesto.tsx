@@ -66,16 +66,9 @@ export default function Manifesto() {
 
             <p className="manifesto-p">
               A maioria das marcas posta. Poucas se posicionam. A diferença está
-              na estratégia por trás de cada imagem, legenda e decisão criativa
-              e é exatamente isso que entrego em cada projeto.
-            </p>
-
-            <p className="manifesto-p">
-              Cada cliente recebe uma leitura única da sua marca, do seu público
-              e dos canais onde a voz precisa ser ouvida. Sem fórmula pronta.
-              Com produção autoral em <strong>Porto Alegre, no Brasil e em
-              José Ignácio (Uruguai)</strong>, onde dirijo conteúdo para
-              maisons de luxo e referências de moda.
+              na estratégia por trás de cada imagem e decisão criativa e é isso
+              que entrego: uma <strong>leitura única de cada marca</strong>, sem
+              fórmula pronta.
             </p>
 
             <div className="manifesto-credentials">
@@ -87,10 +80,6 @@ export default function Manifesto() {
               ))}
             </div>
 
-            <p className="manifesto-filter">
-              Não atendo todo mundo. Atendo marcas que entendem que conteúdo é
-              ativo de posicionamento, não obrigação de calendário.
-            </p>
           </motion.div>
 
           {/* Visual: vídeo */}
@@ -231,19 +220,6 @@ export default function Manifesto() {
           letter-spacing: -0.005em;
         }
 
-        /* FILTER (não-cliente) */
-        .manifesto-filter {
-          margin-top: 32px;
-          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
-          font-style: italic;
-          font-size: 1.05rem;
-          line-height: 1.6;
-          color: rgba(10,10,10,0.6);
-          letter-spacing: -0.005em;
-          padding-top: 24px;
-          border-top: 1px dashed rgba(184,149,106,0.4);
-        }
-
         /* VISUAL: vídeo framed editorial */
         .manifesto-visual {
           position: relative;
@@ -348,7 +324,6 @@ export default function Manifesto() {
         @media (max-width: 480px) {
           .manifesto-pull { font-size: 1.15rem; padding-left: 18px; }
           .manifesto-p { font-size: 0.96rem; }
-          .manifesto-filter { font-size: 0.92rem; }
         }
       `}</style>
     </section>

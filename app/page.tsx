@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import BrandMarquee from "./components/BrandMarquee";
 import Manifesto from "./components/Manifesto";
 import Metodologia from "./components/Metodologia";
+import Internacional from "./components/Internacional";
 import Prova from "./components/prova";
 import Portfolio from "./components/Portfolio";
 import Planos from "./components/Planos";
@@ -20,6 +21,7 @@ export default function Home() {
         <BrandMarquee />
         <Manifesto />
         <Metodologia />
+        <Internacional />
         <Prova />
         <Portfolio />
         <Planos />

@@ -18,12 +18,6 @@ const IconUnmuted = () => (
   </svg>
 );
 
-const credentials = [
-  { l: "Direção", v: "Criativa & Editorial" },
-  { l: "Base", v: "Porto Alegre · RS" },
-  { l: "Captação", v: "Brasil + Uruguai" },
-];
-
 export default function Manifesto() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
@@ -70,15 +64,6 @@ export default function Manifesto() {
               que entrego: uma <strong>leitura única de cada marca</strong>, sem
               fórmula pronta.
             </p>
-
-            <div className="manifesto-credentials">
-              {credentials.map((c) => (
-                <div key={c.l} className="manifesto-cred">
-                  <p className="manifesto-cred__label">{c.l}</p>
-                  <p className="manifesto-cred__value">{c.v}</p>
-                </div>
-              ))}
-            </div>
 
           </motion.div>
 
@@ -195,31 +180,6 @@ export default function Manifesto() {
           font-weight: 500;
         }
 
-        /* CREDENTIALS */
-        .manifesto-credentials {
-          margin-top: 36px;
-          padding-top: 24px;
-          border-top: 1px solid rgba(10,10,10,0.08);
-          display: flex;
-          gap: 36px;
-          flex-wrap: wrap;
-        }
-        .manifesto-cred__label {
-          font-family: var(--font-dm-mono), 'DM Mono', monospace;
-          font-size: 0.65rem;
-          letter-spacing: 0.18em;
-          text-transform: uppercase;
-          color: rgba(10,10,10,0.45);
-          margin-bottom: 5px;
-        }
-        .manifesto-cred__value {
-          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
-          font-size: 1.02rem;
-          color: var(--ink);
-          font-weight: 500;
-          letter-spacing: -0.005em;
-        }
-
         /* VISUAL: vídeo framed editorial */
         .manifesto-visual {
           position: relative;
@@ -317,7 +277,6 @@ export default function Manifesto() {
         @media (max-width: 768px) {
           .manifesto-section { padding: 72px 0 64px; }
           .manifesto-h2 { margin-bottom: 40px; }
-          .manifesto-credentials { gap: 24px; }
           .manifesto-visual { max-width: 100%; }
           .manifesto-visual__frame { top: -10px; right: -10px; width: calc(100% - 20px); height: calc(100% - 20px); }
         }

@@ -24,6 +24,10 @@ export type Case = {
 export type Brand = {
   name: string;
   style: "italic" | "normal";
+  /** Avatar oficial da marca. Quando ausente, renderiza só o nome. */
+  logo?: string;
+  /** Perfil do Instagram, para link. */
+  handle?: string;
 };
 
 export const stats: Stat[] = [
@@ -84,11 +88,11 @@ export const cases: Case[] = [
 ];
 
 export const brands: Brand[] = [
-  { name: "A.MAR", style: "italic" },
+  { name: "A.MAR", style: "italic", logo: "/marcas/amar.jpg", handle: "a.mar.joseignacio" },
   { name: "H.STERN", style: "normal" },
-  { name: "Brunnen", style: "italic" },
+  { name: "Brunnen", style: "italic", logo: "/marcas/brunnen.jpg", handle: "brunnenmodafeminina" },
   { name: "RESI", style: "normal" },
-  { name: "Mariana Penteado", style: "italic" },
-  { name: "Marina Ciconet", style: "normal" },
+  { name: "Mariana Penteado", style: "italic", logo: "/marcas/marianapenteado.jpg", handle: "marianapenteado" },
+  { name: "Marina Ciconet", style: "normal", logo: "/marcas/marinaciconet.jpg", handle: "marinaciconet" },
   { name: "Casa das Gurias", style: "italic" },
 ];

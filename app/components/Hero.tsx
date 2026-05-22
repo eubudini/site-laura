@@ -105,10 +105,6 @@ export default function Hero() {
           </CTA>
         </motion.div>
 
-        {/* LOCATION */}
-        <motion.p {...fadeUp(0.5)} className="hero-location">
-          Porto Alegre, RS · Presencial na região · Atendimento remoto para todo o Brasil
-        </motion.p>
       </div>
 
       <style>{`

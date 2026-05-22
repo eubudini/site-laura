@@ -182,8 +182,6 @@ export default function Manifesto() {
         .manifesto-visual {
           position: relative;
           width: 100%;
-          align-self: stretch;
-          min-height: 560px;
         }
         .manifesto-visual__frame {
           position: absolute;
@@ -199,7 +197,6 @@ export default function Manifesto() {
           position: relative;
           z-index: 1;
           width: 100%;
-          height: 100%;
           aspect-ratio: 4 / 5;
           background: var(--ink);
           overflow: hidden;

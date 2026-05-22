@@ -134,24 +134,24 @@ export default function Metodologia() {
 
       <style>{`
         .metod-section {
-          background: var(--obsidian-2);
-          padding: clamp(80px, 11vw, 140px) 0 clamp(72px, 10vw, 120px);
-          color: #FFFFFF;
+          background: var(--parchment);
+          padding: clamp(56px, 8vw, 88px) 0;
+          color: var(--ink);
         }
 
         .metod-header {
           text-align: center;
-          margin: 0 auto clamp(64px, 8vw, 96px);
+          margin: 0 auto clamp(40px, 5vw, 60px);
           max-width: 720px;
         }
         .metod-h2 {
           font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(2rem, 3.6vw, 3rem);
           font-weight: 400;
-          color: #FFFFFF;
+          color: var(--ink);
           line-height: 1.08;
           letter-spacing: -0.022em;
-          margin-bottom: 22px;
+          margin-bottom: 16px;
         }
         .metod-h2 em {
           font-style: italic;
@@ -159,36 +159,36 @@ export default function Metodologia() {
         }
         .metod-sub {
           font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
-          font-size: 1.05rem;
-          color: rgba(255,255,255,0.55);
-          line-height: 1.75;
+          font-size: 1.02rem;
+          color: rgba(10,10,10,0.6);
+          line-height: 1.65;
           font-weight: 300;
-          max-width: 560px;
+          max-width: 540px;
           margin: 0 auto;
         }
 
         .acts {
           display: flex;
           flex-direction: column;
-          gap: clamp(64px, 9vw, 110px);
+          gap: clamp(36px, 5vw, 56px);
         }
 
         /* ETAPA */
         .act {
           position: relative;
-          padding: 52px 0;
-          border-top: 1px solid rgba(201,169,110,0.15);
+          padding: 36px 0;
+          border-top: 1px solid rgba(10,10,10,0.10);
         }
         .act:first-child { border-top: none; padding-top: 0; }
 
         .act__roman {
           position: absolute;
-          top: 24px;
+          top: 16px;
           left: -8px;
           font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
-          font-size: clamp(8rem, 16vw, 14rem);
+          font-size: clamp(7rem, 14vw, 12rem);
           font-weight: 500;
-          color: rgba(201,169,110,0.07);
+          color: rgba(184,149,106,0.16);
           line-height: 0.85;
           letter-spacing: -0.05em;
           pointer-events: none;
@@ -205,7 +205,7 @@ export default function Metodologia() {
           z-index: 1;
           display: grid;
           grid-template-columns: 1.1fr 1fr;
-          gap: 64px;
+          gap: 48px;
           align-items: center;
         }
         .act--flipped .act__inner {
@@ -229,8 +229,8 @@ export default function Metodologia() {
           font-size: 0.7rem;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: var(--gold);
-          margin-bottom: 16px;
+          color: var(--gold-text);
+          margin-bottom: 12px;
         }
         .act__label-rule {
           display: inline-block;
@@ -242,16 +242,16 @@ export default function Metodologia() {
           font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
           font-size: clamp(1.6rem, 2.6vw, 2.2rem);
           font-weight: 400;
-          color: #FFFFFF;
+          color: var(--ink);
           line-height: 1.12;
           letter-spacing: -0.018em;
-          margin-bottom: 16px;
+          margin-bottom: 12px;
         }
         .act__phrase {
           font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
-          font-size: 1.04rem;
-          color: rgba(255,255,255,0.66);
-          line-height: 1.74;
+          font-size: 1.02rem;
+          color: rgba(10,10,10,0.62);
+          line-height: 1.6;
           font-weight: 300;
           max-width: 440px;
         }
@@ -266,8 +266,8 @@ export default function Metodologia() {
           font-size: 0.68rem;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.5);
-          margin-bottom: 18px;
+          color: rgba(10,10,10,0.45);
+          margin-bottom: 14px;
         }
         .act__list {
           list-style: none;
@@ -275,7 +275,7 @@ export default function Metodologia() {
           margin: 0;
           display: flex;
           flex-direction: column;
-          gap: 14px;
+          gap: 10px;
         }
         .act__item {
           display: flex;
@@ -283,7 +283,7 @@ export default function Metodologia() {
           gap: 12px;
           font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 1rem;
-          color: rgba(255,255,255,0.85);
+          color: rgba(10,10,10,0.82);
           line-height: 1.4;
           font-weight: 400;
         }
@@ -304,7 +304,7 @@ export default function Metodologia() {
         @media (max-width: 900px) {
           .act__inner {
             grid-template-columns: 1fr !important;
-            gap: 28px;
+            gap: 20px;
           }
           .act--flipped .act__head,
           .act--flipped .act__body {
@@ -312,24 +312,23 @@ export default function Metodologia() {
             grid-row: auto;
           }
           .act__roman {
-            font-size: 9rem;
+            font-size: 7rem;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 0.5;
           }
           .act--flipped .act__roman {
             left: 50%;
             right: auto;
           }
-          .act { padding: 56px 0; }
-          .act:first-child { padding-top: 24px; }
+          .act { padding: 32px 0; }
+          .act:first-child { padding-top: 8px; }
           .act__phrase { max-width: 100%; }
         }
         @media (max-width: 480px) {
-          .metod-section { padding: 64px 0 56px; }
-          .act { padding: 40px 0; }
-          .act__roman { font-size: 6rem; }
+          .metod-section { padding: 48px 0; }
+          .act { padding: 26px 0; }
+          .act__roman { font-size: 5.5rem; }
           .act__title { font-size: 1.5rem; }
           .act__phrase { font-size: 0.95rem; }
           .act__item { font-size: 0.92rem; }

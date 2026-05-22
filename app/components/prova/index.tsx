@@ -39,10 +39,6 @@ export default function Prova() {
             ))}
           </div>
 
-          <p className="prova-disclaimer">
-            * Dados acumulados ao longo do período de acompanhamento estratégico. Mockups
-            ilustrativos baseados em dados reais.
-          </p>
         </div>
       </div>
 

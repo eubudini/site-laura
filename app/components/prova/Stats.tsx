@@ -28,8 +28,8 @@ export function Stats() {
 
       <style>{`
         .prova-stats-band {
-          background: linear-gradient(155deg, #E9D9B4 0%, #D8BC8C 55%, #C9A96E 100%);
-          padding: clamp(48px, 7vw, 72px) 0;
+          background: transparent;
+          padding: clamp(56px, 8vw, 96px) 0;
         }
         .prova-stats-grid {
           max-width: var(--bp-xl);
@@ -37,53 +37,54 @@ export function Stats() {
           padding: 0 clamp(20px, 5vw, 64px);
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: clamp(12px, 1.6vw, 20px);
         }
         .prova-stat {
-          background: rgba(255,255,255,0.22);
-          border: 1px solid rgba(255,255,255,0.45);
-          border-radius: 6px;
-          padding: clamp(26px, 3vw, 40px) clamp(14px, 2vw, 28px);
+          padding: clamp(6px, 1.4vw, 18px) clamp(16px, 2.2vw, 32px);
           text-align: center;
-          transition: background var(--duration-base) ease,
-            transform var(--duration-base) var(--ease-editorial);
         }
-        .prova-stat:hover {
-          background: rgba(255,255,255,0.34);
-          transform: translateY(-3px);
+        /* Hairline vertical sutil separando os numeros (so no desktop). */
+        .prova-stat + .prova-stat {
+          border-left: 1px solid rgba(10,10,10,0.10);
         }
         .prova-stat__value {
           font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
-          font-size: clamp(2rem, 3.2vw, 2.9rem);
+          font-size: clamp(2.4rem, 3.8vw, 3.4rem);
           font-weight: 500;
           color: var(--ink);
           line-height: 1;
-          margin-bottom: 10px;
+          margin-bottom: 12px;
           letter-spacing: -0.02em;
         }
         .prova-stat__label {
           font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
-          font-size: 0.94rem;
-          font-weight: 600;
-          color: #3B2D19;
-          margin-bottom: 5px;
+          font-size: 0.95rem;
+          font-weight: 500;
+          color: var(--ink);
+          margin-bottom: 6px;
         }
         .prova-stat__sub {
           font-family: var(--font-dm-mono), 'DM Mono', monospace;
           font-size: 0.68rem;
           letter-spacing: 0.06em;
-          color: #6E5635;
+          color: var(--gold-text);
         }
 
         @media (max-width: 760px) {
-          .prova-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-          .prova-stat { padding: 28px 14px; }
-          .prova-stat__value { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+          .prova-stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: clamp(36px, 9vw, 52px);
+          }
+          .prova-stat { padding: 0 14px; }
+          .prova-stat__value { font-size: clamp(2.1rem, 9vw, 2.8rem); }
+          /* No mobile 2x2: divisoria so entre as colunas. */
+          .prova-stat + .prova-stat { border-left: none; }
+          .prova-stat:nth-child(even) {
+            border-left: 1px solid rgba(10,10,10,0.10);
+          }
         }
         @media (max-width: 380px) {
-          .prova-stat { padding: 22px 8px; }
-          .prova-stat__label { font-size: 0.84rem; }
-          .prova-stat__sub { font-size: 0.6rem; }
+          .prova-stat__label { font-size: 0.86rem; }
+          .prova-stat__sub { font-size: 0.62rem; }
         }
       `}</style>
     </div>

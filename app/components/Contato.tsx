@@ -19,10 +19,10 @@ export default function Contato() {
           <EditorialFrame offset={20} position="bl">
             <div className="contato-foto__inner">
               <Image
-                src="/portfolio/Fotos/IMG_8883.jpg"
-                alt="Laura Camponogara"
+                src="/laura-contato.jpg"
+                alt="Laura Camponogara, estrategista de conteúdo"
                 fill
-                sizes="(max-width: 900px) 100vw, 420px"
+                sizes="(max-width: 768px) 240px, (max-width: 900px) 100vw, 420px"
                 className="contato-foto__img"
               />
             </div>
@@ -191,8 +191,10 @@ export default function Contato() {
         }
         @media (max-width: 768px) {
           #contato { padding: 80px 0 !important; }
-          .contato-foto { display: none !important; }
-          .contato-grid { gap: 0 !important; }
+          /* Mantém o retrato no mobile (presença humana fecha melhor),
+             porém compacto e centralizado acima do texto. */
+          .contato-foto__inner { max-width: 240px; margin-left: auto; margin-right: auto; }
+          .contato-grid { gap: 40px !important; }
         }
         @media (max-width: 480px) {
           #contato { padding: 64px 0 !important; }

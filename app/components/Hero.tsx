@@ -38,16 +38,22 @@ export default function Hero() {
       <div className="hero-bg-2" aria-hidden />
 
       <div className="hero-grid">
-        {/* H1 */}
-        <motion.h1 {...fadeUp(0.2)} className="hero-h1 serif-display">
+        {/* H1 — elemento LCP: pinta imediatamente (sem gate de opacity),
+            só desliza via transform após hidratar. Evita render delay no LCP. */}
+        <motion.h1
+          initial={reduced ? false : { y: 28 }}
+          animate={{ y: 0 }}
+          transition={{ duration: reduced ? 0 : 0.7, delay: reduced ? 0 : 0.2, ease: EASE_EDITORIAL }}
+          className="hero-h1 serif-display"
+        >
           Sua marca passou da hora{" "}
           <em>de ser desejada.</em>
         </motion.h1>
 
-        {/* PHOTO */}
+        {/* PHOTO — também candidata a LCP: sem gate de opacity, só escala + parallax. */}
         <motion.div
-          initial={reduced ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={reduced ? false : { scale: 0.96 }}
+          animate={{ scale: 1 }}
           transition={{
             duration: reduced ? 0 : 0.9,
             delay: reduced ? 0 : 0.15,

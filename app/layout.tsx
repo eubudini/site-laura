@@ -51,12 +51,21 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: SITE_URL,
     siteName: "Laura Camponogara",
+    images: [
+      {
+        url: "/laura-hero.jpg",
+        width: 720,
+        height: 1280,
+        alt: "Laura Camponogara — Estrategista de Conteúdo & Direção Criativa",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Laura Camponogara | Estratégia de Conteúdo",
     description:
       "Estratégia, direção criativa e presença digital para marcas que querem ser referência.",
+    images: ["/laura-hero.jpg"],
   },
 };
 

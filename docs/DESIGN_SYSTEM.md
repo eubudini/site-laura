@@ -84,9 +84,15 @@ expostas como CSS variables consumidas em `--font-sans` / `--font-serif`.
 
 | Variable | Familia | Uso |
 |---|---|---|
-| `--font-bodoni-moda` | Bodoni Moda (400/500/700/900) | Display / serif editorial (H1, H2, blockquotes) |
-| `--font-dm-sans` | DM Sans (300/400/500/600/700) | Body / sans (paragrafos, UI, navegacao) |
+| `--font-bodoni-moda` | **Fraunces** (400/500/600/700, normal+italic) | Display / serif editorial (H1, H2, blockquotes) |
+| `--font-dm-sans` | **Inter Tight** (300/400/500/600/700, normal+italic) | Body / sans (paragrafos, UI, navegacao) |
 | `--font-dm-mono` | DM Mono (300/400/500) | Kicker monoespacado, labels editoriais |
+
+> **Nota (descasamento legado):** os nomes de variavel `--font-bodoni-moda` e
+> `--font-dm-sans` foram mantidos por compatibilidade, mas resolvem para **Fraunces**
+> e **Inter Tight** respectivamente (carregadas via `next/font/google` em `app/layout.tsx`).
+> Os literais `'Bodoni Moda'` / `'DM Sans'` no font-stack de `globals.css` sao apenas
+> fallback de hidratacao. Apenas `--font-dm-mono` → DM Mono esta nominalmente correto.
 
 Anti-padrao: importar fontes via `@import url` ou `<link>`. Toda fonte passa
 pelo loader `next/font/google` para garantir auto-host, font-display swap e

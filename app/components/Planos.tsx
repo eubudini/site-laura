@@ -169,8 +169,8 @@ export default function Planos() {
           padding: 5px 13px;
         }
         .plan-badge--featured {
-          color: var(--gold);
-          background: rgba(201,169,110,0.12);
+          color: var(--gold-text);
+          background: transparent;
         }
 
         .plan-tag {
@@ -178,10 +178,10 @@ export default function Planos() {
           font-size: 0.74rem;
           letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: rgba(201,169,110,0.6);
+          color: var(--gold);
           margin-bottom: 14px;
         }
-        .plan-tag--featured { color: var(--gold); }
+        .plan-tag--featured { color: var(--gold-text); }
 
         .plan-name {
           font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
@@ -240,7 +240,7 @@ export default function Planos() {
         .planos-note {
           font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 0.96rem;
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.62);
           text-align: center;
           margin-bottom: 32px;
           font-weight: 300;

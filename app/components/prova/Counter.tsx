@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 type Props = {
   value: number;
@@ -14,9 +15,15 @@ export function Counter({ value, prefix = "", suffix = "", separator = "" }: Pro
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const reduced = useReducedMotion();
 
   useEffect(() => {
     if (!inView) return;
+    // Sem contagem animada quando o usuário pede menos movimento: mostra o valor final.
+    if (reduced) {
+      setCount(value);
+      return;
+    }
     const duration = 1800;
     const steps = 60;
     const inc = value / steps;
@@ -30,7 +37,7 @@ export function Counter({ value, prefix = "", suffix = "", separator = "" }: Pro
       setCount(Math.floor(current));
     }, duration / steps);
     return () => clearInterval(interval);
-  }, [inView, value]);
+  }, [inView, value, reduced]);
 
   const formatted = separator
     ? count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator)

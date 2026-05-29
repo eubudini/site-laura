@@ -77,13 +77,16 @@ export default function Manifesto() {
             <div className="manifesto-visual__inner">
               <video
                 ref={videoRef}
-                src="/videos/IMG_2301.mov"
+                poster="/videos/manifesto-poster.jpg"
                 autoPlay
                 muted
                 loop
                 playsInline
+                preload="metadata"
                 className="manifesto-visual__video"
-              />
+              >
+                <source src="/videos/manifesto.mp4" type="video/mp4" />
+              </video>
               <button
                 onClick={toggleMute}
                 aria-label={muted ? "Ativar som" : "Desativar som"}

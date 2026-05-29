@@ -74,8 +74,12 @@ const personLd = {
   "@type": "Person",
   name: "Laura Camponogara",
   jobTitle: "Estrategista de Conteúdo & Direção Criativa",
+  description:
+    "Estratégia de conteúdo, direção criativa, captação editorial e gestão de redes sociais para marcas com identidade.",
   url: SITE_URL,
   image: `${SITE_URL}/laura-hero.jpg`,
+  email: "laura.camponogara29@icloud.com",
+  telephone: "+55-51-98530-9613",
   sameAs: ["https://www.instagram.com/laura.camponogara/"],
   address: {
     "@type": "PostalAddress",

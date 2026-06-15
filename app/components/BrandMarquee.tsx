@@ -36,20 +36,22 @@ export default function BrandMarquee() {
 
       <style>{`
         .marquee {
-          background: var(--paper, #F7F3EC);
-          padding: clamp(28px, 4vw, 44px) 0;
-          border-top: 1px solid rgba(10,10,10,0.06);
-          border-bottom: 1px solid rgba(10,10,10,0.06);
+          background:
+            linear-gradient(180deg, var(--gold-light) 0%, transparent 60%),
+            var(--paper, #F7F3EC);
+          padding: clamp(40px, 6vw, 72px) 0;
+          border-top: 1px solid var(--gold-mid);
+          border-bottom: 1px solid var(--gold-mid);
           overflow: hidden;
         }
         .marquee__label {
           font-family: var(--font-dm-mono), 'DM Mono', monospace;
-          font-size: 0.66rem;
-          letter-spacing: 0.3em;
+          font-size: var(--text-mono-kicker);
+          letter-spacing: 0.32em;
           text-transform: uppercase;
-          color: var(--gold);
+          color: var(--gold-text);
           text-align: center;
-          margin-bottom: clamp(18px, 2.6vw, 28px);
+          margin-bottom: clamp(28px, 3.6vw, 44px);
         }
         .marquee__viewport {
           position: relative;
@@ -79,28 +81,25 @@ export default function BrandMarquee() {
           flex-shrink: 0;
         }
         .marquee__logo {
-          height: clamp(26px, 3.4vw, 36px);
+          height: clamp(34px, 4.6vw, 52px);
           width: auto;
           object-fit: contain;
-          filter: grayscale(1);
-          opacity: 0.6;
-          transition: opacity var(--duration-base) ease,
-            filter var(--duration-base) ease;
+          opacity: 1;
+          transition: transform var(--duration-base) ease;
         }
         .marquee__item:hover .marquee__logo {
-          filter: grayscale(0);
-          opacity: 1;
+          transform: scale(1.06);
         }
         .marquee__word {
           font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
-          font-size: clamp(1.05rem, 1.7vw, 1.5rem);
+          font-size: clamp(1.3rem, 2.2vw, 1.9rem);
           font-weight: 400;
           letter-spacing: -0.005em;
-          color: rgba(10,10,10,0.42);
+          color: var(--ink-80);
           white-space: nowrap;
           transition: color var(--duration-base) ease;
         }
-        .marquee__item:hover .marquee__word { color: var(--gold); }
+        .marquee__item:hover .marquee__word { color: var(--gold-text); }
 
         @keyframes marquee-scroll {
           from { transform: translateX(0); }

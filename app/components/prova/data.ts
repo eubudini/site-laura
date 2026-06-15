@@ -97,4 +97,5 @@ export const brands: Brand[] = [
   { name: "Mariana Penteado", style: "italic", handle: "marianapenteado" },
   { name: "Marina Ciconet", style: "normal", handle: "marinaciconet" },
   { name: "Casa das Gurias", style: "italic" },
+  { name: "CauCakes", style: "normal", logo: "/logo-caucakes.png" },
 ];

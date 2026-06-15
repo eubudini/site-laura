@@ -28,6 +28,12 @@ export type Brand = {
   logo?: string;
   /** Perfil do Instagram, para link. */
   handle?: string;
+  /**
+   * Ajuste óptico de altura relativo à base do marquee (1 = base).
+   * Logos largas/finas (wordmarks) usam < 1; brasões quase quadrados
+   * usam > 1 para igualar o peso visual das demais.
+   */
+  logoScale?: number;
 };
 
 export const stats: Stat[] = [
@@ -92,13 +98,13 @@ export const cases: Case[] = [
 // o marquee renderiza o nome em wordmark tipográfico ate o arquivo chegar.
 export const brands: Brand[] = [
   { name: "A.MAR", style: "italic", handle: "a.mar.joseignacio" },
-  { name: "H.STERN", style: "normal", logo: "/logo-hstern.png" },
-  { name: "Brunnen", style: "italic", handle: "brunnenmodafeminina", logo: "/logo-brunnen.png" },
+  { name: "H.STERN", style: "normal", logo: "/logo-hstern.png", logoScale: 0.92 },
+  { name: "Brunnen", style: "italic", handle: "brunnenmodafeminina", logo: "/logo-brunnen.png", logoScale: 0.86 },
   { name: "RESI", style: "normal" },
   { name: "Mariana Penteado", style: "italic", handle: "marianapenteado" },
   { name: "Marina Ciconet", style: "normal", handle: "marinaciconet" },
   { name: "Casa das Gurias", style: "italic" },
-  { name: "CauCakes", style: "normal", logo: "/logo-caucakes.png" },
-  { name: "QNB", style: "normal", logo: "/logo-qnb.png" },
-  { name: "Gama Concept", style: "normal", logo: "/logo-gama.png" },
+  { name: "CauCakes", style: "normal", logo: "/logo-caucakes.png", logoScale: 0.95 },
+  { name: "QNB", style: "normal", logo: "/logo-qnb.png", logoScale: 1.5 },
+  { name: "Gama Concept", style: "normal", logo: "/logo-gama.png", logoScale: 0.9 },
 ];

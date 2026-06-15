@@ -23,6 +23,11 @@ export default function BrandMarquee() {
                   width={120}
                   height={40}
                   className="marquee__logo"
+                  style={
+                    b.logoScale
+                      ? { height: `calc(var(--logo-h) * ${b.logoScale})` }
+                      : undefined
+                  }
                 />
               ) : (
                 <span className="marquee__word" style={{ fontStyle: b.style }}>
@@ -36,6 +41,8 @@ export default function BrandMarquee() {
 
       <style>{`
         .marquee {
+          /* altura-base comum a todas as logos; cada logo ajusta com logoScale */
+          --logo-h: clamp(30px, 3.8vw, 40px);
           background:
             linear-gradient(180deg, var(--gold-light) 0%, transparent 60%),
             var(--paper, #F7F3EC);
@@ -81,8 +88,9 @@ export default function BrandMarquee() {
           flex-shrink: 0;
         }
         .marquee__logo {
-          height: clamp(34px, 4.6vw, 52px);
+          height: var(--logo-h);
           width: auto;
+          max-width: clamp(120px, 16vw, 168px);
           object-fit: contain;
           opacity: 1;
           transition: transform var(--duration-base) ease;

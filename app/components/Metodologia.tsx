@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 type Act = {
   marker: string;
+  num: string;
   title: string;
   phrase: string;
   deliverables: string[];
@@ -12,6 +14,7 @@ type Act = {
 const acts: Act[] = [
   {
     marker: "01 · Posicionar",
+    num: "01",
     title: "Encontrar a sua voz",
     phrase:
       "Começo encontrando o que só a sua marca pode dizer: o posicionamento e o tom que vão te diferenciar de verdade.",
@@ -24,9 +27,10 @@ const acts: Act[] = [
   },
   {
     marker: "02 · Produzir",
+    num: "02",
     title: "Dar imagem a ela",
     phrase:
-      "Depois dou forma a isso: fotografo, dirijo e edito conteúdo autoral, feito pra sua marca — nunca tirado de um modelo.",
+      "Depois dou forma a isso: fotografo, dirijo e edito conteúdo autoral, feito pra sua marca, nunca tirado de um modelo.",
     deliverables: [
       "Direção criativa",
       "Foto & vídeo",
@@ -36,6 +40,7 @@ const acts: Act[] = [
   },
   {
     marker: "03 · Crescer",
+    num: "03",
     title: "Levar mais longe",
     phrase:
       "Por fim, coloco esse conteúdo pra trabalhar: nos canais certos, acompanhado de perto, crescendo com consistência.",
@@ -48,16 +53,27 @@ const acts: Act[] = [
   },
 ];
 
-function Check() {
+function Chevron() {
   return (
-    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <polyline points="20 6 9 17 4 12" />
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <polyline points="6 9 12 15 18 9" />
     </svg>
   );
 }
 
-function ActBlock({ act, idx }: { act: Act; idx: number }) {
+function ActBlock({
+  act,
+  idx,
+  open,
+  onToggle,
+}: {
+  act: Act;
+  idx: number;
+  open: boolean;
+  onToggle: () => void;
+}) {
   const flipped = idx % 2 === 1;
+  const panelId = `act-panel-${idx}`;
   return (
     <motion.article
       initial={{ opacity: 0, y: 32 }}
@@ -66,27 +82,38 @@ function ActBlock({ act, idx }: { act: Act; idx: number }) {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       className={`act ${flipped ? "act--flipped" : ""}`}
       data-idx={idx}
+      data-open={open ? "true" : "false"}
     >
-      <div className="act__inner">
-        <div className="act__head">
+      <span className="act__num" aria-hidden>{act.num}</span>
+
+      <button
+        type="button"
+        className="act__head"
+        aria-expanded={open}
+        aria-controls={panelId}
+        onClick={onToggle}
+      >
+        <span className="act__head-text">
           <span className="act__label">
             <span className="act__label-rule" aria-hidden />
             {act.marker}
           </span>
           <h3 className="act__title">{act.title}</h3>
-          <p className="act__phrase">{act.phrase}</p>
-        </div>
+        </span>
+        <span className="act__chev" aria-hidden><Chevron /></span>
+      </button>
 
-        <div className="act__body">
-          <p className="act__small-label">Entregas</p>
-          <ul className="act__list">
-            {act.deliverables.map((d) => (
-              <li key={d} className="act__item">
-                <span className="act__check"><Check /></span>
-                <span>{d}</span>
-              </li>
-            ))}
-          </ul>
+      <div className="act__panel" id={panelId}>
+        <div className="act__panel-inner">
+          <p className="act__phrase">{act.phrase}</p>
+          <div className="act__body">
+            <p className="act__small-label">Entregas</p>
+            <ul className="act__chips">
+              {act.deliverables.map((d) => (
+                <li key={d} className="act__chip">{d}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </motion.article>
@@ -94,6 +121,9 @@ function ActBlock({ act, idx }: { act: Act; idx: number }) {
 }
 
 export default function Metodologia() {
+  // Accordion (mobile): etapa 0 aberta por padrão. No desktop o CSS força tudo aberto.
+  const [openIdx, setOpenIdx] = useState(0);
+
   return (
     <section id="servicos" className="metod-section">
       <div className="container-x">
@@ -115,13 +145,19 @@ export default function Metodologia() {
             className="metod-sub"
           >
             A sua marca provavelmente é maior do que parece nas redes. Meu
-            trabalho é fechar essa distância — em três etapas.
+            trabalho é fechar essa distância em três etapas.
           </motion.p>
         </div>
 
         <div className="acts">
           {acts.map((a, i) => (
-            <ActBlock key={a.marker} act={a} idx={i} />
+            <ActBlock
+              key={a.marker}
+              act={a}
+              idx={i}
+              open={openIdx === i}
+              onToggle={() => setOpenIdx((prev) => (prev === i ? -1 : i))}
+            />
           ))}
         </div>
       </div>
@@ -164,7 +200,7 @@ export default function Metodologia() {
         .acts {
           display: flex;
           flex-direction: column;
-          gap: clamp(36px, 5vw, 56px);
+          gap: clamp(8px, 2vw, 56px);
         }
 
         /* ETAPA */
@@ -173,29 +209,43 @@ export default function Metodologia() {
           padding: 36px 0;
           border-top: 1px solid rgba(10,10,10,0.10);
         }
-        .act:first-child { border-top: none; padding-top: 0; }
+        .act:first-child { border-top: none; }
 
-        .act__inner {
+        /* Número grande translúcido — acento editorial */
+        .act__num {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
+          font-size: clamp(5rem, 11vw, 9rem);
+          line-height: 1;
+          color: rgba(201,169,110,0.08);
+          pointer-events: none;
+          z-index: 0;
+          user-select: none;
+        }
+        .act--flipped .act__num { right: auto; left: 0; }
+
+        /* HEAD (botão) */
+        .act__head {
           position: relative;
           z-index: 1;
-          display: grid;
-          grid-template-columns: 1.1fr 1fr;
-          gap: 48px;
-          align-items: center;
+          width: 100%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 16px;
+          background: none;
+          border: none;
+          padding: 0;
+          margin: 0;
+          text-align: left;
+          font: inherit;
+          color: inherit;
+          cursor: pointer;
         }
-        .act--flipped .act__inner {
-          grid-template-columns: 1fr 1.1fr;
-        }
-        .act--flipped .act__head {
-          grid-column: 2;
-          grid-row: 1;
-        }
-        .act--flipped .act__body {
-          grid-column: 1;
-          grid-row: 1;
-        }
-
-        /* HEAD */
+        .act__head-text { display: block; }
         .act__label {
           display: inline-flex;
           align-items: center;
@@ -220,82 +270,148 @@ export default function Metodologia() {
           color: var(--ink);
           line-height: 1.12;
           letter-spacing: -0.018em;
-          margin-bottom: 12px;
+          margin: 0;
         }
+        .act__chev {
+          flex-shrink: 0;
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          border: 1px solid rgba(201,169,110,0.3);
+          background: rgba(201,169,110,0.08);
+          color: var(--gold);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform var(--duration-base) ease,
+            background var(--duration-base) ease;
+        }
+        .act[data-open="true"] .act__chev {
+          transform: rotate(180deg);
+          background: rgba(201,169,110,0.18);
+        }
+
+        /* PANEL — área colapsável (mobile) / participa do grid (desktop) */
+        .act__panel-inner { display: block; }
         .act__phrase {
           font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
           font-size: 1.02rem;
           color: rgba(10,10,10,0.62);
           line-height: 1.6;
           font-weight: 300;
-          max-width: 440px;
+          margin: 14px 0 0;
         }
 
-        /* BODY — entregas */
-        .act__body {
-          display: flex;
-          flex-direction: column;
-        }
+        /* BODY — entregas como chips */
         .act__small-label {
           font-family: var(--font-dm-mono), 'DM Mono', monospace;
           font-size: 0.68rem;
           letter-spacing: 0.22em;
           text-transform: uppercase;
           color: rgba(10,10,10,0.45);
-          margin-bottom: 14px;
+          margin: 18px 0 12px;
         }
-        .act__list {
+        .act__chips {
           list-style: none;
           padding: 0;
           margin: 0;
           display: flex;
-          flex-direction: column;
-          gap: 10px;
+          flex-wrap: wrap;
+          gap: 8px;
         }
-        .act__item {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
-          font-size: 1rem;
-          color: rgba(10,10,10,0.82);
-          line-height: 1.4;
-          font-weight: 400;
-        }
-        .act__check {
-          flex-shrink: 0;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: rgba(201,169,110,0.12);
-          color: var(--gold);
+        .act__chip {
           display: inline-flex;
           align-items: center;
-          justify-content: center;
-          border: 1px solid rgba(201,169,110,0.3);
+          gap: 8px;
+          font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+          font-size: 0.9rem;
+          font-weight: 400;
+          color: var(--ink-80, rgba(10,10,10,0.8));
+          padding: 7px 14px;
+          border-radius: 999px;
+          background: rgba(201,169,110,0.10);
+          border: 1px solid rgba(201,169,110,0.28);
+          line-height: 1;
+          transition: background var(--duration-fast) ease,
+            border-color var(--duration-fast) ease;
+        }
+        .act__chip::before {
+          content: "";
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: var(--gold);
+          flex-shrink: 0;
+        }
+        .act__chip:hover {
+          background: rgba(201,169,110,0.18);
+          border-color: rgba(201,169,110,0.5);
         }
 
-        /* Responsive */
+        /* ─────────── MOBILE: accordion ─────────── */
         @media (max-width: 900px) {
-          .act__inner {
-            grid-template-columns: 1fr !important;
-            gap: 20px;
+          .act { padding: 0; border-top: 1px solid rgba(10,10,10,0.10); }
+          .act__head { padding: 22px 0; }
+          .act__panel {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows var(--duration-base) ease;
           }
-          .act--flipped .act__head,
-          .act--flipped .act__body {
-            grid-column: 1;
-            grid-row: auto;
+          .act[data-open="true"] .act__panel { grid-template-rows: 1fr; }
+          .act__panel-inner {
+            overflow: hidden;
+            min-height: 0;
           }
-          .act { padding: 32px 0; }
-          .act:first-child { padding-top: 8px; }
-          .act__phrase { max-width: 100%; }
-        }
-        @media (max-width: 480px) {
-          .metod-section { padding: 48px 0; }
-          .act { padding: 26px 0; }
+          .act[data-open="true"] .act__panel-inner { padding-bottom: 26px; }
+          .act__phrase { margin-top: 0; max-width: 100%; }
           .act__title { font-size: 1.5rem; }
-          .act__phrase { font-size: 0.95rem; }
-          .act__item { font-size: 0.92rem; }
+        }
+
+        /* ─────────── DESKTOP: 2 colunas, tudo aberto ─────────── */
+        @media (min-width: 901px) {
+          .act { padding: 36px 0; }
+          .act__chev { display: none; }
+          .act__head { cursor: default; }
+
+          /* o grid de 2 colunas vive na própria etapa */
+          .act {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 48px;
+            align-items: center;
+          }
+          .act--flipped { grid-template-columns: 1fr 1.1fr; }
+
+          /* panel e inner desaparecem do layout: filhos sobem pro grid */
+          .act__panel, .act__panel-inner { display: contents; }
+
+          .act__num {
+            top: 0;
+            transform: none;
+            font-size: clamp(6rem, 8vw, 9rem);
+          }
+
+          .act__head { grid-column: 1; grid-row: 1; align-self: end; }
+          .act__phrase {
+            grid-column: 1;
+            grid-row: 2;
+            max-width: 440px;
+            align-self: start;
+          }
+          .act__body {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            align-self: center;
+          }
+
+          .act--flipped .act__head { grid-column: 2; }
+          .act--flipped .act__phrase { grid-column: 2; }
+          .act--flipped .act__body { grid-column: 1; grid-row: 1 / span 2; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .act__panel { transition: none; }
+          .act__chev { transition: none; }
         }
       `}</style>
     </section>

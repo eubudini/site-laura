@@ -165,6 +165,12 @@ a, button {
   min-height: 44px;
 }
 
+/* ── Bio: ícones sociais circulares isolados da regra de
+   touch-target (evita ovalizar o botão 40x40) ───────── */
+.bio-icon {
+  min-height: 0;
+}
+
 ::selection {
   background: var(--gold-light);
   color: var(--ink);

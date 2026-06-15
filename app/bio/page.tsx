@@ -1,5 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
+import bannerCover from "@/public/banner-cover.jpg";
+import avatarImg from "@/public/avatar.jpg";
 
 export const metadata: Metadata = {
   title: "Laura Camponogara — Links",
@@ -11,7 +14,6 @@ export const metadata: Metadata = {
 const profile = {
   name: "Laura Camponogara",
   role: "Estrategista de Conteúdo · Direção Criativa",
-  avatar: "/avatar.jpg",
 };
 
 const socials = [
@@ -41,54 +43,61 @@ const cards = [
 export default function BioPage() {
   return (
     <main className="min-h-screen bg-parchment text-ink">
-      {/* BANNER — capa editorial */}
-      <div className="relative w-full h-[210px] sm:h-[300px] overflow-hidden bg-parchment-dark">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/banner-cover.jpg"
-          alt="Laura Camponogara"
-          className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
-        />
-        {/* fade para o parchment na borda inferior */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-parchment pointer-events-none" />
-      </div>
-
-      {/* CONTEÚDO */}
-      <div className="relative z-10 px-5 pb-16 flex justify-center">
-        <div className="w-full max-w-md flex flex-col items-center">
-          {/* Avatar sobrepondo o banner */}
-          <div className="-mt-16 sm:-mt-20 w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden ring-4 ring-parchment shadow-lg shadow-ink/10 bg-parchment-dark">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={profile.avatar}
+      {/* Faixa contida: coluna única centrada que respira (D1).
+          Mobile-first; o respiro lateral/vertical do lg+ é aditivo. */}
+      <div className="mx-auto w-full max-w-md px-5 pb-16 lg:max-w-lg lg:px-8 lg:py-12">
+        <div className="flex flex-col items-center">
+          {/* BANNER — capa editorial contida (D1+D2+D3).
+              Mobile: faixa colada no topo do container.
+              lg+: faixa arredondada contida, com respiro. */}
+          <div className="relative w-full aspect-3/2 overflow-hidden rounded-b-2xl bg-parchment-dark lg:rounded-2xl">
+            <Image
+              src={bannerCover}
               alt={profile.name}
-              className="w-full h-full object-cover object-[center_25%]"
+              fill
+              sizes="(min-width: 1024px) 32rem, 28rem"
+              placeholder="blur"
+              className="object-cover object-[center_30%]"
+            />
+            {/* fade para o parchment na borda inferior */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-parchment" />
+          </div>
+
+          {/* Avatar sobrepondo o banner */}
+          <div className="-mt-16 size-28 overflow-hidden rounded-full bg-parchment-dark shadow-lg shadow-ink/10 ring-4 ring-parchment sm:size-32">
+            <Image
+              src={avatarImg}
+              alt={profile.name}
+              width={144}
+              height={144}
+              placeholder="blur"
+              className="size-full object-cover object-[center_25%]"
             />
           </div>
 
-          <h1 className="mt-5 font-serif text-[26px] sm:text-3xl tracking-tight text-center text-ink">
+          <h1 className="mt-5 text-center font-serif text-3xl tracking-tight text-ink">
             {profile.name}
           </h1>
 
           {/* régua + kicker */}
-          <div className="mt-3 flex items-center gap-2.5">
+          <div className="mt-3 flex items-center gap-2">
             <span className="h-px w-6 bg-gold/60" />
-            <p className="text-[11px] tracking-[0.18em] uppercase text-gold-text">
+            <p className="text-xs uppercase tracking-[0.18em] text-gold-text">
               {profile.role}
             </p>
             <span className="h-px w-6 bg-gold/60" />
           </div>
 
-          <p className="mt-5 max-w-[22rem] text-center font-serif text-[19px] sm:text-[21px] leading-snug text-ink/90 italic">
+          <p className="mt-5 max-w-sm text-center font-serif text-xl italic leading-snug text-ink/90">
             Sua marca passou da hora de ser desejada.
           </p>
-          <p className="mt-3 max-w-[20rem] text-center text-[13.5px] leading-relaxed text-muted">
+          <p className="mt-3 max-w-xs text-center text-sm leading-relaxed text-muted">
             Ajudo marcas a construírem uma imagem mais forte, desejável e
             consistente — por meio de conteúdo, posicionamento e presença nos
             canais certos.
           </p>
 
-          <nav className="mt-6 flex items-center gap-2.5">
+          <nav className="mt-6 flex items-center gap-2">
             {socials.map((s) => (
               <a
                 key={s.label}
@@ -96,36 +105,36 @@ export default function BioPage() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={s.label}
-                className="w-10 h-10 grid place-items-center rounded-full bg-white ring-1 ring-ink/10 text-ink hover:ring-gold/50 hover:text-gold-text transition"
+                className="bio-icon grid size-10 place-items-center rounded-full bg-white text-ink ring-1 ring-ink/10 transition hover:text-gold-text hover:ring-gold/50"
               >
-                <s.icon className="w-[18px] h-[18px]" />
+                <s.icon className="size-[18px]" />
               </a>
             ))}
           </nav>
 
-          <section className="mt-9 w-full flex flex-col gap-3.5">
+          <section className="mt-8 flex w-full flex-col gap-3">
             {cards.map((c) => (
               <Link
                 key={c.title}
                 href={c.href}
                 target="_blank"
-                className="group relative overflow-hidden rounded-2xl ring-1 ring-ink/10 bg-white hover:ring-gold/50 hover:shadow-md hover:shadow-ink/5 transition"
+                className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-ink/10 transition hover:shadow-md hover:shadow-ink/5 hover:ring-gold/50"
               >
                 <div className="flex items-center gap-4 p-4 sm:p-5">
-                  <span className="shrink-0 w-12 h-12 grid place-items-center rounded-xl bg-parchment ring-1 ring-ink/5 text-gold-text">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-parchment text-gold-text ring-1 ring-ink/5">
                     {c.kind === "whatsapp" ? (
-                      <IconWhatsapp className="w-6 h-6" />
+                      <IconWhatsapp className="size-6" />
                     ) : (
-                      <IconGlobe className="w-6 h-6" />
+                      <IconGlobe className="size-6" />
                     )}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <h3 className="font-serif text-[17px] text-ink">{c.title}</h3>
-                    <p className="mt-0.5 text-[12.5px] leading-snug text-muted">
+                    <h3 className="font-serif text-lg text-ink">{c.title}</h3>
+                    <p className="mt-1 text-sm leading-snug text-muted">
                       {c.description}
                     </p>
                   </div>
-                  <span className="shrink-0 text-[13px] font-medium text-gold-text underline-offset-4 group-hover:underline">
+                  <span className="shrink-0 text-sm font-medium text-gold-text underline-offset-4 group-hover:underline">
                     {c.cta} →
                   </span>
                 </div>
@@ -133,7 +142,7 @@ export default function BioPage() {
             ))}
           </section>
 
-          <footer className="mt-14 text-[11px] tracking-wide text-muted">
+          <footer className="mt-12 text-xs tracking-wide text-muted">
             © 2026 {profile.name}
           </footer>
         </div>

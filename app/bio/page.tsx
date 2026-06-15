@@ -42,10 +42,11 @@ const cards = [
 
 export default function BioPage() {
   return (
-    <main className="min-h-screen bg-parchment text-ink">
+    <main className="flex min-h-screen flex-col items-center bg-parchment text-ink">
       {/* Faixa contida: coluna única centrada que respira (D1).
+          Centralização via flex (o reset global `* { margin: 0 }` anula mx-auto).
           Mobile-first; o respiro lateral/vertical do lg+ é aditivo. */}
-      <div className="mx-auto w-full max-w-md px-5 pb-16 lg:max-w-lg lg:px-8 lg:py-12">
+      <div className="w-full max-w-md px-5 pb-16 lg:max-w-lg lg:px-8 lg:py-12">
         <div className="flex flex-col items-center">
           {/* BANNER — capa editorial contida (D1+D2+D3).
               Mobile: faixa colada no topo do container.

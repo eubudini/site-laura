@@ -63,19 +63,20 @@ export const cases: Case[] = [
     ],
   },
   {
-    name: "Mariana Penteado",
-    handle: "marianapenteado",
+    // ═══════ A.MAR — texto real; MÉTRICAS PROVISÓRIAS: Laura vai passar os números ═══════
+    name: "A.MAR",
+    handle: "a.mar.joseignacio",
     tag: "Moda · Lifestyle",
-    bio: "Moda · Lifestyle · Direção criativa ✨",
-    initials: "MP",
-    postsCount: "856",
+    bio: "Bonés manifesto · Curadoria José Ignacio",
+    initials: "AM",
+    postsCount: "—",
     metrics: [
-      { label: "Seguidores", before: "42K", after: "198K", growth: "+371%" },
-      { label: "Engajamento", before: "1,1%", after: "3,8%", growth: "+245%" },
-      { label: "Alcance / mês", before: "22K", after: "180K", growth: "+718%" },
+      { label: "Seguidores", before: "—", after: "—", growth: "—" },
+      { label: "Engajamento", before: "—", after: "—", growth: "—" },
+      { label: "Alcance / mês", before: "—", after: "—", growth: "—" },
     ],
     highlight:
-      "Direção criativa consistente, captação editorial e narrativa premium transformaram um perfil de moda em referência nacional.",
+      "Construção de marca para a A.MAR: identidade editorial, captação e narrativa de produto posicionaram a curadoria de bonés manifesto inspirada em José Ignacio.",
     feedPalette: [
       "linear-gradient(135deg, #e8dcc8 0%, #b89d75 100%)",
       "linear-gradient(135deg, #2a2018 0%, #4a3a28 100%)",
@@ -92,10 +93,12 @@ export const cases: Case[] = [
 export const brands: Brand[] = [
   { name: "A.MAR", style: "italic", handle: "a.mar.joseignacio" },
   { name: "H.STERN", style: "normal", logo: "/logo-hstern.png" },
-  { name: "Brunnen", style: "italic", handle: "brunnenmodafeminina" },
+  { name: "Brunnen", style: "italic", handle: "brunnenmodafeminina", logo: "/logo-brunnen.png" },
   { name: "RESI", style: "normal" },
   { name: "Mariana Penteado", style: "italic", handle: "marianapenteado" },
   { name: "Marina Ciconet", style: "normal", handle: "marinaciconet" },
   { name: "Casa das Gurias", style: "italic" },
   { name: "CauCakes", style: "normal", logo: "/logo-caucakes.png" },
+  { name: "QNB", style: "normal", logo: "/logo-qnb.png" },
+  { name: "Gama Concept", style: "normal", logo: "/logo-gama.png" },
 ];

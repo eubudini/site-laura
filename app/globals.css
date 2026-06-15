@@ -20,6 +20,7 @@
   --gold-text: #8E6E42;        /* WCAG AA-safe sobre parchment p/ texto pequeno */
   --gold-light: rgba(184,149,106,0.10);
   --gold-mid: rgba(184,149,106,0.32);
+  --muted: rgba(10,10,10,0.55);
   --obsidian: #0A0A0A;
   --obsidian-2: #131313;
   --obsidian-3: #1C1C1C;
@@ -66,6 +67,16 @@
 @theme inline {
   --color-background: var(--parchment);
   --color-foreground: var(--ink);
+
+  /* Cores como utilities Tailwind v4 (bg-parchment, text-ink, text-gold-text…) */
+  --color-ink: var(--ink);
+  --color-parchment: var(--parchment);
+  --color-parchment-dark: var(--parchment-dark);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-text: var(--gold-text);
+  --color-muted: var(--muted);
+
   --font-sans: var(--font-dm-sans), 'DM Sans', sans-serif;
   --font-serif: var(--font-bodoni-moda), 'Bodoni Moda', serif;
   --font-mono: var(--font-dm-mono), 'DM Mono', monospace;

@@ -42,11 +42,11 @@ export default function BrandMarquee() {
       <style>{`
         .marquee {
           /* altura-base comum a todas as logos; cada logo ajusta com logoScale */
-          --logo-h: clamp(30px, 3.8vw, 40px);
+          --logo-h: clamp(24px, 2.2vw, 28px);
           background:
             linear-gradient(180deg, var(--gold-light) 0%, transparent 60%),
             var(--paper, #F7F3EC);
-          padding: clamp(40px, 6vw, 72px) 0;
+          padding: clamp(28px, 3.4vw, 40px) 0;
           border-top: 1px solid var(--gold-mid);
           border-bottom: 1px solid var(--gold-mid);
           overflow: hidden;
@@ -58,7 +58,7 @@ export default function BrandMarquee() {
           text-transform: uppercase;
           color: var(--gold-text);
           text-align: center;
-          margin-bottom: clamp(28px, 3.6vw, 44px);
+          margin-bottom: clamp(20px, 2.4vw, 30px);
         }
         .marquee__viewport {
           position: relative;
@@ -100,7 +100,7 @@ export default function BrandMarquee() {
         }
         .marquee__word {
           font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
-          font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+          font-size: clamp(1.05rem, 1.5vw, 1.4rem);
           font-weight: 400;
           letter-spacing: -0.005em;
           color: var(--ink-80);

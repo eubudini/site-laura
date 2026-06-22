@@ -23,6 +23,11 @@ export default function BrandMarquee() {
                   width={160}
                   height={64}
                   className="marquee__logo"
+                  style={
+                    b.logoScale
+                      ? { height: `calc(var(--logo-h) * ${b.logoScale})` }
+                      : undefined
+                  }
                 />
               ) : (
                 <span className="marquee__word" style={{ fontStyle: b.style }}>

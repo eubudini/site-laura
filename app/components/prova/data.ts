@@ -98,11 +98,11 @@ export const cases: Case[] = [
 // o marquee renderiza o nome em wordmark tipográfico ate o arquivo chegar.
 export const brands: Brand[] = [
   { name: "A.MAR", style: "italic", handle: "a.mar.joseignacio" },
-  { name: "Brunnen", style: "italic", handle: "brunnenmodafeminina", logo: "/logo-brunnen.png" },
+  { name: "Brunnen", style: "italic", handle: "brunnenmodafeminina", logo: "/logo-brunnen.png", logoScale: 0.85 },
   { name: "Mariana Penteado", style: "italic", handle: "marianapenteado" },
   { name: "Marina Ciconet", style: "normal", handle: "marinaciconet" },
-  { name: "CauCakes", style: "normal", logo: "/logo-caucakes.png" },
-  { name: "QNB", style: "normal", logo: "/logo-qnb.png" },
+  { name: "CauCakes", style: "normal", logo: "/logo-caucakes-rosa.png" },
+  { name: "QNB", style: "normal", logo: "/logo-qnb.png", logoScale: 1.18 },
   { name: "Gama Concept", style: "normal", logo: "/logo-gama.png" },
   { name: "SP3 Company", style: "normal", logo: "/logo-sp3.png" },
 ];

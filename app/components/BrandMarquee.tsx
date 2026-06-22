@@ -20,14 +20,9 @@ export default function BrandMarquee() {
                 <Image
                   src={b.logo}
                   alt={b.name}
-                  width={120}
-                  height={40}
+                  width={160}
+                  height={64}
                   className="marquee__logo"
-                  style={
-                    b.logoScale
-                      ? { height: `calc(var(--logo-h) * ${b.logoScale})` }
-                      : undefined
-                  }
                 />
               ) : (
                 <span className="marquee__word" style={{ fontStyle: b.style }}>
@@ -41,8 +36,13 @@ export default function BrandMarquee() {
 
       <style>{`
         .marquee {
-          /* altura-base comum a todas as logos; cada logo ajusta com logoScale */
-          --logo-h: clamp(24px, 2.2vw, 28px);
+          /* Normalização por altura: TODAS as logos têm exatamente a mesma
+             altura (--logo-h), largura automática preservando a proporção.
+             --logo-max-w só impede que wordmarks muito largas estourem o
+             layout no mobile. Resultado: mesma altura/peso em qualquer tela. */
+          --logo-h: clamp(26px, 3.4vw, 38px);
+          --logo-max-w: clamp(132px, 22vw, 196px);
+          --logo-box-h: clamp(40px, 5vw, 56px);
           background:
             linear-gradient(180deg, var(--gold-light) 0%, transparent 60%),
             var(--paper, #F7F3EC);
@@ -85,12 +85,14 @@ export default function BrandMarquee() {
         .marquee__item {
           display: flex;
           align-items: center;
+          justify-content: center;
           flex-shrink: 0;
+          height: var(--logo-box-h);
         }
         .marquee__logo {
           height: var(--logo-h);
           width: auto;
-          max-width: clamp(120px, 16vw, 168px);
+          max-width: var(--logo-max-w);
           object-fit: contain;
           opacity: 1;
           transition: transform var(--duration-base) ease;
@@ -100,7 +102,10 @@ export default function BrandMarquee() {
         }
         .marquee__word {
           font-family: var(--font-bodoni-moda), 'Bodoni Moda', serif;
-          font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+          /* calibrado para que a altura do texto iguale a das logos em imagem
+             (var(--logo-h)) tanto no mobile quanto no desktop */
+          font-size: clamp(1.55rem, 4.5vw, 2.3rem);
+          line-height: 1;
           font-weight: 400;
           letter-spacing: -0.005em;
           color: var(--ink-80);

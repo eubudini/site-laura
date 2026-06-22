@@ -28,7 +28,7 @@ const cards = [
       "Estratégia, direção criativa e presença digital para marcas que querem ser referência.",
     href: "https://lauracamponogara.com.br",
     cta: "Visitar",
-    banner: "site" as const,
+    kind: "site" as const,
   },
   {
     title: "WhatsApp",
@@ -36,7 +36,7 @@ const cards = [
       "Vamos conversar sobre a presença da sua marca. Atendimento direto comigo.",
     href: "https://wa.me/5551985309613?text=Oi%20Laura!%20Vim%20pelo%20seu%20link%20e%20gostaria%20de%20conversar%20sobre%20conte%C3%BAdo%20e%20presen%C3%A7a%20digital.",
     cta: "Chamar",
-    banner: "whatsapp" as const,
+    kind: "whatsapp" as const,
   },
 ];
 
@@ -49,7 +49,6 @@ export default function BioPage() {
           src={bannerCover}
           alt={profile.name}
           fill
-          priority
           sizes="100vw"
           placeholder="blur"
           className="object-cover object-[center_35%]"
@@ -110,7 +109,7 @@ export default function BioPage() {
             ))}
           </nav>
 
-          <section className="mt-9 w-full flex flex-col gap-4">
+          <section className="mt-9 w-full flex flex-col gap-3.5">
             {cards.map((c) => (
               <Link
                 key={c.title}
@@ -118,21 +117,23 @@ export default function BioPage() {
                 target="_blank"
                 className="group relative overflow-hidden rounded-2xl ring-1 ring-ink/10 bg-white hover:ring-gold/50 hover:shadow-md hover:shadow-ink/5 transition"
               >
-                {c.banner === "whatsapp" ? <WhatsappBanner /> : <SiteBanner />}
-                <div className="p-4 sm:p-5">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="min-w-0">
-                      <h3 className="font-serif text-[17px] sm:text-[18px] text-ink">
-                        {c.title}
-                      </h3>
-                      <p className="mt-1 text-[12.5px] sm:text-[13px] leading-snug text-muted">
-                        {c.description}
-                      </p>
-                    </div>
-                    <span className="shrink-0 text-[13px] font-medium text-gold-text underline-offset-4 group-hover:underline">
-                      {c.cta} →
-                    </span>
+                <div className="flex items-center gap-4 p-4 sm:p-5">
+                  <span className="shrink-0 w-12 h-12 grid place-items-center rounded-xl bg-parchment ring-1 ring-ink/5 text-gold-text">
+                    {c.kind === "whatsapp" ? (
+                      <IconWhatsapp className="w-6 h-6" />
+                    ) : (
+                      <IconGlobe className="w-6 h-6" />
+                    )}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-serif text-[17px] text-ink">{c.title}</h3>
+                    <p className="mt-0.5 text-[12.5px] leading-snug text-muted">
+                      {c.description}
+                    </p>
                   </div>
+                  <span className="shrink-0 text-[13px] font-medium text-gold-text underline-offset-4 group-hover:underline">
+                    {c.cta} →
+                  </span>
                 </div>
               </Link>
             ))}
@@ -144,65 +145,6 @@ export default function BioPage() {
         </div>
       </div>
     </main>
-  );
-}
-
-function SiteBanner() {
-  return (
-    <div className="relative h-28 sm:h-32 overflow-hidden" style={{ background: "#0A0A0A" }}>
-      {/* glow radial gold sobre fundo escuro — sofisticação editorial */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 70% at 50% 45%, rgba(201,169,110,0.45) 0%, rgba(184,149,106,0.18) 38%, transparent 72%)",
-        }}
-      />
-      {/* grid editorial sutil */}
-      <div
-        className="absolute inset-0 opacity-[0.10]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      />
-      <div className="relative h-full grid place-items-center px-4">
-        <span className="font-serif text-white text-[17px] sm:text-[20px] tracking-tight text-center drop-shadow-[0_1px_12px_rgba(201,169,110,0.4)]">
-          lauracamponogara.com.br
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function WhatsappBanner() {
-  return (
-    <div className="relative h-28 sm:h-32 overflow-hidden bg-parchment-dark">
-      {/* glow radial gold (espelho dos banners de gradiente do link-bio) */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 65% 70% at 50% 50%, rgba(184,149,106,0.42) 0%, rgba(142,110,66,0.20) 38%, transparent 72%)",
-        }}
-      />
-      {/* grid editorial sutil */}
-      <div
-        className="absolute inset-0 opacity-[0.12]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(10,10,10,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(10,10,10,0.5) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      />
-      <div className="relative h-full grid place-items-center gap-2">
-        <IconWhatsapp className="w-9 h-9 text-gold-text drop-shadow-[0_1px_6px_rgba(184,149,106,0.4)]" />
-        <span className="font-serif text-ink text-[16px] sm:text-[18px] tracking-tight">
-          Vamos conversar
-        </span>
-      </div>
-    </div>
   );
 }
 
@@ -227,6 +169,14 @@ function IconWhatsapp(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
       <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.93.55 3.74 1.5 5.27L2 22l5.04-1.6a9.83 9.83 0 0 0 5 1.36h.01c5.43 0 9.83-4.4 9.83-9.84 0-2.63-1.02-5.1-2.88-6.96A9.78 9.78 0 0 0 12.04 2Zm5.7 13.93c-.24.68-1.4 1.3-1.93 1.37-.5.07-1.12.1-1.8-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.2-1.16-1.54-1.16-2.94 0-1.4.73-2.08.99-2.37.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.65.5.24.6.83 2.07.9 2.22.07.15.12.32.02.51-.1.2-.15.32-.29.49-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.98 1.1.97 2.02 1.27 2.31 1.42.29.14.46.12.63-.08.17-.2.73-.85.92-1.14.19-.29.39-.24.65-.15.27.1 1.69.8 1.98.94.29.15.49.22.56.34.07.13.07.71-.17 1.4Z" />
+    </svg>
+  );
+}
+function IconGlobe(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18" />
     </svg>
   );
 }

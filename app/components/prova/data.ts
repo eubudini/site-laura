@@ -104,4 +104,5 @@ export const brands: Brand[] = [
   { name: "CauCakes", style: "normal", logo: "/logo-caucakes.png", logoScale: 0.88 },
   { name: "QNB", style: "normal", logo: "/logo-qnb.png", logoScale: 1.05 },
   { name: "Gama Concept", style: "normal", logo: "/logo-gama.png", logoScale: 0.82 },
+  { name: "SP3 Company", style: "normal", logo: "/logo-sp3.png", logoScale: 1.25 },
 ];
